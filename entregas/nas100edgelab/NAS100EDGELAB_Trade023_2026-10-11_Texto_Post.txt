@@ -1,0 +1,9 @@
+La señal fue BUY, pero el movimiento no tuvo continuidad.
+
+El trade #023 cerró en stop loss con −100,55 puntos ejecutados. El registro mostró 26 puntos de recorrido favorable y 297 adversos durante la ventana. Esa última cifra describe el recorrido del mercado, no la pérdida de la operación.
+
+En este video revisamos qué pasó, cómo terminó la ejecución y las tres conclusiones que deja el caso.
+
+Sigue NAS100 EDGE LAB para acompañar la bitácora.
+
+Contenido educativo. No es asesoría financiera. Operar implica riesgo de pérdida.

@@ -1,0 +1,11 @@
+Una pérdida, una ganancia y un balance prácticamente neutro.
+
+Los trades publicados #023 y #024 cerraron con −100,55 y +102,70 puntos: +2,15 puntos netos entre ambas ejecuciones.
+
+Detrás del balance hubo dos historias distintas: un BUY con Score 8 que terminó en stop y un SELL con Score 6 que alcanzó el objetivo. También hubo una diferencia importante de duración: más de cuatro horas frente a unos once minutos.
+
+Este resumen recoge únicamente estas dos operaciones. Seguimos documentando sin convertir dos resultados en una regla.
+
+Sigue NAS100 EDGE LAB para acompañar la bitácora.
+
+Contenido educativo. No es asesoría financiera. Operar implica riesgo de pérdida.

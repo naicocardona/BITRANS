@@ -10,7 +10,7 @@ Hola Claude. Vamos a producir videos para **NAS100 EDGE LAB** (@nas100edgelab), 
 ## 1. Método de producción
 - Composición en HTML + GSAP con **HyperFrames 0.8.134**: `check`, `snapshot` de los momentos clave y `render` a 30 fps.
 - **ffmpeg** para audio, cortes y portada.
-- Música original generada por ti, con energía pero sin tapar nada, y **distinta en cada video**. Efectos de sonido sintetizados sutiles. Sin narración ni voz del avatar salvo que yo la apruebe.
+- Música original generada por ti, con energía pero sin tapar nada, y **distinta en cada video**. Efectos de sonido sintetizados sutiles. Voz del avatar aprobada: «A · Mentor» (ver sección 4); con voz, la música baja cuando habla.
 - Flujo de aprobación: **1)** guion por escenas con tiempos → **2)** capturas clave → **3)** render final verificado (duración, resolución, audio).
 
 ## 2. Duración: máximo 1:30, idealmente menos
@@ -66,6 +66,20 @@ El objetivo es **enganchar sin perder la seriedad del trading**. Un video de tar
   | Las tres conclusiones | pensativo |
 - Cambios de pose con fundido rápido y un pequeño rebote; respiración sutil en reposo. El avatar sale antes del logo y el CTA final.
 - Las burbujas nunca dan consejos de inversión ni celebran ganancias; mantienen el tono educativo.
+
+### Voz del avatar · «A · Mentor» (aprobada el 17 oct 2026)
+- **Úsala en los videos de NAS100 EDGE LAB.** El avatar puede narrar; las burbujas pasan a ser subtítulos breves sincronizados con la voz.
+- **Receta exacta**, para que suene siempre igual:
+  - Kokoro multi-lang v1.0 (sherpa-onnx, local, licencia Apache 2.0), voz `em_alex` (sid 29), idioma `es-419`, velocidad 0.92.
+  - Procesamiento con ffmpeg: `asetrate=24000*0.917,aresample=48000,atempo=1.0905,highpass=f=70,equalizer=f=220:t=q:w=1:g=2,equalizer=f=3000:t=q:w=1.2:g=2.5,deesser=i=0.3,acompressor=threshold=-20dB:ratio=3:attack=5:release=120:makeup=2,aecho=0.85:0.6:35|60:0.18|0.10`.
+  - Mezcla final con la música, a −16 LUFS.
+- **Pronunciación:**
+  - Genera **cada frase por separado y sin punto final**: con punto, Kokoro agrega un soplido que suena como una «s» («pérdidas»).
+  - Une las frases con pausas controladas.
+  - Escribe las cifras como se dicen («más dos coma quince puntos») y muestra la cifra en pantalla («+2,15 puntos»).
+- **Verificación obligatoria:** transcribe la narración final con Whisper (sherpa-onnx, local) y compárala con el guion antes de entregar. Si una palabra no coincide, regenera esa frase.
+- **Ojos del visor:** pulsan al ritmo de la voz (envolvente del audio a 30 fps); cambios de pose en los cambios de idea.
+- **El guion de la voz** se presenta junto al guion por escenas para aprobación; la voz complementa los textos en pantalla, no los lee todos.
 
 ## 5. Estructura obligatoria de cada trade
 1. **Apertura:** gancho con el resultado + «TRADE #0XX · fecha · sesión (9 AM / 11 PM Colombia)».

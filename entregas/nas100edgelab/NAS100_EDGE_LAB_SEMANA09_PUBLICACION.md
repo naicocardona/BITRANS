@@ -67,7 +67,7 @@ El TikTok es la versión dinámica ya aprobada, sin cambios: es una copia idént
 - Los gráficos son las capturas reales de TradingView; no hay velas fabricadas.
 - Todo se comunica en puntos. El Short aclara «no son dólares ni rentabilidad de cuenta» y no muestra dinero.
 - El resultado no se presenta como recuperación: se dice «sumamos».
-- La voz final se transcribió con Whisper y coincide frase por frase con el guion.
+- La voz final se transcribió con Whisper y coincide frase por frase con el guion. «HOLDING» se genera como «Jóldin» para que suene con h aspirada (corrección del 18 oct).
 
 ## Diferencias entre versiones
 

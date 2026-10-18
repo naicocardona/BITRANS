@@ -109,10 +109,59 @@ El objetivo es **enganchar sin perder la seriedad del trading**. Un video de tar
 - Disclaimer en cada video: «Contenido educativo · No es asesoría financiera · Operar implica riesgo de pérdida».
 
 ## 8. Entregables
-- `NAS100EDGELAB_Trade0XX_AAAA-MM-DD.mp4`
-- `NAS100EDGELAB_Trade0XX_AAAA-MM-DD_Portada.jpg` (gráfico real como protagonista, título corto, identidad negra / morada + verde o rojo según resultado)
-- `NAS100EDGELAB_Trade0XX_AAAA-MM-DD_Texto_Post.txt`
+Desde la Semana #9 cada video sale en **dos versiones independientes** (ver sección 8 B). Nombres:
+- `NAS100_EDGE_LAB_<TIPO><NÚMERO>_<PLATAFORMA>[_V<n>].mp4`
+  - TIPO: `ENTRADA`, `RESULTADO`, `APRENDIZAJE` o `SEMANA`.
+  - NÚMERO: trade con tres cifras (`TRADE023`) o semana con dos (`SEMANA09`).
+  - PLATAFORMA: `TIKTOK` o `SHORTS`. V2, V3… solo si hay una corrección posterior.
+  - Ejemplos: `NAS100_EDGE_LAB_RESULTADO_TRADE025_TIKTOK.mp4`, `NAS100_EDGE_LAB_SEMANA10_SHORTS.mp4`.
+- Una portada por versión, con el mismo nombre más `_PORTADA.jpg`. La portada lleva el gráfico real como protagonista, un título corto e identidad negra / morada con verde o rojo según el resultado. Nunca muestra dinero.
+- `NAS100_EDGE_LAB_<TIPO><NÚMERO>_PUBLICACION.md` con:
+  - Título, descripción, 3 hashtags, duración y miniatura recomendada de cada versión.
+  - Para Shorts, además: lista de reproducción y video relacionado.
+  - Datos verificados, diferencias entre versiones y checklist de QC.
 - MP4 y portada siempre juntos.
+
+## 8 B. Sistema multiplataforma: TikTok + YouTube Shorts (permanente)
+Son **dos ediciones distintas**, no un recorte de la otra. Mismos datos verificados, mismo avatar «Explorador» con la voz A, misma identidad.
+
+| | TikTok | YouTube Shorts |
+|---|---|---|
+| Duración | 60–90 s (máx. 1:30) | 35–60 s |
+| Gancho | Resultado + contexto del trade | Pregunta o contraste propio en el primer segundo, con el gráfico ya en pantalla |
+| Contenido | Historia completa: entrada, desarrollo, resultado y 3 conclusiones | **Una sola lección principal**, menos texto secundario, sin conclusiones 2 y 3 |
+| Narración | Voz A + subtítulos | Voz A + subtítulos palabra-frase sincronizados (obligatorio) |
+| Zona de datos | x 90–900, y 180–1500 | x 90–900, **y 290–1000** (datos), subtítulos en y ≈ 1015. Nada importante bajo y 1500 ni a la derecha de x 900, que son los botones y la descripción de Shorts |
+| Audio | −16 LUFS | −14 LUFS |
+| Música | Pista original propia | **Otra** pista original (nunca la misma del TikTok) |
+| Cierre | CTA «Sigue la bitácora…» + disclaimer | «Esto es NAS100 EDGE LAB, un laboratorio de TITÁN HOLDING» + disclaimer. El CTA va en la descripción |
+| Marcas | Sin marca de agua de TikTok | Sin marca de agua de TikTok ni de ninguna app |
+
+TITÁN HOLDING aparece solo como identificación (logo pequeño + nombre). No es protagonista ni se vende nada.
+
+**Qué cuenta cada tipo de video:**
+- **ENTRADA:** el setup registrado (dirección, Score, Quality, Alignment y contexto) sin resultado. En Shorts: «¿Qué vio el journal antes de entrar?».
+- **RESULTADO:** ejecución real (MT5), resultado en puntos y recorrido. En Shorts: gancho con el desenlace y una lección.
+- **APRENDIZAJE:** un hallazgo transversal (por ejemplo, Score vs. resultado) con los trades que lo respaldan. En Shorts: una idea, una prueba.
+- **REPORTE SEMANAL:** balance de la semana y hallazgo principal. En Shorts: contraste inicial + balance + lección + identificación.
+
+**Archivos maestros reutilizables (por video):**
+- Narración por frases y la narración montada (`narr_A.wav`) con sus tiempos (`narr_times.json`).
+- La composición de cada versión (`index.html` + `assets/`) y su script generador.
+- Portadas en HTML editable.
+- Las capturas reales recortadas.
+
+**QC antes de entregar cada versión:**
+- Cifras contra el comprobante.
+- Transcripción ASR de la voz final, palabra por palabra.
+- Duración dentro del rango de la plataforma.
+- Sonoridad (LUFS) dentro de lo indicado.
+- Subtítulos sin solaparse con datos.
+- Nada fuera de la zona segura.
+- Avatar sin tapar datos.
+- Disclaimer presente.
+- Portada sin dinero.
+- Música distinta entre versiones.
 
 ## 9. Lo que te mando en cada encargo
 - Comprobante MT5 y captura de TradingView del trade.

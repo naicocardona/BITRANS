@@ -80,6 +80,16 @@ El objetivo es **enganchar sin perder la seriedad del trading**. Un video de tar
 - **Bloque F** (escritorio, cuerpo entero, sentado, primerísimo plano) tiene otro encuadre: úsalo solo en escenas propias (apertura, transición o corte de impacto), nunca en la esquina junto a los datos. Las pantallas de esos monitores son decorativas y no reemplazan las capturas reales.
 - **Ojos (bloque H):** parpadeo cada 3–5 s en reposo (abiertos → entrecerrados → cerrados → entrecerrados → abiertos, ≈ 2 fotogramas cada uno). `ojos_brillo` para el pico de la voz y `ojos_sonrisa` para un TAKE PROFIT moderado. Usa los estados de ojos solo con la pose neutral, porque están dibujados sobre ella.
 - **Secuencias (bloque G):** se reproducen a 6–8 fotogramas por segundo y solo dentro de la misma secuencia. Nunca alternes poses de bloques distintos como si fueran fotogramas.
+- **Fotogramas V3 (`avatar/explorador/V3/`), para que el Explorador nunca esté estático:**
+  - **Parpadeo** cada 3–5 s en cualquier pose principal.
+  - **«Hablando»** en bucle mientras narra.
+  - **Señalar en 3 tiempos** al destacar un dato.
+  - **STOP LOSS:** `sl_t1` → `sl_t2` → preocupado.
+  - **TAKE PROFIT:** `tp_t1` → `tp_t2` → satisfecho.
+  - **Pensar en 2 tiempos.**
+  - **Salida:** girar (`gira_1` → `gira_3`) y salir por abajo.
+  - Órdenes y tiempos en `CATALOGO.md`.
+- **Movimiento en código, siempre:** respiración (escala vertical ≈ 1 %), rebote al cambiar de pose y entrada desde abajo. Sacudida solo en el gancho.
 - Cambios de pose con fundido rápido y un pequeño rebote; respiración sutil en reposo. El avatar sale antes del logo y el CTA final.
 - Las burbujas nunca dan consejos de inversión ni celebran ganancias; mantienen el tono educativo.
 

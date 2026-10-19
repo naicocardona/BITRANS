@@ -148,3 +148,21 @@ Consulta la tabla «Poses según el momento» en la sección 4 del prompt maestr
 - No uses gestos de euforia para las ganancias ni dramatices las pérdidas. El aplauso reconoce el proceso, nunca la ganancia.
 - Las pantallas, tablets y carteles son decorativos o sirven para poner texto encima. Nunca reemplazan las capturas reales.
 - La voz del avatar es la **A · Mentor**, aprobada el 17 oct 2026. El LEEME del ZIP dice «no se ha aprobado una voz»; eso quedó desactualizado.
+
+## V3 · Fotogramas de animación (20 + bases), recibidos el 19 oct 2026
+Carpeta `V3/`, WebP de 640 × 640 en el mismo lienzo que su pose base. **Bases** en `V3/bases/`: las 6 poses originales en lienzo 1024 y `fin_nuca` / `fin_pulgar`, ajustadas por Codex.
+
+**Verificación propia:**
+- Fuera de la zona que se mueve, los parpadeos, «habla», «señala» y «piensa» son idénticos píxel por píxel a su base. Cambian entre 0,9 % y 14 % del lienzo, solo donde corresponde.
+- Los fotogramas del giro venían más pequeños que el resto (unos 25 %). Los reescalé (× 1,266, con la base anclada) para que calcen con la pose neutral.
+- `prueba_animacion_V3.mp4` muestra todas las secuencias animadas.
+
+| Secuencia | Orden | Nota |
+|---|---|---|
+| Parpadeo | base → `*_ojos_cerrados` (≈ 4 fotogramas a 30 fps) → base, cada 3–5 s | Para explica, senala, pensativo, satisfecho y preocupado. `pulgar_ojos_cerrados` calza con `D/avatar_pulgar` de la biblioteca |
+| Hablando | `habla_1` → `habla_2` → `habla_1` → `habla_3`, en bucle a ≈ 7 fps | Mientras narra con la pose «explica» |
+| Señalar | neutral → `senala_t1` → `senala_t2` → senala | Con un pequeño rebote al final |
+| STOP LOSS | neutral → `sl_t1` → `sl_t2` (sostener) → **preocupado** | Recomendado: misma familia, sin salto. Terminar en `fin_nuca` produce un salto de escala y estilo |
+| TAKE PROFIT | neutral → `tp_t1` → `tp_t2` → **satisfecho** | Recomendado. `fin_pulgar` también funciona con un fundido de 0,2 s, pero con salto |
+| Pensar | neutral → `piensa_t1` → pensativo ↔ `piensa_t2` | |
+| Girar y salir | neutral → `gira_1` → `gira_2` → `gira_3` → sale por abajo | Ya reescalado |

@@ -1,0 +1,103 @@
+{
+  "png_produccion": 20,
+  "laminas": 7,
+  "gif": 7,
+  "formato": "1024x1024 RGBA",
+  "mascaras": [
+    {
+      "file": "explica_ojos_cerrados.png",
+      "registration_inliers": 191,
+      "changed_pixels_outside_mask": 0
+    },
+    {
+      "file": "senala_ojos_cerrados.png",
+      "registration_inliers": 174,
+      "changed_pixels_outside_mask": 0
+    },
+    {
+      "file": "pensativo_ojos_cerrados.png",
+      "registration_inliers": 190,
+      "changed_pixels_outside_mask": 0
+    },
+    {
+      "file": "satisfecho_ojos_cerrados.png",
+      "registration_inliers": 167,
+      "changed_pixels_outside_mask": 0
+    },
+    {
+      "file": "preocupado_ojos_cerrados.png",
+      "registration_inliers": 167,
+      "changed_pixels_outside_mask": 0
+    },
+    {
+      "file": "pulgar_ojos_cerrados.png",
+      "registration_inliers": 187,
+      "changed_pixels_outside_mask": 0
+    },
+    {
+      "file": "habla_2.png",
+      "registration_inliers": 92,
+      "changed_pixels_outside_mask": 0
+    },
+    {
+      "file": "habla_3.png",
+      "registration_inliers": 107,
+      "changed_pixels_outside_mask": 0
+    },
+    {
+      "file": "senala_t1.png",
+      "registration_inliers": 131,
+      "changed_pixels_outside_mask": 0
+    },
+    {
+      "file": "senala_t2.png",
+      "registration_inliers": 139,
+      "changed_pixels_outside_mask": 0
+    },
+    {
+      "file": "sl_t1.png",
+      "registration_inliers": 147,
+      "changed_pixels_outside_mask": 0
+    },
+    {
+      "file": "sl_t2.png",
+      "registration_inliers": 7,
+      "changed_pixels_outside_mask": 0
+    },
+    {
+      "file": "tp_t1.png",
+      "registration_inliers": 194,
+      "changed_pixels_outside_mask": 0
+    },
+    {
+      "file": "tp_t2.png",
+      "registration_inliers": 0,
+      "changed_pixels_outside_mask": 0
+    },
+    {
+      "file": "piensa_t1.png",
+      "registration_inliers": 12,
+      "changed_pixels_outside_mask": 0
+    },
+    {
+      "file": "piensa_t2.png",
+      "registration_inliers": 110,
+      "changed_pixels_outside_mask": 0
+    },
+    {
+      "file": "gira_1.png",
+      "registration_inliers": 0,
+      "changed_pixels_outside_mask": 0
+    },
+    {
+      "file": "gira_2.png",
+      "registration_inliers": 0,
+      "changed_pixels_outside_mask": 0
+    },
+    {
+      "file": "gira_3.png",
+      "registration_inliers": 0,
+      "changed_pixels_outside_mask": 0
+    }
+  ]
+}

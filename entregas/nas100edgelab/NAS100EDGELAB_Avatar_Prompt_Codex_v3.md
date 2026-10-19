@@ -1,14 +1,21 @@
 # Prompt para Codex · Explorador: 20 fotogramas de animación (v3)
 
-Copia todo lo que está debajo de la línea y pégalo en Codex. Adjunta como referencia:
-- la lámina original del avatar (las 6 poses);
-- estos archivos de la biblioteca: `avatar_pulgar.png`, `avatar_nuca.png`, `avatar_espalda.png`, `avatar_tres_cuartos.png` y `ojos_cerrados.png`.
+Copia todo lo que está debajo de la línea y pégalo en Codex, **en la misma conversación o proyecto donde creó la biblioteca `NAS100_EXPLORADOR`**. No hace falta adjuntar nada: Codex ya tiene la lámina original y todas las imágenes que generó. Si abres una conversación nueva y no las encuentra, adjúntale la lámina original y los archivos de la sección «Material de referencia».
 
-Si Codex no puede hacerlo todo de una vez, pídeselo por bloques (A, B, C…).
+Si no puede hacerlo todo de una vez, pídeselo por bloques (A, B, C…).
 
 ---
 
-Crea **20 fotogramas de animación** del **mismo personaje** de las imágenes de referencia, el «Explorador» de NAS100 EDGE LAB. Ya existe una biblioteca de 88 poses. Estos fotogramas no son poses nuevas: son **movimientos intermedios y variantes de ojos** de poses que ya existen, para animarlas en video vertical (el avatar aparece abajo a la izquierda y narra con voz).
+Crea **20 fotogramas de animación** del **mismo personaje**: el «Explorador» de NAS100 EDGE LAB, cuya biblioteca de 88 poses tú mismo generaste en la carpeta `NAS100_EXPLORADOR/`. Estos fotogramas no son poses nuevas: son **movimientos intermedios y variantes de ojos** de poses que ya existen, para animarlas en video vertical (el avatar aparece abajo a la izquierda y narra con voz).
+
+## Material de referencia (ya lo tienes, no lo vuelvas a generar)
+- **Lámina original de las 6 poses** que usaste como referencia para la biblioteca: neutral (manos juntas), pensativo, explicando, señalando, satisfecho y preocupado. Estas son las «poses base» de este encargo.
+- `NAS100_EXPLORADOR/D/avatar_pulgar.png`
+- `NAS100_EXPLORADOR/D/avatar_nuca.png`
+- `NAS100_EXPLORADOR/A/avatar_espalda.png`
+- `NAS100_EXPLORADOR/A/avatar_tres_cuartos.png`
+- `NAS100_EXPLORADOR/H/ojos_cerrados.png`
+- Usa también como guía las secuencias que ya hiciste en `NAS100_EXPLORADOR/G/`: misma técnica de edición sobre la referencia para que los fotogramas calcen.
 
 ## Reglas de consistencia (obligatorias en TODAS las imágenes)
 - **Personaje idéntico:**
@@ -77,6 +84,7 @@ Mismo encuadre, misma escala y misma altura en los tres. El cuerpo gira sobre su
 Uso: 1 → 2 → 3 y salida de cuadro.
 
 ## Entrega
+- Guarda los 20 PNG en una carpeta nueva, `NAS100_EXPLORADOR/V3/`, sin modificar ni sobrescribir ninguna imagen existente de la biblioteca.
 - 20 PNG transparentes de 1024 × 1024, con los nombres indicados.
 - Una lámina de contacto por bloque (`lamina_v3_A.png` … `lamina_v3_G.png`) sobre fondo oscuro #090B10. Cada fotograma va junto a su pose base para comparar la alineación.
 - Un GIF de prueba por secuencia, a 8 fotogramas por segundo: `prueba_habla.gif`, `prueba_senala.gif`, `prueba_sl.gif`, `prueba_tp.gif`, `prueba_piensa.gif`, `prueba_gira.gif` y `prueba_parpadeo.gif`, este último con los 6 ojos cerrados alternando con su pose. Así verificas que no haya saltos.

@@ -1,0 +1,970 @@
+{
+ "avatar_bienvenida": {
+  "bloque": "A",
+  "archivo": "A/avatar_bienvenida.webp",
+  "bbox": [
+   4,
+   40,
+   637,
+   582
+  ],
+  "capucha_cx": 321
+ },
+ "avatar_brazos_cruzados": {
+  "bloque": "A",
+  "archivo": "A/avatar_brazos_cruzados.webp",
+  "bbox": [
+   93,
+   22,
+   572,
+   622
+  ],
+  "capucha_cx": 329
+ },
+ "avatar_capucha": {
+  "bloque": "A",
+  "archivo": "A/avatar_capucha.webp",
+  "bbox": [
+   10,
+   27,
+   633,
+   611
+  ],
+  "capucha_cx": 323
+ },
+ "avatar_espalda": {
+  "bloque": "A",
+  "archivo": "A/avatar_espalda.webp",
+  "bbox": [
+   59,
+   21,
+   614,
+   619
+  ],
+  "capucha_cx": 364
+ },
+ "avatar_perfil_der": {
+  "bloque": "A",
+  "archivo": "A/avatar_perfil_der.webp",
+  "bbox": [
+   77,
+   24,
+   616,
+   617
+  ],
+  "capucha_cx": 311
+ },
+ "avatar_perfil_izq": {
+  "bloque": "A",
+  "archivo": "A/avatar_perfil_izq.webp",
+  "bbox": [
+   49,
+   24,
+   574,
+   610
+  ],
+  "capucha_cx": 331
+ },
+ "avatar_reverencia": {
+  "bloque": "A",
+  "archivo": "A/avatar_reverencia.webp",
+  "bbox": [
+   53,
+   25,
+   620,
+   626
+  ],
+  "capucha_cx": 340
+ },
+ "avatar_saludo": {
+  "bloque": "A",
+  "archivo": "A/avatar_saludo.webp",
+  "bbox": [
+   28,
+   24,
+   628,
+   610
+  ],
+  "capucha_cx": 341
+ },
+ "avatar_tres_cuartos": {
+  "bloque": "A",
+  "archivo": "A/avatar_tres_cuartos.webp",
+  "bbox": [
+   34,
+   13,
+   627,
+   622
+  ],
+  "capucha_cx": 351
+ },
+ "avatar_circula": {
+  "bloque": "B",
+  "archivo": "B/avatar_circula.webp",
+  "bbox": [
+   20,
+   24,
+   635,
+   619
+  ],
+  "capucha_cx": 262
+ },
+ "avatar_dos_manos_senalan": {
+  "bloque": "B",
+  "archivo": "B/avatar_dos_manos_senalan.webp",
+  "bbox": [
+   30,
+   28,
+   628,
+   613
+  ],
+  "capucha_cx": 257
+ },
+ "avatar_presenta_arriba": {
+  "bloque": "B",
+  "archivo": "B/avatar_presenta_arriba.webp",
+  "bbox": [
+   8,
+   37,
+   639,
+   608
+  ],
+  "capucha_cx": 365
+ },
+ "avatar_presenta_derecha": {
+  "bloque": "B",
+  "archivo": "B/avatar_presenta_derecha.webp",
+  "bbox": [
+   12,
+   30,
+   636,
+   600
+  ],
+  "capucha_cx": 224
+ },
+ "avatar_senala_abajo": {
+  "bloque": "B",
+  "archivo": "B/avatar_senala_abajo.webp",
+  "bbox": [
+   59,
+   23,
+   625,
+   609
+  ],
+  "capucha_cx": 342
+ },
+ "avatar_senala_arriba": {
+  "bloque": "B",
+  "archivo": "B/avatar_senala_arriba.webp",
+  "bbox": [
+   26,
+   25,
+   634,
+   613
+  ],
+  "capucha_cx": 350
+ },
+ "avatar_senala_camara": {
+  "bloque": "B",
+  "archivo": "B/avatar_senala_camara.webp",
+  "bbox": [
+   57,
+   24,
+   626,
+   626
+  ],
+  "capucha_cx": 318
+ },
+ "avatar_senala_izquierda": {
+  "bloque": "B",
+  "archivo": "B/avatar_senala_izquierda.webp",
+  "bbox": [
+   22,
+   23,
+   636,
+   623
+  ],
+  "capucha_cx": 358
+ },
+ "avatar_balanza_objeto": {
+  "bloque": "C",
+  "archivo": "C/avatar_balanza_objeto.webp",
+  "bbox": [
+   50,
+   22,
+   609,
+   612
+  ],
+  "capucha_cx": 334
+ },
+ "avatar_calculadora": {
+  "bloque": "C",
+  "archivo": "C/avatar_calculadora.webp",
+  "bbox": [
+   52,
+   23,
+   609,
+   624
+  ],
+  "capucha_cx": 331
+ },
+ "avatar_cartel": {
+  "bloque": "C",
+  "archivo": "C/avatar_cartel.webp",
+  "bbox": [
+   16,
+   15,
+   623,
+   623
+  ],
+  "capucha_cx": 319
+ },
+ "avatar_cronometro": {
+  "bloque": "C",
+  "archivo": "C/avatar_cronometro.webp",
+  "bbox": [
+   37,
+   10,
+   618,
+   625
+  ],
+  "capucha_cx": 349
+ },
+ "avatar_laptop": {
+  "bloque": "C",
+  "archivo": "C/avatar_laptop.webp",
+  "bbox": [
+   23,
+   30,
+   630,
+   583
+  ],
+  "capucha_cx": 280
+ },
+ "avatar_libreta": {
+  "bloque": "C",
+  "archivo": "C/avatar_libreta.webp",
+  "bbox": [
+   41,
+   15,
+   608,
+   623
+  ],
+  "capucha_cx": 338
+ },
+ "avatar_lupa": {
+  "bloque": "C",
+  "archivo": "C/avatar_lupa.webp",
+  "bbox": [
+   32,
+   20,
+   628,
+   626
+  ],
+  "capucha_cx": 334
+ },
+ "avatar_portapapeles": {
+  "bloque": "C",
+  "archivo": "C/avatar_portapapeles.webp",
+  "bbox": [
+   48,
+   23,
+   609,
+   621
+  ],
+  "capucha_cx": 320
+ },
+ "avatar_regla": {
+  "bloque": "C",
+  "archivo": "C/avatar_regla.webp",
+  "bbox": [
+   8,
+   24,
+   631,
+   613
+  ],
+  "capucha_cx": 332
+ },
+ "avatar_reloj": {
+  "bloque": "C",
+  "archivo": "C/avatar_reloj.webp",
+  "bbox": [
+   29,
+   20,
+   626,
+   623
+  ],
+  "capucha_cx": 330
+ },
+ "avatar_tablet": {
+  "bloque": "C",
+  "archivo": "C/avatar_tablet.webp",
+  "bbox": [
+   39,
+   16,
+   612,
+   622
+  ],
+  "capucha_cx": 319
+ },
+ "avatar_tablet_muestra": {
+  "bloque": "C",
+  "archivo": "C/avatar_tablet_muestra.webp",
+  "bbox": [
+   23,
+   13,
+   628,
+   624
+  ],
+  "capucha_cx": 340
+ },
+ "avatar_tarjeta": {
+  "bloque": "C",
+  "archivo": "C/avatar_tarjeta.webp",
+  "bbox": [
+   19,
+   16,
+   622,
+   625
+  ],
+  "capucha_cx": 320
+ },
+ "avatar_alto": {
+  "bloque": "D",
+  "archivo": "D/avatar_alto.webp",
+  "bbox": [
+   34,
+   22,
+   632,
+   614
+  ],
+  "capucha_cx": 342
+ },
+ "avatar_aplauso_suave": {
+  "bloque": "D",
+  "archivo": "D/avatar_aplauso_suave.webp",
+  "bbox": [
+   94,
+   23,
+   563,
+   621
+  ],
+  "capucha_cx": 317
+ },
+ "avatar_asiente": {
+  "bloque": "D",
+  "archivo": "D/avatar_asiente.webp",
+  "bbox": [
+   53,
+   27,
+   616,
+   617
+  ],
+  "capucha_cx": 338
+ },
+ "avatar_cara_mano": {
+  "bloque": "D",
+  "archivo": "D/avatar_cara_mano.webp",
+  "bbox": [
+   61,
+   23,
+   625,
+   631
+  ],
+  "capucha_cx": 317
+ },
+ "avatar_hombros": {
+  "bloque": "D",
+  "archivo": "D/avatar_hombros.webp",
+  "bbox": [
+   5,
+   28,
+   636,
+   610
+  ],
+  "capucha_cx": 332
+ },
+ "avatar_mano_corazon": {
+  "bloque": "D",
+  "archivo": "D/avatar_mano_corazon.webp",
+  "bbox": [
+   46,
+   26,
+   617,
+   625
+  ],
+  "capucha_cx": 328
+ },
+ "avatar_niega": {
+  "bloque": "D",
+  "archivo": "D/avatar_niega.webp",
+  "bbox": [
+   49,
+   24,
+   630,
+   611
+  ],
+  "capucha_cx": 341
+ },
+ "avatar_nuca": {
+  "bloque": "D",
+  "archivo": "D/avatar_nuca.webp",
+  "bbox": [
+   25,
+   27,
+   630,
+   617
+  ],
+  "capucha_cx": 364
+ },
+ "avatar_pulgar": {
+  "bloque": "D",
+  "archivo": "D/avatar_pulgar.webp",
+  "bbox": [
+   35,
+   23,
+   628,
+   625
+  ],
+  "capucha_cx": 330
+ },
+ "avatar_sorprendido": {
+  "bloque": "D",
+  "archivo": "D/avatar_sorprendido.webp",
+  "bbox": [
+   13,
+   25,
+   627,
+   624
+  ],
+  "capucha_cx": 328
+ },
+ "avatar_suspiro": {
+  "bloque": "D",
+  "archivo": "D/avatar_suspiro.webp",
+  "bbox": [
+   11,
+   29,
+   633,
+   621
+  ],
+  "capucha_cx": 314
+ },
+ "avatar_balanza": {
+  "bloque": "E",
+  "archivo": "E/avatar_balanza.webp",
+  "bbox": [
+   10,
+   29,
+   630,
+   610
+  ],
+  "capucha_cx": 337
+ },
+ "avatar_cinco": {
+  "bloque": "E",
+  "archivo": "E/avatar_cinco.webp",
+  "bbox": [
+   25,
+   24,
+   631,
+   610
+  ],
+  "capucha_cx": 342
+ },
+ "avatar_cuatro": {
+  "bloque": "E",
+  "archivo": "E/avatar_cuatro.webp",
+  "bbox": [
+   28,
+   25,
+   629,
+   610
+  ],
+  "capucha_cx": 342
+ },
+ "avatar_dos": {
+  "bloque": "E",
+  "archivo": "E/avatar_dos.webp",
+  "bbox": [
+   29,
+   23,
+   630,
+   611
+  ],
+  "capucha_cx": 341
+ },
+ "avatar_grande": {
+  "bloque": "E",
+  "archivo": "E/avatar_grande.webp",
+  "bbox": [
+   7,
+   15,
+   633,
+   624
+  ],
+  "capucha_cx": 319
+ },
+ "avatar_idea": {
+  "bloque": "E",
+  "archivo": "E/avatar_idea.webp",
+  "bbox": [
+   38,
+   16,
+   630,
+   621
+  ],
+  "capucha_cx": 342
+ },
+ "avatar_pequeno": {
+  "bloque": "E",
+  "archivo": "E/avatar_pequeno.webp",
+  "bbox": [
+   23,
+   19,
+   636,
+   613
+  ],
+  "capucha_cx": 347
+ },
+ "avatar_pregunta": {
+  "bloque": "E",
+  "archivo": "E/avatar_pregunta.webp",
+  "bbox": [
+   21,
+   28,
+   632,
+   613
+  ],
+  "capucha_cx": 327
+ },
+ "avatar_secreto": {
+  "bloque": "E",
+  "archivo": "E/avatar_secreto.webp",
+  "bbox": [
+   51,
+   18,
+   638,
+   639
+  ],
+  "capucha_cx": 317
+ },
+ "avatar_silencio": {
+  "bloque": "E",
+  "archivo": "E/avatar_silencio.webp",
+  "bbox": [
+   67,
+   16,
+   626,
+   626
+  ],
+  "capucha_cx": 322
+ },
+ "avatar_tres": {
+  "bloque": "E",
+  "archivo": "E/avatar_tres.webp",
+  "bbox": [
+   27,
+   24,
+   629,
+   611
+  ],
+  "capucha_cx": 341
+ },
+ "avatar_uno": {
+  "bloque": "E",
+  "archivo": "E/avatar_uno.webp",
+  "bbox": [
+   27,
+   24,
+   631,
+   611
+  ],
+  "capucha_cx": 341
+ },
+ "avatar_cuerpo_entero": {
+  "bloque": "F",
+  "archivo": "F/avatar_cuerpo_entero.webp",
+  "bbox": [
+   178,
+   10,
+   459,
+   628
+  ],
+  "capucha_cx": 319
+ },
+ "avatar_cuerpo_entero_camina": {
+  "bloque": "F",
+  "archivo": "F/avatar_cuerpo_entero_camina.webp",
+  "bbox": [
+   132,
+   8,
+   538,
+   626
+  ],
+  "capucha_cx": 351
+ },
+ "avatar_escritorio": {
+  "bloque": "F",
+  "archivo": "F/avatar_escritorio.webp",
+  "bbox": [
+   0,
+   69,
+   639,
+   578
+  ],
+  "capucha_cx": 347
+ },
+ "avatar_escritorio_espalda": {
+  "bloque": "F",
+  "archivo": "F/avatar_escritorio_espalda.webp",
+  "bbox": [
+   4,
+   136,
+   635,
+   592
+  ],
+  "capucha_cx": 319
+ },
+ "avatar_primerisimo": {
+  "bloque": "F",
+  "archivo": "F/avatar_primerisimo.webp",
+  "bbox": [
+   0,
+   2,
+   639,
+   639
+  ],
+  "capucha_cx": 322
+ },
+ "avatar_sentado_pensativo": {
+  "bloque": "F",
+  "archivo": "F/avatar_sentado_pensativo.webp",
+  "bbox": [
+   4,
+   20,
+   635,
+   639
+  ],
+  "capucha_cx": 337
+ },
+ "seq_asiente_1": {
+  "bloque": "G",
+  "archivo": "G/seq_asiente_1.webp",
+  "bbox": [
+   31,
+   11,
+   609,
+   628
+  ],
+  "capucha_cx": 318
+ },
+ "seq_asiente_2": {
+  "bloque": "G",
+  "archivo": "G/seq_asiente_2.webp",
+  "bbox": [
+   30,
+   10,
+   610,
+   628
+  ],
+  "capucha_cx": 320
+ },
+ "seq_asiente_3": {
+  "bloque": "G",
+  "archivo": "G/seq_asiente_3.webp",
+  "bbox": [
+   31,
+   11,
+   609,
+   628
+  ],
+  "capucha_cx": 318
+ },
+ "seq_escribe_1": {
+  "bloque": "G",
+  "archivo": "G/seq_escribe_1.webp",
+  "bbox": [
+   41,
+   15,
+   608,
+   623
+  ],
+  "capucha_cx": 338
+ },
+ "seq_escribe_2": {
+  "bloque": "G",
+  "archivo": "G/seq_escribe_2.webp",
+  "bbox": [
+   41,
+   15,
+   609,
+   624
+  ],
+  "capucha_cx": 338
+ },
+ "seq_mira_centro": {
+  "bloque": "G",
+  "archivo": "G/seq_mira_centro.webp",
+  "bbox": [
+   31,
+   11,
+   609,
+   628
+  ],
+  "capucha_cx": 318
+ },
+ "seq_mira_der": {
+  "bloque": "G",
+  "archivo": "G/seq_mira_der.webp",
+  "bbox": [
+   30,
+   10,
+   610,
+   629
+  ],
+  "capucha_cx": 334
+ },
+ "seq_mira_izq": {
+  "bloque": "G",
+  "archivo": "G/seq_mira_izq.webp",
+  "bbox": [
+   30,
+   11,
+   610,
+   629
+  ],
+  "capucha_cx": 311
+ },
+ "seq_niega_1": {
+  "bloque": "G",
+  "archivo": "G/seq_niega_1.webp",
+  "bbox": [
+   30,
+   11,
+   610,
+   629
+  ],
+  "capucha_cx": 311
+ },
+ "seq_niega_2": {
+  "bloque": "G",
+  "archivo": "G/seq_niega_2.webp",
+  "bbox": [
+   31,
+   11,
+   609,
+   628
+  ],
+  "capucha_cx": 318
+ },
+ "seq_niega_3": {
+  "bloque": "G",
+  "archivo": "G/seq_niega_3.webp",
+  "bbox": [
+   30,
+   10,
+   610,
+   629
+  ],
+  "capucha_cx": 334
+ },
+ "seq_saludo_1": {
+  "bloque": "G",
+  "archivo": "G/seq_saludo_1.webp",
+  "bbox": [
+   19,
+   24,
+   629,
+   610
+  ],
+  "capucha_cx": 341
+ },
+ "seq_saludo_2": {
+  "bloque": "G",
+  "archivo": "G/seq_saludo_2.webp",
+  "bbox": [
+   28,
+   24,
+   628,
+   610
+  ],
+  "capucha_cx": 341
+ },
+ "seq_saludo_3": {
+  "bloque": "G",
+  "archivo": "G/seq_saludo_3.webp",
+  "bbox": [
+   28,
+   25,
+   629,
+   611
+  ],
+  "capucha_cx": 341
+ },
+ "seq_senala_1": {
+  "bloque": "G",
+  "archivo": "G/seq_senala_1.webp",
+  "bbox": [
+   26,
+   25,
+   634,
+   613
+  ],
+  "capucha_cx": 350
+ },
+ "seq_senala_2": {
+  "bloque": "G",
+  "archivo": "G/seq_senala_2.webp",
+  "bbox": [
+   8,
+   25,
+   634,
+   613
+  ],
+  "capucha_cx": 235
+ },
+ "seq_teclea_1": {
+  "bloque": "G",
+  "archivo": "G/seq_teclea_1.webp",
+  "bbox": [
+   23,
+   30,
+   630,
+   583
+  ],
+  "capucha_cx": 280
+ },
+ "seq_teclea_2": {
+  "bloque": "G",
+  "archivo": "G/seq_teclea_2.webp",
+  "bbox": [
+   23,
+   30,
+   630,
+   584
+  ],
+  "capucha_cx": 279
+ },
+ "ojos_abiertos": {
+  "bloque": "H",
+  "archivo": "H/ojos_abiertos.webp",
+  "bbox": [
+   31,
+   11,
+   609,
+   628
+  ],
+  "capucha_cx": 318
+ },
+ "ojos_aburrido": {
+  "bloque": "H",
+  "archivo": "H/ojos_aburrido.webp",
+  "bbox": [
+   30,
+   10,
+   610,
+   629
+  ],
+  "capucha_cx": 318
+ },
+ "ojos_brillo": {
+  "bloque": "H",
+  "archivo": "H/ojos_brillo.webp",
+  "bbox": [
+   30,
+   11,
+   610,
+   629
+  ],
+  "capucha_cx": 318
+ },
+ "ojos_cerrados": {
+  "bloque": "H",
+  "archivo": "H/ojos_cerrados.webp",
+  "bbox": [
+   30,
+   11,
+   610,
+   629
+  ],
+  "capucha_cx": 318
+ },
+ "ojos_entrecerrados": {
+  "bloque": "H",
+  "archivo": "H/ojos_entrecerrados.webp",
+  "bbox": [
+   30,
+   10,
+   610,
+   629
+  ],
+  "capucha_cx": 318
+ },
+ "ojos_mira_der": {
+  "bloque": "H",
+  "archivo": "H/ojos_mira_der.webp",
+  "bbox": [
+   31,
+   11,
+   610,
+   629
+  ],
+  "capucha_cx": 318
+ },
+ "ojos_mira_izq": {
+  "bloque": "H",
+  "archivo": "H/ojos_mira_izq.webp",
+  "bbox": [
+   30,
+   11,
+   610,
+   629
+  ],
+  "capucha_cx": 318
+ },
+ "ojos_sonrisa": {
+  "bloque": "H",
+  "archivo": "H/ojos_sonrisa.webp",
+  "bbox": [
+   30,
+   11,
+   610,
+   629
+  ],
+  "capucha_cx": 318
+ },
+ "ojos_sorpresa": {
+  "bloque": "H",
+  "archivo": "H/ojos_sorpresa.webp",
+  "bbox": [
+   30,
+   11,
+   609,
+   629
+  ],
+  "capucha_cx": 318
+ },
+ "ojos_sospecha": {
+  "bloque": "H",
+  "archivo": "H/ojos_sospecha.webp",
+  "bbox": [
+   30,
+   10,
+   610,
+   629
+  ],
+  "capucha_cx": 318
+ },
+ "ojos_triste": {
+  "bloque": "H",
+  "archivo": "H/ojos_triste.webp",
+  "bbox": [
+   31,
+   11,
+   610,
+   629
+  ],
+  "capucha_cx": 318
+ }
+}

@@ -52,18 +52,34 @@ El objetivo es **enganchar sin perder la seriedad del trading**. Un video de tar
 - **Portada** con el avatar en pose de explicar, sin tapar las fotos ni el título.
 
 ## 4. Avatar presentador
-- **Un solo personaje por video:** el encapuchado de visor violeta. Usa las 6 poses recortadas (fondo transparente). No redibujes ni cambies su ropa, colores ni proporciones.
-- **Posición fija:** abajo a la izquierda (≈ x 50–440, y 1137–1500), con una burbuja de diálogo a su derecha. **Nunca** tapa velas relevantes, precios, resultados ni subtítulos: los datos viven en y 300–1110.
-- **Sin voz aprobada, habla con burbujas breves** (máximo ≈ 8 palabras) que **complementan** el contenido sin repetirlo. Ejemplos: «Mira dónde termina la aguja.», «Bien. Pero es un solo caso.», «¿Score alto = mejor resultado?».
-- **Poses según el momento:**
-  | Momento | Pose |
-  |---|---|
-  | Presentar / transición | neutral (manos juntas) |
-  | Destacar un dato | señalando |
-  | STOP LOSS | preocupado, sobrio |
-  | TAKE PROFIT | satisfacción moderada, sin euforia |
-  | Contexto / sesiones / cierre | explicando (manos abiertas) |
-  | Las tres conclusiones | pensativo |
+- **Un solo personaje por video:** el «Explorador», encapuchado de visor violeta. Biblioteca oficial completa (88 piezas, 8 bloques) en `avatar/explorador/`. Catálogo y usos en `avatar/explorador/CATALOGO.md`; coordenadas en `catalogo.json`. Las 6 poses originales (`avatar/*.png`) siguen siendo válidas. No redibujes ni cambies su ropa, colores ni proporciones.
+- **Posición fija:** abajo a la izquierda (≈ x 50–440, y 1137–1500 en TikTok; en Shorts, base del avatar ≤ y 1500 y datos en y 290–1000). **Nunca** tapa velas relevantes, precios, resultados ni subtítulos.
+- Con la voz A, el avatar narra y los subtítulos reemplazan a las burbujas. Sin voz, habla con burbujas breves (máximo ≈ 8 palabras) que **complementan** el contenido sin repetirlo.
+- **Poses según el momento** (elige la más precisa; no uses más de una pose por idea):
+  | Momento | Pose principal | Alternativas |
+  |---|---|---|
+  | Apertura / saludo | `seq_saludo` 1→2→3→2 | `avatar_bienvenida`, `avatar_capucha` (inicio misterioso) |
+  | Gancho con pregunta | `avatar_pregunta` | `avatar_idea`, `avatar_silencio` (atención) |
+  | Presentar el trade / contexto | `avatar_presenta_derecha` | `avatar_presenta_arriba`, `avatar_tablet_muestra` |
+  | Destacar un dato o captura | `avatar_senala_arriba` / `_abajo` / `_izquierda` según dónde esté el dato | `avatar_circula`, `avatar_dos_manos_senalan` (énfasis fuerte) |
+  | Revisar comprobante o gráfico | `avatar_lupa` | `avatar_tablet`, `avatar_portapapeles` |
+  | Duración del trade | `avatar_reloj` | `avatar_cronometro` |
+  | Medir recorrido / MFE / MAE | `avatar_regla` | `avatar_sorprendido` (si el MAE es grande) |
+  | STOP LOSS | `avatar_nuca` | `avatar_suspiro` (pérdida aceptada) |
+  | TAKE PROFIT | `avatar_pulgar` | `avatar_asiente`, `seq_asiente` 1→2→3 |
+  | BE / resultado mínimo | `avatar_pequeno` | `avatar_hombros` |
+  | Comparar dos trades / balance | `avatar_balanza` | `avatar_balanza_objeto` |
+  | Cifra en pantalla sobre el avatar | `avatar_tarjeta` o `avatar_cartel` (texto encima en el video) | — |
+  | Conclusiones 1, 2 y 3 | `avatar_uno`, `avatar_dos`, `avatar_tres` | `avatar_pensativo` |
+  | Desmentir un mito («Score alto = ganar») | `avatar_niega` | `seq_niega` 1→2→3→2 |
+  | Riesgo / disclaimer | `avatar_alto` | `avatar_brazos_cruzados` |
+  | Registrar en la bitácora | `seq_escribe` 1→2→1 | `seq_teclea` 1→2→1, `avatar_laptop`, `avatar_libreta` |
+  | Cierre / agradecimiento | `avatar_mano_corazon` | `avatar_reverencia`, `avatar_aplauso_suave` (reconocer el proceso, nunca la ganancia) |
+  | Salida | `avatar_espalda` | `avatar_perfil_der` |
+  | Escena de apertura de serie o reporte | `avatar_escritorio` | `avatar_escritorio_espalda`, `avatar_cuerpo_entero_camina` (entrada caminando) |
+- **Bloque F** (escritorio, cuerpo entero, sentado, primerísimo plano) tiene otro encuadre: úsalo solo en escenas propias (apertura, transición o corte de impacto), nunca en la esquina junto a los datos. Las pantallas de esos monitores son decorativas y no reemplazan las capturas reales.
+- **Ojos (bloque H):** parpadeo cada 3–5 s en reposo (abiertos → entrecerrados → cerrados → entrecerrados → abiertos, ≈ 2 fotogramas cada uno). `ojos_brillo` para el pico de la voz y `ojos_sonrisa` para un TAKE PROFIT moderado. Usa los estados de ojos solo con la pose neutral, porque están dibujados sobre ella.
+- **Secuencias (bloque G):** se reproducen a 6–8 fotogramas por segundo y solo dentro de la misma secuencia. Nunca alternes poses de bloques distintos como si fueran fotogramas.
 - Cambios de pose con fundido rápido y un pequeño rebote; respiración sutil en reposo. El avatar sale antes del logo y el CTA final.
 - Las burbujas nunca dan consejos de inversión ni celebran ganancias; mantienen el tono educativo.
 

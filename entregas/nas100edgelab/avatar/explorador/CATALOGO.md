@@ -162,7 +162,7 @@ Carpeta `V3/`, WebP de 640 × 640 en el mismo lienzo que su pose base. **Bases**
 | Parpadeo | base → `*_ojos_cerrados` (≈ 4 fotogramas a 30 fps) → base, cada 3–5 s | Para explica, senala, pensativo, satisfecho y preocupado. `pulgar_ojos_cerrados` calza con `D/avatar_pulgar` de la biblioteca |
 | Hablando | `habla_1` → `habla_2` → `habla_1` → `habla_3`, en bucle a ≈ 7 fps | Mientras narra con la pose «explica» |
 | Señalar | neutral → `senala_t1` → `senala_t2` → senala | Con un pequeño rebote al final |
-| STOP LOSS | neutral → `sl_t1` → `sl_t2` (sostener) → **preocupado** | Recomendado: misma familia, sin salto. Terminar en `fin_nuca` produce un salto de escala y estilo |
-| TAKE PROFIT | neutral → `tp_t1` → `tp_t2` → **satisfecho** | Recomendado. `fin_pulgar` también funciona con un fundido de 0,2 s, pero con salto |
+| STOP LOSS | neutral → `sl_t1` → `sl_t2` (sostener) → **preocupado** | **Final oficial** (aprobado el 19 oct 2026). No usar `fin_nuca` |
+| TAKE PROFIT | neutral → `tp_t1` → `tp_t2` → **satisfecho** | **Final oficial** (aprobado el 19 oct 2026). No usar `fin_pulgar` |
 | Pensar | neutral → `piensa_t1` → pensativo ↔ `piensa_t2` | |
 | Girar y salir | neutral → `gira_1` → `gira_2` → `gira_3` → sale por abajo | Ya reescalado |

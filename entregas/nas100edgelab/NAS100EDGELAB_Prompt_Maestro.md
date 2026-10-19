@@ -65,8 +65,8 @@ El objetivo es **enganchar sin perder la seriedad del trading**. Un video de tar
   | Revisar comprobante o gráfico | `avatar_lupa` | `avatar_tablet`, `avatar_portapapeles` |
   | Duración del trade | `avatar_reloj` | `avatar_cronometro` |
   | Medir recorrido / MFE / MAE | `avatar_regla` | `avatar_sorprendido` (si el MAE es grande) |
-  | STOP LOSS | `avatar_nuca` | `avatar_suspiro` (pérdida aceptada) |
-  | TAKE PROFIT | `avatar_pulgar` | `avatar_asiente`, `seq_asiente` 1→2→3 |
+  | STOP LOSS | Secuencia `sl_t1` → `sl_t2` → **preocupado** (decisión del 19 oct 2026) | `avatar_suspiro` (pérdida aceptada, en otra escena) |
+  | TAKE PROFIT | Secuencia `tp_t1` → `tp_t2` → **satisfecho** (decisión del 19 oct 2026) | `seq_asiente` 1→2→3 |
   | BE / resultado mínimo | `avatar_pequeno` | `avatar_hombros` |
   | Comparar dos trades / balance | `avatar_balanza` | `avatar_balanza_objeto` |
   | Cifra en pantalla sobre el avatar | `avatar_tarjeta` o `avatar_cartel` (texto encima en el video) | — |
@@ -86,6 +86,7 @@ El objetivo es **enganchar sin perder la seriedad del trading**. Un video de tar
   - **Señalar en 3 tiempos** al destacar un dato.
   - **STOP LOSS:** `sl_t1` → `sl_t2` → preocupado.
   - **TAKE PROFIT:** `tp_t1` → `tp_t2` → satisfecho.
+  - No usar `fin_nuca` ni `fin_pulgar` como final de estas secuencias: provocan un salto de escala.
   - **Pensar en 2 tiempos.**
   - **Salida:** girar (`gira_1` → `gira_3`) y salir por abajo.
   - Órdenes y tiempos en `CATALOGO.md`.

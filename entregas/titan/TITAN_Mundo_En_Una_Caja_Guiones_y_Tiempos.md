@@ -9,7 +9,14 @@ Videos 1080 × 1920 · 30 fps · **sin audio** (para su voz). Sin narración sin
 
 **Cómo se calcularon los tiempos:** son orientativos, a un ritmo de lectura de 2,5 palabras por segundo con media pausa entre frases. Cuando lleguen sus grabaciones, cada escena se ajusta a su lectura natural: no se acelera la voz ni las animaciones. Todo el montaje depende de una sola tabla de tiempos por frase, así que se reajusta sin rehacer la animación.
 
-**Avatar:** su avatar de TITÁN aparece en un recuadro abajo a la izquierda, como usted lo pidió. Nunca tapa la caja, los textos ni las ilustraciones. Las poses cambian con fundidos suaves y tiene una respiración leve. Se esconde durante el recorrido para que el mundo luzca, y no aparece en la apertura ni en el cierre.
+**Avatar:** su avatar de TITÁN aparece en un recuadro abajo a la izquierda, con la oficina de TITÁN (sin logo) de fondo, como usted lo pidió. Nunca tapa la caja, los textos ni las ilustraciones. Desde la versión del 20 oct tiene más vida:
+- parpadea cada pocos segundos;
+- mueve las manos mientras explica;
+- asiente antes de salir;
+- pasa por un gesto intermedio antes de señalar o de ponerse pensativo;
+- respira levemente.
+
+Se esconde durante el recorrido para que el mundo luzca, y no aparece en la apertura ni en el cierre.
 
 ## YouTube Shorts
 
@@ -75,4 +82,4 @@ Videos 1080 × 1920 · 30 fps · **sin audio** (para su voz). Sin narración sin
 ## Pendiente
 - Sincronizar con su voz cuando suba las grabaciones (una por versión).
 - El manual de marca no se adjuntó en este pedido. Se usaron la paleta y el logo oficial de las piezas aprobadas.
-- El avatar usa las poses actuales. Cuando lleguen las 16 piezas nuevas (parpadeo, secuencias estables), se pueden incorporar.
+- Las 16 piezas V2 del avatar ya están incorporadas.

@@ -29,3 +29,18 @@
 - **Sí:** cambio de pose con fundido corto (0,2 s) y leve escala; respiración en código (escala ≈ 0,8 %); reacciones del bloque I con fundido sobre la neutral; entrada y salida con desplazamiento.
 - **Con cuidado:** las secuencias H, siempre con fundido entre fotogramas.
 - **No:** mover la boca con imágenes sueltas para simular que habla; giros o caminata cuadro a cuadro.
+
+## V2 · Piezas de animación (16), recibidas el 20 oct 2026
+Carpeta `V2/`. Codex reporta 0 píxeles cambiados fuera de la máscara, y mi comparación propia contra cada base lo confirma: solo cambian los ojos, la cabeza o las manos, según la pieza.
+
+| Pieza | Uso |
+|---|---|
+| `titan_neutral_ojos_entrecerrados` / `_ojos_cerrados` | Parpadeo de la neutral: entrecerrados → cerrados → entrecerrados (≈ 0,25 s) cada 3–4 s |
+| `titan_explicando_ojos_cerrados`, `titan_pensativo_ojos_cerrados` | Parpadeo en explicando y pensativo |
+| `titan_explica_v2_1…3` | Manos en bucle mientras explica: 1 → 2 → 1 → 3, unos 0,6 s por imagen con fundido de 0,15 s |
+| `titan_asiente_v2_1…3` | Asentir: 1 → 2 → 3 → 2 → 1. La cabeza queda algo más derecha que en la neutral, así que se entra y se sale con fundido corto |
+| `titan_t_senala`, `titan_t_pensativo`, `titan_t_pulgar` | Transición desde la neutral hacia señalar, pensativo o pulgar (0,15–0,2 s por paso) |
+| `titan_oficina_vacia` (vertical) | Fondo de oficina **sin logo**, para componer las poses transparentes. El logo oficial se pone encima en el video |
+| `titan_oficina_neutral_sin_logo`, `titan_oficina_explicando_sin_logo` | Fotos completas en la oficina, sin logo inventado. **Reemplazan al bloque J** |
+
+**Usado por primera vez en:** «El mundo en una caja» (20 oct 2026): parpadeo, manos al explicar, asentir, transición antes de señalar y de pensar, y la oficina como fondo del recuadro del avatar.

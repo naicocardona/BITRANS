@@ -1,0 +1,286 @@
+{
+  "metodo": "Comparacion RGBA por pixel contra la base y mascara entregada; mascara=0 exige identidad exacta. No mide identidad biometrica ni angulos 3D.",
+  "piezas": [
+    {
+      "numero": 1,
+      "archivo": "titan_neutral_ojos_entrecerrados.png",
+      "base": "A/titan_neutral.png",
+      "dimensiones": [
+        1024,
+        1024
+      ],
+      "modo": "RGBA",
+      "sha256": "8cd6ebbe3e3b5085c0cc36e818eb5303eb0537a7b37dbd17d8a05056a7ed14c2",
+      "sha256_base": "597aa8a3264bc281a5695776d7c7cd33af6b9d86e5c2ed4b0e38f6929bb55398",
+      "mascara": "mascaras/titan_neutral_ojos_entrecerrados_mask.png",
+      "sha256_mascara": "0ac004437430282b8fb9d6fb8265dc87963e998d1a457242b509a63bf3754625",
+      "pixeles_mascara": 3283,
+      "pixeles_cambiados_dentro_mascara": 3279,
+      "pixeles_cambiados_fuera_mascara": 0,
+      "pixeles_transparentes": 547630
+    },
+    {
+      "numero": 2,
+      "archivo": "titan_neutral_ojos_cerrados.png",
+      "base": "A/titan_neutral.png",
+      "dimensiones": [
+        1024,
+        1024
+      ],
+      "modo": "RGBA",
+      "sha256": "d6d63f5997c455b1b74fcec5c5260a36d27c650fe2c8933ef935f3ed8de16829",
+      "sha256_base": "597aa8a3264bc281a5695776d7c7cd33af6b9d86e5c2ed4b0e38f6929bb55398",
+      "mascara": "mascaras/titan_neutral_ojos_cerrados_mask.png",
+      "sha256_mascara": "0ac004437430282b8fb9d6fb8265dc87963e998d1a457242b509a63bf3754625",
+      "pixeles_mascara": 3283,
+      "pixeles_cambiados_dentro_mascara": 3280,
+      "pixeles_cambiados_fuera_mascara": 0,
+      "pixeles_transparentes": 547630
+    },
+    {
+      "numero": 3,
+      "archivo": "titan_explicando_ojos_cerrados.png",
+      "base": "C/titan_explicando.png",
+      "dimensiones": [
+        1024,
+        1024
+      ],
+      "modo": "RGBA",
+      "sha256": "28875ffe0f5ceda85558650412b2365e854577811e860d8aa7f1d296b2cf9d73",
+      "sha256_base": "3a8a849d650723717b1ae45b89c5cd2e3696c7b9ecd4ceb4fa5fbf704a379dd4",
+      "mascara": "mascaras/titan_explicando_ojos_cerrados_mask.png",
+      "sha256_mascara": "ba6b1310e45733137f6e09e09cb37d08b1321c4433f845999097ee4f9b71ee22",
+      "pixeles_mascara": 3463,
+      "pixeles_cambiados_dentro_mascara": 3460,
+      "pixeles_cambiados_fuera_mascara": 0,
+      "pixeles_transparentes": 518232
+    },
+    {
+      "numero": 4,
+      "archivo": "titan_pensativo_ojos_cerrados.png",
+      "base": "C/titan_pensativo.png",
+      "dimensiones": [
+        1024,
+        1024
+      ],
+      "modo": "RGBA",
+      "sha256": "d2c7f6110ef18b6e087ec543d5f38d3890cfe2c5fb2a50ae1c0a74be21c87373",
+      "sha256_base": "b7313b01916ded3191709cd3d6a6cce5df45a431fd96b1eb85217ebf6103ddc0",
+      "mascara": "mascaras/titan_pensativo_ojos_cerrados_mask.png",
+      "sha256_mascara": "495e75c62ebf3f22ff0d9f591a92e849d706488cce82eb03bc05d8baf6053248",
+      "pixeles_mascara": 3185,
+      "pixeles_cambiados_dentro_mascara": 3184,
+      "pixeles_cambiados_fuera_mascara": 0,
+      "pixeles_transparentes": 577730
+    },
+    {
+      "numero": 5,
+      "archivo": "titan_asiente_v2_1.png",
+      "base": "A/titan_neutral.png",
+      "dimensiones": [
+        1024,
+        1024
+      ],
+      "modo": "RGBA",
+      "sha256": "868e23120ffa717e116d353de02c2ecd4eebfe1372ed47db524b655d58ca2af2",
+      "sha256_base": "597aa8a3264bc281a5695776d7c7cd33af6b9d86e5c2ed4b0e38f6929bb55398",
+      "mascara": "mascaras/titan_asiente_v2_1_mask.png",
+      "sha256_mascara": "fe21490d67511b3de26f051a299ca1cadf5912b9bd509b2704490317e4b6b5b7",
+      "pixeles_mascara": 155668,
+      "pixeles_cambiados_dentro_mascara": 106691,
+      "pixeles_cambiados_fuera_mascara": 0,
+      "pixeles_transparentes": 547529
+    },
+    {
+      "numero": 6,
+      "archivo": "titan_asiente_v2_2.png",
+      "base": "A/titan_neutral.png",
+      "dimensiones": [
+        1024,
+        1024
+      ],
+      "modo": "RGBA",
+      "sha256": "81a7c5f676fccab902da6b5668c7419668f03ba8401165731e41a1b309fbcdda",
+      "sha256_base": "597aa8a3264bc281a5695776d7c7cd33af6b9d86e5c2ed4b0e38f6929bb55398",
+      "mascara": "mascaras/titan_asiente_v2_2_mask.png",
+      "sha256_mascara": "fe21490d67511b3de26f051a299ca1cadf5912b9bd509b2704490317e4b6b5b7",
+      "pixeles_mascara": 155668,
+      "pixeles_cambiados_dentro_mascara": 105994,
+      "pixeles_cambiados_fuera_mascara": 0,
+      "pixeles_transparentes": 546858
+    },
+    {
+      "numero": 7,
+      "archivo": "titan_asiente_v2_3.png",
+      "base": "V2/titan_asiente_v2_1.png",
+      "dimensiones": [
+        1024,
+        1024
+      ],
+      "modo": "RGBA",
+      "sha256": "7539c48c9133e1c9a8bddd65849cfec4136195960ed37148ca7d80bec227ff49",
+      "sha256_base": "868e23120ffa717e116d353de02c2ecd4eebfe1372ed47db524b655d58ca2af2",
+      "mascara": "mascaras/titan_asiente_v2_3_mask.png",
+      "sha256_mascara": "c9557108bd25356aaeebacf80dee47d723c897582b9bf8bbc2b37d8604deede8",
+      "pixeles_mascara": 3283,
+      "pixeles_cambiados_dentro_mascara": 3232,
+      "pixeles_cambiados_fuera_mascara": 0,
+      "cambios_fuera_cabeza_vs_neutral": 0,
+      "pixeles_transparentes": 547529
+    },
+    {
+      "numero": 8,
+      "archivo": "titan_explica_v2_1.png",
+      "base": "C/titan_explicando.png",
+      "dimensiones": [
+        1024,
+        1024
+      ],
+      "modo": "RGBA",
+      "sha256": "3a8a849d650723717b1ae45b89c5cd2e3696c7b9ecd4ceb4fa5fbf704a379dd4",
+      "sha256_base": "3a8a849d650723717b1ae45b89c5cd2e3696c7b9ecd4ceb4fa5fbf704a379dd4",
+      "mascara": "mascaras/titan_explica_v2_1_mask.png",
+      "sha256_mascara": "0f4b1668d119f77ceb6b86645573f088ab2341d7b284314d5df0be7226ea5d91",
+      "pixeles_mascara": 0,
+      "pixeles_cambiados_dentro_mascara": 0,
+      "pixeles_cambiados_fuera_mascara": 0,
+      "copia_binaria_exacta": true,
+      "pixeles_transparentes": 518232
+    },
+    {
+      "numero": 9,
+      "archivo": "titan_explica_v2_2.png",
+      "base": "C/titan_explicando.png",
+      "dimensiones": [
+        1024,
+        1024
+      ],
+      "modo": "RGBA",
+      "sha256": "5191656baf1e79a7dcc41850f07cc81ffa2b0c7a50f4479e51f5b3f47d4aa5ec",
+      "sha256_base": "3a8a849d650723717b1ae45b89c5cd2e3696c7b9ecd4ceb4fa5fbf704a379dd4",
+      "mascara": "mascaras/titan_explica_v2_2_mask.png",
+      "sha256_mascara": "7dee77f08daa68a8fdde3b65caf4a1c8876289b8b890156daf187cb708b8b1cb",
+      "pixeles_mascara": 70888,
+      "pixeles_cambiados_dentro_mascara": 64951,
+      "pixeles_cambiados_fuera_mascara": 0,
+      "pixeles_transparentes": 521536
+    },
+    {
+      "numero": 10,
+      "archivo": "titan_explica_v2_3.png",
+      "base": "C/titan_explicando.png",
+      "dimensiones": [
+        1024,
+        1024
+      ],
+      "modo": "RGBA",
+      "sha256": "32a9594365cb88078f19eec9776f4afea2a63ee74cde0f310bc381f996ad2db7",
+      "sha256_base": "3a8a849d650723717b1ae45b89c5cd2e3696c7b9ecd4ceb4fa5fbf704a379dd4",
+      "mascara": "mascaras/titan_explica_v2_3_mask.png",
+      "sha256_mascara": "94b8ea00b15f5f8bfb0c88ef0a08eba51638c23c9b0ff2c15be640144e494c25",
+      "pixeles_mascara": 86409,
+      "pixeles_cambiados_dentro_mascara": 78103,
+      "pixeles_cambiados_fuera_mascara": 0,
+      "pixeles_transparentes": 517111
+    },
+    {
+      "numero": 11,
+      "archivo": "titan_t_senala.png",
+      "base": "A/titan_neutral.png",
+      "dimensiones": [
+        1024,
+        1024
+      ],
+      "modo": "RGBA",
+      "sha256": "3ee0b03371caa7a0edaa3a6e9d15feb54b179c0f3c31091a83275876687b137b",
+      "sha256_base": "597aa8a3264bc281a5695776d7c7cd33af6b9d86e5c2ed4b0e38f6929bb55398",
+      "mascara": "mascaras/titan_t_senala_mask.png",
+      "sha256_mascara": "28e68cf376501d0ff0436636819ddae070240b690ede5081b3d419fa79ed0db7",
+      "pixeles_mascara": 110577,
+      "pixeles_cambiados_dentro_mascara": 100322,
+      "pixeles_cambiados_fuera_mascara": 0,
+      "pixeles_transparentes": 549131
+    },
+    {
+      "numero": 12,
+      "archivo": "titan_t_pensativo.png",
+      "base": "A/titan_neutral.png",
+      "dimensiones": [
+        1024,
+        1024
+      ],
+      "modo": "RGBA",
+      "sha256": "895b8273d6ea90330716f7b66b373105209ecd7041fbcfc55736d6336148317a",
+      "sha256_base": "597aa8a3264bc281a5695776d7c7cd33af6b9d86e5c2ed4b0e38f6929bb55398",
+      "mascara": "mascaras/titan_t_pensativo_mask.png",
+      "sha256_mascara": "9e9f70a46de94925f4e3c47d49923824cc49cd6e6b10afc005fd9e565ea1e41f",
+      "pixeles_mascara": 116736,
+      "pixeles_cambiados_dentro_mascara": 105552,
+      "pixeles_cambiados_fuera_mascara": 0,
+      "pixeles_transparentes": 554072
+    },
+    {
+      "numero": 13,
+      "archivo": "titan_t_pulgar.png",
+      "base": "A/titan_neutral.png",
+      "dimensiones": [
+        1024,
+        1024
+      ],
+      "modo": "RGBA",
+      "sha256": "514c8911fb926fbf23aafa6dcb82672bffff41e2023c2ebf416ab8c60b74b131",
+      "sha256_base": "597aa8a3264bc281a5695776d7c7cd33af6b9d86e5c2ed4b0e38f6929bb55398",
+      "mascara": "mascaras/titan_t_pulgar_mask.png",
+      "sha256_mascara": "526ca2a8ae506346d732e771b90e88c3148bcb667d505104761f7c4846421843",
+      "pixeles_mascara": 73790,
+      "pixeles_cambiados_dentro_mascara": 66875,
+      "pixeles_cambiados_fuera_mascara": 0,
+      "pixeles_transparentes": 546785
+    },
+    {
+      "numero": 14,
+      "archivo": "titan_oficina_vacia.png",
+      "base": "J/titan_oficina_neutral.png",
+      "dimensiones": [
+        1080,
+        1920
+      ],
+      "modo": "RGB",
+      "sha256": "582bea56becf9771954386aaf427edd5b6e4a79e95fdf11c10afd9fcb9ae284e"
+    },
+    {
+      "numero": 15,
+      "archivo": "titan_oficina_neutral_sin_logo.png",
+      "base": "J/titan_oficina_neutral.png",
+      "dimensiones": [
+        1024,
+        1024
+      ],
+      "modo": "RGB",
+      "sha256": "e2f3f0216df652daeb74f9a277ccde684e27a324c81a3e53f656ad2e7d0f92a1",
+      "sha256_base": "2bf6b7d9c64b201e77c490d4ceeacad1819164f4455db635c9ef22f432e347f6",
+      "mascara": "mascaras/titan_oficina_neutral_sin_logo_mask.png",
+      "sha256_mascara": "ff9692499c02758c90d8f9e3afb01a46cae8e8ba31c8a9026b967b291c10d2ae",
+      "pixeles_mascara": 166875,
+      "pixeles_cambiados_dentro_mascara": 164309,
+      "pixeles_cambiados_fuera_mascara": 0
+    },
+    {
+      "numero": 16,
+      "archivo": "titan_oficina_explicando_sin_logo.png",
+      "base": "J/titan_oficina_explicando.png",
+      "dimensiones": [
+        1024,
+        1024
+      ],
+      "modo": "RGB",
+      "sha256": "85cdca9b9b70d74e7a2dfc3db2c1bad963afd8057aeb6f9b83f67ac96882e5e6",
+      "sha256_base": "1ee8a35eb532049cc7da4511d5c14c94486b47d49d746e877f1bc2494be508a4",
+      "mascara": "mascaras/titan_oficina_explicando_sin_logo_mask.png",
+      "sha256_mascara": "ff9692499c02758c90d8f9e3afb01a46cae8e8ba31c8a9026b967b291c10d2ae",
+      "pixeles_mascara": 166875,
+      "pixeles_cambiados_dentro_mascara": 165335,
+      "pixeles_cambiados_fuera_mascara": 0
+    }
+  ]
+}

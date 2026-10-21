@@ -111,7 +111,7 @@ El objetivo es **enganchar sin perder la seriedad del trading**. Un video de tar
 
 ## 5. Estructura obligatoria de cada trade
 1. **Apertura:** gancho con el resultado + «TRADE #0XX · fecha · sesión (9 AM / 11 PM Colombia)».
-2. **Entrada:** dirección (BUY / SELL) y lotes, datos del journal (Score, Quality, Alignment) y contexto registrado. Nunca presentar Score o Quality como probabilidad de ganar.
+2. **Entrada:** dirección (BUY / SELL), datos del journal (Score, Quality, Alignment) y contexto registrado. Los lotes no se muestran (ver sección 7). Nunca presentar Score o Quality como probabilidad de ganar.
 3. **Desarrollo y resultado:** texto narrativo repartido en varios momentos, el comprobante MT5 para entrada / salida / duración, y el gráfico para el recorrido.
 4. **Tres conclusiones**, cada una con su propia escena, su dato de respaldo y su significado. No reemplazarlas por frases genéricas («disciplina», «respetar el stop», «seguir aprendiendo»).
 5. **Cierre:** «NO BUSCAMOS OPERACIONES PERFECTAS. / BUSCAMOS VENTAJA ESTADÍSTICA.» + logo + CTA + disclaimer.
@@ -128,12 +128,18 @@ El objetivo es **enganchar sin perder la seriedad del trading**. Un video de tar
 - **Nunca inventar datos**, resultados, horas, emociones, noticias ni confluencias. Si falta un dato, se dice o se omite.
 - Solo capturas reales: animar encuadres, acercamientos y resaltados. **No fabricar velas** ni presentar recortes de una foto como momentos distintos.
 - Verificar las cifras contra el comprobante: entrada, salida, puntos, duración (MT5 está en hora del servidor, UTC+3; Colombia = servidor − 8 h).
-- **Separar ejecución y ventana:** el resultado ejecutado (MT5) no es el MFE / MAE de la ventana. Rotular MFE / MAE como «Recorrido de la ventana · journal» y, si la ventana no ha terminado, «ventana en curso».
+- **Separar ejecución y ventana:** el resultado ejecutado (MT5) no es el MFE / MAE de la ventana. Rotular MFE / MAE como «Recorrido medido» o «Recorrido de la ventana» y, si la ventana no ha terminado, «ventana en curso».
 - No deducir movimientos del stop, BE ni salidas manuales que yo no haya confirmado.
 - Mostrar pérdidas y BE con el mismo cuidado que las ganancias.
-- Dinero del comprobante: **visible o tapado según indique en cada encargo** (por defecto, comunicar en puntos). La portada nunca muestra dinero.
+- **Dinero y lotes tapados (desde el 21 oct 2026):** en el comprobante se tapan siempre el resultado en dinero (USD o divisa de la cuenta) y el tamaño de la posición (lotes).
+  - No basta con un bloque negro: sobre cada zona va una **etiqueta de diseño** con información útil. Por ejemplo, sobre el dinero «RESULTADO EN PUNTOS · +100 pts» (verde, o rojo si es pérdida), y sobre los lotes «TAMAÑO · PRIVADO».
+  - La etiqueta va en la identidad del laboratorio (fondo oscuro, borde violeta o del color del resultado) y aparece con una animación corta, para que se lea como información y no como censura.
+  - El resto del comprobante queda visible: símbolo, dirección, precios de entrada y salida, fecha, hora, SL y TP.
+  - La narración y los textos nunca mencionan el dinero ni los lotes; el resultado se comunica en puntos.
+  - Solo se muestra el dinero si el encargo lo pide de forma explícita. La portada nunca muestra dinero.
 - No prometer ganancias ni rentabilidad. No vender nada.
 - **CTA único:** «Sigue la bitácora para ver el siguiente trade.» **Nunca** pedir comentarios ni mensajes al DM.
+- **Fuente de los datos:** no se menciona Notion ni la herramienta donde se anotan los datos (ni en la voz ni en pantalla). Se dice «registro», «bitácora» o «recorrido medido».
 - Disclaimer en cada video: «Contenido educativo · No es asesoría financiera · Operar implica riesgo de pérdida».
 
 ## 8. Entregables

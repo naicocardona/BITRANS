@@ -105,7 +105,7 @@ El objetivo es **enganchar sin perder la seriedad del trading**. Un video de tar
   - Une las frases con pausas controladas.
   - Escribe las cifras como se dicen («más dos coma quince puntos») y muestra la cifra en pantalla («+2,15 puntos»).
 - **Verificación obligatoria:** transcribe la narración final con Whisper (sherpa-onnx, local) y compárala con el guion antes de entregar. Si una palabra no coincide, regenera esa frase.
-- **Ojos del visor:** pulsan al ritmo de la voz (envolvente del audio a 30 fps); cambios de pose en los cambios de idea.
+- **Ojos del visor que se iluminan al hablar (obligatorio en cada video):** mientras el Explorador narra, sus ojos brillan al ritmo de la voz, siguiendo la envolvente del audio a 30 fps. El brillo es un halo blanco y violeta sobre los dos ojos, que sube con cada sílaba y baja en los silencios. Debe notarse claramente en el teléfono. Se mantiene en todas las poses, incluidas las secuencias y los parpadeos, y cambia de pose en los cambios de idea.
 - **El guion de la voz** se presenta junto al guion por escenas para aprobación; la voz complementa los textos en pantalla, no los lee todos.
 - Pronunciación de marcas: escribir «TITÁN HOLDING» para la voz como «Titán Jóldin» (la h de holding suena como j); «NAS100 EDGE LAB» como «Nas cien Edch Lab»; «trade» como «treid».
 

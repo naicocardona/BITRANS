@@ -132,7 +132,7 @@ El objetivo es **enganchar sin perder la seriedad del trading**. Un video de tar
 - No deducir movimientos del stop, BE ni salidas manuales que yo no haya confirmado.
 - Mostrar pérdidas y BE con el mismo cuidado que las ganancias.
 - **Dinero y lotes tapados (desde el 21 oct 2026):** en el comprobante se tapan siempre el resultado en dinero (USD o divisa de la cuenta) y el tamaño de la posición (lotes).
-  - No basta con un bloque negro: sobre cada zona va una **etiqueta de diseño** con información útil. Por ejemplo, sobre el dinero «RESULTADO EN PUNTOS · +100 pts» (verde, o rojo si es pérdida), y sobre los lotes «TAMAÑO · PRIVADO».
+  - No basta con un bloque negro: sobre cada zona va una **etiqueta de diseño** con información útil. Sobre el dinero va «RESULTADO EN PUNTOS · +100 pts» (verde, o rojo si es pérdida). Sobre los lotes va **«RIESGO : BENEFICIO · 1 : 1»**, calculado con las distancias reales del comprobante: puntos hasta el Stop Loss contra puntos hasta el Take Profit. Si falta el SL o el TP, se pone la distancia disponible, por ejemplo «STOP · 100 pts». Nunca se pone «privado» ni «oculto».
   - La etiqueta va en la identidad del laboratorio (fondo oscuro, borde violeta o del color del resultado) y aparece con una animación corta, para que se lea como información y no como censura.
   - El resto del comprobante queda visible: símbolo, dirección, precios de entrada y salida, fecha, hora, SL y TP.
   - La narración y los textos nunca mencionan el dinero ni los lotes; el resultado se comunica en puntos.

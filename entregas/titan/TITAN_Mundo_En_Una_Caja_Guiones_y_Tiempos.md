@@ -80,6 +80,50 @@ Se esconde durante el recorrido para que el mundo luzca, y no aparece en la aper
 - Los negocios del recorrido no se presentan como recomendación de inversión.
 
 ## Pendiente
-- Sincronizar con su voz cuando suba las grabaciones (una por versión).
+- ~~Sincronizar con su voz~~: hecho el 21 oct (ver abajo).
 - El manual de marca no se adjuntó en este pedido. Se usaron la paleta y el logo oficial de las piezas aprobadas.
 - Las 16 piezas V2 del avatar ya están incorporadas.
+
+## Versión con su voz (21 oct 2026)
+
+Grabaciones recibidas: `YOUTUBE_SHORT.m4a` (45,5 s) y `Tiktok.m4a` (67,0 s). Ajustes aplicados:
+- **Silencio inicial recortado:** Shorts tenía 2,8 s y TikTok 2,3 s antes de la primera palabra. Ahora la voz arranca a los 0,26 s, junto con la apertura de la caja.
+- **Más aire entre frases:** se añadieron pausas de 0,25 a 0,6 s **solo entre frases**, para que cada revelación se alcance a ver. La voz no se aceleró ni se cortó ninguna palabra.
+- **Limpieza suave de la voz:** filtro de graves, reducción de ruido de fondo, un poco de presencia y compresión ligera. Nivel final de −14 LUFS en las dos versiones.
+- **Sincronía:** el video se reprogramó con los tiempos reales de cada tramo de su lectura. Los titulares y animaciones entran con la palabra que les corresponde, por ejemplo cada negocio de la red aparece cuando dice «fabrican», «transportan», «almacenan» y «reparten».
+- **Verificación:** transcribí el audio final con la música y la voz se entiende completa. Revisé además cuadros sueltos en cada inicio de frase.
+
+| Archivo | Contenido |
+|---|---|
+| `TITAN_Mundo_En_Una_Caja_Shorts_ConVoz.mp4` / `_TikTok_ConVoz.mp4` | **Recomendado:** su voz + música original suave (distinta en cada versión), que baja sola cuando usted habla, y 5 efectos discretos |
+| `..._SoloVoz.mp4` | Solo su voz, por si prefiere poner la música desde TikTok o YouTube |
+| `..._SinVoz.mp4` | El mismo montaje sin audio |
+
+### YouTube Shorts · 47,5 s
+
+| # | Tiempo real | Frase |
+|---|---|---|
+| 1 | 0,26 – 2,22 s | ¿Cuánto mundo cabe en esta caja? |
+| 2 | 2,77 – 6,21 s | Ves un paquete en tu puerta, pero su historia empezó mucho antes. |
+| 3 | 7,59 – 14,61 s | Si viene del exterior, pudo pasar por una fábrica, un puerto, un barco y un almacén antes de llegar a tus manos. |
+| 4 | 16,03 – 22,89 s | En cada etapa hay negocios distintos: unos fabrican, otros transportan, otros almacenan y otros reparten. |
+| 5 | 23,99 – 28,77 s | Por eso, investigar inversiones también es aprender a mirar detrás de lo que compramos. |
+| 6 | 30,53 – 40,85 s | Pero que una industria sea necesaria no significa que todas sus empresas sean una buena inversión. También importan sus costos, sus riesgos y el precio que pagas. |
+| 7 | 42,01 – 44,85 s | ¿Qué recorrido habrá hecho lo último que compraste? |
+
+### TikTok · 70,4 s
+
+| # | Tiempo real | Frase |
+|---|---|---|
+| 1 | 0,26 – 1,78 s | ¿Cuánto mundo cabe en esta caja? |
+| 2 | 2,99 – 8,21 s | Parece un paquete más. Pero antes de llegar a tu puerta, pudo conectar negocios de distintos lugares del mundo. |
+| 3 | 9,37 – 13,73 s | Todo empieza con un producto. Hay que fabricarlo, prepararlo y organizar su salida. |
+| 4 | 15,33 – 24,47 s | Si cruza el mar, puede pasar por un puerto y viajar dentro de un contenedor. Al llegar, todavía falta llevarlo a un almacén, clasificarlo y preparar su reparto. |
+| 5 | 26,13 – 34,31 s | No todos los pedidos siguen esa ruta. Es un ejemplo de algo que normalmente no vemos: detrás de una compra hay muchas actividades conectadas. |
+| 6 | 35,49 – 43,49 s | Y ahí aparece una forma de investigar inversiones. Preguntarse quién fabrica, quién mueve la mercancía, quién la almacena y cómo gana dinero cada negocio. |
+| 7 | 44,69 – 50,93 s | Después vienen otras preguntas: cuánto le cuesta operar, con quién compite y qué podría salir mal. |
+| 8 | 51,61 – 60,93 s | Porque participar en el comercio mundial no garantiza ganar dinero. Una empresa puede tener mucho trabajo y aun así enfrentar costos altos o dificultades. |
+| 9 | 62,13 – 64,99 s | La próxima vez que recibas un paquete, mira más allá de la caja. |
+| 10 | 65,85 – 67,81 s | ¿Qué recorrido habrá hecho tu última compra? |
+
+Nota: Shorts quedó en 47,5 s y TikTok en 70,4 s, porque su lectura es ágil. Ambas versiones están dentro de su rango sin estirar las animaciones.

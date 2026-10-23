@@ -81,5 +81,48 @@ Videos 1080 × 1920 · 30 fps · **sin audio**, para grabar su voz. No se gener�
 - La fibra y los barcos son ilustraciones simplificadas, no una recreación técnica.
 
 ## Pendiente
-- Sincronizar con su voz cuando suba las grabaciones (una por versión).
+- ~~Sincronizar con su voz~~: hecho el 23 oct (ver abajo).
 - El manual de marca no se adjuntó; se usaron la paleta y el logo oficial de las piezas aprobadas.
+
+## Versión con su voz (23 oct 2026)
+
+Grabaciones recibidas: `Short.m4a` (45,3 s) y `tiktok_2.m4a` (69,9 s). Ajustes aplicados:
+- **Silencio inicial recortado:** había unos 1,5 s antes de la primera palabra. Ahora su voz arranca a los 0,26 s, junto con la apertura.
+- **Más aire entre frases:** pausas de 0,3 a 0,6 s **solo entre frases**. No se aceleró la voz ni se cortó ninguna palabra.
+- **Voz:** limpieza suave (graves, ruido de fondo, presencia, compresión ligera). Nivel final de −14 LUFS.
+- **Sincronía:** el montaje se reprogramó con los tiempos reales de cada tramo de su lectura. Los titulares, el contador del 99 %, los verbos y las preguntas entran con sus palabras.
+- **Verificación:** transcribí el audio final con la música y la voz se escucha completa.
+
+| Archivo | Contenido |
+|---|---|
+| `TITAN_Internet_Bajo_El_Mar_Shorts_ConVoz.mp4` / `_TikTok_ConVoz.mp4` | **Recomendado:** su voz + música original suave (distinta en cada versión), que baja sola cuando usted habla |
+| `..._SoloVoz.mp4` | Solo su voz |
+| `..._SinVoz.mp4` | El mismo montaje sin audio |
+
+### YouTube Shorts · 47,4 s
+
+| # | Tiempo real | Frase |
+|---|---|---|
+| 1 | 0,26 – 2,10 s | Internet también viaja bajo el mar. |
+| 2 | 3,18 – 11,28 s | Tu conexión empieza cerca de ti, pero cuando los datos cruzan océanos pueden recorrer cables submarinos que conectan redes entre continentes. |
+| 3 | 12,54 – 22,76 s | La fibra óptica lleva información entre costas. Y esa conexión necesita mucho más que un cable: hay que fabricarla, instalarla, operarla y repararla. |
+| 4 | 23,88 – 28,30 s | Ahí aparecen negocios que casi nunca vemos cuando abrimos una aplicación. |
+| 5 | 29,46 – 34,26 s | Investigar inversiones también es descubrir esas actividades y entender cómo funcionan. |
+| 6 | 35,52 – 40,08 s | Pero ser parte de una infraestructura necesaria no garantiza una buena inversión. |
+| 7 | 41,78 – 44,84 s | ¿Qué otra infraestructura usamos todos los días sin pensar en ella? |
+
+### TikTok · 73,5 s
+
+| # | Tiempo real | Frase |
+|---|---|---|
+| 1 | 0,26 – 2,44 s | Internet también viaja bajo el mar. |
+| 2 | 2,96 – 12,98 s | Abres una aplicación y todo parece ocurrir en una pantalla. Pero cuando los datos tienen que cruzar un océano, pueden recorrer cables submarinos que conectan redes entre continentes. |
+| 3 | 14,16 – 22,48 s | Según la Unión Internacional de Telecomunicaciones, por estos cables pasa más del noventa y nueve por ciento del intercambio internacional de datos. |
+| 4 | 23,96 – 28,32 s | Internacional: eso no significa que cada mensaje que envías tenga que cruzar el mar. |
+| 5 | 29,28 – 38,20 s | Lo interesante es todo lo que hace posible esa conexión. Hay que fabricar los cables, instalarlos, operar las redes y mantenerlas. |
+| 6 | 39,70 – 44,84 s | Y si un cable sufre daños, repararlo también requiere recursos y trabajo especializado. |
+| 7 | 46,12 – 55,94 s | Desde las inversiones, esto abre preguntas: ¿quién participa en cada actividad?, ¿cómo obtiene ingresos?, ¿qué costos enfrenta y qué podría salir mal? |
+| 8 | 57,00 – 62,60 s | Descubrir una industria importante es el inicio del análisis, no una garantía de ganancias. |
+| 9 | 63,48 – 67,54 s | La próxima vez que pienses en internet, imagina también lo que hay bajo el agua. |
+| 10 | 68,72 – 70,94 s | ¿Qué otra infraestructura damos por sentada? |
+

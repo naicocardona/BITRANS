@@ -27,8 +27,10 @@ Guardado el 19 oct 2026. Las instrucciones más recientes de quien dirige el pro
 
 ## Producción y voz (videos de gráficos)
 - **Sin personas ni avatar**, salvo que se pida. El avatar humano de TITÁN está en `avatar_titan/` y solo se usa cuando se solicite.
-- Las animaciones se producen y se exportan inicialmente **SIN AUDIO**.
-- La voz la graba el equipo de TITÁN y la sube después como archivo. **No generar voz sintética ni sustituir la grabada.**
+- **Voz oficial desde el 2 nov 2026:** ElevenLabs, voz «Juan - Clear & Expressive» (`FA1FBP9TKxnBiw45fHmS`), autorizada por Lady. Una sola toma por guion. Antes de generar, se estima el costo en créditos y se cierran los guiones. Después se verifica cada narración con transcripción local y se regenera solo la frase que falle.
+- La voz no se copia ni se clona fuera de ElevenLabs. Si no hay créditos o acceso, se exporta **sin audio** y se entrega el guion para grabarlo.
+- Si el equipo de TITÁN sube una grabación propia, esa manda sobre la voz sintética.
+- Plan gratis: aproximadamente 1 crédito por carácter en cada toma, con v4 y también con Flash. Normalmente no permite uso comercial y pide atribución. Para monetizar, usar un plan que incluya licencia comercial (por ejemplo, Starter).
 - Entregar siempre el **guion exacto de narración** para cada versión.
 - El primer montaje usa tiempos orientativos. Con la grabación, los tiempos definitivos siguen la lectura natural: **ajustar las escenas antes de acelerar la voz**.
 - Conservar el proyecto editable y los recursos para la sincronización posterior.
@@ -70,10 +72,10 @@ Se usa el identificador que corresponda al contenido. Una pieza general sobre in
 - Los datos personales y comprobantes se usan **solo cuando se aportan para esa pieza**.
 
 ## Entregas habituales
-- MP4 vertical 1080 × 1920, 30 fps, **sin audio**.
+- MP4 vertical 1080 × 1920, 30 fps, con la voz oficial (o **sin audio** si no hay voz disponible).
 - Una versión para TikTok y otra para Shorts.
 - Portada de cada versión (puede compartir diseño).
-- Guion exacto para grabar cada narración.
+- Guion exacto de cada narración y subtítulos SRT cuando haya voz.
 - Tiempos orientativos de escenas.
 - Proyecto editable y recursos utilizados, cuando el entorno permita entregarlos.
 - Comprobar los archivos antes de entregar. Explicar cualquier limitación concreta y distinguir lo producido de lo pendiente.

@@ -1,0 +1,619 @@
+1
+00:00:00,250 --> 00:00:02,748
+Imagina que compras acciones de una empresa
+
+2
+00:00:02,768 --> 00:00:03,533
+conocida.
+
+3
+00:00:03,685 --> 00:00:05,507
+Tienes una parte del negocio.
+
+4
+00:00:05,527 --> 00:00:08,364
+Pero hay una pregunta que casi nadie se
+
+5
+00:00:08,384 --> 00:00:09,972
+hace antes de comprar:
+
+6
+00:00:10,131 --> 00:00:11,754
+¿esa acción te da voto?
+
+7
+00:00:11,909 --> 00:00:14,442
+Tener participación económica y tener poder
+
+8
+00:00:14,462 --> 00:00:16,939
+de voto no siempre van juntos.
+
+9
+00:00:17,091 --> 00:00:19,683
+Y un caso reciente lo muestra con claridad.
+
+10
+00:00:20,438 --> 00:00:24,207
+En octubre de 2026, junto con sus resultados
+
+11
+00:00:24,227 --> 00:00:25,710
+del tercer trimestre,
+
+12
+00:00:25,988 --> 00:00:28,964
+Meta anunció una nueva clase de acciones:
+
+13
+00:00:29,114 --> 00:00:29,634
+la clase C.
+
+14
+00:00:29,654 --> 00:00:31,159
+Según su documentación,
+
+15
+00:00:31,179 --> 00:00:34,323
+la modificación tiene una fecha efectiva
+
+16
+00:00:34,343 --> 00:00:35,329
+prevista:
+
+17
+00:00:35,486 --> 00:00:37,673
+el 19 de enero de 2027.
+
+18
+00:00:37,693 --> 00:00:41,506
+Es decir, se trata de un cambio anunciado,
+
+19
+00:00:41,565 --> 00:00:42,995
+con efectos futuros.
+
+20
+00:00:43,148 --> 00:00:45,122
+La característica central de esta nueva
+
+21
+00:00:45,142 --> 00:00:47,874
+clase es que no tiene voto ordinario,
+
+22
+00:00:48,034 --> 00:00:50,053
+salvo las excepciones previstas en los
+
+23
+00:00:50,073 --> 00:00:52,257
+documentos de la empresa y en la ley.
+
+24
+00:00:52,419 --> 00:00:55,056
+Esto no significa que los accionistas actuales
+
+25
+00:00:55,076 --> 00:00:58,522
+pierdan sus votos, ni que la clase C deje
+
+26
+00:00:58,542 --> 00:01:01,240
+de representar una participación económica
+
+27
+00:01:01,260 --> 00:01:02,460
+en la empresa.
+
+28
+00:01:02,616 --> 00:01:05,097
+Lo que cambia es la combinación de derechos
+
+29
+00:01:05,117 --> 00:01:06,504
+que trae cada clase.
+
+30
+00:01:07,185 --> 00:01:08,871
+Veamos las tres clases,
+
+31
+00:01:08,891 --> 00:01:10,586
+una al lado de la otra.
+
+32
+00:01:10,740 --> 00:01:12,975
+La clase A da un voto por acción.
+
+33
+00:01:13,128 --> 00:01:14,900
+La clase B da 10 votos por acción.
+
+34
+00:01:14,920 --> 00:01:17,799
+Y la nueva clase C no da voto ordinario,
+
+35
+00:01:17,819 --> 00:01:20,801
+aunque sigue siendo participación económica.
+
+36
+00:01:20,821 --> 00:01:22,455
+Un detalle importante:
+
+37
+00:01:22,475 --> 00:01:24,754
+estos números son votos por acción.
+
+38
+00:01:24,774 --> 00:01:27,827
+No hablan del precio de la acción,
+
+39
+00:01:27,859 --> 00:01:30,525
+ni de su rentabilidad, ni de cuánto vale
+
+40
+00:01:30,545 --> 00:01:31,635
+en el mercado.
+
+41
+00:01:31,738 --> 00:01:33,938
+Una acción con 10 votos no vale 10 veces
+
+42
+00:01:33,958 --> 00:01:34,996
+más por ese motivo.
+
+43
+00:01:35,016 --> 00:01:38,345
+Simplemente pesa más cuando llega el momento
+
+44
+00:01:38,365 --> 00:01:38,850
+de votar.
+
+45
+00:01:38,870 --> 00:01:39,737
+Y algo más:
+
+46
+00:01:39,846 --> 00:01:42,689
+que una clase exista en los documentos
+
+47
+00:01:42,709 --> 00:01:45,329
+no significa que cualquier inversor pueda
+
+48
+00:01:45,349 --> 00:01:46,384
+comprarla hoy.
+
+49
+00:01:46,529 --> 00:01:48,098
+Antes de dar algo por hecho,
+
+50
+00:01:48,118 --> 00:01:50,701
+hay que revisar qué está disponible y en
+
+51
+00:01:50,721 --> 00:01:51,883
+qué condiciones.
+
+52
+00:01:52,571 --> 00:01:54,154
+Para verlo con números,
+
+53
+00:01:54,205 --> 00:01:56,340
+usemos un ejemplo conceptual:
+
+54
+00:01:56,495 --> 00:01:58,984
+una empresa ficticia, con 100 acciones
+
+55
+00:01:59,004 --> 00:01:59,717
+en total.
+
+56
+00:01:59,870 --> 00:02:02,795
+10 acciones son de clase B y están en manos
+
+57
+00:02:02,815 --> 00:02:04,074
+de los fundadores.
+
+58
+00:02:04,225 --> 00:02:05,940
+40 son de clase A.
+
+59
+00:02:06,092 --> 00:02:07,964
+Y 50 son de clase C.
+
+60
+00:02:08,118 --> 00:02:10,399
+Para simplificar, supongamos que cada acción
+
+61
+00:02:10,419 --> 00:02:12,596
+tiene la misma participación económica.
+
+62
+00:02:12,616 --> 00:02:16,521
+Entonces, los fundadores tienen el 10 %
+
+63
+00:02:16,541 --> 00:02:17,495
+del negocio;
+
+64
+00:02:17,651 --> 00:02:19,646
+la clase A, el 40;
+
+65
+00:02:19,806 --> 00:02:21,823
+y la clase C, el 50.
+
+66
+00:02:21,976 --> 00:02:23,503
+Ahora contemos los votos.
+
+67
+00:02:23,656 --> 00:02:25,032
+10 acciones de clase B,
+
+68
+00:02:25,052 --> 00:02:28,054
+con 10 votos cada una, suman 100 votos.
+
+69
+00:02:28,206 --> 00:02:31,424
+40 acciones de clase A suman 40 votos.
+
+70
+00:02:31,576 --> 00:02:34,029
+La clase C suma 0 votos ordinarios.
+
+71
+00:02:34,182 --> 00:02:35,776
+En total hay 140 votos.
+
+72
+00:02:35,796 --> 00:02:40,311
+Los fundadores, con el 10 % de las acciones,
+
+73
+00:02:40,331 --> 00:02:43,038
+tienen 100 de 140 votos:
+
+74
+00:02:43,195 --> 00:02:44,792
+más del 71 %.
+
+75
+00:02:44,812 --> 00:02:47,876
+La clase A, con el 40 por ciento de las
+
+76
+00:02:47,896 --> 00:02:51,668
+acciones, tiene alrededor del 29 % de los
+
+77
+00:02:51,688 --> 00:02:52,271
+votos.
+
+78
+00:02:52,422 --> 00:02:54,898
+Y quienes tienen la clase C reúnen la mitad
+
+79
+00:02:54,918 --> 00:02:56,869
+de la participación económica,
+
+80
+00:02:57,023 --> 00:02:59,206
+pero ninguno de los votos ordinarios.
+
+81
+00:02:59,358 --> 00:03:01,711
+Ahora piensa en una sola persona que compra
+
+82
+00:03:01,731 --> 00:03:04,031
+una acción de clase A en esta empresa.
+
+83
+00:03:04,188 --> 00:03:08,705
+Tiene el 1 % del negocio y un voto de 140.
+
+84
+00:03:08,861 --> 00:03:11,079
+Tener voto no es lo mismo que dirigir la
+
+85
+00:03:11,099 --> 00:03:11,786
+empresa:
+
+86
+00:03:11,941 --> 00:03:13,946
+tu influencia depende de cuántos votos
+
+87
+00:03:13,966 --> 00:03:15,410
+tienes frente al total.
+
+88
+00:03:16,127 --> 00:03:18,134
+¿Por qué le importa esto a alguien que
+
+89
+00:03:18,154 --> 00:03:19,204
+está empezando?
+
+90
+00:03:19,357 --> 00:03:21,787
+Porque al buscar una empresa en una aplicación
+
+91
+00:03:21,807 --> 00:03:24,350
+de inversión, muchas veces aparece un nombre,
+
+92
+00:03:24,501 --> 00:03:27,049
+un símbolo y un precio.
+
+93
+00:03:27,069 --> 00:03:29,243
+Pero detrás de ese símbolo hay un instrumento
+
+94
+00:03:29,263 --> 00:03:32,120
+concreto, con derechos concretos.
+
+95
+00:03:32,270 --> 00:03:35,189
+El primer paso es identificar qué estás
+
+96
+00:03:35,209 --> 00:03:36,193
+comprando:
+
+97
+00:03:36,345 --> 00:03:37,814
+qué clase de acción es,
+
+98
+00:03:37,965 --> 00:03:40,325
+o si se trata de otro instrumento relacionado
+
+99
+00:03:40,345 --> 00:03:41,371
+con la empresa.
+
+100
+00:03:41,524 --> 00:03:43,729
+El segundo paso es consultar sus derechos
+
+101
+00:03:43,749 --> 00:03:46,224
+en los documentos oficiales de la empresa,
+
+102
+00:03:46,390 --> 00:03:49,174
+como sus informes y documentos presentados
+
+103
+00:03:49,194 --> 00:03:50,617
+ante el regulador.
+
+104
+00:03:50,771 --> 00:03:53,021
+Ahí se describen las clases de acciones
+
+105
+00:03:53,041 --> 00:03:55,421
+y lo que puede votar cada una.
+
+106
+00:03:55,575 --> 00:03:57,264
+Y hay una diferencia más:
+
+107
+00:03:57,418 --> 00:04:00,062
+una cosa son los derechos del instrumento,
+
+108
+00:04:00,218 --> 00:04:02,470
+y otra las condiciones del intermediario
+
+109
+00:04:02,490 --> 00:04:04,015
+que usas para invertir.
+
+110
+00:04:04,170 --> 00:04:06,156
+No todos los brókers facilitan el voto
+
+111
+00:04:06,176 --> 00:04:08,861
+de la misma manera, así que conviene revisar
+
+112
+00:04:08,881 --> 00:04:11,663
+también cómo funciona en el tuyo.
+
+113
+00:04:12,327 --> 00:04:14,029
+Antes de comprar una acción,
+
+114
+00:04:14,154 --> 00:04:16,619
+estas son cinco preguntas que vale la pena
+
+115
+00:04:16,639 --> 00:04:17,352
+hacerse.
+
+116
+00:04:17,515 --> 00:04:18,183
+Primera:
+
+117
+00:04:18,334 --> 00:04:19,970
+¿qué instrumento es?
+
+118
+00:04:20,121 --> 00:04:22,297
+No basta con reconocer el nombre de la
+
+119
+00:04:22,317 --> 00:04:23,074
+compañía.
+
+120
+00:04:23,233 --> 00:04:24,076
+Segunda:
+
+121
+00:04:24,235 --> 00:04:25,467
+¿qué derechos tiene?
+
+122
+00:04:25,630 --> 00:04:27,380
+Participación económica,
+
+123
+00:04:27,400 --> 00:04:30,143
+voto, y las excepciones que apliquen.
+
+124
+00:04:30,302 --> 00:04:31,051
+Tercera:
+
+125
+00:04:31,206 --> 00:04:32,792
+¿quién concentra el voto?
+
+126
+00:04:32,948 --> 00:04:36,469
+Saber quién toma las decisiones importantes
+
+127
+00:04:36,489 --> 00:04:39,498
+es parte de entender dónde estás invirtiendo.
+
+128
+00:04:39,649 --> 00:04:40,348
+Cuarta:
+
+129
+00:04:40,501 --> 00:04:42,438
+¿qué riesgos tiene el negocio?
+
+130
+00:04:42,590 --> 00:04:45,339
+Ninguna clase de acción elimina los riesgos
+
+131
+00:04:45,359 --> 00:04:46,398
+de la empresa.
+
+132
+00:04:46,559 --> 00:04:47,445
+Y quinta:
+
+133
+00:04:47,596 --> 00:04:49,268
+¿qué precio estoy pagando?
+
+134
+00:04:49,419 --> 00:04:52,257
+Una buena empresa no siempre es una buena
+
+135
+00:04:52,277 --> 00:04:53,513
+compra a cualquier precio.
+
+136
+00:04:53,667 --> 00:04:56,372
+Ninguna de estas preguntas,
+
+137
+00:04:56,392 --> 00:04:58,820
+por sí sola, dice si una inversión es buena
+
+138
+00:04:58,840 --> 00:04:59,453
+o mala.
+
+139
+00:04:59,595 --> 00:05:03,293
+Juntas te ayudan a entender qué estás comprando.
+
+140
+00:05:03,987 --> 00:05:07,173
+Entonces, ¿una estructura con voto concentrado
+
+141
+00:05:07,193 --> 00:05:08,445
+es buena o mala?
+
+142
+00:05:08,603 --> 00:05:10,394
+Depende de lo que evalúes.
+
+143
+00:05:10,545 --> 00:05:13,039
+Concentrar el control puede favorecer la
+
+144
+00:05:13,059 --> 00:05:16,070
+continuidad de una estrategia a largo plazo.
+
+145
+00:05:16,228 --> 00:05:18,373
+Pero también puede limitar la influencia
+
+146
+00:05:18,393 --> 00:05:19,962
+de los demás accionistas.
+
+147
+00:05:20,118 --> 00:05:22,166
+No es un veredicto automático.
+
+148
+00:05:22,193 --> 00:05:24,973
+Es un aspecto más que conviene entender
+
+149
+00:05:24,993 --> 00:05:27,801
+antes de invertir, junto con el negocio,
+
+150
+00:05:27,821 --> 00:05:29,193
+sus riesgos y el precio.
+
+151
+00:05:29,213 --> 00:05:32,266
+Y tú, ¿invertirías sin voto si confiaras
+
+152
+00:05:32,286 --> 00:05:33,703
+en la dirección?
+
+153
+00:05:33,856 --> 00:05:35,553
+Cuéntanos en los comentarios.
+
+154
+00:05:35,704 --> 00:05:38,438
+Este contenido es educativo y no es una
+
+155
+00:05:38,458 --> 00:05:40,720
+recomendación de inversión.

@@ -4,9 +4,9 @@
 
 **Descripción (copiar desde aquí):**
 
-¿Tener acciones te da voto? No siempre. En este video te explico, con ejemplos y en menos de 6 minutos, la diferencia entre participación económica y poder de voto, usando un caso real: en octubre de 2026, Meta anunció una nueva clase de acciones C sin voto ordinario, con fecha efectiva prevista para el 19 de enero de 2027.
+¿Tener acciones te da voto? No siempre. Meta anunció una nueva clase de acciones sin voto ordinario, y eso enseña algo clave a quien empieza a invertir.
 
-Si estás empezando a invertir en acciones, esto te ayuda a entender qué compras realmente: no basta con conocer la empresa y el precio, también importan la clase de acción y sus derechos.
+En menos de 6 minutos vemos la diferencia entre participación económica y poder de voto, las clases de acciones A, B y C, un ejemplo con números y 5 preguntas para hacerte antes de comprar una acción. Fecha efectiva prevista del cambio: 19 de enero de 2027.
 
 👉 Suscríbete a TITÁN HOLDING para aprender a invertir con criterio, paso a paso.
 💬 Cuéntame en los comentarios: ¿invertirías sin voto si confiaras en la dirección?
@@ -20,13 +20,6 @@ Si estás empezando a invertir en acciones, esto te ayuda a entender qué compra
 3:16 Qué revisar si estás empezando a invertir
 4:12 5 preguntas antes de comprar una acción
 5:04 Conclusión: ¿voto concentrado bueno o malo?
-
-📌 En este video aprendes:
-• Qué son las acciones con y sin derecho a voto.
-• Qué significa tener participación económica en una empresa.
-• Cómo funcionan las clases de acciones A, B y C (votos por acción).
-• Por qué el 10 % de las acciones puede tener la mayoría de los votos (ejemplo conceptual).
-• Cinco preguntas que debes hacerte antes de comprar una acción.
 
 📚 Fuentes (documentos oficiales de Meta):
 • Resultados del tercer trimestre de 2026: https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Third-Quarter-2026-Results/default.aspx
@@ -46,5 +39,4 @@ acciones sin voto, clases de acciones, acciones clase A y clase B, Meta acciones
 - Capítulos: YouTube los crea solos con los tiempos de la descripción. Revisa que coincidan con la versión final del video.
 - Pantalla final (últimos 5 s): agregar «Suscribirse» y el Short «Puedes tener acciones y no tener voto: el caso Meta».
 - Lista de reproducción sugerida: «Aprende a invertir · TITÁN HOLDING».
-- Si la voz se generó con el plan gratis de ElevenLabs, agrega al final: «Voz generada con ElevenLabs».
 - Antes de publicar, confirma las fechas en las tres fuentes.

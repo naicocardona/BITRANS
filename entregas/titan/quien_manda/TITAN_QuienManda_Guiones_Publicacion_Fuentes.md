@@ -171,7 +171,7 @@ Los tiempos exactos de cada escena y de cada grupo de subtítulos de las tres ve
 
 - Voz: «Juan - Clear & Expressive» (FA1FBP9TKxnBiw45fHmS). Shorts y TikTok con eleven_v4; el largo con eleven_flash_v2_5.
 - Créditos usados: Shorts 1.212 (2 tomas) · TikTok 1.097 · largo 5.009 · **total 7.318** del plan gratis.
-- **Antes de publicar o monetizar:** el plan gratis de ElevenLabs normalmente no permite uso comercial y pide atribución. Revise los términos de su cuenta o use el plan Starter, que suele incluir licencia comercial.
+- Plan pago de ElevenLabs activo: uso comercial permitido, sin atribución obligatoria.
 - Las narraciones se revisaron con transcripción local frase por frase y coinciden con los guiones. Las pausas largas se acortaron sin tocar las palabras.
 
 ## QC

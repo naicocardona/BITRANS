@@ -30,7 +30,7 @@ Guardado el 19 oct 2026. Las instrucciones más recientes de quien dirige el pro
 - **Voz oficial desde el 2 nov 2026:** ElevenLabs, voz «Juan - Clear & Expressive» (`FA1FBP9TKxnBiw45fHmS`), autorizada por Lady. Una sola toma por guion. Antes de generar, se estima el costo en créditos y se cierran los guiones. Después se verifica cada narración con transcripción local y se regenera solo la frase que falle.
 - La voz no se copia ni se clona fuera de ElevenLabs. Si no hay créditos o acceso, se exporta **sin audio** y se entrega el guion para grabarlo.
 - Si el equipo de TITÁN sube una grabación propia, esa manda sobre la voz sintética.
-- Plan gratis: aproximadamente 1 crédito por carácter en cada toma, con v4 y también con Flash. Normalmente no permite uso comercial y pide atribución. Para monetizar, usar un plan que incluya licencia comercial (por ejemplo, Starter).
+- Plan pago de ElevenLabs activo desde el 3 nov 2026 (uso comercial, sin atribución obligatoria). Consumo: aproximadamente 1 crédito por carácter en cada toma, tanto con v4 como con Flash.
 - Entregar siempre el **guion exacto de narración** para cada versión.
 - El primer montaje usa tiempos orientativos. Con la grabación, los tiempos definitivos siguen la lectura natural: **ajustar las escenas antes de acelerar la voz**.
 - Conservar el proyecto editable y los recursos para la sincronización posterior.
@@ -84,12 +84,11 @@ Se usa el identificador que corresponda al contenido. Una pieza general sobre in
 - Guion exacto de cada narración y subtítulos SRT cuando haya voz.
 - Tiempos orientativos de escenas.
 - Proyecto editable y recursos utilizados, cuando el entorno permita entregarlos.
-- **Video largo de YouTube, siempre:** entregar la descripción lista para pegar, con:
+- **Video largo de YouTube, siempre:** entregar la descripción lista para pegar, breve y con las dos primeras líneas como gancho, con:
   - título;
   - un gancho en las dos primeras líneas;
   - CTA (suscribirse, comentar con la pregunta del video y compartir);
   - capítulos con tiempos reales;
-  - qué se aprende;
   - fuentes con enlaces;
   - disclaimer;
   - tres hashtags;

@@ -59,6 +59,12 @@ Se usa el identificador que corresponda al contenido. Una pieza general sobre in
 - Su presencia no debe retrasar el mensaje inicial.
 
 ## Estilo de animación
+- **Estilo 3D (aprobado el 3 nov 2026 con la muestra de «¿Quién manda?»):** desde ahora, el TikTok, el Shorts y el YouTube de TITÁN se hacen con escenas 3D reales (Three.js dentro de HyperFrames):
+  - objetos con volumen, como fichas, monedas de voto, cubos y documentos;
+  - cámara en movimiento continuo y viajes en profundidad entre escenas, en lugar de cortes;
+  - partículas doradas suaves y textos HTML encima, sincronizados con la voz.
+  - Se mantienen la paleta, la firma, los subtítulos palabra por palabra y el anillo dorado.
+  - Las cifras aparecen exactas cuando la voz las dice, sin contadores con valores intermedios.
 - Contar historias con objetos, recorridos, comparaciones y cambios de escala. Evitar que todos los videos sean presentaciones de tarjetas iguales.
 - Una idea dominante por momento. Movimiento para explicar; texto estable para leer.
 - Ilustraciones amplias, textos cortos y buen contraste.

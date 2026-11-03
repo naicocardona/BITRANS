@@ -84,6 +84,16 @@ Se usa el identificador que corresponda al contenido. Una pieza general sobre in
 - Guion exacto de cada narración y subtítulos SRT cuando haya voz.
 - Tiempos orientativos de escenas.
 - Proyecto editable y recursos utilizados, cuando el entorno permita entregarlos.
+- **Duración del video largo de YouTube (desde el 3 nov 2026): de 8 a 10 minutos**, para habilitar anuncios a mitad del video y sumar horas de visualización. Objetivo: monetizar el canal.
+  - Se llega a esa duración con contenido real, nunca con relleno ni repeticiones:
+    - un segundo ejemplo o un caso comparable con fuente;
+    - una sección de «errores comunes del principiante»;
+    - un recordatorio del gancho a mitad del video;
+    - repasos visuales breves entre secciones;
+    - un cierre con lo aprendido y la invitación al siguiente video.
+  - Retención antes que duración: cada sección debe aportar algo nuevo.
+  - Presupuesto: unos 9.000–10.500 créditos de ElevenLabs por paquete completo, con 121.000 al mes en el plan Creator. Render 3D de unas 3–4 h por video largo.
+  - Las piezas anteriores («¿Quién manda?», 5:45; «NU cayó», 5:25) se quedan como están.
 - **Video largo de YouTube, siempre:** entregar la descripción lista para pegar, breve y con las dos primeras líneas como gancho, con:
   - título;
   - un gancho en las dos primeras líneas;

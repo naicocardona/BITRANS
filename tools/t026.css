@@ -1,0 +1,49 @@
+/* ===== TRADE #026 · laboratorio ilustrado ===== */
+#lab { position:absolute; inset:0; }
+#lab svg { position:absolute; left:0; top:0; }
+.neon { filter: drop-shadow(0 0 10px rgba(167,121,242,.85)); }
+.neonT { filter: drop-shadow(0 0 10px rgba(63,208,201,.85)); }
+.scene { position:absolute; left:90px; top:300px; width:900px; height:690px; }
+.hk1 { position:absolute; left:0; top:0; font-size:96px; font-weight:900; letter-spacing:-.03em; line-height:1; white-space:nowrap; }
+.hk2 { position:absolute; left:0; top:112px; font-size:42px; font-weight:900; letter-spacing:-.01em; color:var(--v); white-space:nowrap; }
+.hk3 { position:absolute; left:0; top:178px; font-size:24px; font-weight:800; letter-spacing:.2em; color:var(--t); }
+.viewer { position:absolute; left:0; width:900px; border-radius:26px; overflow:hidden; background:#fff; border:3px solid rgba(167,121,242,.65); box-shadow:0 0 0 8px rgba(167,121,242,.08), 0 30px 80px rgba(0,0,0,.55), 0 0 60px rgba(167,121,242,.25); }
+.viewer .cam { position:absolute; left:0; top:0; width:560px; height:949px; transform-origin:0 0; }
+.viewer .cam img { position:absolute; left:0; top:0; width:560px; height:949px; }
+.viewer .cam svg { position:absolute; left:0; top:0; overflow:visible; }
+.vnote { position:absolute; right:12px; bottom:12px; padding:7px 14px; border-radius:10px; background:rgba(9,11,16,.9); color:#fff; font-size:19px; font-weight:800; }
+.tpst { position:absolute; padding:8px 20px 10px; border-radius:14px; border:4px solid var(--g); color:var(--g); background:rgba(9,11,16,.9); font-size:40px; font-weight:900; transform:rotate(-4deg); white-space:nowrap; }
+.dpill { position:absolute; left:0; top:0; padding:12px 22px; border-radius:14px; background:var(--sf); border:2px solid rgba(63,208,201,.55); font-size:30px; font-weight:900; letter-spacing:.06em; }
+.ebig { position:absolute; left:0; top:92px; font-size:58px; font-weight:900; letter-spacing:-.02em; line-height:1.05; }
+.row4 { position:absolute; left:0; width:900px; height:92px; border-radius:20px; background:var(--sf); border:2px solid rgba(167,121,242,.35); display:flex; align-items:center; gap:22px; padding:0 26px; font-size:40px; font-weight:900; overflow:hidden; }
+.row4 i { width:54px; height:54px; border-radius:14px; background:rgba(63,208,201,.15); border:3px solid var(--t); display:flex; align-items:center; justify-content:center; font-style:normal; color:var(--t); font-size:32px; flex:none; }
+.row4 .sw { position:absolute; left:0; top:0; width:220px; height:100%; background:linear-gradient(90deg, rgba(63,208,201,0), rgba(63,208,201,.35), rgba(63,208,201,0)); }
+.row4 .mu2 { font-size:26px; font-weight:700; color:var(--mu); margin-left:auto; }
+.rcard { position:absolute; left:0; top:20px; width:900px; height:433px; border-radius:22px; overflow:hidden; border:3px solid rgba(100,224,135,.6); box-shadow:0 30px 80px rgba(0,0,0,.55); transform-origin:50% 0%; }
+.rcard img { position:absolute; left:0; top:0; width:900px; height:433px; }
+.rcard svg { position:absolute; left:0; top:0; }
+.res { position:absolute; left:0; width:900px; }
+.res .ln { font-size:44px; font-weight:900; letter-spacing:-.01em; }
+.res .ln span { color:var(--mu); font-size:32px; font-weight:800; letter-spacing:.08em; margin-right:16px; }
+.tpbig { position:absolute; left:0; width:900px; padding:22px 28px; border-radius:24px; background:rgba(100,224,135,.08); border:4px solid var(--g); color:var(--g); font-size:50px; white-space:nowrap; font-weight:900; letter-spacing:-.01em; box-shadow:0 0 60px rgba(100,224,135,.25); }
+.tpbig small { display:block; font-size:30px; color:var(--tx); font-weight:800; letter-spacing:.06em; margin-top:8px; }
+.ttl { position:absolute; left:0; top:0; width:900px; }
+.ttl .n { font-size:26px; font-weight:900; letter-spacing:.2em; color:var(--v); }
+.ttl .h { font-size:54px; font-weight:900; line-height:1.03; letter-spacing:-.02em; text-transform:uppercase; margin-top:8px; }
+.mini { position:absolute; left:0; width:900px; border-radius:22px; background:var(--sf); border:2px solid rgba(167,121,242,.4); padding:20px 26px; }
+.mini .a { font-size:22px; font-weight:900; letter-spacing:.16em; color:var(--mu); }
+.mini .r { font-size:32px; font-weight:850; margin-top:10px; }
+.stampV { position:absolute; padding:10px 26px 14px; border-radius:16px; border:5px solid var(--v); color:var(--v); background:rgba(9,11,16,.94); font-size:44px; font-weight:900; transform:rotate(-4deg); white-space:nowrap; }
+.tl2 { position:absolute; left:0; width:900px; height:120px; }
+.tl2 .ln2 { position:absolute; left:60px; top:58px; width:780px; height:5px; background:linear-gradient(90deg, var(--v), rgba(244,245,249,.18)); transform-origin:0 50%; }
+.tl2 .nd { position:absolute; top:40px; width:42px; height:42px; border-radius:50%; border:5px solid #F4F5F9; }
+.tl2 .lb { position:absolute; top:92px; font-size:24px; font-weight:900; letter-spacing:.12em; width:300px; text-align:center; }
+.cardx { position:absolute; left:0; width:900px; border-radius:24px; background:var(--sf); padding:22px 28px; }
+.cardx .a { font-size:22px; font-weight:900; letter-spacing:.14em; }
+.cardx .b { font-size:52px; font-weight:900; margin-top:8px; letter-spacing:-.01em; }
+.cardx .c { font-size:24px; font-weight:750; color:var(--mu); margin-top:6px; }
+.neq { position:absolute; left:405px; width:90px; height:90px; border-radius:50%; background:#090B10; border:4px solid var(--v); color:var(--v); font-size:64px; font-weight:900; display:flex; align-items:center; justify-content:center; }
+.thumb { position:absolute; top:150px; width:430px; height:330px; border-radius:20px; overflow:hidden; background:#fff; border:3px solid; }
+.thumb img { position:absolute; }
+.thumb .tag2 { position:absolute; left:12px; bottom:12px; padding:8px 14px; border-radius:10px; background:rgba(9,11,16,.92); font-size:22px; font-weight:900; letter-spacing:.06em; }
+.endpill { position:absolute; left:0; top:0; padding:12px 24px; border-radius:14px; border:3px solid var(--g); color:var(--g); font-size:34px; font-weight:900; letter-spacing:.06em; background:rgba(100,224,135,.08); }

@@ -1,0 +1,81 @@
+# Fondos instrumentales originales y discretos (numpy). Uso: bed_music.py <out> <dur> <variante>
+import sys, numpy as np, soundfile as sf
+out, DUR, VAR = sys.argv[1], float(sys.argv[2]), sys.argv[3]
+P = {
+  "mesa":    dict(bpm=100, seed=11, ch=[[50,57,62,65],[46,53,58,62],[48,55,60,64],[45,52,57,60]], tim="rhodes", arp=[0,2,3,2]),
+  "carretera": dict(bpm=118, seed=12, ch=[[52,59,64,68],[49,56,61,64],[45,52,57,61],[47,54,59,63]], tim="guitar", arp=[0,1,2,3]),
+  "isla":    dict(bpm=104, seed=13, ch=[[53,57,60,65],[58,62,65,70],[55,59,62,67],[53,57,60,64]], tim="steel", arp=[0,2,1,3]),
+  "parrilla": dict(bpm=96, seed=14, ch=[[43,50,55,59],[48,55,60,64],[45,52,57,60],[50,57,62,66]], tim="guitar", arp=[0,2,3,1]),
+  "ad1": dict(bpm=124, seed=21, ch=[[50,57,62,66],[47,54,59,62],[43,50,55,59],[45,52,57,61]], tim="bell", arp=[0,2,1,3]),
+  "ad2": dict(bpm=126, seed=22, ch=[[52,59,64,67],[48,55,60,64],[50,57,62,65],[47,54,59,62]], tim="guitar", arp=[0,3,2,1]),
+  "ad3": dict(bpm=110, seed=23, ch=[[55,59,62,67],[52,55,59,64],[48,52,55,60],[50,54,57,62]], tim="steel", arp=[0,1,3,2]),
+  "ad4": dict(bpm=102, seed=24, ch=[[45,52,57,61],[50,57,62,66],[52,59,64,68],[45,52,57,60]], tim="guitar", arp=[0,2,3,1]),
+  "ad5": dict(bpm=128, seed=25, ch=[[53,57,60,65],[50,53,57,62],[46,50,53,58],[48,52,55,60]], tim="bell", arp=[0,1,2,3]),
+  "ad6": dict(bpm=120, seed=26, ch=[[47,54,59,62],[52,59,64,67],[45,52,57,60],[50,57,62,66]], tim="rhodes", arp=[0,3,1,2]),
+  "abrir":   dict(bpm=106, seed=31, ch=[[48,55,59,64],[45,52,55,60],[41,48,52,57],[43,50,53,59]], tim="steel", arp=[0,2,1,3]),
+  "tablero": dict(bpm=98, seed=41, ch=[[50,57,61,66],[47,54,57,62],[43,50,54,59],[45,52,57,61]], tim="rhodes", arp=[0,1,3,2]),
+  "tablero2": dict(bpm=104, seed=51, ch=[[52,59,63,68],[49,56,61,64],[45,52,57,61],[47,54,59,62]], tim="bell", arp=[0,2,3,1]),
+  "celular": dict(bpm=114, seed=61, ch=[[55,62,66,71],[52,59,62,67],[48,55,59,64],[50,57,60,66]], tim="steel", arp=[0,3,1,2]),
+  "edge023": dict(bpm=88, seed=71, ch=[[50,53,57,62],[46,50,53,58],[41,45,48,53],[43,46,50,55]], tim="rhodes", arp=[0,2,1,3]),
+  "edge024": dict(bpm=100, seed=72, ch=[[48,55,60,64],[45,52,57,60],[41,48,53,57],[43,50,55,59]], tim="bell", arp=[0,1,3,2]),
+  "nube": dict(bpm=84, seed=81, ch=[[45,52,57,64],[41,48,53,60],[48,55,60,64],[43,50,55,62]], tim="steel", arp=[0,2,3,1]),
+  "sem09": dict(bpm=96, seed=91, ch=[[47,54,59,62],[43,50,55,59],[45,52,57,60],[42,49,54,57]], tim="rhodes", arp=[0,3,2,1]),
+  "sem09b": dict(bpm=116, seed=93, ch=[[45,52,57,60],[41,48,53,57],[43,50,55,59],[40,47,52,55]], tim="bell", arp=[0,2,1,3]),
+  "short09": dict(bpm=122, seed=95, ch=[[50,57,60,65],[46,53,58,62],[43,50,55,58],[45,52,57,61]], tim="steel", arp=[0,1,3,2]),
+  "cajash": dict(bpm=104, seed=101, ch=[[45,52,57,60],[41,48,53,57],[48,55,60,64],[43,50,55,59]], tim="steel", arp=[0,2,1,3]),
+  "cajatk": dict(bpm=94, seed=103, ch=[[50,57,60,65],[46,53,58,62],[41,48,53,57],[43,50,55,58]], tim="rhodes", arp=[0,1,3,2]),
+  "nas030t": dict(bpm=108, seed=131, ch=[[45,52,57,60],[48,55,60,64],[43,50,55,59],[40,47,52,55]], tim="rhodes", arp=[0,2,3,1]),
+  "nas030s": dict(bpm=118, seed=133, ch=[[50,57,62,65],[46,53,58,62],[48,55,60,63],[43,50,55,58]], tim="bell", arp=[0,3,1,2]),
+  "marsh": dict(bpm=100, seed=141, ch=[[47,54,59,62],[43,50,55,59],[45,52,57,61],[40,47,52,56]], tim="bell", arp=[0,2,1,3]),
+  "martk": dict(bpm=90, seed=143, ch=[[50,57,62,65],[45,52,57,60],[47,54,59,62],[43,50,55,58]], tim="rhodes", arp=[0,3,2,1]),
+  "sem10t": dict(bpm=102, seed=151, ch=[[48,55,58,63],[44,51,55,60],[46,53,56,61],[43,50,55,58]], tim="rhodes", arp=[0,2,1,3]),
+  "sem10s": dict(bpm=114, seed=153, ch=[[52,59,62,67],[48,55,59,64],[50,57,60,65],[45,52,55,60]], tim="steel", arp=[0,3,2,1]),
+  "sem11t": dict(bpm=86, seed=161, ch=[[45,52,57,62],[41,48,55,60],[43,50,55,59],[40,47,52,57]], tim="rhodes", arp=[0,2,3,1]),
+  "sem11s": dict(bpm=92, seed=163, ch=[[50,55,59,64],[47,52,55,62],[43,50,55,59],[45,52,57,60]], tim="bell", arp=[0,1,3,2]),
+  "tqtk": dict(bpm=92, seed=171, ch=[[45,52,57,60],[41,48,53,57],[43,50,55,59],[40,47,52,55]], tim="rhodes", arp=[0,2,1,3]),
+  "tqsh": dict(bpm=98, seed=173, ch=[[50,57,60,65],[46,53,58,62],[48,55,60,63],[43,50,55,58]], tim="bell", arp=[0,3,2,1]),
+  "tqlg": dict(bpm=80, seed=175, ch=[[47,54,59,62],[43,50,55,59],[45,52,57,60],[42,49,54,57]], tim="rhodes", arp=[0,1,3,2]),
+  "nush": dict(bpm=100, seed=181, ch=[[48,55,60,63],[44,51,56,60],[46,53,58,62],[43,50,55,58]], tim="bell", arp=[0,2,1,3]),
+  "nutk": dict(bpm=94, seed=183, ch=[[45,52,57,60],[41,48,53,57],[43,50,55,59],[40,47,52,56]], tim="rhodes", arp=[0,3,2,1]),
+  "nulg": dict(bpm=84, seed=185, ch=[[50,57,60,65],[46,53,58,62],[48,55,60,64],[43,50,55,58]], tim="rhodes", arp=[0,1,3,2]),
+  "t026t": dict(bpm=96, seed=191, ch=[[45,52,57,62],[43,50,55,60],[41,48,53,57],[40,47,52,59]], tim="rhodes", arp=[0,2,3,1]),
+  "t026s": dict(bpm=110, seed=193, ch=[[50,57,62,65],[48,55,60,64],[46,53,58,62],[45,52,57,60]], tim="bell", arp=[0,3,1,2]),
+  "noche":   dict(bpm=112, seed=16, ch=[[45,52,57,60],[50,57,62,65],[43,50,55,59],[48,55,60,64]], tim="rhodes", arp=[0,3,1,2]),
+  "fiesta":  dict(bpm=122, seed=15, ch=[[48,55,60,64],[45,52,57,60],[41,48,53,57],[43,50,55,59]], tim="bell", arp=[0,3,2,1]),
+}[VAR]
+SR = 44100; N = int(SR * DUR); rng = np.random.default_rng(P["seed"])
+L = np.zeros(N); R = np.zeros(N)
+def mtof(m): return 440 * 2 ** ((m - 69) / 12)
+def T(d): return np.arange(int(d * SR)) / SR
+def put(x, t0, g=1.0, pan=0.0):
+    i = int(t0 * SR); j = min(N, i + len(x))
+    if i < N and j > i:
+        L[i:j] += x[:j - i] * g * (1 - max(0, pan)); R[i:j] += x[:j - i] * g * (1 + min(0, pan))
+def pad(m, d):
+    t = T(d); x = sum(np.sin(2 * np.pi * mtof(m) * (1 + dd) * t) for dd in (-0.004, 0, 0.004))
+    return x * np.minimum(1, t / 0.6) * np.minimum(1, (d - t) / 0.6) / 3
+def note(m, d=0.6):
+    t = T(d); f = mtof(m); tim = P["tim"]
+    if tim == "rhodes": x = np.sin(2*np.pi*f*t + 0.8*np.sin(2*np.pi*f*t)*np.exp(-t*6)) * np.exp(-t*4)
+    elif tim == "guitar": x = sum(np.sin(2*np.pi*f*h*t)/h**1.4 for h in range(1, 6)) * np.exp(-t*6)
+    elif tim == "steel": x = (np.sin(2*np.pi*f*t) + 0.5*np.sin(2*np.pi*f*2.76*t)*np.exp(-t*9)) * np.exp(-t*5)
+    else: x = (np.sin(2*np.pi*f*t) + 0.4*np.sin(2*np.pi*f*3.01*t)*np.exp(-t*8)) * np.exp(-t*4.5)
+    return x * np.minimum(1, t / 0.003)
+def kick(g): t = T(0.3); return np.sin(2*np.pi*np.cumsum(80*np.exp(-t*20)+45)/SR) * np.exp(-t*10) * g
+def shk(g): t = T(0.05); return np.diff(rng.uniform(-1, 1, len(t)), prepend=0) * np.exp(-t*80) * g
+B = 60 / P["bpm"]; bar = 0
+while bar * 4 * B < DUR:
+    t0 = bar * 4 * B; c = P["ch"][bar % 4]
+    for m in c[:3]: put(pad(m, 4 * B + 0.3), t0, 0.045)
+    for b in range(4):
+        t = t0 + b * B
+        if t >= DUR: break
+        if bar >= 1: put(kick(0.32 if b in (0, 2) else 0.16), t)
+        put(shk(0.03), t + B / 2, 1, 0.3)
+        for k in range(2):
+            put(note(c[P["arp"][(b * 2 + k) % 4]] + 12), t + k * B / 2, 0.065, -0.25 + 0.5 * k)
+    bar += 1
+mix = np.stack([L, R], 1); fi = int(0.4 * SR); fo = int(1.8 * SR)
+env = np.ones(N); env[:fi] = np.linspace(0, 1, fi); env[-fo:] = np.linspace(1, 0, fo)
+mix *= env[:, None]; mix /= np.max(np.abs(mix)) + 1e-9; mix *= 10 ** (-9 / 20)
+sf.write(out, mix, SR); print("ok", VAR, DUR)

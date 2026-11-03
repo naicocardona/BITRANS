@@ -17,12 +17,12 @@ function swap(next, t, kind) {
   const prev = CUR; CUR = next;
   if (prev) { if (kind === "zoom") tl.to(prev, { opacity: 0, scale: 1.08, filter: "blur(6px)", duration: 0.3, ease: "power2.in" }, t - 0.3);
               else if (kind === "slide") tl.to(prev, { opacity: 0, x: -140, duration: 0.3, ease: "power2.in" }, t - 0.3);
-              else tl.to(prev, { opacity: 0, duration: 0.25 }, t - 0.25); }
-  if (kind === "zoom") tl.fromTo(next, { opacity: 0, scale: 0.86, filter: "blur(8px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.45, ease: EZ, immediateRender: false }, t - 0.05);
-  else if (kind === "slide") tl.fromTo(next, { opacity: 0, x: 160 }, { opacity: 1, x: 0, duration: 0.4, ease: EZ, immediateRender: false }, t - 0.05);
-  else if (kind === "flip") tl.fromTo(next, { opacity: 0, rotationX: -70, transformPerspective: 1400, transformOrigin: "50% 0%" }, { opacity: 1, rotationX: 0, duration: 0.55, ease: "back.out(1.4)", immediateRender: false }, t - 0.05);
-  else { tl.set(next, { opacity: 1 }, t - 0.05); tl.fromTo(next, { clipPath: "inset(0% 0% 100% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.45, ease: IO, immediateRender: false }, t - 0.05); }
-  tl.fromTo("#scanF", { opacity: 0.9, y: 0 }, { opacity: 0, y: 600, duration: 0.7, ease: "power2.out", immediateRender: false }, t - 0.05);
+              else tl.to(prev, { opacity: 0, duration: 0.3 }, t - 0.3); }
+  if (kind === "zoom") tl.fromTo(next, { opacity: 0, scale: 0.86, filter: "blur(8px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.45, ease: EZ, immediateRender: false }, t - 0.32);
+  else if (kind === "slide") tl.fromTo(next, { opacity: 0, x: 160 }, { opacity: 1, x: 0, duration: 0.4, ease: EZ, immediateRender: false }, t - 0.32);
+  else if (kind === "flip") tl.fromTo(next, { opacity: 0, rotationX: -70, transformPerspective: 1400, transformOrigin: "50% 0%" }, { opacity: 1, rotationX: 0, duration: 0.55, ease: "back.out(1.4)", immediateRender: false }, t - 0.32);
+  else { tl.set(next, { opacity: 1 }, t - 0.32); tl.fromTo(next, { clipPath: "inset(0% 0% 100% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.45, ease: IO, immediateRender: false }, t - 0.32); }
+  tl.fromTo("#scanF", { opacity: 0.9, y: 0 }, { opacity: 0, y: 600, duration: 0.7, ease: "power2.out", immediateRender: false }, t - 0.32);
 }
 // ===== Explorador (biblioteca V3) =====
 const POSES = $$(".pose").map(e => e.id.slice(3)); const SCHED = [], BL = []; let ZP = 1;

@@ -52,6 +52,12 @@ El objetivo es **enganchar sin perder la seriedad del trading**. Un video de tar
 - **Portada** con el avatar en pose de explicar, sin tapar las fotos ni el título.
 
 ## 4. Avatar presentador
+- **Personaje único, siempre el Explorador** (confirmado el 3 nov 2026): no se usan otros personajes, ni siquiera ilustrados.
+- **Laboratorio ilustrado de fondo** (desde el Trade #026):
+  - tubos de neón violeta y turquesa, consola con radar y luces, piso con escaneo y partículas;
+  - transiciones con intención: escaneo, zoom al monitor, giro del comprobante y deslizamientos;
+  - en los cambios de escena, la que sale y la que entra se cruzan, sin cuadros vacíos;
+  - las pantallas del laboratorio son decorativas y nunca muestran velas ni precios.
 - **Un solo personaje por video:** el «Explorador», encapuchado de visor violeta. Biblioteca oficial completa (88 piezas, 8 bloques) en `avatar/explorador/`. Catálogo y usos en `avatar/explorador/CATALOGO.md`; coordenadas en `catalogo.json`. Las 6 poses originales (`avatar/*.png`) siguen siendo válidas. No redibujes ni cambies su ropa, colores ni proporciones.
 - **Posición fija:** abajo a la izquierda (≈ x 50–440, y 1137–1500 en TikTok; en Shorts, base del avatar ≤ y 1500 y datos en y 290–1000). **Nunca** tapa velas relevantes, precios, resultados ni subtítulos.
 - Con la voz A, el avatar narra y los subtítulos reemplazan a las burbujas. Sin voz, habla con burbujas breves (máximo ≈ 8 palabras) que **complementan** el contenido sin repetirlo.

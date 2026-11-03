@@ -129,12 +129,12 @@ async function build() {
       // cambio tipo baraja: la tarjeta actual sale a la izquierda mientras la siguiente entra por la derecha (la cámara no atraviesa nada)
       anim.push(t => cs.forEach((c, k) => { const pin = ease(span(t, E[k], 0.6)), pout = k < n0 - 1 ? easeIO(span(t, E[k + 1], 0.6)) : 0;
         const fn = easeIO(span(t, TT("qAll") + 0.25 + k * 0.12, 0.9));
-        const sx = OFX * (1 - pin) - OFX * pout, sy = 0.3 + 0.05 * Math.sin(t * 0.7 + k), sz = -0.8 * (1 - pin) - 0.8 * pout;
-        const gx = H > W ? 0 : (k % 2 ? 1.95 : -1.95), gy = H > W ? 0.3 + 0.9 * ((n0 - 1) / 2 - k) : 0.3 + (k < 2 ? 1.15 : -1.15);
+        const HZ = W > H, sx = OFX * (1 - pin) - (HZ ? 0 : OFX) * pout, sy = 0.3 + 0.05 * Math.sin(t * 0.7 + k) + (HZ ? 3.4 * pout * pout : 0), sz = -0.8 * (1 - pin) - (HZ ? 4.5 : 0.8) * pout;
+        const gx = H > W ? 0 : (k % 2 ? 1.15 : -1.15), gy = H > W ? 0.3 + 0.9 * ((n0 - 1) / 2 - k) : 0.3 + (k < 2 ? 1.15 : -0.15);
         c.visible = pin > 0 || fn > 0; c.position.set(sx + (gx - sx) * fn, sy + (gy - sy) * fn, sz * (1 - fn));
-        const ry = -1.1 * (1 - pin) + 1.0 * pout + 0.07 * Math.sin(t * 0.6 + k);
+        const ry = -1.1 * (1 - pin) + (W > H ? 0.3 : 1.0) * pout + 0.07 * Math.sin(t * 0.6 + k);
         c.rotation.set(0.04 * Math.sin(t * 0.9 + k), ry * (1 - fn), -0.06 * (1 - pin) + 0.06 * pout);
-        c.scale.setScalar(Math.max(0.001, VS * (1 - 0.56 * fn) * (k === 0 ? Math.max(0.001, back(span(t, E[0], 0.8))) : 1) )); })); }
+        c.scale.setScalar(Math.max(0.001, VS * (1 - (W > H ? 0.4 : 0.56) * fn) * (k === 0 ? Math.max(0.001, back(span(t, E[0], 0.8))) : 1) )); })); }
     if (n === "split") { const a = ticket("A", "Empresa hipotética", "EJEMPLO"), b = ticket("B", "Empresa hipotética", "EJEMPLO"); g.add(a); g.add(b);
       const ok = new THREE.Mesh(new RoundedBoxGeometry(1.6, 0.24, 1.0, 3, 0.06), solid(GREEN, 0.2, 0.4)), bad = new THREE.Mesh(new RoundedBoxGeometry(1.6, 0.24, 1.0, 3, 0.06), solid(RED, 0.2, 0.4)); g.add(ok); g.add(bad);
       anim.push(t => { const d = easeIO(span(t, TT("spDrop"), 0.8)); [a, b].forEach((m, i) => { m.position.set(i ? 1.5 : -1.5, 0.5 - 0.9 * d, 0); m.rotation.set(0.2 * d, (i ? -0.25 : 0.25) + 0.15 * Math.sin(t * 0.7 + i * 2), 0.03 * Math.sin(t * 1.1 + i)); m.scale.setScalar(0.8 * Math.max(0.001, back(span(t, TT("spIn") + i * 0.2, 0.7)))); });

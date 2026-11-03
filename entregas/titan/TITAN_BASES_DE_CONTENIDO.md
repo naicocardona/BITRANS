@@ -26,7 +26,7 @@ Guardado el 19 oct 2026. Las instrucciones más recientes de quien dirige el pro
 - La duración se sostiene con contenido útil: sin frases repetidas, sin animaciones estiradas y sin pantallas vacías.
 
 ## Producción y voz (videos de gráficos)
-- **Personajes ilustrados genéricos permitidos y recomendados** (desde el 3 nov 2026). El avatar humano de TITÁN solo se usa cuando se pida. El avatar humano de TITÁN está en `avatar_titan/` y solo se usa cuando se solicite.
+- **Personajes ilustrados genéricos permitidos y recomendados** (desde el 3 nov 2026). El avatar humano de TITÁN (`avatar_titan/`) solo se usa cuando se pida.
 - **Voz oficial desde el 2 nov 2026:** ElevenLabs, voz «Juan - Clear & Expressive» (`FA1FBP9TKxnBiw45fHmS`), autorizada por Lady. Una sola toma por guion. Antes de generar, se estima el costo en créditos y se cierran los guiones. Después se verifica cada narración con transcripción local y se regenera solo la frase que falle.
 - La voz no se copia ni se clona fuera de ElevenLabs. Si no hay créditos o acceso, se exporta **sin audio** y se entrega el guion para grabarlo.
 - Si el equipo de TITÁN sube una grabación propia, esa manda sobre la voz sintética.

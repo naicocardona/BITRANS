@@ -94,6 +94,7 @@ Se usa el identificador que corresponda al contenido. Una pieza general sobre in
   - Retención antes que duración: cada sección debe aportar algo nuevo.
   - Presupuesto: unos 9.000–10.500 créditos de ElevenLabs por paquete completo, con 121.000 al mes en el plan Creator. Render 3D de unas 3–4 h por video largo.
   - Las piezas anteriores («¿Quién manda?», 5:45; «NU cayó», 5:25) se quedan como están.
+  - Peso del archivo: el video largo de YouTube se exporta en buena calidad aunque pase de 30 MB. El límite de 30 MB aplica solo a TikTok y Shorts.
 - **Video largo de YouTube, siempre:** entregar la descripción lista para pegar, breve y con las dos primeras líneas como gancho, con:
   - título;
   - un gancho en las dos primeras líneas;

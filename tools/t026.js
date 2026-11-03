@@ -81,7 +81,7 @@ pop("#cvB .lbE", D0 + 0.3); draw("#cvB .hiD", D0 + 0.6, 1.2);
 tl.fromTo("#cvB .hiT", { opacity: 0 }, { opacity: 1, duration: 0.2, yoyo: true, repeat: 3, immediateRender: false }, D0 + 1.6); tl.set("#cvB .hiT", { opacity: 1 }, D0 + 2.4); pop("#cvB .lbT", D0 + 1.7);
 // 4 · resultado: comprobante real
 const R0 = S(K.R), R3 = S(K.R3); chapter(3, R0 - 0.2); swap("#sR", R0, "flip"); pose("senala", R0 + 0.2);
-pop("#rcd .cvM", R0 + 0.5, 0.6); pop("#rcd .cvL", R0 + 0.7, 0.6);
+tl.fromTo(["#rcd .cvM", "#rcd .cvL"], { scale: 1 }, { scale: 1.08, transformOrigin: "50% 50%", duration: 0.2, yoyo: true, repeat: 1, immediateRender: false }, R0 + 0.5);
 tl.fromTo("#rcd .rhE", { opacity: 0 }, { opacity: 1, duration: 0.3, immediateRender: false }, R0 + 0.9);
 inn("#r_e", R0 + 1.0, { x: -40, y: 0 }); inn("#r_s", R0 + (F(K.R) - R0) * 0.55, { x: -40, y: 0 });
 out(["#r_e", "#r_s"], R3 - 0.2);

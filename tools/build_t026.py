@@ -66,10 +66,10 @@ def receipt_overlay():   # comprobante 828×398 mostrado a 900×433 (×1.087)
             f'<rect class="rhE" {R(24, 112, 352, 56)} rx="10" fill="none" stroke="#A779F2" stroke-width="5" opacity="0"/>'
             f'<rect class="rhD" {R(24, 226, 592, 46)} rx="10" fill="none" stroke="#3FD0C9" stroke-width="5" opacity="0"/>'
             f'<rect class="rhT" {R(220, 336, 116, 46)} rx="10" fill="none" stroke="#64E087" stroke-width="5" opacity="0"/>'
-            f'<g class="cvM" opacity="0"><rect {R(560, 104, 256, 70)} rx="12" fill="#13161F" stroke="#64E087" stroke-width="3"/>'
+            f'<g class="cvM"><rect {R(560, 104, 256, 70)} rx="12" fill="#13161F" stroke="#64E087" stroke-width="3"/>'
             f'<text x="{688*k:.0f}" y="{128*k:.0f}" font-family="Inter" font-weight="900" font-size="15" text-anchor="middle" fill="#F4F5F9" letter-spacing="1.5">RESULTADO EN PUNTOS</text>'
             f'<text x="{688*k:.0f}" y="{160*k:.0f}" font-family="Inter" font-weight="900" font-size="30" text-anchor="middle" fill="#64E087">+100,70 pts</text></g>'
-            f'<g class="cvL" opacity="0"><rect {R(188, 16, 250, 52)} rx="12" fill="#13161F" stroke="#A779F2" stroke-width="3"/>'
+            f'<g class="cvL"><rect {R(188, 16, 250, 52)} rx="12" fill="#13161F" stroke="#A779F2" stroke-width="3"/>'
             f'<text x="{313*k:.0f}" y="{50*k:.0f}" font-family="Inter" font-weight="900" font-size="22" text-anchor="middle" fill="#F4F5F9">TAKE PROFIT · 100 pts</text></g>'
             '</svg>')
 
@@ -119,7 +119,7 @@ def body(V, DUR, caps):
 <div class="note fx" id="c2c" style="left:0;top:640px;font-size:26px;color:var(--tx);font-weight:800">Información para investigar, no beneficio capturado.</div>""")}
 {C("sC3", f"""<div class="ttl"><div class="n">CONCLUSIÓN 3</div><div class="h">Verificar la ejecución</div></div>
 <div class="thumb fx" id="c3g" style="left:0;border-color:var(--v)"><img src="assets/img/chart.jpg" alt="" style="left:-40px;top:-470px;width:560px;height:949px;transform:scale(.95);transform-origin:0 0" /><div class="tag2 v">CONTEXTO · TradingView</div></div>
-<div class="thumb fx" id="c3r" style="left:470px;border-color:var(--g);background:#1c1c1e"><img src="assets/img/receipt.jpg" alt="" style="left:-6px;top:60px;width:440px;height:212px" /><div class="tag2 g">EJECUCIÓN · bróker</div></div>
+<div class="thumb fx" id="c3r" style="left:470px;border-color:var(--g);background:#1c1c1e"><img src="assets/img/receipt.jpg" alt="" style="left:-6px;top:60px;width:440px;height:212px" /><div style="position:absolute;left:290px;top:113px;width:138px;height:40px;border-radius:8px;background:#13161F;border:2px solid #64E087;color:#64E087;font-size:19px;font-weight:900;display:flex;align-items:center;justify-content:center">+100,70 pts</div><div style="position:absolute;left:96px;top:66px;width:160px;height:30px;border-radius:7px;background:#13161F;border:2px solid #A779F2;color:#F4F5F9;font-size:12px;white-space:nowrap;font-weight:900;display:flex;align-items:center;justify-content:center">TAKE PROFIT · 100 pts</div><div class="tag2 g">EJECUCIÓN · bróker</div></div>
 <div class="note fx" id="c3t" style="left:0;top:510px;width:900px;font-size:34px;color:var(--tx);font-weight:850;line-height:1.25">Un TP documenta este trade.<br/><span class="v">No demuestra, por sí solo, ventaja estadística.</span></div>""")}
 <div id="sEnd" class="clip fx" data-start="0" data-duration="{DUR}" data-track-index="{TI()}" style="position:absolute;left:90px;top:300px;width:900px;height:690px">
   <div class="endpill fx" id="eP">TRADE #026 · TP</div>

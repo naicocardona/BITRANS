@@ -78,6 +78,15 @@ Se usa el identificador que corresponda al contenido. Una pieza general sobre in
     - una hoja de muestras de todo el video;
     - nada vacío, cortado ni tapando los subtítulos.
   - **Mejora continua:** cada video nuevo debe superar al anterior en ritmo, transiciones o claridad. Se toman como referencia de ritmo los videos que comparta Lady, sin copiar personajes, marcas ni diseños de otros.
+- **Biblioteca de transiciones y recursos (3 nov 2026, tomados de las referencias de Pinterest que compartió Lady).** Se adaptan a la paleta y al 3D de TITÁN. Solo se toma la técnica de movimiento, nunca el diseño, los personajes ni las marcas.
+  1. **Transformación de forma.** El objeto se encoge hasta volverse un círculo dorado; el círculo late, se divide en dos y cada mitad se convierte en el objeto de la escena siguiente. Ejemplos: la moneda se vuelve un punto y luego dos monedas (R$ y US$); un check se vuelve un círculo que da paso a la siguiente idea.
+  2. **Zoom dentro de una pantalla.** La cámara entra en un celular o un monitor 3D y lo que se ve en la pantalla pasa a ser la escena nueva. Sirve para «la noticia», «la app del banco» o «el reporte de resultados».
+  3. **Íconos que orbitan un objeto central.** Burbujas con íconos (país, moneda, clientes, préstamos) giran alrededor del objeto y se conectan con líneas que se dibujan solas.
+  4. **Ilustración que se construye por partes.** Los edificios crecen desde el piso, el mapa se despliega con pines que caen, la línea de una gráfica se dibuja con su flecha y la lupa recorre un documento mientras se van marcando los checks.
+  5. **Líneas de conexión animadas.** Trazos que viajan entre dos objetos para mostrar una relación, por ejemplo de banco a clientes o de país a empresa.
+  6. **Celebración del check.** El check aparece con un pequeño estallido de partículas y un rebote.
+  - Sin manos ni personajes, salvo que se pida: se usan objetos 3D, como un celular flotante o un documento.
+  - Las gráficas usan datos reales con fuente o se marcan como «ilustrativo».
 - Contar historias con objetos, recorridos, comparaciones y cambios de escala. Evitar que todos los videos sean presentaciones de tarjetas iguales.
 - Una idea dominante por momento. Movimiento para explicar; texto estable para leer.
 - Ilustraciones amplias, textos cortos y buen contraste.

@@ -31,12 +31,25 @@ def build(V):
         SH = [dict(t0=0, set="hook", r0=10.5, r1=9.5, az0=-0.3, az1=0.2, el=0.12, ty=0.2), dict(t0=T["tkIn"] - 0.2, set="ticket", r0=9.6, r1=9.0, az0=0.3, az1=-0.2, el=0.08, ty=0.35),
               dict(t0=T["brIn"] - 0.2, set="brasil", r0=14.0, r1=12.5, az0=-0.4, az1=0.3, el=0.42, ty=-0.6), dict(t0=T["qIn"] - 0.2, set="cards", r0=7.6, r1=7.6, az0=0, az1=0, el=0.06),
               dict(t0=T["cta"] - 0.4, set="titan", r0=9.5, r1=8.8, az0=-0.2, az1=0.2, el=0.08, ty=1.5)]
-        O += [("drop", drop_html(170), TOP, T["drop"] + 0.3, T["brIn"] - 0.3, "pop"),
-              ("br1", pill("Reacción del mercado a las elecciones de Brasil", 38), TOP, T["brIn"] + 0.6, T["brBank"] - 0.2, "inn"),
-              ("br2", pill("El país donde opera también cuenta", 40, "var(--gold)"), TOP, T["brBank"] + 0.4, T["qIn"] - 0.3, "pop"),
-              ("qh", '<div class="B" style="font-size:72px">Para entender una caída</div>', TOP, T["qIn"], T["qAll"] - 0.3, "inn"),
-              ("stamp", '<div class="B" style="display:inline-block;font-size:96px;padding:10px 34px 18px;border:7px solid #FF8A80;color:#FF8A80;border-radius:20px;transform:rotate(-5deg);background:rgba(11,27,51,.85)">Caída ≠ barata</div>', "left:150px;top:620px;width:900px", T["qAll"] + 0.4, T["cta"] - 0.3, "pop"),
+        B = lambda txt, fs=58, c="": f'<div class="B {c}" style="font-size:{fs}px;line-height:1.08">{txt}</div>'
+        GP = lambda txt, fs=38: pill(txt, fs, "var(--gold)")
+        IP = lambda txt, fs=38: pill(txt, fs)
+        cx = A("La conexión importa:", False)
+        O += [("dt", pill("26 OCT 2026", 44, "var(--navy)", "var(--gold)", "border:3px solid var(--gold)"), TOP, A("El 26 de", False) + 0.1, T["drop"] - 0.05, "pop"),
+              ("drop", drop_html(170), TOP, T["drop"] + 0.3, T["brIn"] - 0.3, "pop"),
+              ("br1", pill("Reacción del mercado a las elecciones de Brasil", 38), TOP, T["brIn"] + 0.6, cx - 0.35, "inn"),
+              ("br2", GP("Elecciones de Brasil", 40), "left:70px;top:390px;width:940px", A("a las elecciones", False) + 0.1, cx - 0.35, "pop"),
+              ("cx0", B("La conexión importa", 66), TOP, cx + 0.05, T["qIn"] - 0.3, "inn"),
+              ("cx1", IP("✓ Lo que ocurre en el país", 38), "left:70px;top:400px;width:940px", A("lo que ocurre", False) + 0.05, T["qIn"] - 0.3, "pop"),
+              ("cx2", GP("✓ Donde hace negocios", 38), "left:70px;top:480px;width:940px", A("donde hace negocios.", False) + 0.05, T["qIn"] - 0.3, "pop"),
+              ("qh", B("Para entender una caída", 66), TOP, T["qIn"], T["qAll"] - 0.3, "inn")]
+        for k in range(3):
+            O.append((f"qc{k}", pill(f"{k+1} DE 3", 32, "var(--navy)", "var(--gold)", "border:2px solid var(--gold)"), "left:70px;top:400px;width:940px", T["qT"][k], (T["qT"][k + 1] - 0.32 if k < 2 else T["qAll"] - 0.3), "pop"))
+        O += [("rc", B("Y recuerda…", 66), TOP, T["qAll"] + 0.05, T["cta"] - 0.3, "inn"),
+              ("stamp", '<div class="B" style="display:inline-block;font-size:84px;padding:10px 34px 18px;border:7px solid #FF8A80;color:#FF8A80;border-radius:20px;transform:rotate(-5deg);background:rgba(11,27,51,.88)">Caída ≠ barata</div>', "left:110px;top:420px;width:900px", A("caiga no demuestra", False) + 0.2, T["cta"] - 0.3, "pop"),
+              ("dock", pill("NU&nbsp;&nbsp;≈ −17 %&nbsp;&nbsp;·&nbsp;&nbsp;26 OCT 2026", 30, "rgba(11,27,51,.88)", "#FF8A80", "border:2px solid rgba(255,138,128,.7)"), "left:70px;top:1272px;width:940px", T["brIn"] - 0.25, T["cta"] - 0.3, "pop"),
               ("cta", cta_html("¿Conocías este riesgo al invertir?", 84, 940), "left:70px;top:300px;width:940px", T["cta"] + 0.2, None, "inn")]
+        HUD = ["Caída", "Brasil", "Conexión", "3 cosas"]; HUDT = [SH[1]["t0"], SH[2]["t0"], cx, SH[3]["t0"], SH[4]["t0"]]
     if V == "tiktok":
         T.update(hkUrna=A("unas elecciones"), hkShake=A("pueden sacudir"), tkIn=A("Eso ayuda"), drop=A("cayó cerca"), brIn=A("La cobertura financiera"), brPin=A("elecciones de Brasil."),
                  bkIn=A("¿Por qué importa"), loan=A("Piensa en un banco"), pay=A("y puedan pagar."), curIn=A("También le afectan"), curDrop=A("y la moneda."),
@@ -71,7 +84,7 @@ def build(V):
               ("ln4", '<div class="tag" style="position:relative;display:inline-block;font-size:30px;background:var(--ivory);color:var(--navy)">RESULTADOS · próximos trimestres</div>', "left:70px;top:1180px;width:940px", T["res"] + 0.3, T["qIn"] - 0.3, "inn"),
               ("qh", B("Tres preguntas", 72), TOP, T["qIn"], T["qAll"] - 0.3, "inn")]
         for k in range(3):
-            O.append((f"qc{k}", pill(f"PREGUNTA {k+1} DE 3", 32, "var(--navy)", "var(--gold)", "border:2px solid var(--gold)"), "left:70px;top:400px;width:940px", T["qT"][k], (T["qT"][k + 1] if k < 2 else T["qAll"] - 0.3), "pop"))
+            O.append((f"qc{k}", pill(f"PREGUNTA {k+1} DE 3", 32, "var(--navy)", "var(--gold)", "border:2px solid var(--gold)"), "left:70px;top:400px;width:940px", T["qT"][k], (T["qT"][k + 1] - 0.32 if k < 2 else T["qAll"] - 0.3), "pop"))
         O += [("nc0", B("No podemos concluir…", 62), TOP, T["qAll"] + 0.1, T["ttIn"] - 0.3, "inn"),
               ("nc1", RP("✕ Una sola causa", 40), "left:70px;top:400px;width:940px", A("sola causa.", False) - 0.3, T["ttIn"] - 0.3, "pop"),
               ("nc2", RP("✕ Recuperación asegurada", 40), "left:70px;top:480px;width:940px", A("a recuperarse.", False) - 0.1, T["ttIn"] - 0.3, "pop"),
@@ -127,7 +140,7 @@ def build(V):
               ("ls2", pill("Te ayuda a entender lo que tienes", 36, "var(--ivory)"), "left:100px;top:740px;width:900px", T["qAll"] + 0.3, X["z"] - 0.4, "pop"),
               ("tt", '<div style="display:inline-block;padding:12px 28px;border-radius:999px;background:#7C3AED;color:#fff;font-weight:800;font-size:30px;letter-spacing:.12em">TITÁN 3.0</div><div class="B" style="font-size:58px;line-height:1.1;margin-top:20px">Invertir en una empresa es también invertir en su entorno</div>', L, T["ttIn"] + 0.3, T["cta"] - 0.3, "inn"),
               ("cta", cta_html("¿Qué empresa conoces por su producto y te gustaría entender como inversión?", 62, 900), "left:100px;top:220px;width:900px", T["cta"] + 0.2, None, "inn")]
-    if V == "shorts":  # rótulo de avance «// 03 · la conexión», cambia en cada toma
+    if False:  # rótulo de avance (reemplazado por la franja de pasos) «// 03 · la conexión», cambia en cada toma
         KL = {"shorts": ["el gancho", "el dato", "el contexto", "para entender", "cierre"],
               "tiktok": ["el gancho", "el dato", "el contexto", "la conexión", "la moneda", "expectativas vs. resultados", "tres preguntas", "cierre"]}[V]
         for k, s in enumerate(SH):
@@ -152,14 +165,15 @@ def build(V):
     if "brasil" in SETS: body.append(C("lbBR", "BRASIL", "left:0;top:0;width:220px;text-align:center;font-family:Bricolage;font-weight:800;font-size:40px;color:var(--ivory);text-shadow:0 2px 10px rgba(0,0,0,.6);transform:translate(-3000px,0)", "fx"))
     if "nuvs" in SETS:
         for k, nm in enumerate(["BRASIL", "MÉXICO", "COLOMBIA"]): body.append(C(f"lbP{k}", nm, "left:0;top:0;width:220px;text-align:center;font-family:Bricolage;font-weight:800;font-size:34px;color:var(--ivory);text-shadow:0 2px 10px rgba(0,0,0,.6);transform:translate(-3000px,0)", "fx"))
-    if V == "tiktok":
+    if not Hz:
         body.append(C("hud", "".join(f'<span id="hs{k}" class="hs">{h}</span>' for k, h in enumerate(HUD)), "left:70px;top:244px;width:960px;white-space:nowrap"))
     body.append(C("flash", "", f"left:0;top:0;width:{W_}px;height:{H_}px;background:radial-gradient(circle at 50% 50%, rgba(124,58,237,.30), #0B1B33 72%);opacity:0"))
     body.append(C("caps", ta.caps_html(G, 54 if Hz else 66), "left:160px;top:910px;width:1600px;height:140px" if Hz else "left:70px;top:1360px;width:940px;height:220px"))
     OV = [[i, tin, tout, kind] for (i, h, s, tin, tout, kind) in O]
     if "brasil" in SETS: OV.append(["lbBR", T["brPin"] + 0.4, next(s["t0"] for s in SH if SH.index(s) > [x["set"] for x in SH].index("brasil")) - 0.3, "fade"])
     if "nuvs" in SETS: OV += [[f"lbP{k}", T["pins"] + 1.0 + k * 0.35, X["h"] - 0.4, "fade"] for k in range(3)]
-    HS = [[SH[k + 1]["t0"], SH[k + 2]["t0"] if k + 2 < len(SH) else DUR] for k in range(len(HUD))] if V == "tiktok" else []
+    if V == "tiktok": HUDT = [s["t0"] for s in SH[1:]] + [DUR]
+    HS = [[HUDT[k], HUDT[k + 1]] for k in range(len(HUD))] if not Hz else []
     cuts = []  # sin destello: la cámara viaja en profundidad y el siguiente set ya está a la vista
     EK = {"ticket": "tkIn", "brasil": "brIn", "bankc": "bkIn", "cur": "curIn", "lanes": "exp", "cards": "qIn", "split": "spIn", "nuvs": "nvIn", "titan": "ttIn"}
     OVER = r'''window.OVERLAYS = function (tl) {

@@ -124,10 +124,17 @@ async function build() {
         trail.forEach((m, i) => { const q = P - (i + 1) * 0.035; m.visible = t > TT("exp") && (q % 1 + 1) % 1 < ((P % 1) + 1) % 1; m.position.set(ox(q), 1.2, 0); });
         const bp = span(t, TT("exp"), Math.max(2, TT("res") - TT("exp") + 3.6)); bar.scale.set(Math.max(0.001, LW * bp), 1, 1); bar.position.set(LX + LW * bp / 2, -0.88, 0.25); bar.visible = bp > 0;
         blocks.forEach((b, i) => { b.scale.setScalar(Math.max(0.001, back(span(t, TT("res") + i * 0.9, 0.6))) * (H > W ? 0.8 : 1)); b.position.y = -0.4 + 0.06 * Math.sin(t * 1.5 + i); b.rotation.y = 0.25 * Math.sin(t * 0.8 + i); }); }); }
-    if (n === "cards") { const L = QLIST; const cs = L.map((q, k) => { const c = card(3.4, 2.0, qTex(k + 1, q, QLAB)); c.position.set((k % 2 ? 1 : -1) * (H > W ? 0.3 : 1.0), 0.3, -k * QSP); if (H > W) c.scale.setScalar(0.82); g.add(c); return c; });
-      anim.push(t => cs.forEach((c, k) => { const a = back(span(t, (k ? T.qT[k] - 0.9 : TT("qIn") + 0.2), 0.8)); c.rotation.set(0.04 * Math.sin(t * 0.9 + k), (k % 2 ? -0.22 : 0.22) + (1 - a) * 1.6 + 0.07 * Math.sin(t * 0.6 + k), 0); const fn = H > W ? easeIO(span(t, TT("qAll") + 0.7 + k * 0.12, 1.0)) : 0; const n0 = L.length, ox = (k % 2 ? 1 : -1) * 0.3;
-        c.scale.setScalar(Math.max(0.001, a) * (H > W ? 0.82 : 1) * (1 - 0.48 * fn)); c.position.set(ox * (1 - fn), 0.3 + 0.05 * Math.sin(t * 0.7 + k) + fn * (1.02 * ((n0 - 1) / 2 - k)), -k * QSP + fn * (k * QSP - (n0 - 1) * QSP / 2));
-        if (fn > 0) c.rotation.y *= (1 - fn); })); }
+    if (n === "cards") { const L = QLIST, n0 = L.length, VS = H > W ? 0.82 : 1, OFX = H > W ? 4.4 : 7.5; const cs = L.map((q, k) => { const c = card(3.4, 2.0, qTex(k + 1, q, QLAB)); c.scale.setScalar(VS); g.add(c); return c; });
+      const E = L.map((_, k) => k ? T.qT[k] - 0.5 : TT("qIn") + 0.2);
+      // cambio tipo baraja: la tarjeta actual sale a la izquierda mientras la siguiente entra por la derecha (la cámara no atraviesa nada)
+      anim.push(t => cs.forEach((c, k) => { const pin = ease(span(t, E[k], 0.6)), pout = k < n0 - 1 ? easeIO(span(t, E[k + 1], 0.6)) : 0;
+        const fn = easeIO(span(t, TT("qAll") + 0.25 + k * 0.12, 0.9));
+        const sx = OFX * (1 - pin) - OFX * pout, sy = 0.3 + 0.05 * Math.sin(t * 0.7 + k), sz = -0.8 * (1 - pin) - 0.8 * pout;
+        const gx = H > W ? 0 : (k % 2 ? 1.95 : -1.95), gy = H > W ? 0.3 + 0.9 * ((n0 - 1) / 2 - k) : 0.3 + (k < 2 ? 1.15 : -1.15);
+        c.visible = pin > 0 || fn > 0; c.position.set(sx + (gx - sx) * fn, sy + (gy - sy) * fn, sz * (1 - fn));
+        const ry = -1.1 * (1 - pin) + 1.0 * pout + 0.07 * Math.sin(t * 0.6 + k);
+        c.rotation.set(0.04 * Math.sin(t * 0.9 + k), ry * (1 - fn), -0.06 * (1 - pin) + 0.06 * pout);
+        c.scale.setScalar(Math.max(0.001, VS * (1 - 0.56 * fn) * (k === 0 ? Math.max(0.001, back(span(t, E[0], 0.8))) : 1) )); })); }
     if (n === "split") { const a = ticket("A", "Empresa hipotética", "EJEMPLO"), b = ticket("B", "Empresa hipotética", "EJEMPLO"); g.add(a); g.add(b);
       const ok = new THREE.Mesh(new RoundedBoxGeometry(1.6, 0.24, 1.0, 3, 0.06), solid(GREEN, 0.2, 0.4)), bad = new THREE.Mesh(new RoundedBoxGeometry(1.6, 0.24, 1.0, 3, 0.06), solid(RED, 0.2, 0.4)); g.add(ok); g.add(bad);
       anim.push(t => { const d = easeIO(span(t, TT("spDrop"), 0.8)); [a, b].forEach((m, i) => { m.position.set(i ? 1.5 : -1.5, 0.5 - 0.9 * d, 0); m.rotation.set(0.2 * d, (i ? -0.25 : 0.25) + 0.15 * Math.sin(t * 0.7 + i * 2), 0.03 * Math.sin(t * 1.1 + i)); m.scale.setScalar(0.8 * Math.max(0.001, back(span(t, TT("spIn") + i * 0.2, 0.7)))); });
@@ -147,7 +154,8 @@ async function build() {
         ring.position.copy(coin.position); ring.rotation.set(1.2 + 0.1 * Math.sin(t * 0.5), 0.2 * t, 0); ring.scale.setScalar(Math.max(0.001, a) * cs2);
         minis.forEach((m, i) => { const an = t * 0.55 + i * Math.PI / 4, q = back(span(t, TT("ttIn") + 0.4 + i * 0.08, 0.6)); m.position.set(Math.cos(an) * 2.5 * cs2, coin.position.y + Math.sin(an) * 0.9 * cs2 + 0.1 * Math.sin(t * 2 + i), Math.sin(an) * 1.2 - 0.3); m.rotation.set(Math.PI / 2, 0, t * 2 + i); m.scale.setScalar(Math.max(0.001, q) * cs2); }); }); }
     { const S1 = SHOTS[si2 + 1], a0 = S0.t0 - TR - 0.9, a1 = S1 ? S1.t0 + TR + 0.4 : 1e9, sway = ["brasil", "bankc", "nuvs"].includes(n);
-      anim.splice(anim0, 0, t => { const vis = t >= a0 && t <= a1; g.visible = vis; if (!vis) return false; const xo = S1 ? span(t, S1.t0 - TR * 1.1, TR * 1.5) : 0; g.scale.setScalar(Math.max(0.001, ease(span(t, a0, 0.7)) * (1 - xo * xo))); if (sway) g.rotation.y = 0.22 * Math.sin(t * 0.35 + si2); return true; });
+      anim.splice(anim0, 0, t => { const vis = t >= a0 && t <= a1; g.visible = vis; if (!vis) return false; const xo = S1 ? span(t, S1.t0 - TR * 1.2, TR * 2.0) : 0, x2 = xo * xo, side = si2 % 2 ? 1 : -1; if (!g.userData.base) g.userData.base = g.position.clone();
+        g.visible = xo < 0.999; g.position.set(g.userData.base.x + side * 3.2 * x2, g.userData.base.y - 5.5 * x2, g.userData.base.z - 2 * x2); g.scale.setScalar(Math.max(0.001, ease(span(t, a0, 0.7)) * (1 - 0.55 * xo))); if (sway) g.rotation.y = 0.22 * Math.sin(t * 0.35 + si2); return true; });
       const fns = anim.splice(anim0); anim.push(t => { if (!fns[0](t)) return; for (let j = 1; j < fns.length; j++) fns[j](t); }); }
   }
   // ---- mundo: piso con retícula y objetos flotantes (paralaje) ----
@@ -161,11 +169,9 @@ async function build() {
   const shotCam = (s, t) => { const g = SETS[s.key], u = clamp((t - s.t0) / Math.max(1, s.t1 - s.t0)); let az = s.az0 + (s.az1 - s.az0) * u; const rad = s.r0 + (s.r1 - s.r0) * easeIO(u);
     const tx = g.position.x + (s.tx || 0), ty = s.ty || 0, tz = g.position.z;
     let target = new THREE.Vector3(tx, ty, tz);
-    if (s.set === "cards") { let k = 0; T.qT.forEach((q, i) => { if (i > 0 && t >= q - 0.6) k = i; }); const at = i => new THREE.Vector3(g.position.x + (i < 0 ? 0 : (i % 2 ? 1 : -1) * (H > W ? 0.3 : 1.0)), 0.3, g.position.z + (i < 0 ? -(QLIST.length - 1) * QSP / 2 : -i * QSP));
-      const pr = at(Math.max(0, k - 1)), nx = at(k), p = k > 0 ? easeIO(span(t, T.qT[k] - 0.6, 1.1)) : 1; target = pr.lerp(nx, p);
-      const r = k < 0 ? (H > W ? 21 : 22) : rad, a2 = k < 0 ? 0.6 : (k % 2 ? -0.18 : 0.18); const fin = easeIO(span(t, TT("qAll"), H > W ? 1.0 : 1.6)); const all = new THREE.Vector3(g.position.x, 0.3, g.position.z - (QLIST.length - 1) * QSP / 2);
-      target.lerp(all, fin); if (H > W) all.y = -0.26; const rr2 = r + (H > W ? 8 : 16) * fin - r * fin, aa = a2 + ((H > W ? 0.12 * Math.sin(t * 0.5) : 0.7) - a2) * fin;
-      return { p: new THREE.Vector3(target.x + rr2 * Math.sin(aa), target.y + rr2 * Math.sin(s.el), target.z + rr2 * Math.cos(aa)), t: target, off: s.off || 0 }; }
+    if (s.set === "cards") { const fin = easeIO(span(t, TT("qAll"), 1.0)); const target2 = new THREE.Vector3(g.position.x, 0.3 + (H > W ? 0.02 : 0) * fin, g.position.z);
+      const rr2 = rad + ((H > W ? 8 : 8.2) - rad) * fin, aa = 0.1 * Math.sin(t * 0.5);
+      return { p: new THREE.Vector3(target2.x + rr2 * Math.sin(aa), target2.y + rr2 * Math.sin(s.el), target2.z + rr2 * Math.cos(aa)), t: target2, off: s.off || 0 }; }
     az += 0.07 * Math.sin(t * 0.45);
     return { p: new THREE.Vector3(tx + rad * Math.sin(az) * Math.cos(s.el), ty + rad * Math.sin(s.el), tz + rad * Math.cos(az) * Math.cos(s.el)), t: target, off: s.off || 0 }; };
     function camAt(t) {

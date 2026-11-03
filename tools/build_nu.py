@@ -160,13 +160,16 @@ def build(V):
     logo = '<div class="lg" data-layout-allow-overflow><img src="assets/brand/logo.jpg" alt="TITÁN Holding" /></div>'
     body = ['<div id="dots"></div>', C("glw", f'<canvas id="gl" width="{W_}" height="{H_}"></canvas>', f"left:0;top:0;width:{W_}px;height:{H_}px"),
             C("brand", logo + "<span>TITÁN HOLDING</span>", "left:48px;top:40px" if Hz else "left:50px;top:180px")]
+    if not Hz:  # deja aire bajo el sello TITÁN HOLDING y la franja de pasos
+        import re as _re
+        O = [(i, h, _re.sub(r"top:(\d+)px", lambda m: f"top:{int(m.group(1)) + 46}px" if 290 <= int(m.group(1)) <= 700 else m.group(0), st), a_, b_, k) for (i, h, st, a_, b_, k) in O]
     for (i, html, st, tin, tout, kind) in O:
         body.append(C(i, html, st, "fx" if kind != "hook" else "hk"))
     if "brasil" in SETS: body.append(C("lbBR", "BRASIL", "left:0;top:0;width:220px;text-align:center;font-family:Bricolage;font-weight:800;font-size:40px;color:var(--ivory);text-shadow:0 2px 10px rgba(0,0,0,.6);transform:translate(-3000px,0)", "fx"))
     if "nuvs" in SETS:
         for k, nm in enumerate(["BRASIL", "MÉXICO", "COLOMBIA"]): body.append(C(f"lbP{k}", nm, "left:0;top:0;width:220px;text-align:center;font-family:Bricolage;font-weight:800;font-size:34px;color:var(--ivory);text-shadow:0 2px 10px rgba(0,0,0,.6);transform:translate(-3000px,0)", "fx"))
     if not Hz:
-        body.append(C("hud", "".join(f'<span id="hs{k}" class="hs">{h}</span>' for k, h in enumerate(HUD)), "left:70px;top:244px;width:960px;white-space:nowrap"))
+        body.append(C("hud", "".join(f'<span id="hs{k}" class="hs">{h}</span>' for k, h in enumerate(HUD)), "left:70px;top:290px;width:960px;white-space:nowrap"))
     body.append(C("flash", "", f"left:0;top:0;width:{W_}px;height:{H_}px;background:radial-gradient(circle at 50% 50%, rgba(124,58,237,.30), #0B1B33 72%);opacity:0"))
     body.append(C("caps", ta.caps_html(G, 54 if Hz else 66), "left:160px;top:910px;width:1600px;height:140px" if Hz else "left:70px;top:1360px;width:940px;height:220px"))
     OV = [[i, tin, tout, kind] for (i, h, s, tin, tout, kind) in O]

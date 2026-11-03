@@ -65,6 +65,19 @@ Se usa el identificador que corresponda al contenido. Una pieza general sobre in
   - partículas doradas suaves y textos HTML encima, sincronizados con la voz.
   - Se mantienen la paleta, la firma, los subtítulos palabra por palabra y el anillo dorado.
   - Las cifras aparecen exactas cuando la voz las dice, sin contadores con valores intermedios.
+- **Ritmo y movimiento (aprobado el 3 nov 2026 con el TikTok de «NU cayó» v2). Se aplica a todos los videos: TikTok, Shorts y YouTube largo.**
+  - **Cero cuadros vacíos.** Las escenas 3D van en fila hacia el fondo. La cámara viaja menos de 1 s entre una y otra, y la siguiente ya se ve llegar. Sin destellos ni fundidos a pantalla vacía.
+  - **Algo nuevo cada 1–2 s, amarrado a la frase que dice la voz:** un check, un sello, una ficha, una pregunta «1 de 3», una línea que se va armando. Nada de bloques de texto que aparecen completos de una vez.
+  - **Movimiento constante en cada set:** objetos con animación en ciclo (monedas que van y vuelven, órbitas, flechas que caen), cámara con balanceo suave, objetos flotantes de fondo y partículas. Nunca un objeto solo y quieto mientras habla la voz.
+  - **Estructura fija que da sensación de avance:**
+    - en verticales, una franja de pasos arriba: el paso actual en dorado y los anteriores con ✓;
+    - una ficha de dato acoplada que se queda en pantalla (por ejemplo, «NU ≈ −17 % · 26 OCT 2026»);
+    - en el largo, chips de sección.
+  - **Verificación cuadro por cuadro antes de entregar:**
+    - cuadros a 10 fps alrededor de cada transición;
+    - una hoja de muestras de todo el video;
+    - nada vacío, cortado ni tapando los subtítulos.
+  - **Mejora continua:** cada video nuevo debe superar al anterior en ritmo, transiciones o claridad. Se toman como referencia de ritmo los videos que comparta Lady, sin copiar personajes, marcas ni diseños de otros.
 - Contar historias con objetos, recorridos, comparaciones y cambios de escala. Evitar que todos los videos sean presentaciones de tarjetas iguales.
 - Una idea dominante por momento. Movimiento para explicar; texto estable para leer.
 - Ilustraciones amplias, textos cortos y buen contraste.

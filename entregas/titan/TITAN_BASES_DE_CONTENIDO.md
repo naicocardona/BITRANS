@@ -84,6 +84,18 @@ Se usa el identificador que corresponda al contenido. Una pieza general sobre in
 - Guion exacto de cada narración y subtítulos SRT cuando haya voz.
 - Tiempos orientativos de escenas.
 - Proyecto editable y recursos utilizados, cuando el entorno permita entregarlos.
+- **Video largo de YouTube, siempre:** entregar la descripción lista para pegar, con:
+  - título;
+  - un gancho en las dos primeras líneas;
+  - CTA (suscribirse, comentar con la pregunta del video y compartir);
+  - capítulos con tiempos reales;
+  - qué se aprende;
+  - fuentes con enlaces;
+  - disclaimer;
+  - tres hashtags;
+  - etiquetas con palabras clave;
+  - notas de subida (miniatura, SRT, pantalla final y lista de reproducción).
+  - Sin promesas de rentabilidad ni de viralidad.
 - Comprobar los archivos antes de entregar. Explicar cualquier limitación concreta y distinguir lo producido de lo pendiente.
 
 ## Archivos del proyecto

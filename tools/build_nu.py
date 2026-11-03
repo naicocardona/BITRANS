@@ -46,7 +46,7 @@ def build(V):
         for k in range(3):
             O.append((f"qc{k}", pill(f"{k+1} DE 3", 32, "var(--navy)", "var(--gold)", "border:2px solid var(--gold)"), "left:70px;top:400px;width:940px", T["qT"][k], (T["qT"][k + 1] - 0.32 if k < 2 else T["qAll"] - 0.3), "pop"))
         O += [("rc", B("Y recuerda…", 66), TOP, T["qAll"] + 0.05, T["cta"] - 0.3, "inn"),
-              ("stamp", '<div class="B" style="display:inline-block;font-size:84px;padding:10px 34px 18px;border:7px solid #FF8A80;color:#FF8A80;border-radius:20px;transform:rotate(-5deg);background:rgba(11,27,51,.88)">Caída ≠ barata</div>', "left:110px;top:420px;width:900px", A("caiga no demuestra", False) + 0.2, T["cta"] - 0.3, "pop"),
+              ("stamp", '<div class="B" style="display:inline-block;font-size:72px;padding:8px 30px 14px;border:6px solid #FF8A80;color:#FF8A80;border-radius:20px;transform:rotate(-5deg);background:rgba(11,27,51,.88)">Caída ≠ barata</div>', "left:110px;top:372px;width:900px", A("caiga no demuestra", False) + 0.2, T["cta"] - 0.3, "pop"),
               ("dock", pill("NU&nbsp;&nbsp;≈ −17 %&nbsp;&nbsp;·&nbsp;&nbsp;26 OCT 2026", 30, "rgba(11,27,51,.88)", "#FF8A80", "border:2px solid rgba(255,138,128,.7)"), "left:70px;top:1272px;width:940px", T["brIn"] - 0.25, T["cta"] - 0.3, "pop"),
               ("cta", cta_html("¿Conocías este riesgo al invertir?", 84, 940), "left:70px;top:300px;width:940px", T["cta"] + 0.2, None, "inn")]
         HUD = ["Caída", "Brasil", "Conexión", "3 cosas"]; HUDT = [SH[1]["t0"], SH[2]["t0"], cx, SH[3]["t0"], SH[4]["t0"]]

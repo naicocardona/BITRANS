@@ -92,7 +92,7 @@ async function build() {
         tiles.forEach((m, i) => { const o = TT("others") + i * 0.12, q = back(span(t, o, 0.6)), dd = easeIO(span(t, o + 0.4, 0.8)); const a = (i / 6) * Math.PI * 2;
           m.position.set(Math.cos(a) * 3.0, 0.4 + Math.sin(a) * 1.7 - 0.8 * dd, -1.2); m.rotation.set(0.3 * dd, 0, 0.2 * dd); m.scale.setScalar(Math.max(0.001, q)); }); }); }
     if (n === "brasil") { const pl = platform(2.6); pl.position.y = -1.6; g.add(pl); const p = pin(VIO, 1.3); p.position.set(0.6, -1.48, 0.3); g.add(p); g.userData.lab = p; const u = urna(); u.position.set(-1.0, -0.55, -0.4); u.scale.setScalar(0.75); g.add(u);
-      const b = bank(); b.position.set(0.9, -1.48, -0.6); b.scale.setScalar(0.8); g.add(b);
+      const b = bank(); b.position.set(-0.9, -1.48, -0.4); b.scale.setScalar(0.8); g.add(b);
       anim.push(t => { const a = back(span(t, TT("brIn"), 0.8)); pl.scale.setScalar(Math.max(0.001, a)); p.position.y = -1.48 + 2.5 * (1 - ease(span(t, TT("brPin"), 0.6))); p.scale.setScalar(Math.max(0.001, span(t, TT("brPin"), 0.2)));
         animUrna(u, t, TT("brIn")); u.visible = t < TT("brBank", 1e9) + 0.3; b.scale.setScalar(0.8 * Math.max(0.001, back(span(t, TT("brBank"), 0.8)))); }); }
     if (n === "bankc") { const pl = platform(2.8); pl.position.y = -1.5; g.add(pl); const b = bank(); b.position.y = -1.38; g.add(b);

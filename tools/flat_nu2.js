@@ -35,7 +35,7 @@
   camTo("#cam4", T.por - 0.05, 0.55, PIN[0], PIN[1] - 40, 5, "power3.in");
   tl.set("#lbBR", { opacity: 0 }, T.por);
   tl.set("#s5", { opacity: 1 }, T.por + 0.42); tl.set("#s4", { opacity: 0 }, T.por + 0.5);
-  camSet("#cam5", T.por + 0.42, 540, 880, 1.9); camTo("#cam5", T.por + 0.42, 0.7, 540, 880, 1.0, "power3.out");
+  camSet("#cam5", T.por + 0.42, 540, 900, 1.9); camTo("#cam5", T.por + 0.42, 0.7, 520, 930, 1.3, "power3.out");
   POS.fA = 0; POS.fB = 0; POS.fC = 0;
   walk("fC", T.por, 7.5, 1200, 0.3); walk("fB", T.por + 0.5, 5.5, -700, 0.3);
   tl.fromTo("#car2", { x: -200 }, { x: 2300, duration: 4.5, ease: "none", immediateRender: false }, T.por + 0.2);
@@ -43,25 +43,25 @@
   $$(".cl").forEach((c, i) => tl.fromTo(c, { x: 0 }, { x: 140 + i * 30, duration: 12, ease: "none", immediateRender: false }, T.por));
   // A camina al banco
   walk("fA", T.piensa + 0.05, 1.6, 340);
-  camTo("#cam5", T.piensa, 1.8, 520, 900, 1.12);
-  $$("[id^=lc]").forEach((c, i) => fly(c, T.dinero - 0.2 + i * 0.12, 0, 0, -80 - i * 6, 40, 0.55, 90));
+  camTo("#cam5", T.piensa, 1.8, 560, 930, 1.35);
+  $$("[id^=lc]").forEach((c, i) => fly(c, T.dinero - 0.2 + i * 0.12, 0, 0, -30 - i * 6, -100, 0.55, 90));
   jump("fA", T.dinero + 0.35); show("#lbl1", T.dinero - 0.1, T.interesa + 0.3);
   // A va a trabajar y cobra
-  walk("fA", T.interesa, 2.0, 960);
-  camTo("#cam5", T.interesa, 2.2, 1300, 900, 1.1);
-  $$("[id^=sc]").forEach((c, i) => fly(c, T.ingresos - 0.1 + i * 0.12, 0, 0, -40 - i * 8, 140, 0.55, 70));
+  walk("fA", T.interesa, 2.0, 850);
+  camTo("#cam5", T.interesa, 2.2, 1360, 930, 1.35);
+  $$("[id^=sc]").forEach((c, i) => fly(c, T.ingresos - 0.1 + i * 0.12, 0, 0, -10 - i * 6, -60, 0.55, 70));
   show("#lbl2", T.ingresos, T.pagar + 0.2); jump("fA", T.ingresos + 0.5);
   // vuelve y paga
   walk("fA", T.ingresos + 0.75, 1.3, -780);
-  camTo("#cam5", T.ingresos + 0.7, 1.4, 700, 900, 1.05);
-  $$("[id^=pc]").forEach((c, i) => fly(c, T.pagar - 0.05 + i * 0.1, -460, 30, -560, 20, 0.5, 80));
+  camTo("#cam5", T.ingresos + 0.7, 1.4, 680, 930, 1.35);
+  $$("[id^=pc]").forEach((c, i) => fly(c, T.pagar - 0.05 + i * 0.1, -509, -80, -560, 20, 0.5, 80));
   pop("#bchk", T.pagar + 0.35, 0.3); show("#lbl3", T.pagar + 0.3, T.tamb + 0.3);
   // ---------- 25.9 la economía se complica ----------
   tl.to("#storm", { opacity: 1, duration: 0.8 }, T.tamb); tl.to("#sun", { opacity: 0, duration: 0.5 }, T.tamb);
   tl.fromTo("#dclouds", { opacity: 0, x: 300 }, { opacity: 1, x: 0, duration: 1.0, ease: "power2.out", immediateRender: false }, T.tamb);
   tl.to("#rain", { opacity: 1, duration: 0.4 }, T.tamb + 0.5);
   tl.fromTo(".rd", { y: -60 }, { y: 60, duration: 0.35, ease: "none", repeat: 9, immediateRender: false }, T.tamb + 0.5);
-  camTo("#cam5", T.tamb, 1.2, 1000, 900, 1.0);
+  camTo("#cam5", T.tamb, 1.2, 1050, 930, 1.2);
   pop("#closed", T.condic + 0.1, 0.4); face("fA", T.condic, "fl");
   tl.to(["#fA-aL"], { rotation: 8, transformOrigin: "50% 4%", duration: 0.4 }, T.condic); tl.to(["#fA-aR"], { rotation: -8, transformOrigin: "50% 4%", duration: 0.4 }, T.condic);
   tl.to("#fA-h", { y: 10, duration: 0.4 }, T.condic);
@@ -92,10 +92,10 @@
   camTo("#cam7", zq, 0.5, 2100, 1000, 4.5, "power3.in");
   tl.set("#s8", { opacity: 1 }, zq + 0.42); tl.set("#s7", { opacity: 0 }, zq + 0.5);
   camSet("#cam8", zq + 0.42, 540, 880, 1.6); camTo("#cam8", zq + 0.42, 0.6, 540, 900, 1.0, "power3.out");
-  const qs = [[T.q1, "#q1i", 250, 760, "#qk0"], [T.q2, "#q2i", 540, 700, "#qk1"], [T.q3, "#q3i", 830, 760, "#qk2"]];
+  const qs = [[T.q1, "#q1i", 800, 560, "#qk0"], [T.q2, "#q2i", 800, 790, "#qk1"], [T.q3, "#q3i", 800, 960, "#qk2"]];
   qs.forEach(([t, s, x, y, k], i) => {
     pop(s, t - 0.15, 0.5); tl.set("#lupa", { opacity: 1 }, t - 0.1);
-    tl.to("#lupa", { attr: { transform: `translate(${x} ${y})` }, duration: 0.35, ease: "power2.inOut" }, t - 0.1);
+    tl.to("#lupa", { attr: { transform: `translate(${x} ${y}) scale(.75)` }, duration: 0.35, ease: "power2.inOut" }, t - 0.1);
     tl.to("#lupai", { x: 20, y: -10, duration: 0.25, yoyo: true, repeat: 2, ease: "sine.inOut" }, t + 0.25);
     pop(k, t + 0.6, 0.3);
     tl.to("#fD-aR", { rotation: -35, transformOrigin: "50% 4%", duration: 0.25, yoyo: true, repeat: 1 }, t + 0.1);

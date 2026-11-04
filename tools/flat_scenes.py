@@ -62,12 +62,12 @@ def scene_street():  # S5/S6 — calle con banco (ancho 2100)
 {''.join(f'<rect x="{k*160}" y="1226" width="90" height="12" rx="6" fill="{IVORY}" opacity=".7"/>' for k in range(14))}
 {''.join(f'<g transform="translate({x} 1080)"><rect x="-5" y="-170" width="10" height="170" fill="{INK}"/><circle cy="-176" r="16" fill="{GOLD}"/></g>' for x in [200, 860, 1240, 1780])}
 <g transform="translate(0 1210)"><g id="car2"><rect x="-70" y="-30" width="140" height="40" rx="14" fill="{VIO}"/><rect x="-44" y="-58" width="84" height="34" rx="12" fill="{VIO}"/><rect x="-34" y="-52" width="64" height="22" rx="7" fill="{LAV}"/><circle cx="-40" cy="12" r="14" fill="{INK}"/><circle cx="42" cy="12" r="14" fill="{INK}"/></g></g>'''
-    people = (place(fig("fA", SKINS[0], "#1E1A2E", GOLD, "#3B4F7A", 2), 120, 1120, 0.95)
-              + place(fig("fB", SKINS[1], "#2B1B12", "#FF8A80", "#0B1B33", 3), 1900, 1125, 0.75)
-              + place(fig("fC", SKINS[2], "#5A3A22", LAV, "#2A3F66", 0), -100, 1128, 0.7))
+    people = (place(fig("fA", SKINS[0], "#1E1A2E", GOLD, "#3B4F7A", 2), 120, 1120, 1.15)
+              + place(fig("fB", SKINS[1], "#2B1B12", "#FF8A80", "#0B1B33", 3), 1900, 1125, 0.85)
+              + place(fig("fC", SKINS[2], "#5A3A22", LAV, "#2A3F66", 0), -100, 1128, 0.8))
     flows = ''.join(coin(f"lc{k}", 540, 990, 22, "$") for k in range(4)) + ''.join(coin(f"sc{k}", 1490, 960, 22, "$") for k in range(4)) + ''.join(coin(f"pc{k}", 1100, 980, 22, "$") for k in range(4))
     lbl = lambda id, x, y, t, bg, fg: f'<g transform="translate({x} {y})"><g id="{id}" opacity="0"><rect x="-150" y="-40" width="300" height="80" rx="40" fill="{bg}"/><text y="14" font-family="Jakarta" font-weight="800" font-size="38" text-anchor="middle" fill="{fg}">{t}</text></g></g>'
-    labels = lbl("lbl1", 460, 760, "+ Préstamo", GOLD, INK) + lbl("lbl2", 1420, 690, "+ Sueldo", IVORY, INK) + lbl("lbl3", 760, 600, "✓ Pagó", "#2E7D4F", "#fff")
+    labels = lbl("lbl1", 760, 640, "+ Préstamo", GOLD, INK) + lbl("lbl2", 1180, 640, "+ Sueldo", IVORY, INK) + lbl("lbl3", 820, 560, "✓ Pagó", "#2E7D4F", "#fff")
     return f'<svg viewBox="0 0 2100 1920" width="2100" height="1920" xmlns="http://www.w3.org/2000/svg">{bg}{shop}{bank}{ground}{people}{flows}{labels}</svg>'
 
 def scene_fx():  # S6b — cambio de moneda (balanza)
@@ -108,28 +108,28 @@ def scene_desk():  # S8 — escritorio con lupa y 3 preguntas
     return f'''<svg viewBox="0 0 1080 1920" width="1080" height="1920" xmlns="http://www.w3.org/2000/svg"><rect width="1080" height="1920" fill="#18305A"/>
 {''.join(f'<circle cx="{40+(k%14)*78}" cy="{60+(k//14)*80}" r="3" fill="{IVORY}" opacity=".05"/>' for k in range(14*24))}
 <rect x="640" y="430" width="340" height="260" rx="10" fill="#24407A" stroke="{GOLD}" stroke-width="10"/>{windows(670, 460, 4, 3, 50, 50, 26, 28, GOLD, ".5")}
-<g id="dD">{place(fig("fD", SKINS[0], "#1E1A2E", GOLD, "#3B4F7A", 2), 360, 1290, 1.3)}</g>
+<g id="dD">{place(fig("fD", SKINS[0], "#1E1A2E", GOLD, "#3B4F7A", 2), 250, 1290, 1.3)}</g>
 <rect x="120" y="1020" width="840" height="40" rx="12" fill="#B88A2E"/><rect x="160" y="1060" width="24" height="230" fill="#8A6620"/><rect x="896" y="1060" width="24" height="230" fill="#8A6620"/>
-<g transform="translate(760 1020) scale(.8)"><rect x="-150" y="-150" width="300" height="150" rx="12" fill="{INK}"/><rect x="-136" y="-138" width="272" height="124" rx="6" fill="{LAV}"/><rect x="-190" y="-6" width="380" height="16" rx="8" fill="#3B4F7A"/>
+<g transform="translate(520 1020) scale(.8)"><rect x="-150" y="-150" width="300" height="150" rx="12" fill="{INK}"/><rect x="-136" y="-138" width="272" height="124" rx="6" fill="{LAV}"/><rect x="-190" y="-6" width="380" height="16" rx="8" fill="#3B4F7A"/>
 <text y="-68" font-family="Bricolage" font-weight="800" font-size="30" text-anchor="middle" fill="{INK}">INVESTIGAR</text></g>
-<g id="q1i" opacity="0" transform="translate(250 760)"><rect x="-110" y="-130" width="220" height="260" rx="10" fill="{IVORY}"/><rect x="-90" y="-104" width="180" height="22" rx="4" fill="{INK}"/>{''.join(f'<rect x="-90" y="{-66+k*24}" width="{180-(k%2)*50}" height="10" rx="4" fill="{INK}" opacity=".4"/>' for k in range(7))}</g>
-<g id="q2i" opacity="0" transform="translate(540 700)"><rect x="-90" y="-140" width="180" height="260" fill="{IVORY}"/><path d="M-110 -136 L0 -200 L110 -136Z" fill="{VIO}"/>{windows(-66, -110, 3, 4, 30, 34, 18, 22, GOLD, ".9")}<g id="gear" transform="translate(90 -170)"><circle r="40" fill="{GOLD}"/><circle r="16" fill="#18305A"/>{''.join(f'<rect x="-9" y="-56" width="18" height="22" rx="4" fill="{GOLD}" transform="rotate({k*45})"/>' for k in range(8))}</g></g>
-<g id="q3i" opacity="0" transform="translate(830 760)"><rect x="-110" y="-130" width="220" height="260" rx="10" fill="{IVORY}"/><text y="-84" font-family="Jakarta" font-weight="800" font-size="24" text-anchor="middle" fill="{INK}">RESULTADOS</text>
-{''.join(f'<rect x="{-80+k*42}" y="{60-h}" width="28" height="{h}" rx="4" fill="{VIO}"/>' for k, h in enumerate([50, 80, 60, 100]))}<text y="110" font-family="Jakarta" font-weight="700" font-size="18" text-anchor="middle" fill="#5A6680">ilustrativo</text></g>
-<g id="lupa" opacity="0" transform="translate(250 760)"><g id="lupai"><circle r="70" fill="#9FD3FF" fill-opacity=".25" stroke="{INK}" stroke-width="16"/><rect x="44" y="44" width="26" height="100" rx="12" fill="{INK}" transform="rotate(-45 57 57)"/></g></g>
-{''.join(f'<g id="qk{k}" opacity="0" transform="translate({x} 590)"><circle r="34" fill="#2E7D4F"/><path d="M-15 0 l10 10 l20 -22" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></g>' for k, x in enumerate([340, 630, 920]))}
+<g transform="translate(800 560) scale(.72)"><g id="q1i" opacity="0"><rect x="-110" y="-130" width="220" height="260" rx="10" fill="{IVORY}"/><rect x="-90" y="-104" width="180" height="22" rx="4" fill="{INK}"/>{''.join(f'<rect x="-90" y="{-66+k*24}" width="{180-(k%2)*50}" height="10" rx="4" fill="{INK}" opacity=".4"/>' for k in range(7))}</g></g>
+<g transform="translate(800 790) scale(.62)"><g id="q2i" opacity="0"><rect x="-90" y="-140" width="180" height="260" fill="{IVORY}"/><path d="M-110 -136 L0 -200 L110 -136Z" fill="{VIO}"/>{windows(-66, -110, 3, 4, 30, 34, 18, 22, GOLD, ".9")}<g id="gear" transform="translate(90 -170)"><circle r="40" fill="{GOLD}"/><circle r="16" fill="#18305A"/>{''.join(f'<rect x="-9" y="-56" width="18" height="22" rx="4" fill="{GOLD}" transform="rotate({k*45})"/>' for k in range(8))}</g></g></g>
+<g transform="translate(800 960) scale(.56)"><g id="q3i" opacity="0"><rect x="-110" y="-130" width="220" height="260" rx="10" fill="{IVORY}"/><text y="-84" font-family="Jakarta" font-weight="800" font-size="24" text-anchor="middle" fill="{INK}">RESULTADOS</text>
+{''.join(f'<rect x="{-80+k*42}" y="{60-h}" width="28" height="{h}" rx="4" fill="{VIO}"/>' for k, h in enumerate([50, 80, 60, 100]))}<text y="110" font-family="Jakarta" font-weight="700" font-size="18" text-anchor="middle" fill="#5A6680">ilustrativo</text></g></g>
+<g id="lupa" opacity="0" transform="translate(800 560) scale(.75)"><g id="lupai"><circle r="70" fill="#9FD3FF" fill-opacity=".25" stroke="{INK}" stroke-width="16"/><rect x="44" y="44" width="26" height="100" rx="12" fill="{INK}" transform="rotate(-45 57 57)"/></g></g>
+{''.join(f'<g id="qk{k}" opacity="0" transform="translate(660 {x})"><circle r="34" fill="#2E7D4F"/><path d="M-15 0 l10 10 l20 -22" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></g>' for k, x in enumerate([560, 790, 960]))}
 </svg>'''
 
 def scene_cross(t1="UNA SOLA CAUSA", t2="RECUPERACIÓN ASEGURADA"):  # S9 — encrucijada
-    sign = lambda id, y, txt, rot, dx: f'''<g transform="translate(540 {y}) rotate({rot})"><g id="{id}"><path d="M{-300+dx} -50 H{250+dx} L{310+dx} 0 L{250+dx} 50 H{-300+dx}Z" fill="{IVORY}" transform="scale({1 if dx >= 0 else -1} 1)"/>
+    sign = lambda id, y, txt, rot, dx: f'''<g transform="translate(640 {y}) rotate({rot})"><g id="{id}"><path d="M{-300+dx} -50 H{250+dx} L{310+dx} 0 L{250+dx} 50 H{-300+dx}Z" fill="{IVORY}" transform="scale({1 if dx >= 0 else -1} 1)"/>
 <text x="{0}" y="13" font-family="Bricolage" font-weight="800" font-size="{40 if len(txt) < 16 else 31}" text-anchor="middle" fill="{INK}">{txt}</text>
 <g class="xs" opacity="0"><path d="M-200 -40 L200 40 M-200 40 L200 -40" stroke="#D93A2F" stroke-width="18" stroke-linecap="round"/></g></g></g>'''
     return f'''<svg viewBox="0 0 1080 1920" width="1080" height="1920" xmlns="http://www.w3.org/2000/svg"><rect width="1080" height="1920" fill="#1B3566"/>
 <path d="M0 1200 Q540 1060 1080 1200 V1920 H0Z" fill="#2E7D4F" opacity=".55"/><path d="M380 1920 L500 1180 L580 1180 L700 1920Z" fill="#D8CFB8" opacity=".7"/>
-<rect x="528" y="560" width="24" height="640" fill="#8A6620"/>
+<rect x="628" y="560" width="24" height="640" fill="#8A6620"/>
 {sign("sg1", 640, t1, -4, 0)}{sign("sg2", 800, t2, 3, 0)}
-<g id="dQ">{place(fig("fQ", SKINS[0], "#1E1A2E", GOLD, "#3B4F7A", 2), 250, 1290, 1.2)}</g>
-{''.join(f'<text class="qm" x="{x}" y="{y}" font-family="Bricolage" font-weight="800" font-size="80" fill="{GOLD}" opacity="0">?</text>' for x, y in [(150, 780), (260, 740), (340, 790)])}
+<g id="dQ">{place(fig("fQ", SKINS[0], "#1E1A2E", GOLD, "#3B4F7A", 2), 170, 1290, 1.2)}</g>
+{''.join(f'<text class="qm" x="{x}" y="{y}" font-family="Bricolage" font-weight="800" font-size="80" fill="{GOLD}" opacity="0">?</text>' for x, y in [(90, 740), (200, 700), (290, 750)])}
 </svg>'''
 
 LINES3 = ''.join(f'<rect x="-34" y="{4+j*16}" width="68" height="8" rx="4" fill="{INK}" opacity=".3"/>' for j in range(3))
@@ -137,12 +137,12 @@ def scene_titan():  # S10 — carpeta TITÁN 3.0, lluvia de noticias y paraguas
     return f'''<svg viewBox="0 0 1080 1920" width="1080" height="1920" xmlns="http://www.w3.org/2000/svg"><rect width="1080" height="1920" fill="#13284A"/>
 {''.join(f'<circle cx="{40+(k%14)*78}" cy="{60+(k//14)*80}" r="3" fill="{IVORY}" opacity=".06"/>' for k in range(14*24))}
 <g id="glow"><circle cx="540" cy="760" r="300" fill="{GOLD}" opacity=".12"/></g>
-<g id="binder" transform="translate(540 820)"><rect x="-260" y="-200" width="520" height="380" rx="26" fill="#5B21B6"/><rect id="bfront" x="-260" y="-200" width="520" height="380" rx="26" fill="{VIO}"/>
+<g transform="translate(540 610) scale(.72)"><g id="binder"><rect x="-260" y="-200" width="520" height="380" rx="26" fill="#5B21B6"/><rect id="bfront" x="-260" y="-200" width="520" height="380" rx="26" fill="{VIO}"/>
 <text id="bt" y="-110" font-family="Jakarta" font-weight="800" font-size="56" text-anchor="middle" fill="#fff" letter-spacing="6">TITÁN 3.0</text>
-{''.join(f'<g class="pcard" transform="translate({-170+k*120} 20)"><rect x="-50" y="-70" width="100" height="140" rx="12" fill="{IVORY}"/><rect x="-34" y="-50" width="68" height="40" rx="8" fill="{c}"/><text y="-22" font-family="Bricolage" font-weight="800" font-size="24" text-anchor="middle" fill="#fff">{t}</text>{LINES3}</g>' for k, (t, c) in enumerate([("NU", VIO), ("", "#2A4A8C"), ("", GOLD), ("", "#2E7D4F")]))}</g>
-<g id="logo" transform="translate(540 560)" opacity="0"><circle r="96" fill="{GOLD}"/><clipPath id="lgc"><circle r="86"/></clipPath><image href="assets/brand/logo.jpg" x="-100" y="-100" width="200" height="200" clip-path="url(#lgc)"/></g>
-<g id="cloud2" opacity="0" transform="translate(540 640)"><ellipse rx="230" ry="70" fill="#3A4466"/><ellipse cx="-130" cy="20" rx="140" ry="56" fill="#444F74"/><ellipse cx="140" cy="20" rx="150" ry="60" fill="#3A4466"/></g>
-{''.join(f'<g class="npr" transform="translate({x} 690)" opacity="0"><rect x="-40" y="-30" width="80" height="60" rx="4" fill="{IVORY}"/><rect x="-30" y="-20" width="60" height="10" fill="{INK}"/><rect x="-30" y="0" width="44" height="6" fill="{INK}" opacity=".4"/></g>' for x in [340, 540, 740])}
+{''.join(f'<g class="pcard" transform="translate({-170+k*120} 20)"><rect x="-50" y="-70" width="100" height="140" rx="12" fill="{IVORY}"/><rect x="-34" y="-50" width="68" height="40" rx="8" fill="{c}"/><text y="-22" font-family="Bricolage" font-weight="800" font-size="24" text-anchor="middle" fill="#fff">{t}</text>{LINES3}</g>' for k, (t, c) in enumerate([("NU", VIO), ("", "#2A4A8C"), ("", GOLD), ("", "#2E7D4F")]))}</g></g>
+<g transform="translate(880 470) scale(.8)"><g id="logo" opacity="0"><circle r="96" fill="{GOLD}"/><clipPath id="lgc"><circle r="86"/></clipPath><image href="assets/brand/logo.jpg" x="-100" y="-100" width="200" height="200" clip-path="url(#lgc)"/></g></g>
+<g id="cloud2" opacity="0" transform="translate(540 470)"><ellipse rx="230" ry="70" fill="#3A4466"/><ellipse cx="-130" cy="20" rx="140" ry="56" fill="#444F74"/><ellipse cx="140" cy="20" rx="150" ry="60" fill="#3A4466"/></g>
+{''.join(f'<g class="npr" transform="translate({x} 520)" opacity="0"><rect x="-40" y="-30" width="80" height="60" rx="4" fill="{IVORY}"/><rect x="-30" y="-20" width="60" height="10" fill="{INK}"/><rect x="-30" y="0" width="44" height="6" fill="{INK}" opacity=".4"/></g>' for x in [340, 540, 740])}
 <g id="dT">{place(fig("fT", SKINS[0], "#1E1A2E", GOLD, "#3B4F7A", 2), 540, 1280, 1.15)}</g>
-<g id="umb" opacity="0" transform="translate(600 900)"><path d="M-170 0 Q0 -170 170 0 Q128 -26 85 0 Q42 -26 0 0 Q-42 -26 -85 0 Q-128 -26 -170 0Z" fill="{GOLD}"/><rect x="-5" y="0" width="10" height="200" fill="{INK}"/></g>
+<g id="umb" opacity="0" transform="translate(580 770) scale(.85)"><path d="M-170 0 Q0 -170 170 0 Q128 -26 85 0 Q42 -26 0 0 Q-42 -26 -85 0 Q-128 -26 -170 0Z" fill="{GOLD}"/><rect x="-5" y="0" width="10" height="200" fill="{INK}"/></g>
 </svg>'''

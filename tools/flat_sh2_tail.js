@@ -3,30 +3,30 @@
   camTo("#cam4", T.por - 0.05, 0.55, PIN[0], PIN[1] - 40, 5, "power3.in");
   tl.set("#lbBR", { opacity: 0 }, T.por);
   tl.set("#s5", { opacity: 1 }, T.por + 0.42); tl.set("#s4", { opacity: 0 }, T.por + 0.5);
-  camSet("#cam5", T.por + 0.42, 540, 880, 1.9); camTo("#cam5", T.por + 0.42, 0.7, 540, 880, 1.0, "power3.out");
+  camSet("#cam5", T.por + 0.42, 540, 900, 1.9); camTo("#cam5", T.por + 0.42, 0.7, 520, 930, 1.3, "power3.out");
   POS.fA = 0; POS.fB = 0; POS.fC = 0;
   walk("fC", T.por, 6.0, 1000, 0.3); walk("fB", T.por + 0.4, 4.5, -600, 0.3);
   tl.fromTo("#car2", { x: -200 }, { x: 2300, duration: 4.0, ease: "none", immediateRender: false }, T.por + 0.2);
   $$(".cl").forEach((c, i) => tl.fromTo(c, { x: 0 }, { x: 140 + i * 30, duration: 8, ease: "none", immediateRender: false }, T.por));
   walk("fA", T.por + 0.6, 1.5, 340);
-  camTo("#cam5", T.empresa - 0.2, 1.4, 760, 900, 1.0);
-  $$("[id^=lc]").forEach((c, i) => fly(c, T.empresa + i * 0.12, 0, 0, -80 - i * 6, 40, 0.55, 90));
+  camTo("#cam5", T.empresa - 0.2, 1.4, 600, 930, 1.35);
+  $$("[id^=lc]").forEach((c, i) => fly(c, T.empresa + i * 0.12, 0, 0, -30 - i * 6, -100, 0.55, 90));
   jump("fA", T.empresa + 0.5); show("#lbl1", T.empresa, T.ocurre + 0.2);
   // lo que ocurre en el país: se nubla y cierra la tienda
   tl.to("#storm", { opacity: 1, duration: 0.8 }, T.ocurre); tl.to("#sun", { opacity: 0, duration: 0.5 }, T.ocurre);
   tl.fromTo("#dclouds", { opacity: 0, x: 300 }, { opacity: 1, x: 0, duration: 1.0, ease: "power2.out", immediateRender: false }, T.ocurre);
   tl.to("#rain", { opacity: 1, duration: 0.4 }, T.ocurre + 0.4);
   tl.fromTo(".rd", { y: -60 }, { y: 60, duration: 0.35, ease: "none", repeat: 6, immediateRender: false }, T.ocurre + 0.4);
-  camTo("#cam5", T.ocurre, 1.2, 1000, 900, 1.0);
+  camTo("#cam5", T.ocurre, 1.2, 1050, 930, 1.2);
   pop("#closed", T.negocios - 0.2, 0.4); face("fA", T.ocurre + 0.3, "fl");
   tl.to("#fA-aL", { rotation: 8, transformOrigin: "50% 4%", duration: 0.4 }, T.ocurre + 0.3); tl.to("#fA-aR", { rotation: -8, transformOrigin: "50% 4%", duration: 0.4 }, T.ocurre + 0.3);
   // 21.3 · tres cosas: círculo dorado → escritorio
   wipe(T.entender - 0.35, 540, 900, 540, 900, "#s5", "#s8");
   camSet("#cam8", T.entender, 540, 900, 1.15); camTo("#cam8", T.entender, 1.2, 540, 900, 1.0, "power2.out");
-  const qs = [[T.q1, "#q1i", 250, 760, "#qk0"], [T.q2, "#q2i", 540, 700, "#qk1"], [T.q3, "#q3i", 830, 760, "#qk2"]];
+  const qs = [[T.q1, "#q1i", 800, 560, "#qk0"], [T.q2, "#q2i", 800, 790, "#qk1"], [T.q3, "#q3i", 800, 960, "#qk2"]];
   qs.forEach(([t, s, x, y, k], i) => {
     pop(s, t - 0.15, 0.5); tl.set("#lupa", { opacity: 1 }, t - 0.1);
-    tl.to("#lupa", { attr: { transform: `translate(${x} ${y})` }, duration: 0.35, ease: "power2.inOut" }, t - 0.1);
+    tl.to("#lupa", { attr: { transform: `translate(${x} ${y}) scale(.75)` }, duration: 0.35, ease: "power2.inOut" }, t - 0.1);
     tl.to("#lupai", { x: 20, y: -10, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, t + 0.25);
     pop(k, t + 0.5, 0.3);
     tl.to("#fD-h", { rotation: [-8, 0, 8][i], transformOrigin: "50% 90%", duration: 0.3 }, t - 0.1);

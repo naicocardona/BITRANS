@@ -141,7 +141,7 @@ room = f'''<svg viewBox="0 0 1080 1920" width="1080" height="1920" xmlns="http:/
 <rect x="210" y="1270" width="18" height="50" rx="6" fill="{INK}"/><rect x="812" y="1270" width="18" height="50" rx="6" fill="{INK}"/>
 <rect x="640" y="1080" width="120" height="96" rx="26" fill="#E2B755" transform="rotate(-8 700 1128)"/></g>
 {char()}
-<g id="papers">{paper(0, 230, 640, -10, "Estadão")}{paper(1, 540, 610, 4, "The Motley Fool")}{paper(2, 850, 660, 12, "Zacks")}</g>
+<g id="papers">{paper(0, 220, 520, -10, "Estadão")}{paper(1, 540, 470, 4, "The Motley Fool")}{paper(2, 860, 530, 12, "Zacks")}</g>
 </svg>'''
 
 phoneui = f'''<svg viewBox="0 0 1080 1920" width="1080" height="1920" xmlns="http://www.w3.org/2000/svg">

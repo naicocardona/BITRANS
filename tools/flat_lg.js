@@ -154,7 +154,8 @@
   tl.fromTo("#rcoin", { scale: 0.62 }, { scale: 1, duration: 0.3, immediateRender: false }, T.gana100 + 1.0); tl.to("#beam2", { rotation: 0, duration: 0.3 }, T.gana100 + 1.0);
   tl.to("#rcoin", { scale: 0.62, duration: 0.6, ease: "back.in(2)" }, T.gana100 + 5.0); tl.to("#beam2", { rotation: 9, duration: 0.5, ease: "back.out(2)" }, T.gana100 + 5.3);
   go("#sV", T.vias, "whip"); camSet("#cam_sV", 0, 530, 540, 1);
-  ["#via0", "#via1", "#via2"].forEach((s, i) => pop(s, T.moneda3 + [0, 1.2, 2.8][i], 0.3));
+  ["#via0", "#via1", "#via2"].forEach((s, i) => pop(s, T.vias + 0.4 + i * 0.6, 0.3));
+  ["#via0", "#via1", "#via2"].forEach((s, i) => tl.to(s, { scale: 1.15, transformOrigin: "50% 50%", duration: 0.25, yoyo: true, repeat: 1 }, T.moneda3 + [0, 1.2, 2.8][i]));
   tl.to("#via0", { y: 30, duration: 0.4, yoyo: true, repeat: 5, ease: "sine.inOut" }, T.fool2 + 0.5);
   tl.set("#viaLupa", { opacity: 1 }, T.mecan); [200, 530, 860].forEach((x, i) => tl.to("#viaLupa", { attr: { transform: `translate(${x} 520)` }, duration: 0.6, ease: "power2.inOut" }, T.mecan + i * 0.9));
   tl.to("#viaLupa", { opacity: 0, duration: 0.3 }, T.nosignif + 1.0);

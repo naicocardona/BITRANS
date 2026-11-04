@@ -54,7 +54,7 @@
   tl.to("#bfront", { scaleY: 0.12, duration: 0.4, ease: "power2.inOut" }, T.cta + 0.3); tl.to("#bt", { opacity: 0, duration: 0.2 }, T.cta + 0.25);
   $$(".pcard").forEach((c, i) => tl.fromTo(c, { opacity: 0, y: 220 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, T.cta + 0.45 + i * 0.1));
   tl.fromTo("#logo", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)", immediateRender: false }, T.cta + 0.2);
-  tl.to(["#binder", "#logo"], { y: 160, opacity: 0.3, duration: 0.5 }, T.cta + 1.4);
+  tl.to("#logo", { opacity: 0, duration: 0.3 }, T.cta + 0.9); tl.to("#binder", { y: 160, opacity: 0.3, duration: 0.5 }, T.cta + 1.0);
   tl.to("#fT-aR", { rotation: -150, transformOrigin: "50% 4%", duration: 0.35, ease: "back.out(2)" }, T.cta + 1.6);
   tl.to("#fT-aR", { rotation: -125, duration: 0.25, yoyo: true, repeat: 5, ease: "sine.inOut" }, T.cta + 1.95);
   // titulares, franja y ficha

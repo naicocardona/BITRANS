@@ -67,7 +67,7 @@ def scene_street():  # S5/S6 — calle con banco (ancho 2100)
               + place(fig("fC", SKINS[2], "#5A3A22", LAV, "#2A3F66", 0), -100, 1128, 0.8))
     flows = ''.join(coin(f"lc{k}", 540, 990, 22, "$") for k in range(4)) + ''.join(coin(f"sc{k}", 1490, 960, 22, "$") for k in range(4)) + ''.join(coin(f"pc{k}", 1100, 980, 22, "$") for k in range(4))
     lbl = lambda id, x, y, t, bg, fg: f'<g transform="translate({x} {y})"><g id="{id}" opacity="0"><rect x="-150" y="-40" width="300" height="80" rx="40" fill="{bg}"/><text y="14" font-family="Jakarta" font-weight="800" font-size="38" text-anchor="middle" fill="{fg}">{t}</text></g></g>'
-    labels = lbl("lbl1", 760, 640, "+ Préstamo", GOLD, INK) + lbl("lbl2", 1180, 640, "+ Sueldo", IVORY, INK) + lbl("lbl3", 820, 560, "✓ Pagó", "#2E7D4F", "#fff")
+    labels = lbl("lbl1", 830, 760, "+ Préstamo", GOLD, INK) + lbl("lbl2", 1180, 640, "+ Sueldo", IVORY, INK) + lbl("lbl3", 820, 560, "✓ Pagó", "#2E7D4F", "#fff")
     return f'<svg viewBox="0 0 2100 1920" width="2100" height="1920" xmlns="http://www.w3.org/2000/svg">{bg}{shop}{bank}{ground}{people}{flows}{labels}</svg>'
 
 def scene_fx():  # S6b — cambio de moneda (balanza)

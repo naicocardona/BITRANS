@@ -121,7 +121,7 @@
   tl.set("#nvUD", { opacity: 1 }, T.subebaja - 0.2); tl.to("#nvUD", { y: -16, duration: 0.3, yoyo: true, repeat: 7, ease: "sine.inOut" }, T.subebaja - 0.2);
   tl.to("#nvCt", { y: -30, duration: 0.3, yoyo: true, repeat: 5, ease: "sine.inOut" }, T.subebaja);
   go("#sM", T.e140, "fade"); camSet("#cam_sM", T.e140 - 0.4, 530, 540, 1); camTo("#cam_sM", T.e140, 8, 560, 560, 1.06, "sine.inOut");
-  ["#mMX", "#mCO", "#mBR"].forEach((s, i) => tl.fromTo(s, { opacity: 0 }, { opacity: 1, duration: 0.5, immediateRender: false }, T.e140 + 0.2 + i * 0.3));
+  ["#mMX", "#mCO", "#mBR"].forEach((s, i) => tl.fromTo(s, { opacity: 0 }, { opacity: 1, duration: 0.4, immediateRender: false }, T.e140 - 0.45 + i * 0.12));
   ["#pMX", "#pCO", "#pBR"].forEach((s, i) => tl.fromTo(s, { opacity: 0, y: -200 }, { opacity: 1, y: 0, duration: 0.45, ease: "bounce.out", immediateRender: false }, T.e140 + 1.6 + i * 0.5));
   $$(".cr").forEach((c, i) => tl.fromTo(c, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)", immediateRender: false }, T.e140 + 3.2 + i * 0.08));
   tl.to(".cr", { y: -8, duration: 0.3, yoyo: true, repeat: 9, stagger: 0.05, ease: "sine.inOut" }, T.e140 + 4.6);

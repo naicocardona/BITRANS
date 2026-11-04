@@ -1,0 +1,38 @@
+# TRADE #027 · guion por frases: (id, texto para la voz [sin punto final], subtítulo con | por línea)
+TK = [
+ ("g1", "Esta vez cambiamos la hora de entrada: de nueve a diez de la mañana", "Esta vez cambiamos la hora de entrada:|de 9 a 10 de la mañana."),
+ ("g2", "La compra alcanzó el objetivo, pero el ajuste sigue en observación", "La compra alcanzó el objetivo,|pero el ajuste sigue en observación."),
+ ("e1", "Tras el cambio horario en Estados Unidos, movimos la entrada una hora", "Tras el cambio horario en Estados Unidos,|movimos la entrada una hora."),
+ ("e2", "El indicador marcaba compra: escor siete sobre diez, por encima del mínimo de seis", "El indicador marcaba compra:|score 7/10, por encima del mínimo de 6,"),
+ ("e3", "y un radar con mayor lectura alcista que bajista", "y un radar con mayor lectura|alcista que bajista."),
+ ("r1", "El gráfico muestra un impulso alcista hasta la zona del objetivo, y después oscilaciones y retrocesos", "El gráfico muestra un impulso alcista|hasta la zona del objetivo,|y después oscilaciones y retrocesos."),
+ ("r2", "En el bróker entramos en veintiocho mil ciento sesenta coma cuarenta, y salimos cien puntos más arriba", "En el bróker entramos en 28.160,40|y salimos 100 puntos más arriba."),
+ ("r3", "La operación duró treinta y seis minutos y cuarenta y cinco segundos", "La operación duró|36 minutos y 45 segundos."),
+ ("c1a", "Primero: cambiar el horario introduce una variable en el análisis", "Primero: cambiar el horario|introduce una variable en el análisis."),
+ ("c1b", "Este teik prófit quedó registrado a las diez, pero un ganador no demuestra que esa hora sea mejor", "Este Take Profit quedó registrado a las 10,|pero un ganador no demuestra|que esa hora sea mejor."),
+ ("c1c", "Necesitamos más operaciones comparables para evaluar el ajuste", "Necesitamos más operaciones comparables|para evaluar el ajuste."),
+ ("c2a", "Segundo: el precio puede alcanzar nuestro objetivo y después retroceder", "Segundo: el precio puede alcanzar|nuestro objetivo y después retroceder."),
+ ("c2b", "El gráfico lo muestra: un impulso hacia el objetivo, y oscilaciones posteriores", "El gráfico lo muestra:|un impulso hacia el objetivo|y oscilaciones posteriores."),
+ ("c2c", "Evaluamos la salida ejecutada, sin usar lo que pasó después como razón para haber mantenido o cerrado distinto", "Evaluamos la salida ejecutada,|sin usar lo que pasó después como razón|para haber mantenido o cerrado distinto."),
+ ("c3a", "Tercero: capturamos cien puntos", "Tercero: capturamos 100 puntos."),
+ ("c3b", "El seguimiento parcial registró ciento cincuenta y seis favorables y treinta y nueve adversos, que pueden incluir tiempo después de salir", "El seguimiento parcial registró|156 favorables y 39 adversos,|que pueden incluir tiempo después de salir."),
+ ("c3c", "Ayudan a estudiar el recorrido, pero no son ganancias adicionales ni una medición definitiva de la sesión", "Ayudan a estudiar el recorrido,|pero no son ganancias adicionales|ni una medición definitiva de la sesión."),
+ ("x1", "No buscamos operaciones perfectas", "No buscamos operaciones perfectas."),
+ ("x2", "Buscamos ventaja estadística", "Buscamos ventaja estadística."),
+]
+SH = [
+ ("s1", "Cambiamos nuestra entrada de nueve a diez de la mañana, tras el cambio horario de Estados Unidos", "Cambiamos nuestra entrada de 9 a 10 AM|tras el cambio horario de Estados Unidos."),
+ ("s2", "¿Cómo salió?", "¿Cómo salió?"),
+ ("s3", "Treid veintisiete", "Trade #027."),
+ ("s4", "El indicador marcaba compra, con escor siete sobre diez, y mayor lectura alcista en el radar", "El indicador marcaba compra, con score 7/10|y mayor lectura alcista en el radar."),
+ ("s5", "Entramos en veintiocho mil ciento sesenta coma cuarenta", "Entramos en 28.160,40."),
+ ("s6", "El impulso alcanzó el objetivo: salida cien puntos más arriba, en treinta y seis minutos y cuarenta y cinco segundos", "El impulso alcanzó el objetivo:|salida 100 puntos más arriba,|en 36 minutos y 45 segundos."),
+ ("s8", "Uno: este teik prófit no demuestra que entrar a las diez sea mejor", "Uno: este Take Profit no demuestra|que entrar a las 10 sea mejor."),
+ ("s9", "El ajuste sigue en observación", "El ajuste sigue en observación."),
+ ("s10", "Dos: el precio alcanzó la zona objetivo y después osciló", "Dos: el precio alcanzó la zona objetivo|y después osciló."),
+ ("s11", "Analizamos nuestra ejecución, sin juzgarla solamente por lo que ocurrió después", "Analizamos nuestra ejecución|sin juzgarla solo por lo que ocurrió después."),
+ ("s12", "Tres: capturamos cien puntos", "Tres: capturamos 100 puntos."),
+ ("s13", "Los ciento cincuenta y seis favorables y treinta y nueve adversos pertenecen a un seguimiento parcial más amplio; no son beneficio adicional", "Los 156 favorables y 39 adversos|pertenecen a un seguimiento parcial más amplio;|no son beneficio adicional."),
+ ("s14", "Seguimos documentando para buscar ventaja estadística", "Seguimos documentando|para buscar ventaja estadística."),
+]
+GAP = {"g1": 0.3, "g2": 0.2, "e1": 0.35, "r1": 0.35, "c1a": 0.4, "c2a": 0.4, "c3a": 0.4, "x1": 0.4, "s1": 0.3, "s3": 0.45, "s5": 0.4, "s8": 0.5, "s10": 0.45, "s12": 0.45, "s14": 0.5}

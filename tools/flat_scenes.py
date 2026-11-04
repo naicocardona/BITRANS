@@ -120,14 +120,14 @@ def scene_desk():  # S8 — escritorio con lupa y 3 preguntas
 {''.join(f'<g id="qk{k}" opacity="0" transform="translate({x} 590)"><circle r="34" fill="#2E7D4F"/><path d="M-15 0 l10 10 l20 -22" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></g>' for k, x in enumerate([340, 630, 920]))}
 </svg>'''
 
-def scene_cross():  # S9 — encrucijada
+def scene_cross(t1="UNA SOLA CAUSA", t2="RECUPERACIÓN ASEGURADA"):  # S9 — encrucijada
     sign = lambda id, y, txt, rot, dx: f'''<g transform="translate(540 {y}) rotate({rot})"><g id="{id}"><path d="M{-300+dx} -50 H{250+dx} L{310+dx} 0 L{250+dx} 50 H{-300+dx}Z" fill="{IVORY}" transform="scale({1 if dx >= 0 else -1} 1)"/>
 <text x="{0}" y="13" font-family="Bricolage" font-weight="800" font-size="{40 if len(txt) < 16 else 31}" text-anchor="middle" fill="{INK}">{txt}</text>
 <g class="xs" opacity="0"><path d="M-200 -40 L200 40 M-200 40 L200 -40" stroke="#D93A2F" stroke-width="18" stroke-linecap="round"/></g></g></g>'''
     return f'''<svg viewBox="0 0 1080 1920" width="1080" height="1920" xmlns="http://www.w3.org/2000/svg"><rect width="1080" height="1920" fill="#1B3566"/>
 <path d="M0 1200 Q540 1060 1080 1200 V1920 H0Z" fill="#2E7D4F" opacity=".55"/><path d="M380 1920 L500 1180 L580 1180 L700 1920Z" fill="#D8CFB8" opacity=".7"/>
 <rect x="528" y="560" width="24" height="640" fill="#8A6620"/>
-{sign("sg1", 640, "UNA SOLA CAUSA", -4, 0)}{sign("sg2", 800, "RECUPERACIÓN ASEGURADA", 3, 0)}
+{sign("sg1", 640, t1, -4, 0)}{sign("sg2", 800, t2, 3, 0)}
 <g id="dQ">{place(fig("fQ", SKINS[0], "#1E1A2E", GOLD, "#3B4F7A", 2), 250, 1290, 1.2)}</g>
 {''.join(f'<text class="qm" x="{x}" y="{y}" font-family="Bricolage" font-weight="800" font-size="80" fill="{GOLD}" opacity="0">?</text>' for x, y in [(150, 780), (260, 740), (340, 790)])}
 </svg>'''

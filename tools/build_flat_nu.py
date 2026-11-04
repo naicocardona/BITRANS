@@ -1,15 +1,22 @@
 # TITÁN · NU · muestra en estilo ilustrado (personajes + escenas), primeros ~17 s del TikTok
 import os, sys, json, shutil, subprocess, importlib.util as U
-FULL = "full" in sys.argv
+SH = "shorts" in sys.argv
+FULL = "full" in sys.argv or SH
 H = os.path.dirname(os.path.abspath(__file__)); SCR = os.path.join(H, "..")
 sp = U.spec_from_file_location("ta", f"{H}/tq_anchors.py"); ta = U.module_from_spec(sp); sp.loader.exec_module(ta)
-d = json.load(open(f"{SCR}/nu/voz/t/tiktok.words.json")); Wd = d["display"]
+d = json.load(open(f"{SCR}/nu/voz/t/" + ("shorts" if SH else "tiktok") + ".words.json")); Wd = d["display"]
 a = ta.Anchors(Wd); A = lambda ph: a(ph, False)
-DUR = 68.64 if FULL else 17.6
-T = dict(nubank=A("Nubank…"), elec=A("unas elecciones"), sacudir=A("sacudir"), inv=A("inversión."), eso=A("Eso ayuda"), nu=A("con NU"), d26=A("26"),
+DUR = 38.78 if SH else (68.64 if FULL else 17.6)
+if SH:
+    T = dict(nubank=1.2, elec=A("unas elecciones"), sacudir=A("con el precio"), inv=2.95, eso=A("El 26"), nu=A("de NU"), d26=A("26"), cayo=A("cayó cerca"),
+             ses=round(A("cayó cerca") + 1.6, 3), cob=A("La cobertura"), rel=A("vinculó"), reac=A("reacción del mercado"), elec2=A("a las elecciones"), bra=A("de Brasil."),
+             por=A("La conexión importa:"), empresa=A("una empresa puede"), ocurre=A("lo que ocurre"), negocios=A("hace negocios."), entender=A("Para entender"),
+             q1=A("la noticia,"), q2=A("su posible efecto"), q3=A("y los resultados"), recuerda=A("Y recuerda:"), caiga=A("caiga no"), barata=A("esté barata."), cta=A("¿Conocías este"))
+else:
+  T = dict(nubank=A("Nubank…"), elec=A("unas elecciones"), sacudir=A("sacudir"), inv=A("inversión."), eso=A("Eso ayuda"), nu=A("con NU"), d26=A("26"),
          cayo=A("cayó cerca"), ses=A("en una sesión."), cob=A("La cobertura"), rel=A("relacionó"), reac=A("con la reacción"),
          elec2=A("a las elecciones"), bra=A("de Brasil."))
-if FULL:
+if FULL and not SH:
     for k, ph in dict(por="¿Por qué importa", piensa="Piensa en un", dinero="dinero.", interesa="Le interesa", ingresos="ingresos y puedan", pagar="pagar.",
                       tamb="También le afectan", condic="las condiciones económicas", moneda="y la moneda.", noticia="Una noticia política", invers="que los inversores",
                       esas="Y esas expectativas", mover="pueden mover el", antes="precio antes de", conoz="que conozcamos su", negocio="el negocio.", poreso="Por eso conviene",
@@ -17,11 +24,11 @@ if FULL:
                       nuforma="NU forma parte", titan="de TITÁN 3.0.", aqui="Aquí queremos entender", incom="noticias incómodas.", cta="¿Qué empresa te").items(): T[k] = A(ph)
 T["nu"] += 0.25; T["p17"] = round(next(w[1] for w in Wd if w[0].startswith("17")), 3)
 G = [g for g in ta.groups(Wd, 3) if g[0] < DUR - 0.2]
-P = f"{SCR}/flat-nu" + ("-tk" if FULL else ""); os.makedirs(f"{P}/assets/audio", exist_ok=True)
+P = f"{SCR}/flat-nu" + ("-sh" if SH else ("-tk" if FULL else "")); os.makedirs(f"{P}/assets/audio", exist_ok=True)
 for sub in ["vendor", "fonts", "brand"]: shutil.copytree(f"{SCR}/tq-3d/assets/{sub}", f"{P}/assets/{sub}", dirs_exist_ok=True)
 shutil.copy(f"{SCR}/tq-3d/hyperframes.json", P)
 json.dump({"name": "flat-nu", "private": True, "type": "module"}, open(P + "/package.json", "w")); json.dump({"id": "flat-nu", "name": "flat-nu"}, open(P + "/meta.json", "w"))
-subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f"{SCR}/nu-tiktok/assets/audio/mix.wav", "-t", str(DUR), "-af", f"afade=t=out:st={DUR-0.5}:d=0.5", f"{P}/assets/audio/mix.wav"], check=True)
+subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f"{SCR}/nu-" + ("shorts" if SH else "tiktok") + "/assets/audio/mix.wav", "-t", str(DUR), "-af", f"afade=t=out:st={DUR-0.5}:d=0.5", f"{P}/assets/audio/mix.wav"], check=True)
 json.dump({"name": os.path.basename(P), "private": True, "type": "module"}, open(P + "/package.json", "w")); json.dump({"id": os.path.basename(P), "name": os.path.basename(P)}, open(P + "/meta.json", "w"))
 
 SKIN, HAIR, SHIRT, PANTS, INK = "#C68B59", "#1E1A2E", "#C4B5FD", "#3B4F7A", "#0B1B33"
@@ -170,7 +177,14 @@ mapsvg = f'''<svg viewBox="0 0 1080 1920" width="1080" height="1920" xmlns="http
 sys.path.insert(0, H); import flat_scenes as FS
 def B(t, fs=58, c=""): return f'<div class="B {c}" style="display:inline-block;font-size:{fs}px;line-height:1.08;padding:10px 22px 14px;border-radius:18px;background:rgba(11,27,51,.86)">{t}</div>'
 def TAG(t): return f'<div class="tag" style="position:relative;display:inline-block;font-size:24px">{t}</div>'
-OV2 = [] if not FULL else [
+OV2SH = [("h1", B("La conexión importa", 62), T.get("por", 0), T.get("ocurre", 0) - 0.15),
+         ("h2", B("Lo que pasa en el país afecta a la empresa", 54), T.get("ocurre", 0), T.get("entender", 0) - 0.3),
+         ("h3", B("Para entender una caída, revisa tres cosas", 52), T.get("entender", 0), T.get("q1", 0) - 0.1),
+         ("h4", B("1 · La noticia", 62), T.get("q1", 0), T.get("q2", 0) - 0.1),
+         ("h5", B("2 · Su efecto en el negocio", 60), T.get("q2", 0), T.get("q3", 0) - 0.1),
+         ("h6", B("3 · Los resultados de la empresa", 56), T.get("q3", 0), T.get("recuerda", 0) - 0.25),
+         ("h7", B("Y recuerda…", 62), T.get("recuerda", 0), T.get("barata", 0) - 0.25)]
+OV2 = OV2SH if SH else [] if not FULL else [
     ("h1", B("¿Por qué importa el país?", 62), T["por"], T["piensa"] - 0.1),
     ("h2", TAG("EJEMPLO HIPOTÉTICO") + B("Un banco que presta", 60).replace('style="', 'style="margin-top:10px;', 1), T["piensa"], T["tamb"] - 0.1),
     ("h3", B("También le afectan la economía y la moneda", 56), T["tamb"], T["noticia"] - 0.25),
@@ -186,7 +200,7 @@ OV2 = [] if not FULL else [
     ("h13", '<div style="display:inline-block;padding:12px 28px;border-radius:999px;background:#7C3AED;color:#fff;font-weight:800;font-size:34px;letter-spacing:.12em">TITÁN 3.0</div>', T["titan"] - 0.4, T["aqui"] - 0.1),
     ("h14", B("Entender nuestras inversiones", 58), T["aqui"], T["incom"] - 0.6),
     ("h15", B("…también con noticias incómodas", 58, "gold"), T["incom"] - 0.5, T["cta"] - 0.2)]
-HUD = ["Caída", "Brasil", "Banco", "Moneda", "Expectativas", "3 preguntas"]
+HUD = ["Caída", "Brasil", "Conexión", "3 cosas"] if SH else ["Caída", "Brasil", "Banco", "Moneda", "Expectativas", "3 preguntas"]
 hud = "".join(f'<span id="hs{k}" class="hs">{h}</span>' for k, h in enumerate(HUD))
 n = [0]
 def C(i, inner, style, extra=""):
@@ -196,7 +210,7 @@ body = [C("s1", f'<div id="cam1" style="position:absolute;left:0;top:0;width:108
         C("s3", f'<div id="cam3" style="position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:0 0">{phoneui}</div>', "left:0;top:0;width:1080px;height:1920px;overflow:hidden;opacity:0"),
         C("s4", f'<div id="cam4" style="position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:0 0">{mapsvg}</div>', "left:0;top:0;width:1080px;height:1920px;overflow:hidden;opacity:0"),
         *([] if not FULL else [C(f"s{k}", f'<div id="cam{k}" style="position:absolute;left:0;top:0;width:{w}px;height:1920px;transform-origin:0 0">{svg}</div>', f"left:0;top:0;width:1080px;height:1920px;overflow:hidden;opacity:0")
-              for k, w, svg in [(5, 2100, FS.scene_street()), (6, 1080, FS.scene_fx()), (7, 2200, FS.scene_news()), (8, 1080, FS.scene_desk()), (9, 1080, FS.scene_cross()), (10, 1080, FS.scene_titan())]]
+              for k, w, svg in [(5, 2100, FS.scene_street()), (6, 1080, FS.scene_fx()), (7, 2200, FS.scene_news()), (8, 1080, FS.scene_desk()), (9, 1080, FS.scene_cross("CAYÓ ≈ 17 %", "¿ENTONCES ESTÁ BARATA?") if SH else FS.scene_cross()), (10, 1080, FS.scene_titan())]]
             + [C("wipe", "", "left:0;top:0;width:120px;height:120px;border-radius:50%;background:#E2B755;opacity:0;transform-origin:50% 50%")]),
         C("shade", "", "left:0;top:1290px;width:1080px;height:630px;background:linear-gradient(180deg,rgba(11,27,51,0),rgba(11,27,51,.82) 30%)"),
         C("topshade", "", "left:0;top:0;width:1080px;height:380px;background:linear-gradient(180deg,rgba(11,27,51,.75),rgba(11,27,51,0))"),
@@ -206,14 +220,17 @@ body = [C("s1", f'<div id="cam1" style="position:absolute;left:0;top:0;width:108
         C("hyp", '<div style="font-family:Jakarta;font-weight:800;font-size:26px;letter-spacing:.08em;color:rgba(244,238,220,.75)">Fuentes: Estadão · The Motley Fool · Zacks</div>', "left:70px;top:1316px;opacity:0"),
         *([] if not FULL else [C(i, h, "left:70px;top:346px;width:940px;opacity:0") for i, h, _, _ in OV2]
             + [C("dock", '<div class="pill" style="position:relative;display:inline-block;padding:12px 26px;font-size:30px;background:rgba(11,27,51,.88);color:#FF8A80;border:2px solid rgba(255,138,128,.7)">NU&nbsp;&nbsp;≈ −17 %&nbsp;&nbsp;·&nbsp;&nbsp;26 OCT 2026</div>', "left:70px;top:1296px;opacity:0"),
-               C("cta", '<div class="B" style="font-size:84px;line-height:1.08;text-transform:uppercase;width:940px">¿Qué empresa te gustaría entender mejor?</div><div style="margin-top:28px"><div class="btn" style="position:relative;display:inline-block;padding:20px 50px;font-size:38px">Comenta tu respuesta</div></div><div style="margin-top:22px;font-weight:700;font-size:30px;color:rgba(244,238,220,.88)">Contenido educativo. No es una recomendación de inversión.</div>', "left:70px;top:346px;width:940px;opacity:0")]),
+               *([C("stampB", '<div class="B" style="display:inline-block;font-size:76px;padding:8px 30px 14px;border:6px solid #FF8A80;color:#FF8A80;border-radius:20px;transform:rotate(-5deg);background:rgba(11,27,51,.9)">Caída ≠ barata</div>', "left:120px;top:440px;opacity:0")] if SH else []),
+               C("cta", '<div class="B" style="font-size:84px;line-height:1.08;text-transform:uppercase;width:940px">' + ("¿Conocías este riesgo al invertir?" if SH else "¿Qué empresa te gustaría entender mejor?") + '</div><div style="margin-top:28px"><div class="btn" style="position:relative;display:inline-block;padding:20px 50px;font-size:38px">Comenta tu respuesta</div></div><div style="margin-top:22px;font-weight:700;font-size:30px;color:rgba(244,238,220,.88)">Contenido educativo. No es una recomendación de inversión.</div>', "left:70px;top:346px;width:940px;opacity:0")]),
         C("caps", ta.caps_html(G, 66), "left:70px;top:1380px;width:940px;height:220px")]
 CSS = open(f"{H}/tq.css").read() + ".hs{display:inline-block;padding:7px 14px;margin-right:8px;border-radius:999px;font-family:Jakarta;font-weight:800;font-size:22px;color:rgba(244,238,220,.6);border:2px solid rgba(244,238,220,.28);background:rgba(11,27,51,.6)}.hs.on{background:var(--gold);color:#0B1B33;border-color:var(--gold)}.hs.done{color:var(--gold);border-color:rgba(226,183,85,.55)}.hs.done::before{content:'✓ '}"
 CG = [[a_, b, [[w[1], w[2]] for w in g]] for a_, b, g in G]
 JS = open(f"{H}/flat_nu.js").read()
 if FULL:
     mk = "  tl.to({}, { duration: 0.01 }, DUR - 0.01);"; assert mk in JS
-    JS = JS.replace(mk, open(f"{H}/flat_nu2.js").read() + mk)
+    p2 = open(f"{H}/flat_nu2.js").read()
+    if SH: p2 = p2[:p2.index("  // ---------- 17.2")] + open(f"{H}/flat_sh2_tail.js").read()
+    JS = JS.replace(mk, p2 + mk)
 html = f'''<!doctype html><html lang="es"><head><meta charset="UTF-8" /><meta name="viewport" content="width=1080, height=1920" />
 <title>TITÁN · NU · muestra ilustrada</title><script src="assets/vendor/gsap.min.js"></script>
 <style>{CSS}

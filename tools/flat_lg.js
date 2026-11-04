@@ -64,7 +64,7 @@
   tl.to(".eye", { scale: 1.35, transformOrigin: "50% 50%", duration: 0.2 }, T.fuerza - 0.1); tl.to("#brows", { y: -14, duration: 0.2 }, T.fuerza - 0.1);
   tl.fromTo("#sweat", { opacity: 0, y: -6 }, { opacity: 1, y: 0, duration: 0.25, immediateRender: false }, T.fuerza + 0.2); tl.to("#sweat", { y: 30, opacity: 0, duration: 0.9 }, T.fuerza + 1.2);
   // ¿la razón? periódicos
-  camTo("#cam_s1", T.razon - 0.3, 0.8, 540, 900, 1.08);
+  camTo("#cam_s1", T.razon - 0.3, 0.8, 540, 790, 0.94);
   tl.set("#papers", { opacity: 1 }, T.razon);
   [["#np0", -700, -200, -60], ["#np1", 0, -900, 40], ["#np2", 700, -150, 70]].forEach(([s, dx, dy, r], i) =>
     tl.fromTo(s + " .npi", { x: dx, y: dy, rotation: r, opacity: 0 }, { x: 0, y: 0, rotation: 0, opacity: 1, duration: 0.6, ease: "back.out(1.4)", immediateRender: false }, T.razon + 0.05 + i * 0.3));
@@ -93,7 +93,7 @@
   tl.to("#arr", { y: 18, duration: 0.4, yoyo: true, repeat: 9, ease: "sine.inOut" }, T.p17 + 1.0);
   camTo("#cam_s3", T.anuncio, 4.5, 540, 1000, 1.08, "sine.inOut");
   // cobertura financiera: periódicos en la sala
-  go("#s1", T.cobert, "zoom"); camSet("#cam_s1", T.cobert - 0.4, 540, 900, 1.05);
+  go("#s1", T.cobert, "zoom"); camSet("#cam_s1", T.cobert - 0.4, 540, 790, 0.94);
   [["#np0", -700, -200, -60], ["#np1", 0, -900, 40], ["#np2", 700, -150, 70]].forEach(([s, dx, dy, r], i) =>
     tl.fromTo(s + " .npi", { x: dx, y: dy, rotation: r, opacity: 0 }, { x: 0, y: 0, rotation: 0, opacity: 1, duration: 0.6, ease: "back.out(1.4)", immediateRender: false }, T.cobert + 0.2 + i * 0.3));
   tl.to("#head", { rotation: 8, duration: 0.6, ease: "sine.inOut" }, T.cobert + 2); tl.to("#eyes", { x: 7, duration: 0.4 }, T.cobert + 2);
@@ -175,6 +175,19 @@
   camTo("#cam_s7", T.dos, 1.6, 1300, 900, 0.8);
   // ================= 6 · ¿CAÍDA = OPORTUNIDAD? (201–249.6) =================
   go("#sAB", T.barata, "fade"); camSet("#cam_sAB", 0, 530, 540, 1);
+  camTo("#cam_sAB", T.barata, T.quehacer - T.barata, 530, 560, 1.06, "sine.inOut");
+  $$("#sAB .bw").forEach((w, i) => { if (i % 3 === 0) tl.to(w, { opacity: 0.2, duration: 0.5 + (i % 4) * 0.2, yoyo: true, repeat: 30, ease: "steps(1)" }, T.barata - 0.4 + (i % 7) * 0.3); });
+  tl.to(["#cA", "#cB"], { scaleY: 1.012, transformOrigin: "50% 100%", duration: 1.3, yoyo: true, repeat: 18, ease: "sine.inOut", stagger: 0.6 }, T.barata);
+  $$(".abc").forEach((c, i) => tl.fromTo(c, { x: -120 }, { x: 160 + i * 40, duration: T.quehacer - T.barata, ease: "none", immediateRender: false }, T.barata - 0.4));
+  POS.fP1 = 0; POS.fP2 = 0;
+  walk("fP1", T.barata, 9, 1200, 0.3); walk("fP2", T.barata + 1.5, 9, -1250, 0.3);
+  walk("fP1", T.primera + 1, 9, -1150, 0.3); walk("fP2", T.segunda, 8, 1200, 0.3);
+  shake("#cam_sAB", T.caen + 0.4);
+  tl.fromTo(".dn", { y: 0 }, { y: 18, duration: 0.35, yoyo: true, repeat: 7, ease: "sine.inOut", immediateRender: false }, T.caen + 0.8);
+  tl.fromTo("#cA .up", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(2)", immediateRender: false }, T.primera + 3.8);
+  tl.to("#cA .up", { y: -14, duration: 0.4, yoyo: true, repeat: 9, ease: "sine.inOut" }, T.primera + 4.3);
+  const ck = $("#cB .crack"), CL = ck.getTotalLength(); tl.set(ck, { attr: { "stroke-dasharray": CL, "stroke-dashoffset": CL }, opacity: 1 }, T.segunda + 2.9);
+  tl.to(ck, { attr: { "stroke-dashoffset": 0 }, duration: 0.6, ease: "power2.in" }, T.segunda + 2.9);
   tl.fromTo("#abQ", { opacity: 0, scale: 0.3, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)", immediateRender: false }, T.barata + 0.5);
   tl.to("#abQ", { rotation: 8, transformOrigin: "50% 80%", duration: 0.5, yoyo: true, repeat: 7, ease: "sine.inOut" }, T.barata + 1);
   tl.to("#abQ", { opacity: 0, duration: 0.3 }, T.doscasos);

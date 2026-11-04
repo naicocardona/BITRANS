@@ -47,9 +47,14 @@ def scene_ab():   # dos empresas hipotéticas A y B
     bld = lambda id, x, lab, col: f'''<g transform="translate({x} 860)"><g id="{id}"><rect x="-150" y="-420" width="300" height="420" fill="{IVORY}"/><path d="M-170 -416 L0 -500 L170 -416Z" fill="{col}"/>
 <text y="-440" font-family="Bricolage" font-weight="800" font-size="56" text-anchor="middle" fill="#fff">{lab}</text>{windows(-118, -380, 3, 5, 54, 46, 28, 22, GOLD, ".85")}<rect x="-40" y="-110" width="80" height="110" fill="{INK}"/>
 <g class="dn" opacity="0"><rect x="-90" y="-640" width="180" height="70" rx="16" fill="{INK}"/><text y="-592" font-family="Bricolage" font-weight="800" font-size="44" text-anchor="middle" fill="#FF8A80">≈ −17 %</text></g>
+<path class="crack" d="M-60 -400 L-20 -330 L-50 -270 L10 -200 L-10 -140" fill="none" stroke="#0B1B33" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0"/>
+<g transform="translate(-175 -470)"><g class="up" opacity="0"><path d="M0 -60 L40 0 H15 V60 H-15 V0 H-40Z" fill="#2E7D4F"/></g></g>
 <g class="rep" opacity="0" transform="translate(0 -260)"><rect x="-110" y="-70" width="220" height="150" rx="14" fill="#fff" stroke="{INK}" stroke-width="4"/><text y="-30" font-family="Jakarta" font-weight="800" font-size="22" text-anchor="middle" fill="{INK}">RESULTADOS</text>
 <text class="ok" y="48" font-family="Bricolage" font-weight="800" font-size="56" text-anchor="middle" fill="#2E7D4F" opacity="0">✓</text><text class="bad" y="48" font-family="Bricolage" font-weight="800" font-size="56" text-anchor="middle" fill="#D93A2F" opacity="0">✕</text></g></g></g>'''
     return f'''<svg viewBox="0 0 1060 1080" width="1060" height="1080" xmlns="http://www.w3.org/2000/svg"><rect width="1060" height="1080" fill="#1B3566"/>{dots(op=".05")}
-<rect y="860" width="1060" height="220" fill="#2A3F66"/>{bld("cA", 270, "A", "#2E7D4F")}{bld("cB", 790, "B", "#B3261E")}
+<g id="abClouds">{''.join(f'<g class="abc" transform="translate({x} {y})"><ellipse rx="110" ry="34" fill="#F4EEDC" opacity=".18"/><ellipse cx="-60" cy="10" rx="70" ry="26" fill="#F4EEDC" opacity=".18"/></g>' for x, y in [(160, 120), (620, 90), (980, 150)])}</g>
+<rect y="860" width="1060" height="220" fill="#2A3F66"/>{''.join(f'<rect x="{k*150}" y="960" width="90" height="10" rx="5" fill="#F4EEDC" opacity=".5"/>' for k in range(8))}
+{bld("cA", 270, "A", "#2E7D4F")}{bld("cB", 790, "B", "#B3261E")}
+{place(fig("fP1", SKINS[1], "#2B1B12", "#FF8A80", "#0B1B33", 3), -80, 1040, 0.5)}{place(fig("fP2", SKINS[2], "#5A3A22", "#C4B5FD", "#2A3F66", 1), 1140, 1050, 0.5)}
 <text id="abQ" x="530" y="200" font-family="Bricolage" font-weight="800" font-size="180" text-anchor="middle" fill="{GOLD}" opacity="0">?</text>
 <g id="abCal" opacity="0" transform="translate(530 300)"><rect x="-100" y="-60" width="200" height="120" rx="16" fill="{IVORY}"/><rect x="-100" y="-60" width="200" height="38" rx="16" fill="#D93A2F"/><text y="38" font-family="Bricolage" font-weight="800" font-size="40" text-anchor="middle" fill="{INK}">+ meses</text></g></svg>'''

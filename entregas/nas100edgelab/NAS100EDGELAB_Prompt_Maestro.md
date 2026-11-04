@@ -211,3 +211,15 @@ TITÁN HOLDING aparece solo como identificación (logo pequeño + nombre). No es
 - Las poses del avatar (si no las tienes ya en la conversación).
 
 **Primero preséntame el guion por escenas con tiempos, la duración total (máximo 1:30), las visualizaciones animadas de cada escena y la pose + burbuja del avatar en cada momento. Cuando lo apruebe, lo produces.**
+
+## Revisión automática antes de entregar (desde el 4 nov 2026, aplica a TITÁN y a NAS100 EDGE LAB)
+Lady quiere que los videos lleguen listos y que cada uno supere al anterior. Antes de entregar reviso siempre, sin esperar a que ella lo señale:
+1. **Nada se sale del cuadro:** hojas, tarjetas, letreros, objetos y textos completos dentro del encuadre.
+2. **Nada tapa una cara:** ni etiquetas, ni globos, ni objetos sobre los personajes o el Explorador.
+3. **Nada queda quieto:** cada escena tiene movimiento constante (personajes, luces, ventanas, nubes, gente al fondo, cámara suave). Ningún elemento grande se queda estático más de 2 segundos.
+4. **Sin cuadros vacíos:** en los cambios de escena, la que sale y la que entra se cruzan.
+5. **Lo importante se ve de cerca:** los lugares clave (banco, trabajo, gráfico) llenan el encuadre; nada se ve diminuto o lejano.
+6. **Dinero y lotes tapados** desde el primer cuadro (NAS100), aunque el encargo diga mostrarlos.
+7. **Cifras, voz, LUFS y peso** verificados contra las fuentes, la transcripción local y los límites de cada plataforma.
+
+Método: hojas de cuadros de todo el video y tiras a 5–10 cuadros por segundo en cada transición y en cada escena con comprobante o texto sobre personajes.

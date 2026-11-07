@@ -2,8 +2,8 @@
 
 | Archivo | Formato | Duración |
 |---|---|---|
-| `TITAN_BRK_Shorts.mp4` | 1080×1920 · 30 fps · −14 LUFS | 45,0 s |
-| `TITAN_BRK_TikTok.mp4` | 1080×1920 · 30 fps · −14 LUFS | 70,1 s |
+| `TITAN_BRK_Shorts.mp4` | 1080×1920 · 30 fps · −14 LUFS · 12,7 MB | 45,0 s |
+| `TITAN_BRK_TikTok.mp4` | 1080×1920 · 30 fps · −14 LUFS · 16,4 MB | 70,1 s |
 | `TITAN_BRK_Portada.jpg` | misma portada para las dos plataformas | — |
 | `TITAN_BRK_Shorts.srt` y `TITAN_BRK_TikTok.srt` | subtítulos sincronizados con la voz final | — |
 

@@ -23,16 +23,16 @@ if MODE == "lg":
     t_n, t_dc, t_h, t_m, t_c, t_g, t_b, t_co, t_p, t_d, t_e = (A("El jueves 5 de noviembre") - 0.35, A("¿Qué preocupaba") - 0.3, A("Para ampliar la foto") - 0.35, A("Mira por qué.") - 0.3,
         A("Esa misma idea") - 0.35, A("Ahora la parte práctica.") - 0.35, A("El bróker es el intermediario") - 0.3, A("Mira cuánto cuesta depositar") - 0.3,
         A("Tercera:") - 0.3, A("Veamos una orden ficticia.") - 0.3, A("La próxima vez") - 0.35)
-    SCN = [("cards", 0, None, (540, 520, 1.12), (540, 540, 1.0)), ("chart", t_n, "whip", (540, 540, 1.0), (560, 540, 1.04)),
+    SCN = [("cards", 0, None, (540, 520, 1.06), (540, 540, 1.0)), ("chart", t_n, "whip", (540, 540, 1.0), (540, 545, 1.03)),
            ("dc", t_dc, "wipe", (540, 600, 1.08), (540, 560, 1.0)), ("sp", t_h, "whip", (540, 540, 1.0), (540, 560, 1.05)),
-           ("math", t_m, "zoom", (540, 560, 1.0), (540, 580, 1.05), (700, 750)), ("comp", t_c, "wipe", (330, 680, 1.6), (540, 560, 1.0)),
+           ("math", t_m, "zoom", (540, 560, 1.0), (540, 580, 1.05), (700, 750)), ("comp", t_c, "wipe", (380, 640, 1.3), (540, 560, 1.0)),
            ("goal", t_g, "whip", (540, 540, 1.0), (540, 560, 1.05)), ("brok", t_b, "wipe", (540, 520, 1.0), (540, 540, 1.04)),
-           ("cost", t_co, "zoom", (540, 420, 1.15), (540, 560, 1.0), (540, 400)), ("prod", t_p, "whip", (540, 540, 1.0), (540, 540, 1.05)),
+           ("cost", t_co, "zoom", (540, 500, 1.0), (540, 540, 1.04), (540, 400)), ("prod", t_p, "whip", (540, 540, 1.0), (540, 540, 1.05)),
            ("demo", t_d, "zoom", (540, 540, 1.0), (540, 600, 1.08), (540, 500)), ("end", t_e, "wipe", (540, 560, 1.0), (540, 540, 1.06))]
     BEATS = [[0, "on", "#cdW"], [0.6, "point", "cp"], [A("El jueves,"), "pop", "#cdJ"], [A("El jueves,") + 0.3, "face", "cp", "oh"], [A("El jueves,") + 0.5, "sweat", "cp"],
              [A("¿cómo empiezo"), "shrug", "cp"], [A("¿cómo empiezo"), "face", "cp", "fl"], [A("Vamos a mirar"), "face", "cp", "sm"], [A("Vamos a mirar"), "jump", "cp"],
-             [t_n + 0.25, "draw", "#chLine", 1.6], [A("El jueves 5 de noviembre") + 0.8, "pop", "#dJ"], [A("golpe más fuerte"), "show", "#brJ"], [A("golpe más fuerte"), "cam", 1, 820, 620, 1.35],
-             [A("Pero si comparas"), "out", "#brJ"], [A("Pero si comparas"), "cam", 1, 640, 560, 1.05], [A("Pero si comparas") + 0.3, "pop", "#o30"], [A("viernes 6"), "pop", "#d6"], [A("terminó cerca"), "show", "#brS"],
+             [t_n + 0.25, "draw", "#chLine", 1.6], [A("El jueves 5 de noviembre") + 0.8, "pop", "#dJ"], [A("golpe más fuerte"), "show", "#brJ"], [A("golpe más fuerte"), "cam", 1, 760, 600, 1.15],
+             [A("Pero si comparas"), "out", "#brJ"], [A("Pero si comparas"), "cam", 1, 540, 550, 1.03], [A("Pero si comparas") + 0.3, "pop", "#o30"], [A("viernes 6"), "pop", "#d6"], [A("terminó cerca"), "show", "#brS"],
              [A("Y frente a su máximo"), "out", "#brS"], [A("Y frente a su máximo"), "pop", "#mx"], [A("Y frente a su máximo") + 0.4, "show", "#brM"], [A("Las tres cifras"), "show", "#brTag"], [A("La diferencia es"), "pulse", "#brTag"],
              [t_dc + 0.3, "move", "#truck", 190, 0, 1.6], [A("parte de la presión"), "walk", "tec", 200, 1.8], [A("Había dudas"), "face", "ana", "fl"], [A("centros de datos"), "pulse", "#truck"],
              [A("Imagina una empresa"), "pop", "#ord"], [A("menos pedidos,"), "pop", "#ordDn"], [A("menos pedidos,"), "face", "tec", "oh"], [A("puede cambiar lo que"), "pop", "#px"], [A("antes de que se cancele"), "shake", "#px"],
@@ -54,7 +54,7 @@ if MODE == "lg":
              [A("el nombre y el símbolo,"), "pulse", "#dFicha"], [A("confirmo el tipo"), "show", "#dTipo"], [A("confirmo el tipo"), "move", "#cur", 60, 110, 0.7], [A("compruebo cuánto"), "show", "#dCant"],
              [A("compruebo cuánto"), "move", "#cur", 60, 200, 0.7], [A("En la vista previa"), "show", "#dPrev"], [A("En la vista previa"), "move", "#cur", 60, 450, 0.8], [A("dinero propio o prestado."), "show", "#dFin"],
              [A("dinero propio o prestado."), "move", "#cur", 60, 290, 0.7], [A("Ahí paro."), "dim", "#dBtn", 0.3], [A("Ahí paro."), "pop", "#dStop"], [A("Ahí paro.") + 0.3, "move", "#cur", 300, 700, 0.8],
-             [t_e + 0.4, "pulse", "#eQ"], [DUR - 2.6, "wave", "eA"], [DUR - 2.2, "pulse", "#eQ"], [DUR - 1.6, "jump", "eB"], [A("y llegas a", 0, t_c) + 0.9, "pulse", "#c2"], [A("y llegas a", 0, t_c) + 0.9, "cam", 5, 420, 600, 1.3, 2.4], [A("y llegas a", 0, t_c) + 2.6, "pulse", "#cb2"], [A("qué cambió para el negocio"), "point", "eA"], [A("si entiendes lo que"), "face", "eB", "sm"], [A("esas dos preguntas"), "jump", "eB"]]
+             [t_e + 0.4, "pulse", "#eQ"], [DUR - 2.6, "wave", "eA"], [DUR - 2.2, "pulse", "#eQ"], [DUR - 1.6, "jump", "eB"], [A("y llegas a", 0, t_c) + 0.9, "pulse", "#c2"], [A("y llegas a", 0, t_c) + 0.9, "cam", 5, 440, 600, 1.2, 2.4], [A("y llegas a", 0, t_c) + 2.6, "pulse", "#cb2"], [A("qué cambió para el negocio"), "point", "eA"], [A("si entiendes lo que"), "face", "eB", "sm"], [A("esas dos preguntas"), "jump", "eB"]]
     OV = [(B("MIÉRCOLES: REBOTE · JUEVES: CAÍDA", 50), 0, A("Si estás pensando")), (B("¿Cómo empiezo sin adivinar el mañana?", 52, "gold"), A("Si estás pensando"), A("Vamos a mirar")),
           (B("Qué cayó · qué enseña la historia · cómo revisar un bróker", 46), A("Vamos a mirar"), t_n),
           (B("Jueves 5 nov: −6,36 %", FS), t_n + 0.3, A("Pero si comparas")), (B("Semana (30 oct → 6 nov): −4,91 %", 50), A("Pero si comparas"), A("Y frente a su máximo")),
@@ -106,14 +106,14 @@ else:
     TK = MODE == "tk2"
     t_m, t_c = A("Ahora") - 0.3, (A("Con el interés compuesto") if TK else A("¿Qué tiene que ver")) - 0.35
     t_dc = A("La prensa señaló") - 0.3 if TK else None
-    SCN = [("chart", 0, None, (540, 540, 1.0), (580, 540, 1.06))] + ([("dc", t_dc, "wipe", (540, 600, 1.08), (540, 560, 1.0))] if TK else []) + \
+    SCN = [("chart", 0, None, (540, 540, 1.0), (540, 545, 1.03))] + ([("dc", t_dc, "wipe", (540, 600, 1.08), (540, 560, 1.0))] if TK else []) + \
           [("math", t_m, "whip", (540, 560, 1.0), (540, 580, 1.05)), ("comp", t_c, "wipe", (540, 560, 1.0), (520, 580, 1.05))]
     BEATS = [[0, "on", "#chLine"], [0, "on", "#o30"], [0, "on", "#d6"], [A("cerró la semana"), "show", "#brS"], [A("cerró la semana"), "pulse", "#d6"],
              [t_m + 0.1, "on", "#m100"], [A("baja a 80,"), "show", "#a1"], [A("baja a 80,"), "barup", "#m80"], [A("20%", 0, t_m), "show", "#a2"], [A("96.", 0, t_m), "barup", "#m96"],
              [A("Para volver a 100,"), "pop", "#m25"],
              [t_c + 0.4, "show", "#cLeg"], [t_c + 0.4, "on", "#cb0"], [t_c + 0.4, "show", "#c0"]]
     if TK:
-        BEATS += [[A("El jueves fue"), "out", "#brS"], [A("El jueves fue"), "pop", "#dJ"], [A("El jueves fue") + 0.3, "show", "#brJ"], [A("El jueves fue"), "cam", 0, 820, 620, 1.35],
+        BEATS += [[A("El jueves fue"), "out", "#brS"], [A("El jueves fue"), "pop", "#dJ"], [A("El jueves fue") + 0.3, "show", "#brJ"], [A("El jueves fue"), "cam", 0, 760, 600, 1.15],
                   [t_dc + 0.3, "move", "#truck", 190, 0, 1.6], [A("inteligencia artificial"), "walk", "tec", 200, 1.8], [A("centros de datos"), "pop", "#ord"], [A("más despacio."), "pop", "#ordDn"],
                   [A("Eso ayuda"), "face", "ana", "fl"], [A("no explica por sí solo"), "shrug", "ana"],
                   [A("llegan a 1.070."), "barup", "#cb1"], [A("llegan a 1.070.") + 0.2, "show", "#c1"], [A("llegarían a"), "barup", "#cb2"], [A("llegarían a") + 0.3, "show", "#c2"],

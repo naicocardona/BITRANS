@@ -4,8 +4,12 @@
   const $$ = s => Array.from(document.querySelectorAll(s));
   const SCX = 540, SCY = 540;
   const K = k => "#cam" + k, S = k => "#s" + k;
-  const camTo = (k, t, d, px, py, s, ease = "sine.inOut") => tl.to(K(k), { x: SCX - px * s, y: SCY - py * s, scale: s, duration: d, ease }, t);
-  const camSet = (k, t, px, py, s) => tl.set(K(k), { x: SCX - px * s, y: SCY - py * s, scale: s }, t);
+  // cámara vectorial: se anima el viewBox del SVG (suave a cualquier velocidad) y nunca sale del recuadro de la escena
+  const SV = k => "#cam" + k + " > svg";
+  const VB = (px, py, s) => { s = Math.max(1, s); const h = 540 / s; px = Math.min(Math.max(px, h), 1080 - h); py = Math.min(Math.max(py, h), 1080 - h);
+    return `${(px - h).toFixed(2)} ${(py - h).toFixed(2)} ${(2 * h).toFixed(2)} ${(2 * h).toFixed(2)}`; };
+  const camTo = (k, t, d, px, py, s, ease = "sine.inOut") => tl.to(SV(k), { attr: { viewBox: VB(px, py, s) }, duration: d, ease }, t);
+  const camSet = (k, t, px, py, s) => tl.set(SV(k), { attr: { viewBox: VB(px, py, s) } }, t);
   const pop = (sel, t, from = 0.5, d = 0.45) => tl.fromTo(sel, { opacity: 0, scale: from, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: d, ease: "back.out(2)", immediateRender: false }, t);
   const show = (sel, t, d = 0.4) => tl.fromTo(sel, { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: d, ease: "power3.out", immediateRender: false }, t);
   const out = (sel, t, d = 0.25) => tl.to(sel, { opacity: 0, duration: d }, t);
@@ -61,7 +65,7 @@
       tl.set(a, { opacity: 0 }, t + 0.3); tl.set(b, { opacity: 1 }, t + 0.3); tl.to(w, { scale: 0.01, duration: 0.34, ease: "power2.out" }, t + 0.31); tl.set(w, { opacity: 0 }, t + 0.66); }
     else { const p = c.zp || [540, 540]; camTo(k - 1, t - 0.05, 0.5, p[0], p[1], 5, "power3.in");
       tl.fromTo(b, { opacity: 0 }, { opacity: 1, duration: 0.2, immediateRender: false }, t + 0.3);
-      tl.fromTo(K(k), { scale: 1.7, x: SCX - 540 * 1.7, y: SCY - 540 * 1.7 }, { scale: c.c0[2], x: SCX - c.c0[0] * c.c0[2], y: SCY - c.c0[1] * c.c0[2], duration: 0.55, ease: "power3.out", immediateRender: false }, t + 0.3);
+      tl.fromTo(SV(k), { attr: { viewBox: VB(540, 540, 1.7) } }, { attr: { viewBox: VB(c.c0[0], c.c0[1], c.c0[2]) }, duration: 0.55, ease: "power3.out", immediateRender: false }, t + 0.3);
       tl.set(a, { opacity: 0 }, t + 0.55); }
   });
   // vida constante

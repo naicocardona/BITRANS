@@ -104,7 +104,7 @@ def s_comp():
 <line x1="70" x2="1010" y1="{base}" y2="{base}" stroke="{IV}" stroke-opacity=".35" stroke-width="3"/>{bars}
 {T(110, 420, "", 1)}<g id="c0" opacity="0">{T(110, 440, "Año 0 · USD 1.000", 34, IV, F2, 800, "start")}</g><g id="c1" opacity="0">{T(110, 494, "Año 1 · USD 1.070", 34, GD, F2, 800, "start")}</g><g id="c2" opacity="0">{T(110, 548, "Año 2 · USD 1.144,90", 34, GD, F2, 800, "start")}</g>{lab("c20", 20, "≈ 3.870")}
 {T(90, 950, "Año 0", 22, MUT, F2, 700, "start")}{T(990, 950, "Año 20", 22, MUT, F2, 700, "end")}
-<g id="cLeg" opacity="0"><rect x="300" y="990" width="26" height="26" rx="5" fill="{IV}"/>{T(336, 1012, "Capital inicial", 24, IV, F2, 700, "start")}<rect x="560" y="990" width="26" height="26" rx="5" fill="{GD}"/>{T(596, 1012, "Crecimiento hipotético", 24, GD, F2, 700, "start")}</g>
+<g id="cLeg" opacity="0"><rect x="110" y="990" width="26" height="26" rx="5" fill="{IV}"/>{T(146, 1012, "Capital inicial", 24, IV, F2, 700, "start")}<rect x="350" y="990" width="26" height="26" rx="5" fill="{GD}"/>{T(386, 1012, "Crecimiento hipotético", 24, GD, F2, 700, "start")}</g>
 <g id="cWarn" opacity="0"><rect x="90" y="300" width="440" height="76" rx="38" fill="{DN}"/>{T(310, 352, "Aportes ≠ ganancia", 38, "#fff")}</g>''')
 
 # ---------- 7 · ¿Para qué es ese dinero? ----------

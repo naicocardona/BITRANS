@@ -39,8 +39,22 @@
   - Subtítulos y anclas: `tools/tq_anchors.py`.
   - Música original: `tools/bed_music.py`. Efectos: `tools/sfx_mix.py`. Mezcla: `tools/mix_dem.py`.
   - Portadas: `tools/cover_dem.py`.
+- **Plantilla para paquetes (largo 1920×1080 + verticales con escenas compartidas), desde el paquete Nasdaq (nov 2026):**
+  - `tools/nq_scenes.py`: escenas 1080×1080 reutilizables.
+  - `tools/nq_voice.py`: une la voz, añade pausas de lectura y genera el texto en cifras.
+  - `tools/build_nq.py`: planes por formato con anclas, más un QC de tiempos que detiene el armado.
+  - `tools/nq.js`: motor de efectos por datos con cámara por tramos.
+  - `tools/mix_nq.py`, `tools/cover_nq.py`, `tools/srt_nq.py`.
+  - Si un brief pide su propia paleta o firma (sin logo), se respeta.
+- **Lecciones del paquete Nasdaq:**
+  - Las anclas de una palabra pueden repetirse («Primera:» coincide con «por primera vez»): usar el parámetro `after`.
+  - Nada puede dibujarse encima de las cifras (por ejemplo, un piso tapando la píldora +25 %).
+  - Las tarjetas de cada escena deben llegar junto con la transición; nada de escenarios vacíos mientras la voz arranca.
+  - Las etiquetas «hipotético» se mantienen visibles toda la escena, aunque la cámara se acerque.
+  - Verificar siempre los datos del brief: el S&P de 2022–2023 daba +0,08 %, no −0,18 %.
+- **Revisión cuadro por cuadro antes de entregar:** `python3 tools/qa_video.py video.mp4` detecta cuadros negros, momentos quietos de más de 2 s, volumen y silencios.
 - Mejoras aprobadas por evaluar (inspiradas en la skill claude-animated-shorts, solo técnicas, MIT):
-  - QA cuadro por cuadro (negro, blanco, congelado, saltos, volumen);
+  - QA cuadro por cuadro (negro, blanco, congelado, saltos, volumen): **hecho**;
   - cámara que nunca queda quieta y sacudidas en golpes;
   - profundidad (fondo desenfocado y capas con paralaje);
   - efectos de sonido sincronizados con eventos;

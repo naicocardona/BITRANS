@@ -14,9 +14,9 @@
 
 | # | Riesgo | Quién | Estado |
 |---|---|---|---|
-| 1 | El repositorio BITRANS es **público**: cualquiera puede ver las entregas, el avatar y las muestras de voz. | Lady (GitHub → BITRANS → Settings → General → Danger Zone → Change visibility → Private) | Pendiente |
+| 1 | El repositorio BITRANS es público. | Lady (7 nov): por ahora se queda público, decisión suya | **Cerrado** |
 | 2 | Entregas de LUKAS y NUVA fuera de este repositorio. | Lady (7 nov): ese trabajo lo hace desde su computador; aquí no se necesita nada | **Cerrado** |
-| 3 | Las voces originales de **NU** solo están en ElevenLabs. | Lady: ElevenLabs → Flows → «TITÁN · NU y las elecciones · Narraciones», descargar los audios y subirlos aquí | Pendiente |
+| 3 | Las voces originales de NU solo están en ElevenLabs. | Lady (7 nov): no hace falta; si se reedita NU, se genera una voz nueva con Juan | **Cerrado** |
 | 4 | Todo vive en una rama de trabajo; la rama principal (`master`) solo tiene código viejo. Si alguien borra la rama, se pierde lo visible en la página principal. | Decisión de Lady: unir la rama a `master` con un pull request | Pendiente de autorización |
 | 5 | Herramientas guardadas en carpetas temporales se perdieron al cambiar de equipo. | Claude | **Resuelto:** todo está en `tools/` con `restaurar.sh` |
 | 6 | Las voces de ElevenLabs de demócratas no estaban guardadas. | Claude | **Resuelto:** recuperadas |

@@ -7,9 +7,9 @@ raw = subprocess.run(["ffmpeg", "-v", "error", "-ss", str(a), "-to", str(b), "-i
 F = np.frombuffer(raw, np.uint8).reshape(-1, H, W).astype(np.float32); d = np.abs(np.diff(F, axis=0)).mean((1, 2))
 ev = []; i = 0
 while i < len(d):
-    if d[i] < 0.02:
+    if d[i] < 0.004:
         j = i
-        while j < len(d) and d[j] < 0.02: j += 1
+        while j < len(d) and d[j] < 0.004: j += 1
         if j - i >= 2 and j < len(d) and d[j] > 3 * max(np.median(d[max(0, i-15):i] if i > 0 else d[:1]), 0.05) and np.median(d[max(0, i-15):i] if i > 0 else d[:1]) > 0.05:
             ev.append((round(a + i / 30, 2), j - i, round(float(d[j]), 2)))
         i = j

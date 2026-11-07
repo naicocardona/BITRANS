@@ -1,7 +1,7 @@
 # Verifica la sincronía subtítulos ↔ voz en todo el video: ventanas de 4 s, ASR vs palabras con tiempo. Uso: sync_check.py voz.wav words.json
 import sys, json, re, numpy as np, soundfile as sf
 sys.path.insert(0, __import__("os").path.dirname(__file__)); import align_asr as A
-x, sr = sf.read(sys.argv[1], dtype="float32"); W = json.load(open(sys.argv[2]))["words"]; dur = len(x) / sr; bad = []; sc = []
+x, sr = sf.read(sys.argv[1], dtype="float32"); x = x.mean(1) if x.ndim > 1 else x; W = json.load(open(sys.argv[2]))["words"]; dur = len(x) / sr; bad = []; sc = []
 for a in np.arange(0, dur - 2, 4.0):
     seg = np.concatenate([np.zeros(int(.3 * sr), np.float32), x[int(a * sr):int((a + 4) * sr)]])
     st = A.rec().create_stream(); st.accept_waveform(sr, seg); A.rec().decode_stream(st); heard = set(A.toks(st.result.text))

@@ -13,9 +13,26 @@ def rec():
 NUM = {"0": "cero", "1": "uno", "5": "cinco", "6": "seis", "7": "siete", "10": "diez", "13": "trece", "14": "catorce", "19": "diecinueve", "20": "veinte",
        "24": "veinticuatro", "25": "veinticinco", "80": "ochenta", "96": "noventa y seis", "100": "cien", "1000": "mil", "1070": "mil setenta"}
 def norm(w): return re.sub(r"[^\wáéíóúñü]", "", w.lower())
+_U = "cero uno dos tres cuatro cinco seis siete ocho nueve diez once doce trece catorce quince dieciséis diecisiete dieciocho diecinueve veinte veintiuno veintidós veintitrés veinticuatro veinticinco veintiséis veintisiete veintiocho veintinueve".split()
+_D = {3: "treinta", 4: "cuarenta", 5: "cincuenta", 6: "sesenta", 7: "setenta", 8: "ochenta", 9: "noventa"}
+_C = {1: "ciento", 2: "doscientos", 3: "trescientos", 4: "cuatrocientos", 5: "quinientos", 6: "seiscientos", 7: "setecientos", 8: "ochocientos", 9: "novecientos"}
+def es_num(n):
+    """entero → palabras en español (hasta miles de millones), p. ej. 10800 → diez mil ochocientos (mejora del 7 nov 2026)"""
+    if n < 30: return _U[n]
+    if n < 100: return _D[n // 10] + ("" if n % 10 == 0 else " y " + _U[n % 10])
+    if n < 1000: return "cien" if n == 100 else _C[n // 100] + ("" if n % 100 == 0 else " " + es_num(n % 100))
+    if n < 10**6:
+        k, r = divmod(n, 1000); a = es_num(k)
+        if a.endswith("uno"): a = a[:-3] + ("ún" if a == "veintiuno" else "un")       # veintiún mil, treinta y un mil
+        a = "mil" if k == 1 else a + " mil"
+        return a + ("" if r == 0 else " " + es_num(r))
+    m, r = divmod(n, 10**6); a = "un millón" if m == 1 else es_num(m) + " millones"
+    return a + ("" if r == 0 else " " + es_num(r))
 def toks(text):
     out = []
     for w in text.replace("%", " por ciento").split():
+        d = re.sub(r"[$.,:;?!¿¡»«]", "", w)
+        if d.isdigit() and 0 < len(d) <= 10: out += es_num(int(d)).split(); continue
         n = norm(w); out += (NUM[n].split() if n in NUM else [n]) if n else []
     return out
 def chunks_of(x, sr, db=-35, mind=0.16):

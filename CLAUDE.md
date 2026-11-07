@@ -12,7 +12,7 @@
 - Proyectos independientes, cada uno con sus reglas: TITÁN HOLDING, NAS100 EDGE LAB, LUKAS, NUVA.
 - **Este equipo es solo para hacer videos**, cuando Lady trae una idea (7 nov 2026). El resto del trabajo de LUKAS y NUVA (app, guías, prototipos, anuncios) lo hace ella desde su computador: no pedirlo, rescatarlo ni archivarlo aquí.
 - No inventar datos: cifras exactas y con fuente. Los ejemplos hipotéticos se marcan como tales.
-- Cada archivo debe pesar menos de 30 MB; solo el video largo de YouTube de TITÁN puede superarlo.
+- **Peso:** los videos para redes se exportan en máxima calidad (crf 18), aunque pesen más de 30 MB; Lady lo autorizó el 7 nov 2026. Límite práctico: menos de 100 MB por archivo, que es el máximo de GitHub.
 - No clonar ni imitar voces reales. No activar servicios de pago, no enviar grabaciones de Lady a terceros y no aceptar analítica por ella. ElevenLabs sí está autorizado (plan pago).
 - No copiar el estilo de creadores o canales específicos; TITÁN tiene identidad propia.
 - El correo de Lady solo sirve para identificarla; nunca se envía a servicios.
@@ -68,6 +68,11 @@
   - Siempre en la paleta de TITÁN, con personas genéricas y sin mascotas de terceros (por ejemplo, Clawd de painted-animation).
   - Antes de animar el video completo, aprobar una toma piloto.
   - `motion-reel` aporta el ciclo de crítica: tira de cuadros consecutivos y hasta 3 rondas de corrección.
+  - Plantilla del estilo dibujado (piloto interés compuesto): `tools/ic/`. `guion` → `voice.py` → `film.js` (escenas con anclas A(frase, after)) → `build.sh` → `tools/hd_render.cjs` → `mix.py`.
+    - `tools/hd_render.cjs` renderiza en paralelo a 30 fps con Playwright. También genera grilla, cuadros sueltos y portada, y exporta los efectos.
+    - Se detiene si hay anclas ambiguas.
+    - El film corre a 24 fps lógicos estirados ×1,25 → 30 fps reales.
+  - `align_asr.py` convierte las cifras de Whisper («10,800») a palabras. Así `sync_check` deja de bajar en los videos con números.
 - Mejoras aprobadas por evaluar (inspiradas en la skill claude-animated-shorts, solo técnicas, MIT):
   - QA cuadro por cuadro (negro, blanco, congelado, saltos, volumen): **hecho**;
   - cámara que nunca queda quieta y sacudidas en golpes;

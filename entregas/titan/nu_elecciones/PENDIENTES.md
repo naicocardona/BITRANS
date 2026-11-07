@@ -1,3 +1,11 @@
+# NU · Estado (actualizado 7 nov 2026)
+
+**COMPLETADO.** No hay pendientes. El 4 nov se entregaron el TikTok y el Shorts ilustrados con las correcciones, el video largo de YouTube, la miniatura, el SRT y la descripción (ver el historial de git).
+Las voces originales de Juan están en el flujo de ElevenLabs «TITÁN · NU y las elecciones · Narraciones»; falta guardar sus mp3 en `voz/`.
+
+---
+Historial (nota del 4 nov, ya resuelta):
+
 # NU · Pendientes (4 nov 2026, antes del reinicio de la sesión)
 
 ## Hecho

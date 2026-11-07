@@ -69,7 +69,7 @@ def s_dc():
 <rect x="40" y="-80" width="90" height="80" rx="12" fill="{GD}"/><rect x="60" y="-68" width="50" height="30" rx="6" fill="#9FC0FF"/><circle cx="-100" cy="6" r="22" fill="#111"/><circle cx="80" cy="6" r="22" fill="#111"/></g></g>'''
     return SVG(f'''{T(80, 170, "CENTRO DE DATOS", 44, IV, F1, 800, "start")}{T(80, 214, "Ejemplo ilustrativo", 24, GD, F2, 700, "start")}
 <rect x="60" y="340" width="560" height="380" rx="22" fill="#151A33" stroke="{IV}" stroke-opacity=".15" stroke-width="3"/>{''.join(rack(90 + k*130) for k in range(4))}
-{order}{tag}{floor(800)}{truck}{P("tec", 4, 260, 950, 0.55, shirt="#7FC8B0")}{P("ana", 5, 720, 950, 0.55, flip=True, shirt="#B9A2E8")}''')
+{order}{tag}{floor(800)}{truck}{P("tec", 4, 400, 950, 0.55, shirt="#7FC8B0")}{P("ana", 5, 800, 950, 0.55, flip=True, shirt="#B9A2E8")}''')
 
 # ---------- 4 · S&P 500: diez años y dos años ----------
 def s_sp():
@@ -88,8 +88,8 @@ def s_math():
     arr = lambda id, x, lab, c: f'<g transform="translate({x} 330)"><g id="{id}" opacity="0"><path d="M-70 0 H50 M30 -20 L60 0 L30 20" fill="none" stroke="{c}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>{T(-5, -24, lab, 34, c)}</g></g>'
     return SVG(f'''{T(540, 120, "EJEMPLO APARTE", 30, GD, F2)}{T(540, 170, "No son datos del Nasdaq-100", 24, MUT, F2, 700)}
 <line x1="80" x2="1000" y1="{860-100*5.5:.0f}" y2="{860-100*5.5:.0f}" stroke="{IV}" stroke-opacity=".35" stroke-width="3" stroke-dasharray="10 10"/>
-{col("m100", 200, 100, IV, "1")}{col("m80", 540, 80, DN)}{col("m96", 880, 96, GD)}{arr("a1", 370, "−20 %", DN)}{arr("a2", 710, "+20 %", GD)}
-<g id="m25" opacity="0"><rect x="300" y="930" width="480" height="90" rx="45" fill="{UP}"/>{T(540, 990, "80 → 100 = +25 %", 46, "#fff")}</g>{floor(860, "#11152B")}''')
+{floor(860, "#11152B")}{col("m100", 200, 100, IV, "1")}{col("m80", 540, 80, DN)}{col("m96", 880, 96, GD)}{arr("a1", 370, "−20 %", DN)}{arr("a2", 710, "+20 %", GD)}
+<g id="m25" opacity="0"><rect x="300" y="930" width="480" height="90" rx="45" fill="{UP}"/>{T(540, 990, "80 → 100 = +25 %", 46, "#fff")}</g>''')
 
 # ---------- 6 · Capitalización hipotética ----------
 def s_comp():
@@ -97,7 +97,7 @@ def s_comp():
     bars = ''
     for k, v in enumerate(V):
         x = x0 + k * (w + 6); hc, hg = 1000 * sc, (v - 1000) * sc
-        bars += f'<g class="cb" id="cb{k}" opacity="0"><rect x="{x}" y="{base-hc:.0f}" width="{w}" height="{hc:.0f}" rx="6" fill="{IV}"/><rect x="{x}" y="{base-hc-hg:.0f}" width="{w}" height="{hg:.0f}" rx="6" fill="{GD}"/></g>'
+        bars += f'<g class="cb{" cbx" if k >= 3 else ""}" id="cb{k}" opacity="0"><rect x="{x}" y="{base-hc:.0f}" width="{w}" height="{hc:.0f}" rx="6" fill="{IV}"/><rect x="{x}" y="{base-hc-hg:.0f}" width="{w}" height="{hg:.0f}" rx="6" fill="{GD}"/></g>'
     lab = lambda id, k, t: f'<g id="{id}" opacity="0">{T(x0 + k*(w+6) + w/2, base - V[k]*sc - 22, t, 30, GD, F1)}</g>'
     return SVG(f'''{T(540, 112, "CAPITALIZACIÓN · EJEMPLO HIPOTÉTICO", 34, IV)}
 <g transform="translate(540 172)"><rect x="-470" y="-34" width="940" height="60" rx="30" fill="{BG2}" stroke="{GD}" stroke-width="2"/>{T(0, 6, "7 % hipotético constante · sin aportes, comisiones, impuestos ni inflación", 22, GD, F2, 800)}</g>
@@ -125,7 +125,7 @@ def s_brok(names=True):
 <g id="nmSFC" opacity="0">{T(860, 760, "Registro SFC: consulta", 22, GD, F2, 700)}</g>''' if names else '')
     return SVG(f'''{card("q1", 190, "1 · ENTIDAD", "¿Quién está", "detrás?", ic1)}{card("q2", 540, "2 · COSTOS", "¿Cuánto cuesta", "todo?", ic2)}{card("q3", 890, "3 · PRODUCTO", "¿Qué estoy", "comprando?", ic3)}
 {nm}<g id="bc" opacity="0"><rect x="120" y="800" width="840" height="64" rx="32" fill="{BG2}" stroke="{GD}" stroke-width="2"/>{T(540, 842, "Firma de EE. UU.: BrokerCheck (FINRA) · SIPC no cubre caídas", 24, IV, F2, 700)}</g>
-{floor(900)}{P("bk", 0, 160, 1060, 0.42, shirt="#9BB0E8")}{P("bk2", 5, 930, 1060, 0.42, flip=True, shirt="#E8A87C")}''')
+{floor(900)}{P("bk", 0, 150, 1075, 0.6, shirt="#9BB0E8")}{P("bk2", 5, 940, 1075, 0.6, flip=True, shirt="#E8A87C")}''')
 
 # ---------- 9 · Recorrido de costos + ejemplo USD 20 / USD 1 ----------
 def s_cost():
@@ -133,6 +133,7 @@ def s_cost():
     nodes = ''.join(f'<g transform="translate({120+k*210} 330)"><g class="cn" id="cn{k}" opacity="0"><circle r="62" fill="{IV}"/>{T(0, 10, str(k+1), 40, INK)}{T(0, 112, s, 26, IV, F2)}</g></g>' for k, s in enumerate(st))
     return SVG(f'''{T(540, 150, "EL RECORRIDO COMPLETO", 50, IV)}<line id="cLine" x1="120" x2="960" y1="330" y2="330" stroke="{GD}" stroke-width="6" stroke-dasharray="14 12"/>{nodes}
 <g transform="translate(120 330)"><g id="coin" opacity="0"><circle r="28" fill="{GD}"/>{T(0, 10, "$", 30, INK)}</g></g>
+<g id="cwk">{P("cw1", 2, 60, 700, 0.62, shirt="#7FC8B0")}<g transform="translate(60 700) scale(.62)"><g id="cw1bag"><rect x="34" y="-190" width="56" height="60" rx="10" fill="{GD}"/>{T(62, -148, "$", 34, INK)}</g></g></g>
 <g id="ex" opacity="0"><rect x="160" y="560" width="760" height="330" rx="30" fill="{IV}"/>{T(540, 620, "EJEMPLO HIPOTÉTICO", 26, "#8A6A2A", F2)}
 {T(330, 720, "Orden", 30, INK, F2, 700)}{T(330, 790, "USD 20", 62, INK)}{T(540, 770, "+", 60, INK)}{T(750, 720, "Cargo fijo", 30, INK, F2, 700)}{T(750, 790, "USD 1", 62, DN)}
 <g id="ex5" opacity="0"><rect x="330" y="820" width="420" height="56" rx="28" fill="{DN}"/>{T(540, 858, "= 5 % de la orden", 32, "#fff")}</g></g>

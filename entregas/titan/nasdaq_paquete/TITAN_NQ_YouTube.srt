@@ -1,0 +1,584 @@
+1
+00:00:00,000 --> 00:00:02,417
+El miércoles, Wall Street rebotó.
+
+2
+00:00:02,638 --> 00:00:05,465
+El jueves, el Nasdaq-100 cayó más de 6 %.
+
+3
+00:00:05,485 --> 00:00:08,812
+Si estás pensando en invertir por primera vez,
+
+4
+00:00:08,832 --> 00:00:11,909
+esos dos titulares seguidos te pueden dejar con
+
+5
+00:00:11,929 --> 00:00:12,439
+una duda:
+
+6
+00:00:12,459 --> 00:00:15,488
+¿cómo empiezo sin tener que adivinar qué va
+
+7
+00:00:15,508 --> 00:00:16,624
+a pasar mañana?
+
+8
+00:00:16,921 --> 00:00:18,582
+Vamos a mirar qué cayó,
+
+9
+00:00:18,687 --> 00:00:21,067
+qué nos enseña la historia y cómo revisar
+
+10
+00:00:21,087 --> 00:00:23,332
+un bróker antes de poner dinero.
+
+11
+00:00:24,082 --> 00:00:26,653
+El jueves 5 de noviembre fue el golpe
+
+12
+00:00:26,673 --> 00:00:28,465
+más fuerte de esa semana.
+
+13
+00:00:28,765 --> 00:00:31,150
+Pero si comparas el cierre del viernes 6
+
+14
+00:00:31,170 --> 00:00:32,950
+con el del viernes anterior,
+
+15
+00:00:33,170 --> 00:00:36,803
+el Nasdaq-100 terminó cerca de 5 % abajo.
+
+16
+00:00:37,072 --> 00:00:38,736
+Y frente a su máximo de cierre de
+
+17
+00:00:38,756 --> 00:00:41,980
+octubre, estaba casi 14 % abajo.
+
+18
+00:00:43,309 --> 00:00:46,137
+Las tres cifras hablan del mismo índice.
+
+19
+00:00:46,351 --> 00:00:48,171
+La diferencia es el punto de partida.
+
+20
+00:00:48,191 --> 00:00:50,759
+Por eso, antes de quedarte con un titular,
+
+21
+00:00:50,779 --> 00:00:53,564
+pregunta qué se midió y entre qué fechas.
+
+22
+00:00:53,584 --> 00:00:55,110
+¿Qué preocupaba al mercado?
+
+23
+00:00:55,403 --> 00:00:58,205
+Según la cobertura de esa semana,
+
+24
+00:00:58,225 --> 00:01:01,829
+parte de la presión estuvo en empresas vinculadas
+
+25
+00:01:01,849 --> 00:01:03,904
+a la inteligencia artificial.
+
+26
+00:01:04,181 --> 00:01:06,498
+Había dudas sobre lo caras que estaban algunas
+
+27
+00:01:06,518 --> 00:01:09,094
+acciones y sobre si los proyectos de centros
+
+28
+00:01:09,114 --> 00:01:12,422
+de datos podrían avanzar más despacio tras las
+
+29
+00:01:12,442 --> 00:01:13,470
+elecciones.
+
+30
+00:01:13,735 --> 00:01:16,290
+Imagina una empresa que vende equipos para esos
+
+31
+00:01:16,310 --> 00:01:17,097
+proyectos:
+
+32
+00:01:17,356 --> 00:01:19,741
+si el mercado espera menos pedidos,
+
+33
+00:01:19,890 --> 00:01:21,997
+puede cambiar lo que está dispuesto a pagar
+
+34
+00:01:22,017 --> 00:01:24,304
+por la acción antes de que se cancele
+
+35
+00:01:24,324 --> 00:01:25,541
+un solo pedido.
+
+36
+00:01:26,677 --> 00:01:28,126
+Para ampliar la foto,
+
+37
+00:01:28,146 --> 00:01:32,281
+cambiemos al S&P 500, que sigue a un conjunto
+
+38
+00:01:32,301 --> 00:01:35,225
+más amplio de grandes empresas estadounidenses.
+
+39
+00:01:35,593 --> 00:01:38,572
+Entre 2016 y 2025,
+
+40
+00:01:38,592 --> 00:01:40,675
+el precio de ese índice creció a un
+
+41
+00:01:40,695 --> 00:01:44,237
+ritmo equivalente de alrededor del 13 % anual en
+
+42
+00:01:44,257 --> 00:01:46,584
+dólares, sin contar dividendos.
+
+43
+00:01:46,972 --> 00:01:49,562
+Pero nadie vivió 10 años iguales.
+
+44
+00:01:49,820 --> 00:01:53,025
+En 2022 bajó cerca del 19 % y en
+
+45
+00:01:53,045 --> 00:01:56,912
+2023 subió alrededor del 24.
+
+46
+00:01:57,377 --> 00:02:00,024
+Aun así, al terminar esos dos años,
+
+47
+00:02:00,108 --> 00:02:02,917
+el precio quedó prácticamente en el mismo punto
+
+48
+00:02:02,937 --> 00:02:03,954
+donde empezó.
+
+49
+00:02:04,355 --> 00:02:05,160
+Mira por qué.
+
+50
+00:02:05,569 --> 00:02:08,481
+Si tienes 100 y pierdes 20 %,
+
+51
+00:02:08,501 --> 00:02:09,616
+te quedan 80.
+
+52
+00:02:10,013 --> 00:02:12,264
+Si luego ganas 20 %,
+
+53
+00:02:12,326 --> 00:02:15,061
+ese 20 se calcula sobre 80 y llegas
+
+54
+00:02:15,081 --> 00:02:16,371
+a 96.
+
+55
+00:02:17,754 --> 00:02:21,610
+Para volver a 100 necesitas ganar 25 %.
+
+56
+00:02:22,044 --> 00:02:24,690
+Un promedio histórico sirve para describir lo que
+
+57
+00:02:24,710 --> 00:02:25,227
+pasó.
+
+58
+00:02:25,547 --> 00:02:28,034
+No te dice cuánto ganarás el próximo año
+
+59
+00:02:28,054 --> 00:02:30,908
+ni cuánto te quedará al convertir el resultado
+
+60
+00:02:30,928 --> 00:02:31,667
+a pesos.
+
+61
+00:02:32,617 --> 00:02:35,467
+Esa misma idea explica la capitalización:
+
+62
+00:02:35,714 --> 00:02:38,458
+cada rendimiento se calcula sobre un saldo que
+
+63
+00:02:38,478 --> 00:02:39,493
+va cambiando.
+
+64
+00:02:39,806 --> 00:02:43,020
+Supón que 1.000 dólares crecen un 7 %.
+
+65
+00:02:43,250 --> 00:02:45,804
+Al cabo de un año tienes 1.070.
+
+66
+00:02:46,036 --> 00:02:48,404
+Si vuelves a ganar 7 %,
+
+67
+00:02:48,424 --> 00:02:51,327
+ahora se calcula sobre 1.070 y llegas a
+
+68
+00:02:51,347 --> 00:02:55,282
+1.144,90 dólares.
+
+69
+00:02:55,475 --> 00:02:58,647
+Si esa tasa se repitiera durante 20 años,
+
+70
+00:02:58,667 --> 00:03:02,971
+el saldo llegaría a unos 3.870 dólares.
+
+71
+00:03:04,861 --> 00:03:06,215
+Ese «si» es la parte más importante.
+
+72
+00:03:06,266 --> 00:03:10,259
+Es un ejemplo de cómo funcionan las matemáticas,
+
+73
+00:03:10,279 --> 00:03:13,607
+no una proyección de la bolsa.
+
+74
+00:03:13,858 --> 00:03:16,938
+Mantener invertidas las ganancias o reinvertir dividendos puede
+
+75
+00:03:16,958 --> 00:03:21,419
+contribuir al crecimiento, pero también habrá periodos en
+
+76
+00:03:21,439 --> 00:03:22,866
+los que el valor baje.
+
+77
+00:03:23,127 --> 00:03:24,459
+Y si añades dinero,
+
+78
+00:03:24,479 --> 00:03:26,766
+separa los aportes del rendimiento:
+
+79
+00:03:26,940 --> 00:03:29,100
+lo que pusiste de tu bolsillo no es
+
+80
+00:03:29,120 --> 00:03:29,915
+ganancia.
+
+81
+00:03:31,077 --> 00:03:32,762
+Ahora la parte práctica.
+
+82
+00:03:33,069 --> 00:03:34,576
+Antes de elegir una app,
+
+83
+00:03:34,703 --> 00:03:37,296
+piensa para qué es ese dinero y cuándo
+
+84
+00:03:37,316 --> 00:03:38,906
+podrías necesitarlo.
+
+85
+00:03:39,139 --> 00:03:41,459
+Una caída no significa lo mismo para alguien
+
+86
+00:03:41,479 --> 00:03:44,069
+que necesita retirar el próximo mes que para
+
+87
+00:03:44,221 --> 00:03:46,799
+alguien que está ahorrando para una meta a
+
+88
+00:03:46,819 --> 00:03:47,795
+varios años.
+
+89
+00:03:48,109 --> 00:03:50,772
+El bróker es el intermediario que tramita tus
+
+90
+00:03:50,792 --> 00:03:51,508
+órdenes.
+
+91
+00:03:51,634 --> 00:03:54,115
+Desde Colombia puedes investigar Hapi,
+
+92
+00:03:54,184 --> 00:03:55,576
+Interactive Brokers o un intermediario local.
+
+93
+00:03:55,611 --> 00:04:00,629
+Para compararlos, yo empezaría con tres preguntas.
+
+94
+00:04:00,850 --> 00:04:01,480
+Primera:
+
+95
+00:04:01,677 --> 00:04:03,447
+¿quién responde por mi cuenta?
+
+96
+00:04:03,680 --> 00:04:05,622
+Busca el nombre legal de la firma,
+
+97
+00:04:05,706 --> 00:04:08,890
+quién custodia los activos y dónde puedes comprobar
+
+98
+00:04:08,910 --> 00:04:09,718
+su registro.
+
+99
+00:04:09,813 --> 00:04:13,178
+Para una firma estadounidense puedes usar BrokerCheck de
+
+100
+00:04:13,198 --> 00:04:13,804
+FINRA.
+
+101
+00:04:13,890 --> 00:04:16,092
+Y si ves una referencia a SIPC,
+
+102
+00:04:16,155 --> 00:04:16,840
+entiende qué significa:
+
+103
+00:04:16,860 --> 00:04:20,790
+no cubre pérdidas causadas por una caída del
+
+104
+00:04:20,810 --> 00:04:21,589
+mercado.
+
+105
+00:04:21,937 --> 00:04:22,709
+Segunda:
+
+106
+00:04:22,933 --> 00:04:25,070
+¿cuánto cuesta el recorrido completo?
+
+107
+00:04:25,286 --> 00:04:27,343
+Mira cuánto cuesta depositar,
+
+108
+00:04:27,363 --> 00:04:29,230
+convertir pesos a dólares,
+
+109
+00:04:29,250 --> 00:04:31,315
+comprar, vender y retirar.
+
+110
+00:04:31,411 --> 00:04:33,876
+Imagina una orden de 20 dólares con un
+
+111
+00:04:33,896 --> 00:04:35,475
+cargo fijo de 1 dólar.
+
+112
+00:04:35,547 --> 00:04:38,599
+El cargo representa el 5 % de la orden,
+
+113
+00:04:38,665 --> 00:04:39,420
+incluso antes de que se mueva el precio.
+
+114
+00:04:40,854 --> 00:04:44,079
+Es un ejemplo, no una tarifa de Hapi
+
+115
+00:04:44,099 --> 00:04:45,758
+ni de Interactive Brokers.
+
+116
+00:04:45,778 --> 00:04:46,545
+Tercera:
+
+117
+00:04:46,903 --> 00:04:47,592
+¿qué estoy comprando?
+
+118
+00:04:47,802 --> 00:04:52,832
+Una acción representa una participación en una empresa.
+
+119
+00:04:52,974 --> 00:04:54,310
+Un ETF es un fondo que cotiza en
+
+120
+00:04:54,330 --> 00:04:56,127
+bolsa y puede reunir varias inversiones,
+
+121
+00:04:56,147 --> 00:04:59,299
+según su estrategia.
+
+122
+00:04:59,450 --> 00:05:00,656
+El Nasdaq-100 es un índice:
+
+123
+00:05:00,676 --> 00:05:03,267
+es una referencia, no algo que puedas comprar
+
+124
+00:05:03,287 --> 00:05:03,949
+directamente.
+
+125
+00:05:03,969 --> 00:05:05,480
+Si la pantalla dice CFD,
+
+126
+00:05:05,588 --> 00:05:07,965
+estás viendo un contrato sobre el precio,
+
+127
+00:05:08,088 --> 00:05:10,416
+no una participación en la empresa.
+
+128
+00:05:10,436 --> 00:05:12,535
+Veamos una orden ficticia.
+
+129
+00:05:12,864 --> 00:05:13,607
+Abro
+
+130
+00:05:19,357 --> 00:05:20,495
+la ficha,
+
+131
+00:05:28,713 --> 00:05:29,736
+reviso el nombre y el símbolo,
+
+132
+00:05:29,756 --> 00:05:33,937
+confirmo el tipo de producto y compruebo cuánto
+
+133
+00:05:33,957 --> 00:05:35,447
+quiero comprar.
+
+134
+00:05:35,593 --> 00:05:37,803
+En la vista previa reviso el costo estimado
+
+135
+00:05:37,823 --> 00:05:39,730
+y si la operación usa dinero propio o
+
+136
+00:05:39,750 --> 00:05:40,186
+prestado.
+
+137
+00:05:40,206 --> 00:05:40,912
+Ahí paro.
+
+138
+00:05:41,112 --> 00:05:44,311
+Ya entendí qué haría la orden sin haberla
+
+139
+00:05:44,331 --> 00:05:45,418
+ejecutado.
+
+140
+00:05:45,595 --> 00:05:47,347
+La próxima vez que el mercado esté en
+
+141
+00:05:47,367 --> 00:05:49,846
+rojo, pregúntate qué cambió para el negocio y
+
+142
+00:05:49,866 --> 00:05:52,066
+si entiendes lo que compraste.
+
+143
+00:05:52,225 --> 00:05:54,927
+Para empezar, esas dos preguntas te ayudan más
+
+144
+00:05:54,947 --> 00:05:57,455
+que intentar acertar el rebote de mañana.
+
+145
+00:05:57,840 --> 00:05:59,369
+Contenido educativo.
+
+146
+00:05:59,593 --> 00:06:02,307
+No es una recomendación de inversión.
+

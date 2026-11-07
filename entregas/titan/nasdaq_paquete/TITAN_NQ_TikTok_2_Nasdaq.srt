@@ -1,0 +1,116 @@
+1
+00:00:00,000 --> 00:00:01,615
+El Nasdaq cayó.
+
+2
+00:00:01,859 --> 00:00:04,218
+¿Por qué recuperar una pérdida cuesta más de
+
+3
+00:00:04,238 --> 00:00:05,245
+lo que parece?
+
+4
+00:00:05,671 --> 00:00:08,305
+El Nasdaq-100 cerró la semana del 6 de
+
+5
+00:00:08,325 --> 00:00:10,921
+noviembre casi 5 % abajo.
+
+6
+00:00:11,320 --> 00:00:13,259
+El jueves fue más brusco:
+
+7
+00:00:13,414 --> 00:00:16,468
+cayó más de 6 % en una sesión.
+
+8
+00:00:16,855 --> 00:00:19,162
+La prensa señaló dudas sobre las empresas de
+
+9
+00:00:19,182 --> 00:00:22,566
+inteligencia artificial y sobre si algunos proyectos de
+
+10
+00:00:22,586 --> 00:00:25,866
+centros de datos podrían avanzar más despacio.
+
+11
+00:00:26,135 --> 00:00:28,210
+Eso ayuda a entender el contexto,
+
+12
+00:00:28,276 --> 00:00:30,382
+pero no explica por sí solo todo el
+
+13
+00:00:30,402 --> 00:00:31,394
+movimiento.
+
+14
+00:00:31,812 --> 00:00:33,467
+Ahora un ejemplo aparte.
+
+15
+00:00:33,770 --> 00:00:35,708
+Si 100 baja a 80,
+
+16
+00:00:35,728 --> 00:00:39,014
+ganar 20 % te lleva a 96.
+
+17
+00:00:39,979 --> 00:00:40,889
+Para volver a 100,
+
+18
+00:00:40,909 --> 00:00:42,259
+necesitas subir 25.
+
+19
+00:00:42,279 --> 00:00:43,262
+Cambió la base.
+
+20
+00:00:43,614 --> 00:00:48,008
+Con el interés compuesto pasa algo parecido:
+
+21
+00:00:48,271 --> 00:00:51,658
+cada rendimiento se calcula sobre un saldo distinto.
+
+22
+00:00:51,958 --> 00:00:54,659
+Si 1.000 dólares crecen un 7 %,
+
+23
+00:00:54,679 --> 00:00:56,305
+llegan a 1.070.
+
+24
+00:00:56,584 --> 00:00:59,130
+Si el siguiente año se repitiera esa tasa,
+
+25
+00:00:59,182 --> 00:01:02,439
+llegarían a 1.144,90.
+
+26
+00:01:02,734 --> 00:01:04,848
+El 7 % es hipotético.
+
+27
+00:01:05,104 --> 00:01:07,611
+La capitalización puede ayudar a que el dinero
+
+28
+00:01:07,631 --> 00:01:09,386
+crezca cuando hay ganancias.
+
+29
+00:01:09,477 --> 00:01:12,723
+No garantiza que recuperes una caída.
+

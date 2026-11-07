@@ -1,0 +1,80 @@
+1
+00:00:00,000 --> 00:00:01,593
+El Nasdaq cayó.
+
+2
+00:00:01,942 --> 00:00:04,435
+¿Por qué recuperar una pérdida cuesta más de
+
+3
+00:00:04,455 --> 00:00:05,505
+lo que parece?
+
+4
+00:00:05,830 --> 00:00:08,282
+El Nasdaq-100 cerró la semana del 6 de
+
+5
+00:00:08,302 --> 00:00:10,467
+noviembre casi 5 % abajo.
+
+6
+00:00:10,487 --> 00:00:12,006
+Ahora, un ejemplo aparte:
+
+7
+00:00:12,039 --> 00:00:14,504
+si 100 baja a 80,
+
+8
+00:00:14,524 --> 00:00:17,659
+subir 20 % te deja en 96.
+
+9
+00:00:17,679 --> 00:00:19,018
+Para volver a 100,
+
+10
+00:00:19,298 --> 00:00:21,110
+necesitas subir 25.
+
+11
+00:00:21,130 --> 00:00:22,558
+¿Qué tiene que ver
+
+12
+00:00:23,144 --> 00:00:24,500
+con el interés compuesto?
+
+13
+00:00:24,520 --> 00:00:28,190
+Que cada rendimiento se calcula sobre un saldo
+
+14
+00:00:28,210 --> 00:00:29,099
+distinto.
+
+15
+00:00:29,304 --> 00:00:31,718
+Si tus ganancias se mantienen invertidas,
+
+16
+00:00:31,738 --> 00:00:34,344
+también pueden generar rendimientos después.
+
+17
+00:00:34,565 --> 00:00:37,085
+Pero el mercado no paga una tasa fija.
+
+18
+00:00:37,285 --> 00:00:39,834
+La capitalización puede ayudar a que el dinero
+
+19
+00:00:39,854 --> 00:00:41,635
+crezca cuando hay ganancias;
+
+20
+00:00:41,801 --> 00:00:44,845
+no garantiza que recuperes una caída.
+

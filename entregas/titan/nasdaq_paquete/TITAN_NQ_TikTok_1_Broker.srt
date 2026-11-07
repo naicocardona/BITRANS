@@ -1,0 +1,136 @@
+1
+00:00:00,000 --> 00:00:02,075
+Antes de depositar en un bróker,
+
+2
+00:00:02,095 --> 00:00:03,647
+revisa estas tres cosas.
+
+3
+00:00:03,667 --> 00:00:04,179
+Uno:
+
+4
+00:00:04,445 --> 00:00:07,034
+¿quién está detrás de la app?
+
+5
+00:00:07,288 --> 00:00:09,649
+Si estás comparando opciones desde Colombia,
+
+6
+00:00:09,669 --> 00:00:13,795
+puedes investigar Hapi, Interactive Brokers o un intermediario
+
+7
+00:00:13,815 --> 00:00:14,447
+local.
+
+8
+00:00:14,783 --> 00:00:16,782
+Busca el nombre legal de la firma y
+
+9
+00:00:16,802 --> 00:00:18,678
+quién guarda tus inversiones.
+
+10
+00:00:18,903 --> 00:00:20,933
+Si es una firma estadounidense,
+
+11
+00:00:20,953 --> 00:00:24,185
+puedes consultar su ficha en BrokerCheck.
+
+12
+00:00:24,381 --> 00:00:25,425
+Dos:
+
+13
+00:00:25,445 --> 00:00:26,622
+¿cuánto cuesta todo el recorrido?
+
+14
+00:00:26,897 --> 00:00:29,380
+Mira depósito, cambio de moneda,
+
+15
+00:00:29,400 --> 00:00:31,599
+compra, venta y retiro.
+
+16
+00:00:31,884 --> 00:00:32,647
+Por ejemplo:
+
+17
+00:00:32,852 --> 00:00:34,914
+si tu orden es de 20 dólares y
+
+18
+00:00:34,934 --> 00:00:36,968
+hay un cargo fijo de 1 dólar,
+
+19
+00:00:37,112 --> 00:00:40,316
+ese cargo equivale al 5 % de la orden.
+
+20
+00:00:41,600 --> 00:00:44,772
+Son números inventados para que veas por qué
+
+21
+00:00:44,792 --> 00:00:46,287
+importa comparar el
+
+22
+00:00:47,253 --> 00:00:47,935
+costo completo.
+
+23
+00:00:48,146 --> 00:00:48,564
+Tres:
+
+24
+00:00:48,584 --> 00:00:51,307
+¿qué producto estás comprando?
+
+25
+00:00:51,327 --> 00:00:53,448
+Una acción, un ETF y un CFD son
+
+26
+00:00:53,468 --> 00:00:54,824
+cosas distintas.
+
+27
+00:00:55,090 --> 00:00:57,454
+Antes de confirmar, revisa el nombre,
+
+28
+00:00:57,474 --> 00:00:58,874
+el tipo de producto,
+
+29
+00:00:58,950 --> 00:01:00,900
+el importe y los cargos.
+
+30
+00:01:01,104 --> 00:01:02,312
+Fíjate también si
+
+31
+00:01:03,062 --> 00:01:04,588
+aparece dinero prestado.
+
+32
+00:01:04,931 --> 00:01:07,665
+Aquí llegamos a la vista previa y paramos.
+
+33
+00:01:07,853 --> 00:01:10,502
+Puedes aprender a leer una orden sin mover
+
+34
+00:01:10,522 --> 00:01:11,534
+un peso.
+

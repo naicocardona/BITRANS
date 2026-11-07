@@ -1,0 +1,88 @@
+1
+00:00:00,000 --> 00:00:02,152
+Antes de depositar en un bróker,
+
+2
+00:00:02,172 --> 00:00:03,781
+revisa estas tres cosas.
+
+3
+00:00:03,801 --> 00:00:04,323
+Uno:
+
+4
+00:00:04,559 --> 00:00:07,183
+¿quién está detrás de la app?
+
+5
+00:00:07,414 --> 00:00:09,475
+Busca el nombre legal de la firma y
+
+6
+00:00:09,495 --> 00:00:11,421
+quién guarda tus inversiones.
+
+7
+00:00:11,683 --> 00:00:12,418
+Dos:
+
+8
+00:00:12,694 --> 00:00:14,915
+¿cuánto cuesta todo el recorrido?
+
+9
+00:00:15,166 --> 00:00:17,736
+Suma depósito, cambio de moneda,
+
+10
+00:00:17,756 --> 00:00:19,844
+compra, venta y retiro.
+
+11
+00:00:20,117 --> 00:00:23,069
+Cero comisión no siempre significa cero costos.
+
+12
+00:00:23,089 --> 00:00:23,655
+Tres:
+
+13
+00:00:24,055 --> 00:00:26,826
+¿qué producto estás comprando?
+
+14
+00:00:27,059 --> 00:00:29,514
+Una acción es una parte de una empresa.
+
+15
+00:00:29,694 --> 00:00:31,998
+Un ETF es un fondo que cotiza en
+
+16
+00:00:32,018 --> 00:00:32,691
+bolsa.
+
+17
+00:00:32,882 --> 00:00:35,099
+Un CFD es un contrato sobre el precio.
+
+18
+00:00:35,119 --> 00:00:38,045
+Abre la vista previa de una orden y
+
+19
+00:00:38,065 --> 00:00:40,686
+revisa el nombre, el tipo de producto y
+
+20
+00:00:40,706 --> 00:00:42,987
+los cargos antes de confirmar.
+
+21
+00:00:43,234 --> 00:00:45,802
+Puedes aprender a leer una orden sin mover
+
+22
+00:00:45,822 --> 00:00:46,903
+un peso.
+

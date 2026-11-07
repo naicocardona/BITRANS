@@ -1,6 +1,6 @@
 # Mezcla voz (ElevenLabs Juan) + música original + efectos para los videos de demócratas
 import json, subprocess, sys
-S = "/tmp/claude-0/-home-user-BITRANS/e6df0451-e894-56da-93e1-0311b18c22a2/scratchpad"
+S = __import__("os").environ.get("BITRANS_WORK", "/home/user/bitrans_work")
 for m in (sys.argv[1:] or ["tk", "sh"]):
     d = json.load(open(f"{S}/dem/{m}_times.json")); DUR, T = d["DUR"], d["T"]
     tr = ["t2", "t4", "t6", "t8", "t10", "t12", "t15"] if m == "tk" else ["s3", "s6", "s7", "s10"]

@@ -1,0 +1,77 @@
+@font-face { font-family:"Bricolage"; src:url("assets/fonts/bricolage-800.woff2") format("woff2"); font-weight:800; }
+@font-face { font-family:"Bricolage"; src:url("assets/fonts/bricolage-700.woff2") format("woff2"); font-weight:700; }
+@font-face { font-family:"Jakarta"; src:url("assets/fonts/jakarta-600.woff2") format("woff2"); font-weight:600; }
+@font-face { font-family:"Jakarta"; src:url("assets/fonts/jakarta-700.woff2") format("woff2"); font-weight:700; }
+@font-face { font-family:"Jakarta"; src:url("assets/fonts/jakarta-800.woff2") format("woff2"); font-weight:800; }
+@font-face { font-family:"Caveat"; src:url("assets/fonts/caveat-700.woff2") format("woff2"); font-weight:700; }
+:root { --navy:#0B1B33; --ink:#0E1A2E; --gold:#E2B755; --gold2:#B8862E; --gtx:#7E5A0E; --ivory:#F4EEDC; --pro:#2E7D4F; --con:#B3261E; --mu:rgba(244,238,220,.68); }
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { overflow:hidden; background:var(--navy); }
+#root { position:relative; overflow:hidden; font-family:"Jakarta", Arial, sans-serif; color:var(--ivory);
+  background: radial-gradient(1100px 800px at 85% 0%, rgba(226,183,85,.13), rgba(11,27,51,0) 60%), radial-gradient(900px 900px at 0% 100%, rgba(20,60,110,.45), rgba(11,27,51,0) 65%), var(--navy); }
+#dots { position:absolute; inset:0; background-image:radial-gradient(rgba(244,238,220,.07) 2px, transparent 2.5px); background-size:44px 44px; }
+#ivo { position:absolute; inset:0; background:var(--ivory); opacity:0; }
+#ivo:after { content:""; position:absolute; inset:0; background-image:radial-gradient(rgba(11,27,51,.13) 2px, transparent 2.5px); background-size:40px 40px; }
+.fx { opacity:0; }
+.B { font-family:"Bricolage", Arial, sans-serif; font-weight:800; }
+.gold { color:var(--gold); } .navy { color:var(--navy); } .mu { color:var(--mu); }
+/* firma */
+#brand { position:absolute; display:flex; align-items:center; gap:14px; padding:8px 24px 8px 8px; border-radius:999px; background:var(--navy); border:2px solid rgba(226,183,85,.55); box-shadow:0 10px 30px rgba(0,0,0,.35); }
+#brand .lg { width:64px; height:64px; border-radius:50%; overflow:hidden; position:relative; }
+#brand .lg img { position:absolute; width:118%; height:118%; left:-9%; top:-9%; }
+#brand span { font-family:"Jakarta"; font-weight:800; font-size:24px; letter-spacing:.24em; color:var(--gold); }
+.chip { position:absolute; padding:10px 22px; border-radius:999px; font-weight:800; letter-spacing:.14em; font-size:22px; background:rgba(226,183,85,.14); border:2px solid rgba(226,183,85,.6); color:var(--gold); white-space:nowrap; }
+/* gancho */
+.hk { position:absolute; }
+.hk .l { display:inline-block; font-family:"Bricolage"; font-weight:800; text-transform:uppercase; border-radius:18px; padding:6px 26px 12px; transform:rotate(-2deg); box-shadow:0 14px 34px rgba(0,0,0,.35); white-space:nowrap; line-height:1.05; }
+.hk .l1 { background:var(--ivory); color:var(--navy); }
+.hk .l2 { background:var(--gold); color:var(--navy); margin-top:14px; }
+/* fichas */
+.fc { position:absolute; border-radius:28px; background:var(--ivory); color:var(--navy); box-shadow:0 26px 60px rgba(0,0,0,.45); display:flex; flex-direction:column; align-items:center; }
+.fc .h { font-family:"Bricolage"; font-weight:800; letter-spacing:.04em; }
+.fc .vz { display:flex; flex-wrap:wrap; justify-content:center; align-content:center; }
+.vb { border-radius:50%; background:#DAD3BF; border:3px solid rgba(11,27,51,.25); position:relative; }
+.vb.on { background:var(--gold); border-color:var(--gold2); box-shadow:0 0 18px rgba(226,183,85,.85); }
+.vb.no { background:transparent; border:3px dashed rgba(11,27,51,.35); }
+.vb.no:after { content:""; position:absolute; left:12%; right:12%; top:47%; height:4px; background:rgba(179,38,30,.75); transform:rotate(-40deg); border-radius:2px; }
+.fc .f { font-weight:800; text-align:center; line-height:1.15; }
+.fc .f b { font-family:"Bricolage"; color:var(--navy); }
+.fc .f i { font-style:normal; color:var(--gtx); }
+.pie { border-radius:50%; background:conic-gradient(var(--navy) 0 26%, rgba(11,27,51,.16) 26% 100%); border:3px solid var(--navy); }
+.legend { position:absolute; text-align:center; font-weight:800; color:var(--gold); letter-spacing:.06em; }
+/* tarjetas marfil */
+.card { position:absolute; border-radius:28px; background:var(--ivory); color:var(--navy); box-shadow:0 30px 70px rgba(0,0,0,.45); }
+.card .k { font-weight:800; letter-spacing:.16em; color:var(--gtx); }
+.card .t { font-family:"Bricolage"; font-weight:800; line-height:1.02; }
+.src { position:absolute; font-weight:700; color:rgba(11,27,51,.6); }
+.row { position:absolute; left:0; right:0; display:flex; align-items:center; }
+.tick { font-family:"Bricolage"; font-weight:800; border-radius:12px; display:flex; align-items:center; justify-content:center; }
+.tick.y { background:rgba(46,125,79,.14); color:var(--pro); border:3px solid var(--pro); }
+.tick.n { background:rgba(179,38,30,.1); color:var(--con); border:3px solid var(--con); }
+.note { position:absolute; font-family:"Caveat"; font-weight:700; color:var(--gtx); white-space:nowrap; }
+.note.lt { color:var(--gold); }
+.ring { position:absolute; overflow:visible; pointer-events:none; }
+.ring path { fill:none; stroke:var(--gold2); stroke-width:7; stroke-linecap:round; filter:drop-shadow(0 0 6px rgba(226,183,85,.7)); }
+.ring.lt path { stroke:var(--gold); }
+.qcard { position:absolute; border-radius:26px; padding:28px 34px; font-family:"Bricolage"; font-weight:800; line-height:1.08; }
+.qcard.a { background:var(--ivory); color:var(--navy); } .qcard.b { background:var(--gold); color:var(--navy); }
+.qcard small { display:block; font-family:"Jakarta"; font-weight:800; letter-spacing:.16em; opacity:.7; margin-bottom:8px; }
+.cl { position:absolute; left:0; display:flex; align-items:center; font-weight:800; }
+.cl .n { flex:none; border-radius:50%; background:var(--navy); color:var(--ivory); font-family:"Bricolage"; display:flex; align-items:center; justify-content:center; }
+.cl.hi .n { background:var(--gold); color:var(--navy); }
+.cl s { text-decoration-thickness:5px; text-decoration-color:var(--con); }
+.pill { position:absolute; border-radius:999px; font-weight:800; white-space:nowrap; }
+.btn { position:absolute; border-radius:22px; background:var(--navy); border:4px solid var(--gold); color:var(--ivory); font-weight:800; text-align:center; box-shadow:0 18px 40px rgba(0,0,0,.4); }
+.cur { position:absolute; }
+.disc { position:absolute; font-weight:700; color:rgba(244,238,220,.82); text-align:center; }
+.tag { position:absolute; padding:6px 16px; border-radius:10px; background:var(--navy); color:var(--gold); font-weight:800; letter-spacing:.12em; white-space:nowrap; }
+/* subtítulos */
+#caps { position:absolute; }
+.cg { position:absolute; left:0; right:0; display:flex; justify-content:center; flex-wrap:wrap; opacity:0; }
+.cw { position:relative; display:inline-block; font-family:"Jakarta"; font-weight:800; text-transform:uppercase; color:#fff; -webkit-text-stroke:10px var(--navy); paint-order:stroke fill; padding:0 10px 4px; border-radius:14px; }
+.cw.k { font-family:"Bricolage"; color:#F7DD9C; font-size:1.12em; }
+.cw.on { background:var(--gold); color:var(--navy); -webkit-text-stroke:0; transform:rotate(-2deg) scale(1.06); }
+.tok { position:absolute; width:42px; height:42px; border-radius:10px; opacity:0; }
+.tB { background:var(--gold); } .tA { background:var(--ivory); } .tC { background:#6F8FC2; }
+.sw { display:inline-block; width:22px; height:22px; border-radius:6px; vertical-align:-3px; margin-right:10px; }
+.seg { flex:none; }

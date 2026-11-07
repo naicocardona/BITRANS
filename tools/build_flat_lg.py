@@ -1,7 +1,7 @@
 # TITÁN · NU · video largo de YouTube (5:25) en estilo ilustrado · 1920×1080
 # Izquierda: capítulos, titulares y subtítulos · Derecha: escenario ilustrado (1060×1080)
 import os, sys, json, math, shutil, subprocess, importlib.util as U
-H = os.path.dirname(os.path.abspath(__file__)); SCR = os.path.join(H, "..")
+H = os.path.dirname(os.path.abspath(__file__)); SCR = os.environ.get("BITRANS_WORK", "/home/user/bitrans_work")
 sp = U.spec_from_file_location("ta", f"{H}/tq_anchors.py"); ta = U.module_from_spec(sp); sp.loader.exec_module(ta)
 d = json.load(open(f"{SCR}/nu/voz/t/largo.words.json")); Wd = d["display"]
 DUR = 324.84

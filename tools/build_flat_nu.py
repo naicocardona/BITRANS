@@ -2,7 +2,7 @@
 import os, sys, json, shutil, subprocess, importlib.util as U
 SH = "shorts" in sys.argv
 FULL = "full" in sys.argv or SH
-H = os.path.dirname(os.path.abspath(__file__)); SCR = os.path.join(H, "..")
+H = os.path.dirname(os.path.abspath(__file__)); SCR = os.environ.get("BITRANS_WORK", "/home/user/bitrans_work")
 sp = U.spec_from_file_location("ta", f"{H}/tq_anchors.py"); ta = U.module_from_spec(sp); sp.loader.exec_module(ta)
 d = json.load(open(f"{SCR}/nu/voz/t/" + ("shorts" if SH else "tiktok") + ".words.json")); Wd = d["display"]
 a = ta.Anchors(Wd); A = lambda ph: a(ph, False)

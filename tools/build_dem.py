@@ -1,7 +1,7 @@
 # TITÁN · «Ganaron los demócratas. Wall Street subió. ¿Por qué?» · TikTok (tk) y Short (sh), estilo ilustrado con personas
 import os, sys, json, shutil, importlib.util as U
 MODE = "sh" if "sh" in sys.argv[1:] else "tk"
-H = os.path.dirname(os.path.abspath(__file__)); SCR = os.path.join(H, ".."); sys.path.insert(0, H); sys.path.insert(0, f"{SCR}/dem")
+H = os.path.dirname(os.path.abspath(__file__)); SCR = os.environ.get("BITRANS_WORK", "/home/user/bitrans_work"); sys.path.insert(0, H); sys.path.insert(0, f"{SCR}/dem")
 sp = U.spec_from_file_location("ta", f"{H}/tq_anchors.py"); ta = U.module_from_spec(sp); sp.loader.exec_module(ta)
 import dem_scenes as D
 from script import TK, SH

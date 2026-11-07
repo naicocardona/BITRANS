@@ -1,6 +1,6 @@
 # NAS100 EDGE LAB · TRADE #027 (BUY · TP) · TikTok y YouTube Shorts con la voz A del Explorador y laboratorio ilustrado
 import os, sys, json, re, shutil, numpy as np, soundfile as sf
-SCR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
+SCR = os.environ.get("BITRANS_WORK", "/home/user/bitrans_work")
 AV = "/home/user/BITRANS/entregas/nas100edgelab/avatar/explorador/V3"
 W26 = f"{SCR}/t027"; TTS = f"{W26}/tts"
 sys.path.insert(0, W26); from script import TK, SH

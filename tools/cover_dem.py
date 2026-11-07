@@ -1,5 +1,5 @@
 import sys, os, subprocess
-S = "/tmp/claude-0/-home-user-BITRANS/e6df0451-e894-56da-93e1-0311b18c22a2/scratchpad"; sys.path.insert(0, f"{S}/tools")
+S = __import__("os").environ.get("BITRANS_WORK", "/home/user/bitrans_work"); sys.path.insert(0, f"{S}/tools")
 import dem_scenes as D
 css = open(f"{S}/tools/tq.css").read()
 for m, svg in [("tk", D.scene_wall().replace('id="wsArr" opacity="0"', 'id="wsArr" opacity="1"')), ("sh", D.scene_hook().replace('id="hkArr" opacity="0"', 'id="hkArr" opacity="1"'))]:

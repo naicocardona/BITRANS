@@ -1,5 +1,5 @@
 import json, sys
-S = "/tmp/claude-0/-home-user-BITRANS/e6df0451-e894-56da-93e1-0311b18c22a2/scratchpad"
+S = __import__("os").environ.get("BITRANS_WORK", "/home/user/bitrans_work")
 sys.path.insert(0, f"{S}/t027"); from script import TK, SH
 D = {v: json.load(open(f"{S}/t027-{v}/tiempos.json")) for v in ["tiktok", "shorts"]}
 fmt = lambda x: f"{x:.1f}".replace(".", ",")

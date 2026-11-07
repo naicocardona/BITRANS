@@ -1,6 +1,6 @@
 # TITÁN · «NU cayó: ¿qué tienen que ver las elecciones de Brasil con tu inversión?» · Shorts, TikTok y YouTube (3D)
 import os, sys, json, shutil, importlib.util as U
-H = os.path.dirname(os.path.abspath(__file__)); SCR = os.path.join(H, "..")
+H = os.path.dirname(os.path.abspath(__file__)); SCR = os.environ.get("BITRANS_WORK", "/home/user/bitrans_work")
 sp = U.spec_from_file_location("ta", f"{H}/tq_anchors.py"); ta = U.module_from_spec(sp); sp.loader.exec_module(ta)
 VZ = f"{SCR}/nu/voz/t"
 DISC = "Contenido educativo. No es una recomendación de inversión."

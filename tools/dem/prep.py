@@ -1,6 +1,6 @@
 import sys, json, subprocess
 sys.path.insert(0, ".."); from script import TK, SH
-S = "/tmp/claude-0/-home-user-BITRANS/e6df0451-e894-56da-93e1-0311b18c22a2/scratchpad"
+S = __import__("os").environ.get("BITRANS_WORK", "/home/user/bitrans_work")
 for name, L in [("tiktok", TK), ("shorts", SH)]:
     txt = " ".join(c for _, _, c in L).replace("…", ",")
     open(f"{name}.txt", "w").write(txt)

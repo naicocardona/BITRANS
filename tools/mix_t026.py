@@ -1,6 +1,6 @@
 # Música original distinta por versión + efectos moderados + voz A con ducking
 import json, subprocess
-S = "/tmp/claude-0/-home-user-BITRANS/e6df0451-e894-56da-93e1-0311b18c22a2/scratchpad"
+S = __import__("os").environ.get("BITRANS_WORK", "/home/user/bitrans_work")
 for v, var, lufs in [("tiktok", "t026t", -16), ("shorts", "t026s", -14)]:
     d = json.load(open(f"{S}/t026-{v}/tiempos.json")); T = {n: [s, s + du] for n, s, du in d["frases"]}; DUR = d["duracion"]
     TK = v == "tiktok"; Sx = lambda n: T[n][0]

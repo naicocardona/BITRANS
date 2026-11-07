@@ -10,12 +10,12 @@ function neon(c, t) { tl.to(["#tubeL", "#tubeR"], { fill: c, duration: 0.15 }, t
 
 // 1 · GANCHO: «UNA VENTA. UNA COMPRA. DOS TP.» con los dos gráficos reales
 const G1 = ph(TK ? "g1" : "s1"), G2 = ph(TK ? "g2" : "s2");
-swap("#sG", 0.1, "fade");
-tl.fromTo("#g_1", { opacity: 0, scale: 1.35, transformOrigin: "0% 50%" }, { opacity: 1, scale: 1, duration: 0.3, ease: "power4.out", immediateRender: true }, 0.0);
+tl.set("#sG", { opacity: 1 }, 0); CUR = "#sG";   // gancho visible desde el primer cuadro
+tl.set("#g_1", { opacity: 1 }, 0); tl.fromTo("#g_1", { scale: 1.12, transformOrigin: "0% 50%" }, { scale: 1, duration: 0.3, ease: "power4.out", immediateRender: true }, 0.0);
 shake("#g_1", 0.32, 9);
 camSet("#gvA", 300, 600, 1.0, 400, 0); camSet("#gvB", 231, 560, 1.0, 400, 0);
-tl.fromTo("#gvA", { opacity: 0, x: -520, rotation: -6 }, { opacity: 1, x: 0, rotation: 0, duration: 0.5, ease: "back.out(1.4)", immediateRender: true }, 0.25);
-tl.fromTo("#gvB", { opacity: 0, x: 520, rotation: 6 }, { opacity: 1, x: 0, rotation: 0, duration: 0.5, ease: "back.out(1.4)", immediateRender: true }, 0.45);
+tl.fromTo("#gvA", { opacity: 1, x: -60, rotation: -3 }, { opacity: 1, x: 0, rotation: 0, duration: 0.5, ease: "back.out(1.4)", immediateRender: true }, 0.0);
+tl.fromTo("#gvB", { opacity: 1, x: 60, rotation: 3 }, { opacity: 1, x: 0, rotation: 0, duration: 0.5, ease: "back.out(1.4)", immediateRender: true }, 0.0);
 pop("#gtA", 0.75, 0.4); pop("#gtB", 0.95, 0.4);
 cam("#gvA", 330, 640, 1.25, 400, 1.0, 2.6); cam("#gvB", 231, 540, 1.25, 400, 1.2, 2.6);
 draw("#gvA .hiD", G1[0] + (G1[1] - G1[0]) * 0.35, 0.8); draw("#gvB .hiD", G1[0] + (G1[1] - G1[0]) * 0.7, 0.6);
@@ -91,7 +91,8 @@ if (TK) {
 } else {
   const C = ph("s7"); chapter(3, C[0] - 0.2); swap("#sC", C[0], "zoom"); pose("pensativo", C[0] + 0.1);
   const L = ph("s8"), d = (L[1] - L[0]) / 3;
-  [0, 1, 2].forEach(k => { inn("#cl" + k, L[0] + k * d, { x: -80, y: 0 }); punch("#cl" + k, L[0] + k * d + 0.45, 1.05); });
+  [0, 1, 2].forEach(k => { inn("#cl" + k, C[0] + 0.15 + k * 0.12, { x: -80, y: 0 }); tl.to("#cl" + k, { opacity: 0.3, duration: 0.3 }, C[0] + 0.9);
+    tl.to("#cl" + k, { opacity: 1, duration: 0.25 }, L[0] + k * d); punch("#cl" + k, L[0] + k * d + 0.05, 1.06); });
 }
 
 // 5 · CIERRE: 2 TRADES · 2 TP · +200,70 PUNTOS

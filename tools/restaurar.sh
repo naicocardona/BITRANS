@@ -19,4 +19,10 @@ ln -sfn "$REPO/tools" "$W/tools"
 ln -sfn "$REPO/tools/kit/tq-3d" "$W/tq-3d"
 ln -sfn "$REPO/tools/geo" "$W/geo"
 ln -sfn /opt/asr "$W/asr-models"
+# Skills de animación (código revisado, MIT): se instalan en Claude desde el repo
+mkdir -p "$HOME/.claude/skills"
+for s in "$REPO"/tools/skills/*/; do ln -sfn "$s" "$HOME/.claude/skills/$(basename "$s")"; done
+# Renderizador de hand-drawn-canvas-animation (puppeteer-core, sin descargar navegador)
+mkdir -p "$W/hdca" && cp "$REPO/tools/skills/hand-drawn-canvas-animation/scripts/"package*.json "$W/hdca/"
+( cd "$W/hdca" && PUPPETEER_SKIP_DOWNLOAD=1 npm ci --no-audit --no-fund --silent )
 echo "Taller listo en $W (herramientas: $REPO/tools)"

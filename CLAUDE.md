@@ -62,6 +62,12 @@
   - Al insertar pausas, cada palabra se corre solo con las pausas anteriores a su tiempo original. Antes había doble conteo, y eso causó el desfase del YouTube Nasdaq desde el 4:40.
 - **Cámara sin trabas:** animar el `viewBox` del SVG, no el `transform` de un div; el desplazamiento lento del div salta de a un píxel. El motor `nq.js` también limita la cámara para que nunca salga del recuadro. Detector: `tools/stutter.py`.
 - **Revisión cuadro por cuadro antes de entregar:** `python3 tools/qa_video.py video.mp4` detecta cuadros negros, momentos quietos de más de 2 s, volumen y silencios.
+- **Skills de animación (desde el 7 nov 2026):** procedencia en `tools/skills/PROCEDENCIA.md`.
+  - Para TITÁN se usa `hand-drawn-canvas-animation`: personajes y objetos dibujados a mano en Canvas, con lápiz, tinta o risografía.
+  - Va como capa adicional sobre el pipeline actual, que se mantiene: voz de Juan, align_asr, sync_check, cámara viewBox, qa_video, −14 LUFS y cifras exactas.
+  - Siempre en la paleta de TITÁN, con personas genéricas y sin mascotas de terceros (por ejemplo, Clawd de painted-animation).
+  - Antes de animar el video completo, aprobar una toma piloto.
+  - `motion-reel` aporta el ciclo de crítica: tira de cuadros consecutivos y hasta 3 rondas de corrección.
 - Mejoras aprobadas por evaluar (inspiradas en la skill claude-animated-shorts, solo técnicas, MIT):
   - QA cuadro por cuadro (negro, blanco, congelado, saltos, volumen): **hecho**;
   - cámara que nunca queda quieta y sacudidas en golpes;

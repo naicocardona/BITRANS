@@ -138,6 +138,11 @@ ts = [s[1] for s in SCN]
 if ts != sorted(ts) or len(set(ts)) != len(ts): raise SystemExit(f"[{MODE}] escenas fuera de orden: {ts}")
 for b in BEATS:
     if not (0 <= b[0] <= DUR): raise SystemExit(f"[{MODE}] efecto fuera de rango: {b}")
+# guardia: ningún id de escena puede chocar con los contenedores del motor (s0…, cam0…, wipe0…, h0…)
+_SF = SCF if "SCF" in globals() else NS.SCENES
+for _k, _f in _SF.items():
+    _bad = [i for i in re.findall(r'id="([^"]+)"', _f()) if re.fullmatch(r"(s|cam|wipe|h|hs|cg)\d+|cw\d+_\d+", i)]
+    if _bad: raise SystemExit(f"[{MODE}] escena «{_k}» usa ids reservados del motor: {_bad}")
 # ================= HTML =================
 SC = [s[0] for s in SCN]
 scn = [dict(k=s[0], t0=round(s[1], 3), t1=round(SCN[i + 1][1] + 0.7, 3) if i + 1 < len(SCN) else DUR, tr=s[2], c0=s[3], c1=s[4], zp=(s[5] if len(s) > 5 else None)) for i, s in enumerate(SCN)]

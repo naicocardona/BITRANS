@@ -8,9 +8,11 @@ sp = U.spec_from_file_location("ta", f"{H}/tq_anchors.py"); ta = U.module_from_s
 import nq_scenes as NS
 d = json.load(open(f"{W}/{MODE}.words.json")); Wd = d["display"]; DUR = round(d["dur"], 2)
 NW = [ta.norm(w[0]) for w in Wd]
+AMB = set()
 def A(ph, n=0, after=0.0):
     ks = [ta.norm(x) for x in ph.split()]; hits = [i for i in range(len(NW) - len(ks) + 1) if NW[i:i + len(ks)] == ks and Wd[i][1] >= after]
     if len(hits) <= n: raise SystemExit(f"[{MODE}] ancla no encontrada: «{ph}»")
+    if len(hits) > 1 and n == 0 and after == 0: AMB.add(f"«{ph}» aparece {len(hits)} veces: {[round(Wd[h][1], 1) for h in hits]}")
     return round(Wd[hits[n]][1], 3)
 def B(t, fs, c=""): return f'<div class="B {c}" style="display:inline-block;font-size:{fs}px;line-height:1.1;padding:10px 22px 14px;border-radius:16px;background:rgba(13,16,32,.88)">{t}</div>'
 def TAG(t): return f'<div class="tag" style="position:relative;display:inline-block;font-size:24px;margin-bottom:10px">{t}</div>'
@@ -39,7 +41,7 @@ if MODE == "lg":
              [A("te quedan 80."), "show", "#a1"], [A("te quedan 80."), "barup", "#m80"], [A("Si luego ganas"), "show", "#a2"], [A("llegas a 96."), "barup", "#m96"], [A("Para volver a 100"), "pop", "#m25"],
              [A("Un promedio histórico"), "pulse", "#m25"],
              [t_c - 0.02, "on", "#cb0"], [t_c + 0.4, "show", "#cLeg"], [A("Supón que"), "show", "#c0"], [A("Al cabo de un año"), "barup", "#cb1"], [A("Al cabo de un año") + 0.3, "show", "#c1"],
-             [A("Si vuelves a ganar"), "barup", "#cb2"], [A("y llegas a"), "show", "#c2"], [A("Si esa tasa"), "cam", 5, 540, 560, 1.0, 1.4], [A("Si esa tasa") + 0.3, "stagger", ".cbx", 3.2],
+             [A("Si vuelves a ganar"), "barup", "#cb2"], [A("y llegas a", 0, t_c), "show", "#c2"], [A("Si esa tasa"), "cam", 5, 540, 560, 1.0, 1.4], [A("Si esa tasa") + 0.3, "stagger", ".cbx", 3.2],
              [A("el saldo llegaría"), "show", "#c20"], [A("Ese «si»"), "pulse", "#c20"], [A("separa los aportes"), "pop", "#cWarn"],
              [t_g - 0.02, "on", "#g1, #g2"], [t_g + 0.9, "dim", "#g1, #g2", 0.3], [A("retirar el próximo mes"), "lit", "#g1"], [A("retirar el próximo mes"), "face", "gA", "oh"], [A("ahorrando para una meta"), "lit", "#g2"], [A("ahorrando para una meta"), "cheer", "gB"],
              [A("Desde Colombia puedes"), "show", "#nmH"], [A("intermediario local."), "show", "#nmSFC"], [t_b - 0.02, "on", "#q1, #q2, #q3"], [t_b + 0.8, "dim", "#q1, #q2, #q3", 0.3], [A("yo empezaría con tres"), "lit", "#q1"], [A("yo empezaría con tres") + 0.3, "lit", "#q2"], [A("yo empezaría con tres") + 0.6, "lit", "#q3"],
@@ -52,7 +54,7 @@ if MODE == "lg":
              [A("el nombre y el símbolo,"), "pulse", "#dFicha"], [A("confirmo el tipo"), "show", "#dTipo"], [A("confirmo el tipo"), "move", "#cur", 60, 110, 0.7], [A("compruebo cuánto"), "show", "#dCant"],
              [A("compruebo cuánto"), "move", "#cur", 60, 200, 0.7], [A("En la vista previa"), "show", "#dPrev"], [A("En la vista previa"), "move", "#cur", 60, 450, 0.8], [A("dinero propio o prestado."), "show", "#dFin"],
              [A("dinero propio o prestado."), "move", "#cur", 60, 290, 0.7], [A("Ahí paro."), "dim", "#dBtn", 0.3], [A("Ahí paro."), "pop", "#dStop"], [A("Ahí paro.") + 0.3, "move", "#cur", 300, 700, 0.8],
-             [t_e + 0.4, "pulse", "#eQ"], [DUR - 2.6, "wave", "eA"], [DUR - 2.2, "pulse", "#eQ"], [DUR - 1.6, "jump", "eB"], [A("llegas a 1.144,90") if False else A("y llegas a") + 1.2, "pulse", "#c2"], [A("y llegas a") + 1.0, "cam", 5, 380, 640, 1.42, 1.6], [A("qué cambió para el negocio"), "point", "eA"], [A("si entiendes lo que"), "face", "eB", "sm"], [A("esas dos preguntas"), "jump", "eB"]]
+             [t_e + 0.4, "pulse", "#eQ"], [DUR - 2.6, "wave", "eA"], [DUR - 2.2, "pulse", "#eQ"], [DUR - 1.6, "jump", "eB"], [A("y llegas a", 0, t_c) + 0.9, "pulse", "#c2"], [A("y llegas a", 0, t_c) + 0.9, "cam", 5, 420, 600, 1.3, 2.4], [A("y llegas a", 0, t_c) + 2.6, "pulse", "#cb2"], [A("qué cambió para el negocio"), "point", "eA"], [A("si entiendes lo que"), "face", "eB", "sm"], [A("esas dos preguntas"), "jump", "eB"]]
     OV = [(B("MIÉRCOLES: REBOTE · JUEVES: CAÍDA", 50), 0, A("Si estás pensando")), (B("¿Cómo empiezo sin adivinar el mañana?", 52, "gold"), A("Si estás pensando"), A("Vamos a mirar")),
           (B("Qué cayó · qué enseña la historia · cómo revisar un bróker", 46), A("Vamos a mirar"), t_n),
           (B("Jueves 5 nov: −6,36 %", FS), t_n + 0.3, A("Pero si comparas")), (B("Semana (30 oct → 6 nov): −4,91 %", 50), A("Pero si comparas"), A("Y frente a su máximo")),
@@ -129,6 +131,7 @@ else:
     HUDL, HUDT = (["Caída", "Contexto", "Recuperar", "Compuesto"], [0, t_dc, t_m, t_c]) if TK else (["Caída", "Recuperar", "Compuesto"], [0, t_m, t_c])
     CTA_T, CTA = A("La capitalización puede"), ("Contenido educativo.", "No es una recomendación de inversión.")
 # ================= comprobaciones automáticas (QC) =================
+for x in sorted(AMB): print(f"[{MODE}] AVISO ancla ambigua (se usa la primera): {x}")
 for h, a_, b_ in OV:
     if not (0 <= a_ < b_ <= DUR + 0.01): raise SystemExit(f"[{MODE}] titular con tiempos inválidos ({a_}→{b_}): {re.sub('<[^>]+>', ' ', h)[:60]}")
 ts = [s[1] for s in SCN]

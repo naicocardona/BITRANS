@@ -72,6 +72,11 @@
     - `tools/hd_render.cjs` renderiza en paralelo a 30 fps con Playwright. También genera grilla, cuadros sueltos y portada, y exporta los efectos.
     - Se detiene si hay anclas ambiguas.
     - El film corre a 24 fps lógicos estirados ×1,25 → 30 fps reales.
+  - **Estilo híbrido aprobado por Lady (7 nov 2026, «interés compuesto»):** trazo dibujado más rasgos del plano anterior.
+    - Tarjetas navy con cifras doradas (`pill`), rellenos planos, personas grandes y fondo con puntos y manchas en paralaje.
+    - Escenas navy para tablas y cierres.
+    - Plantilla: `tools/ic/film_final.js`, con constructores de escena con anclas por versión (TikTok y Short desde el mismo archivo), `build_final.sh`, `voice_final.py` y `mix_final.py`.
+    - La mezcla tiene una segunda pasada a −14,0 LUFS exactos.
   - `align_asr.py` convierte las cifras de Whisper («10,800») a palabras. Así `sync_check` deja de bajar en los videos con números.
 - Mejoras aprobadas por evaluar (inspiradas en la skill claude-animated-shorts, solo técnicas, MIT):
   - QA cuadro por cuadro (negro, blanco, congelado, saltos, volumen): **hecho**;

@@ -10,6 +10,7 @@
 - Lady, cofundadora. Responder en español con tono colombiano y lenguaje neutro de género.
 - Sus palabras: «no podemos tener errores», «que no se te olvide nada», «siempre mejorar cada video», «que sea más automático». Ella edita al final; la idea es que todo salga bien a la primera.
 - Proyectos independientes, cada uno con sus reglas: TITÁN HOLDING, NAS100 EDGE LAB, LUKAS, NUVA.
+- **Este equipo es solo para hacer videos**, cuando Lady trae una idea (7 nov 2026). El resto del trabajo de LUKAS y NUVA (app, guías, prototipos, anuncios) lo hace ella desde su computador: no pedirlo, rescatarlo ni archivarlo aquí.
 - No inventar datos: cifras exactas y con fuente. Los ejemplos hipotéticos se marcan como tales.
 - Cada archivo debe pesar menos de 30 MB; solo el video largo de YouTube de TITÁN puede superarlo.
 - No clonar ni imitar voces reales. No activar servicios de pago, no enviar grabaciones de Lady a terceros y no aceptar analítica por ella. ElevenLabs sí está autorizado (plan pago).

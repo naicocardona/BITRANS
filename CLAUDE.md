@@ -62,5 +62,9 @@
 - `npx hyperframes check` sin errores.
 
 ## Notas
-- Las voces originales de «demócratas» (4 nov 2026) quedaron en el flujo de ElevenLabs `NpHTCqs2YXWJ1DlWwwQa`, no en el repositorio. Desde ahora, guardar siempre los mp3 en `entregas/.../voz/`.
+- Las voces originales de «demócratas» ya están en `entregas/titan/democratas_wallstreet/voz/`. Desde ahora, guardar siempre los mp3 de ElevenLabs en `entregas/.../voz/` el mismo día: sus enlaces de descarga vencen.
+- Las voces de NU solo están en el flujo de ElevenLabs «TITÁN · NU y las elecciones · Narraciones».
+- Auditoría del 7 nov 2026: `AUDITORIA_RESPALDO.md`. Revisar sus pendientes al inicio de cada sesión hasta que estén cerrados.
+- Hay que avisarle a Lady en cuanto algo requiera una acción suya desde el computador; ella lo pidió así.
+- El repositorio `naicocardona/lukas-app` es el código de la app LUKAS (otro equipo); no guardar videos ahí.
 - `tools/sfx_mix.py` y `tools/tts_local_any.py` se reconstruyeron el 7 nov 2026 con la misma interfaz (las originales se perdieron en una carpeta temporal). Las demás herramientas se recuperaron textuales. Las fuentes, el logo y GSAP están en `tools/kit/tq-3d/`.

@@ -86,6 +86,7 @@
 - `npx hyperframes check` sin errores.
 
 ## Notas
+- Short 2 del paquete Nasdaq: desfase leve de subtítulos (~1 s) entre los segundos 10 y 15. Lady decidió dejarlo así (7 nov 2026). En los videos siguientes, `sync_check.py` es obligatorio antes de entregar.
 - Las voces originales de «demócratas» ya están en `entregas/titan/democratas_wallstreet/voz/`. Desde ahora, guardar siempre los mp3 de ElevenLabs en `entregas/.../voz/` el mismo día: sus enlaces de descarga vencen.
 - Las voces de NU solo están en el flujo de ElevenLabs «TITÁN · NU y las elecciones · Narraciones».
 - Auditoría del 7 nov 2026: `AUDITORIA_RESPALDO.md`. Revisar sus pendientes al inicio de cada sesión hasta que estén cerrados.

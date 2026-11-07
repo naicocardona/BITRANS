@@ -1,7 +1,7 @@
 # Arma el audio de voz de cada video del paquete Nasdaq (une secciones, añade pausas de lectura) y sus palabras con tiempo.
 # Uso: python3 tools/nq_voice.py   → /home/user/bitrans_work/nq/<modo>.wav y <modo>.words.json (con "display" en cifras)
 import os, sys, re, json, subprocess, numpy as np, soundfile as sf
-R = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, f"{R}/../entregas/titan/nasdaq_paquete")
+R = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, R); sys.path.insert(0, f"{R}/../entregas/titan/nasdaq_paquete")
 from guiones_voz import LARGO, SH1, TK1, SH2, TK2
 W = os.environ.get("BITRANS_WORK", "/home/user/bitrans_work") + "/nq"; V = f"{R}/../entregas/titan/nasdaq_paquete/voz"
 SR = 44100
@@ -11,6 +11,8 @@ def load(name):
     x, _ = sf.read(p, dtype="float32"); nz = np.where(np.abs(x) > 0.003)[0]
     return x[max(0, nz[0] - 2000):nz[-1] + 3000]
 def align(x, text, tag):
+    import align_asr; return align_asr.align(x, SR, text)   # alineación precisa por ASR (desde el 7 nov 2026)
+def align_old(x, text, tag):
     sf.write(f"{W}/{tag}_tmp.wav", x, SR); open(f"{W}/{tag}_tmp.txt", "w").write(text)
     subprocess.run(["python3", "-I", f"{R}/align_words.py", f"{W}/{tag}_tmp.wav", f"{W}/{tag}_tmp.txt", f"{W}/{tag}_tmp.json"], check=True, capture_output=True)
     return json.load(open(f"{W}/{tag}_tmp.json"))["words"]
@@ -25,11 +27,12 @@ def add_pauses(x, words, pauses):
                 j = i + len(ks) - 1; nxt = words[j + 1][1] if j + 1 < len(words) else words[j][2] + 0.2
                 cuts.append(((words[j][2] + nxt) / 2, d)); break
         else: raise SystemExit(f"pausa: frase no encontrada «{ph}»")
-    cuts.sort(); out, last, shift, W2 = [], 0, 0.0, [list(w) for w in words]
+    cuts.sort(); out, last = [], 0
     for t, d in cuts:
         i = int(t * SR); out += [x[last:i], np.zeros(int(d * SR), np.float32)]; last = i
-        for w in W2:
-            if w[1] >= t: w[1] += d; w[2] += d
+    # cada palabra se corre la suma de las pausas insertadas ANTES de su tiempo original (sin doble conteo)
+    sh = lambda t0: sum(d for t, d in cuts if t <= t0)
+    W2 = [[w[0], w[1] + sh(w[1]), w[2] + sh(w[1])] for w in words]
     out.append(x[last:]); return np.concatenate(out), W2
 # ---- texto en pantalla: voz → cifras y nombres ----
 MAP = [("mil ciento cuarenta y cuatro dólares con noventa centavos", "1.144,90 dólares"), ("mil ciento cuarenta y cuatro con noventa", "1.144,90"),

@@ -52,6 +52,15 @@
   - Las tarjetas de cada escena deben llegar junto con la transición; nada de escenarios vacíos mientras la voz arranca.
   - Las etiquetas «hipotético» se mantienen visibles toda la escena, aunque la cámara se acerque.
   - Verificar siempre los datos del brief: el S&P de 2022–2023 daba +0,08 %, no −0,18 %.
+- **Pedido de Lady (7 nov 2026) para TODOS los videos nuevos:** más movimiento para la retención, con más animaciones, más transiciones y más cosas impactantes que generen curiosidad («morbo en el buen sentido»).
+  - Cada 1–2 s debe pasar algo: un golpe visual, un zoom con sacudida, una cifra que estalla, un objeto que vuela o un personaje que reacciona.
+  - Variar las transiciones y que no se repitan seguidas.
+  - Ganchos visuales fuertes en los primeros 3 s.
+- **Sincronía de subtítulos:**
+  - Alinear con `tools/align_asr.py`, que usa Whisper por tramos; `nq_voice.py` ya lo usa. El reparto por letras se desvía en secciones largas.
+  - Verificar siempre con `python3 tools/sync_check.py voz.wav words.json`: la coincidencia media debe ser de 0,85 o más y sin ventanas desfasadas.
+  - Al insertar pausas, cada palabra se corre solo con las pausas anteriores a su tiempo original. Antes había doble conteo, y eso causó el desfase del YouTube Nasdaq desde el 4:40.
+- **Cámara sin trabas:** animar el `viewBox` del SVG, no el `transform` de un div; el desplazamiento lento del div salta de a un píxel. El motor `nq.js` también limita la cámara para que nunca salga del recuadro. Detector: `tools/stutter.py`.
 - **Revisión cuadro por cuadro antes de entregar:** `python3 tools/qa_video.py video.mp4` detecta cuadros negros, momentos quietos de más de 2 s, volumen y silencios.
 - Mejoras aprobadas por evaluar (inspiradas en la skill claude-animated-shorts, solo técnicas, MIT):
   - QA cuadro por cuadro (negro, blanco, congelado, saltos, volumen): **hecho**;

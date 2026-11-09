@@ -100,6 +100,12 @@
 - Voz A: Kokoro em_alex, sid 29, velocidad 0,92 (`tools/tts_local_any.py 29 0.92 salida.wav "texto"`) más la cadena ffmpeg de `tools/t027/assemble.py`. TikTok a −16 LUFS y Shorts a −14 LUFS.
 - No generar el siguiente trade hasta que Lady apruebe el anterior.
 - Plantillas: `tools/build_t027.py`, `tools/t027.js`, `tools/t027.css`, `tools/mix_t027.py`, `tools/t027/`.
+- **Plantilla más reciente para un trade (TRADE #028, 9 nov 2026):** `tools/t028/` (`script.py` y `assemble.py`), `tools/build_t028.py`, `tools/t028.js`, `tools/mix_t028.py` y `tools/cover_t028.py`.
+  - Medidor de score con la marca del mínimo.
+  - Tapas por comprobante: lote, dinero y Δ/%.
+  - Render: `npx hyperframes render --fps 30 --output ...`.
+- **Subtítulos NAS:** usar `nas_common.align_parts`, que ubica los cortes de línea con Whisper y cuenta las cifras como se pronuncian. El reparto por letras adelantaba casi 2 s las frases con números («446»).
+- La voz del Explorador siempre es la voz A: Kokoro em_alex 0,92 más la cadena de voz. Lady lo recordó el 9 nov 2026.
 
 ## QC automático antes de entregar (obligatorio)
 - Nada fuera del encuadre y nada tapando caras; textos arriba, subtítulos abajo y personajes en la franja media.

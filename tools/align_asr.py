@@ -31,6 +31,9 @@ def es_num(n):
 def toks(text):
     out = []
     for w in text.replace("%", " por ciento").split():
+        m = re.fullmatch(r"[$¿¡«]*(\d+),(\d{1,2})[.,:;?!»]*", w)      # decimal con coma: 4,3 → cuatro coma tres (no es separador de miles)
+        if m: out += es_num(int(m.group(1))).split() + ["coma"] + es_num(int(m.group(2))).split(); continue
+        if norm(w) in ("snp", "sp"): out += ["ese", "ene", "pe"]; continue
         d = re.sub(r"[$.,:;?!¿¡»«]", "", w)
         if d.isdigit() and 0 < len(d) <= 10: out += es_num(int(d)).split(); continue
         n = norm(w); out += (NUM[n].split() if n in NUM else [n]) if n else []

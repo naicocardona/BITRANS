@@ -77,7 +77,15 @@
     - Escenas navy para tablas y cierres.
     - Plantilla: `tools/ic/film_final.js`, con constructores de escena con anclas por versión (TikTok y Short desde el mismo archivo), `build_final.sh`, `voice_final.py` y `mix_final.py`.
     - La mezcla tiene una segunda pasada a −14,0 LUFS exactos.
-  - `align_asr.py` convierte las cifras de Whisper («10,800») a palabras. Así `sync_check` deja de bajar en los videos con números.
+  - **Kit genérico del estilo híbrido (desde Nvidia, 9 nov 2026):** cada video nuevo solo escribe sus escenas.
+    - `tools/hd_lib.js`: piezas comunes (trazo, tarjetas, personas, subtítulos y 6 transiciones, entre ellas «news», periódicos volando).
+    - `tools/hd_build.sh`: arma el film.
+    - `tools/hd_render.cjs`: render.
+    - `tools/hd_mix.py`: voz + música + efectos, −14 LUFS en 2 pasadas, MP4 y SRT.
+    - Ejemplo de escenas: `tools/nv/film.js`.
+  - **Pronunciación de Juan (ElevenLabs):** escribir «Envidia» (Nvidia), «Yensen Huang» (Jensen Huang) y «ese ene pe quinientos» (S&P 500). En pantalla se corrigen con el MAP de `voice.py`.
+  - Si un brief dice «no gastar créditos», igual se usa Juan de ElevenLabs. Lady lo confirmó el 9 nov 2026: «usa elevenlabs como siempre, con las de titan».
+  - `align_asr.py` convierte las cifras de Whisper a palabras («10,800», decimales «4,3 %» y «SNP» → «ese ene pe»). Así `sync_check` deja de bajar en los videos con números.
 - Mejoras aprobadas por evaluar (inspiradas en la skill claude-animated-shorts, solo técnicas, MIT):
   - QA cuadro por cuadro (negro, blanco, congelado, saltos, volumen): **hecho**;
   - cámara que nunca queda quieta y sacudidas en golpes;

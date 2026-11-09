@@ -25,8 +25,8 @@ pose("senala", 0.3); pose("explica", G2[0] + 0.1);
 // 2 · ENTRADA: 8 NOV · 11 PM COLOMBIA · SELL 27.106,45 + lectura (radar, confluencia, EMA, ATR)
 const E1 = ph(TK ? "e1" : "s3"), E2 = TK ? ph("e2") : ph("s4");
 chapter(1, E1[0] - 0.2); swap("#sE", E1[0], "zoom"); pose("senala", E1[0] + 0.2);
-stamp("#e_d", E1[0] + 0.05); stamp("#e_p", E1[0] + 0.45); neon("#FF6474", E1[0] + 0.4);
-camSet("#cvE", 390, 560, 1.7, 600, E1[0] - 0.3); cam("#cvE", 395, 580, 2.0, 600, E1[0] + 0.3, 2.4);
+stamp("#e_d", E1[0] + 0.05); inn("#e_n", E1[0] + 0.3, { y: 6 }); stamp("#e_p", E1[0] + 0.45); neon("#FF6474", E1[0] + 0.4);
+camSet("#cvE", 430, 570, 1.6, 420, E1[0] - 0.3); cam("#cvE", 450, 580, 1.85, 420, E1[0] + 0.3, 2.4);
 blinkHi("#cvE .hiE", E1[0] + 0.7); pop("#cvE .lbE", E1[0] + 0.8);
 const eR = TK ? mid("e1", 0.45) : mid("s4", 0.15), eC = TK ? mid("e1", 0.62) : mid("s4", 0.3);
 inn("#e_r", eR, { x: -60, y: 0 }); punch("#e_r", eR + 0.4, 1.08); inn("#e_c", eC, { x: -60, y: 0 }); punch("#e_c", eC + 0.4, 1.08);
@@ -37,12 +37,12 @@ pose("explica", E2[0] + 0.1);
 
 // 3 · DESARROLLO: descenso hacia el objetivo, siguió bajando y rebotó (solo lo que muestra la captura)
 const D1 = ph(TK ? "d1" : "s5"); chapter(2, D1[0] - 0.2); swap("#sD", D1[0], "slide"); pose("senala", D1[0] + 0.15);
-camSet("#cvD", 400, 620, 1.55, 620, D1[0] - 0.3); tl.set("#cvD .hiE", { opacity: 1 }, D1[0] - 0.3); tl.set("#cvD .lbE", { opacity: 1 }, D1[0] - 0.3);
+camSet("#cvD", 400, 620, 1.55, 566, D1[0] - 0.3); inn("#d_n", D1[0], { y: 6 }); tl.set("#cvD .hiE", { opacity: 1 }, D1[0] - 0.3);
 inn("#d_a", D1[0] + 0.1, { x: -40, y: 0 }); draw("#cvD .hiD", D1[0] + 0.2, 1.0);
-blinkHi("#cvD .hiT", D1[0] + 0.9); pop("#cvD .lbT", D1[0] + 1.0); neon("#64E087", D1[0] + 1.0);
-cam("#cvD", 440, 720, 1.12, 620, D1[0] + 1.2, 1.2); pop("#cvD .lbD", mid(TK ? "d1" : "s5", 0.6));
+blinkHi("#cvD .hiT", D1[0] + 0.9); neon("#64E087", D1[0] + 1.0);
+cam("#cvD", 440, 720, 1.05, 566, D1[0] + 1.2, 1.2); 
 out("#d_a", mid(TK ? "d1" : "s5", 0.7)); inn("#d_b", mid(TK ? "d1" : "s5", 0.72), { x: -40, y: 0 });
-draw("#cvD .hiR", mid(TK ? "d1" : "s5", 0.78), 0.8); pop("#cvD .lbR", mid(TK ? "d1" : "s5", 0.85)); cam("#cvD", 470, 700, 1.1, 620, mid(TK ? "d1" : "s5", 0.78), 1.0);
+draw("#cvD .hiR", mid(TK ? "d1" : "s5", 0.78), 0.8);  cam("#cvD", 470, 700, 1.05, 566, mid(TK ? "d1" : "s5", 0.78), 1.0);
 shake("#sD", mid(TK ? "d1" : "s5", 0.9), 6);
 
 // 4 · RESULTADO: comprobante (entrada y salida resaltadas, lote/dinero/Δ tapados) y +101,45 puntos

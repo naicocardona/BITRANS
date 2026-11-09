@@ -1,0 +1,258 @@
+{
+ "version": "tiktok",
+ "duracion": 74.4,
+ "frases": [
+  [
+   "g1",
+   0.2,
+   3.217
+  ],
+  [
+   "g2",
+   3.567,
+   2.58
+  ],
+  [
+   "e1",
+   6.497,
+   4.492
+  ],
+  [
+   "e2",
+   11.089,
+   3.76
+  ],
+  [
+   "d1",
+   15.2,
+   4.888
+  ],
+  [
+   "d2",
+   20.188,
+   3.941
+  ],
+  [
+   "d3",
+   24.228,
+   5.008
+  ],
+  [
+   "l1a",
+   29.686,
+   5.026
+  ],
+  [
+   "l1b",
+   34.812,
+   7.782
+  ],
+  [
+   "l2a",
+   43.044,
+   6.274
+  ],
+  [
+   "l2b",
+   49.418,
+   4.777
+  ],
+  [
+   "l3a",
+   54.645,
+   6.529
+  ],
+  [
+   "l3b",
+   61.273,
+   2.611
+  ],
+  [
+   "l3c",
+   63.985,
+   4.656
+  ],
+  [
+   "x1",
+   68.991,
+   2.17
+  ],
+  [
+   "x2",
+   71.411,
+   2.07
+  ]
+ ],
+ "subtitulos": [
+  [
+   0.2,
+   2.48,
+   "Esta venta pasó el filtro por lo justo:"
+  ],
+  [
+   2.48,
+   3.57,
+   "6 sobre 10."
+  ],
+  [
+   3.57,
+   5.21,
+   "¿Qué más mostraba la lectura"
+  ],
+  [
+   5.21,
+   6.5,
+   "antes de entrar?"
+  ],
+  [
+   6.5,
+   8.41,
+   "El domingo a las 11 de la noche,"
+  ],
+  [
+   8.41,
+   11.09,
+   "el radar y la confluencia favorecían la venta."
+  ],
+  [
+   11.09,
+   12.68,
+   "Las medias seguían mixtas"
+  ],
+  [
+   12.68,
+   15.2,
+   "y el ATR estaba marcado como alto."
+  ],
+  [
+   15.2,
+   18.11,
+   "En el gráfico, el precio descendió hacia el objetivo,"
+  ],
+  [
+   18.11,
+   20.19,
+   "siguió bajando y luego rebotó."
+  ],
+  [
+   20.19,
+   21.97,
+   "El comprobante acredita nuestra salida"
+  ],
+  [
+   21.97,
+   24.23,
+   "en 27.005,00:"
+  ],
+  [
+   24.23,
+   27.51,
+   "capturamos 101,45 puntos,"
+  ],
+  [
+   27.51,
+   29.69,
+   "aunque el objetivo estaba a 100."
+  ],
+  [
+   29.69,
+   31.48,
+   "El radar favorecía la venta,"
+  ],
+  [
+   31.48,
+   33.12,
+   "pero el score apenas cumplía"
+  ],
+  [
+   33.12,
+   34.81,
+   "y las medias estaban mixtas."
+  ],
+  [
+   34.81,
+   37.1,
+   "Vale la pena conservar esa combinación"
+  ],
+  [
+   37.1,
+   39.23,
+   "para comparar, con más casos,"
+  ],
+  [
+   39.23,
+   41.07,
+   "qué pasa cuando entramos con 6"
+  ],
+  [
+   41.07,
+   43.04,
+   "frente a lecturas más altas."
+  ],
+  [
+   43.04,
+   44.9,
+   "El TP estaba a 100 puntos."
+  ],
+  [
+   44.9,
+   49.42,
+   "La salida registrada dejó 101,45."
+  ],
+  [
+   49.42,
+   50.77,
+   "Guardamos los dos datos"
+  ],
+  [
+   50.77,
+   52.62,
+   "para distinguir lo que planeamos"
+  ],
+  [
+   52.62,
+   54.65,
+   "de lo que ejecutó el bróker."
+  ],
+  [
+   54.65,
+   56.98,
+   "Hasta el cierre de la sesión se midieron"
+  ],
+  [
+   56.98,
+   61.27,
+   "446 puntos a favor y 65 en contra."
+  ],
+  [
+   61.27,
+   62.34,
+   "Esa ventana sigue"
+  ],
+  [
+   62.34,
+   63.98,
+   "después de nuestra salida."
+  ],
+  [
+   63.98,
+   66.45,
+   "Sirve para estudiar el movimiento de la noche,"
+  ],
+  [
+   66.45,
+   68.99,
+   "sin sumarlo al resultado de la operación."
+  ],
+  [
+   68.99,
+   71.41,
+   "No buscamos operaciones perfectas."
+  ],
+  [
+   71.41,
+   74.08,
+   "Buscamos ventaja estadística."
+  ]
+ ]
+}

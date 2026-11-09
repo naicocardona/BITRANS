@@ -2,7 +2,7 @@
 # Capturas originales sin alterar: solo encuadre, acercamiento y resaltados encima. Lote, dinero y Δ/% del comprobante tapados desde el primer cuadro.
 import os, sys, json, shutil
 H = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, H)
-from nas_common import KIT, POSES, OVER, GLOW, envelope, lab_svg
+from nas_common import KIT, POSES, OVER, GLOW, envelope, lab_svg, align_parts
 SCR = os.environ.get("BITRANS_WORK", "/home/user/bitrans_work"); W = f"{SCR}/t028"; TTS = f"{W}/tts"
 CAP = f"{H}/../entregas/nas100edgelab/trade028/capturas"
 sys.path.insert(0, f"{H}/t028"); from script import TK, SH
@@ -36,9 +36,9 @@ def chart_ov():   # resaltados sobre la captura de TradingView (684×1121); no s
             '<rect class="hiT" x="280" y="634" width="225" height="17" rx="8" fill="none" stroke="#64E087" stroke-width="5" opacity="0"/>'
             '<path class="hiD" d="M255 560 L337 645 L405 765 L437 935" fill="none" stroke="#FF6474" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0"/>'
             '<path class="hiR" d="M515 905 L530 770 L590 665 L672 575" fill="none" stroke="#3FD0C9" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0"/>'
-            '<g class="lbE" opacity="0"><rect x="512" y="530" width="150" height="38" rx="9" fill="#090B10"/><text x="587" y="556" font-family="Inter" font-weight="900" font-size="20" text-anchor="middle" fill="#A779F2">ENTRADA</text></g>'
-            '<g class="lbT" opacity="0"><rect x="512" y="626" width="150" height="38" rx="9" fill="#090B10"/><text x="587" y="652" font-family="Inter" font-weight="900" font-size="20" text-anchor="middle" fill="#64E087">OBJETIVO</text></g>'
-            '<g class="lbD" opacity="0"><rect x="150" y="760" width="180" height="38" rx="9" fill="#090B10"/><text x="240" y="786" font-family="Inter" font-weight="900" font-size="19" text-anchor="middle" fill="#FF6474">DESCENSO</text></g>'
+            '<g class="lbE" opacity="0"><rect x="352" y="502" width="142" height="38" rx="9" fill="#090B10"/><text x="423" y="528" font-family="Inter" font-weight="900" font-size="20" text-anchor="middle" fill="#A779F2">ENTRADA</text></g>'
+            '<g class="lbT" opacity="0"><rect x="432" y="596" width="122" height="34" rx="8" fill="#090B10"/><text x="493" y="619" font-family="Inter" font-weight="900" font-size="17" text-anchor="middle" fill="#64E087">OBJETIVO</text></g>'
+            '<g class="lbD" opacity="0"><rect x="185" y="760" width="170" height="38" rx="9" fill="#090B10"/><text x="270" y="786" font-family="Inter" font-weight="900" font-size="19" text-anchor="middle" fill="#FF6474">DESCENSO</text></g>'
             '<g class="lbR" opacity="0"><rect x="560" y="760" width="120" height="38" rx="9" fill="#090B10"/><text x="620" y="786" font-family="Inter" font-weight="900" font-size="19" text-anchor="middle" fill="#3FD0C9">REBOTE</text></g>'
             '</svg>')
 def receipt28():   # comprobante 828×441 mostrado a 900 de ancho: lote, dinero y Δ/% tapados SIEMPRE desde el primer cuadro
@@ -106,15 +106,15 @@ def body(V, DUR, caps):
 {VW("gv", 300, 390, chart_ov(), "")}
 <div class="tag3 fx" id="g_q" style="left:0;top:628px;color:var(--t);border:3px solid var(--t)">{'¿QUÉ MÁS MOSTRABA LA LECTURA?' if tk else 'TRADE #028 · SELL'}</div>""")}
 {C("sE", f"""<div class="dpill fx" id="e_d">8 NOV · 11 PM COLOMBIA</div><div class="dpill fx" id="e_p" style="left:430px;border-color:rgba(255,100,116,.75);color:#FF6474">SELL · 27.106,45</div>
-{VW("cvE", 90, 600, chart_ov())}
-<div class="chip2 fx" id="e_r" style="left:20px;top:110px;color:var(--t);border-color:var(--t)">BEAR +8 / BULL −7</div>
-<div class="chip2 fx" id="e_c" style="left:20px;top:182px;color:#FF6474;border-color:#FF6474">FAVORABLE SELL</div>
-<div class="chip2 fx" id="e_m" style="left:20px;top:254px;color:var(--mu);border-color:rgba(244,245,249,.55)">EMA MIXTA</div>
-<div class="chip2 fx" id="e_a" style="left:20px;top:326px;color:#FF6474;border-color:#FF6474">ATR 14: 89 · ALTO / RIESGO</div>
-<div class="tag3 fx" id="e_x" style="left:0;top:620px;color:var(--v);border:3px solid var(--v)">CONTEXTO ANTES DE CONOCER EL RESULTADO</div>""")}
-{C("sD", f"""{VW("cvD", 30, 620, chart_ov())}
-<div class="tag3 fx" id="d_a" style="left:16px;top:50px;color:#FF6474;border:3px solid #FF6474">DESCENSO HACIA EL OBJETIVO</div>
-<div class="tag3 fx" id="d_b" style="left:16px;top:50px;color:var(--t);border:3px solid var(--t)">SIGUIÓ BAJANDO · LUEGO REBOTÓ</div>""")}
+{VW("cvE", 70, 420, chart_ov(), "")}<div class="note fx" id="e_n" style="left:760px;top:6px;width:140px;font-size:19px;line-height:1.2">Gráfico:<br/>TradingView</div>
+<div class="chip2 fx" id="e_r" style="left:0;top:505px;color:var(--t);border-color:var(--t)">BEAR +8 / BULL −7</div>
+<div class="chip2 fx" id="e_c" style="left:470px;top:505px;color:#FF6474;border-color:#FF6474">FAVORABLE SELL</div>
+<div class="chip2 fx" id="e_m" style="left:0;top:575px;color:var(--mu);border-color:rgba(244,245,249,.55)">EMA MIXTA</div>
+<div class="chip2 fx" id="e_a" style="left:300px;top:575px;color:#FF6474;border-color:#FF6474">ATR 14: 89 · ALTO / RIESGO</div>
+<div class="tag3 fx" id="e_x" style="left:0;top:642px;color:var(--v);border:3px solid var(--v)">CONTEXTO ANTES DE CONOCER EL RESULTADO</div>""")}
+{C("sD", f"""{VW("cvD", 74, 566, chart_ov(), "")}<div class="note fx" id="d_n" style="left:0;top:650px;width:900px;font-size:22px;font-weight:800"><span style="color:#A779F2">▬ ENTRADA</span> &nbsp; <span style="color:#64E087">▬ OBJETIVO (TP)</span> &nbsp; <span style="color:#FF6474">▬ DESCENSO</span> &nbsp; <span style="color:#3FD0C9">▬ REBOTE</span> &nbsp; · Gráfico: TradingView</div>
+<div class="tag3 fx" id="d_a" style="left:0;top:0;color:#FF6474;border:3px solid #FF6474">DESCENSO HACIA EL OBJETIVO</div>
+<div class="tag3 fx" id="d_b" style="left:0;top:0;color:var(--t);border:3px solid var(--t)">SIGUIÓ BAJANDO · LUEGO REBOTÓ</div>""")}
 {C("sR", f"""<div class="rcard" id="rc28" style="height:{round(441*900/828)}px"><img src="assets/img/receipt28.jpg" alt="" style="width:900px;height:{round(441*900/828)}px" />{receipt28()}</div>
 <div class="tpbig fx" id="rtp" style="top:{20 + round(441*900/828) + 12}px">TAKE PROFIT · +<span id="nR">101,45</span> PTS<small>27.106,45 → 27.005,00 · 1 H 52 MIN 06 S</small></div>
 <div class="note fx" id="rn" style="left:0;top:668px;font-size:21px">Ejecución: comprobante del bróker (reloj del bróker) · TP configurado: 27.006,45</div>""")}
@@ -140,11 +140,12 @@ for V, L in [("tiktok", TK), ("shorts", SH)]:
     shutil.copy(f"{KIT}/assets/img/logo.png", f"{d}/assets/img/"); shutil.copy(f"{KIT}/hyperframes.json", d)
     shutil.copy(f"{CAP}/grafico_028.jpg", f"{d}/assets/img/chart28.jpg"); shutil.copy(f"{CAP}/comprobante_028.jpg", f"{d}/assets/img/receipt28.jpg")
     json.dump({"name": f"t028-{V}", "private": True, "type": "module"}, open(d + "/package.json", "w")); json.dump({"id": f"t028-{V}", "name": f"t028-{V}"}, open(d + "/meta.json", "w"))
-    capm = {i: c for i, _, c in L}; caps = []
-    for n_, s, du in st:   # una línea por tramo del |, repartida por letras dentro de la frase (frase = tiempo exacto de la voz)
-        parts = capm[n_].split("|"); Ls = [len(p) for p in parts]; t = s
-        for p, l in zip(parts, Ls):
-            dd = du * l / sum(Ls); caps.append([round(t, 2), round(t + dd, 2), p]); t += dd
+    capm = {i: c for i, _, c in L}; vozm = {i: v for i, v, _ in L}; caps = []
+    import numpy as np, soundfile as sf
+    for n_, s, du in st:   # una línea por tramo del |; cortes ubicados con la alineación Whisper de la voz (align_parts)
+        parts = capm[n_].split("|"); x, sr = sf.read(f"{TTS}/{n_}.wav"); nz = np.where(np.abs(x) > 0.004)[0]; x = x[max(0, nz[0] - 240):nz[-1] + 480]
+        sf.write(f"{TTS}/_frase.wav", x, sr)
+        for p, (a0, b0) in zip(parts, align_parts(f"{TTS}/_frase.wav", vozm[n_], parts) if len(parts) > 1 else [(0, du)]): caps.append([round(s + a0, 2), round(s + b0, 2), p])
     for k in range(len(caps) - 1): caps[k][1] = round(min(caps[k + 1][0], caps[k][1] + 0.5), 2)
     caps[-1][1] = round(caps[-1][1] + 0.6, 2)
     ENV = envelope(f"{TTS}/{V}_narr.wav", DUR)

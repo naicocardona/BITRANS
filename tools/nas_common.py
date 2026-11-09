@@ -72,3 +72,34 @@ def receipt(h_img, pts, side):   # comprobante 828×h mostrado a 900 de ancho; d
             f'<g class="cvL"><rect {R(186, 14, 254, 56)} rx="12" fill="#13161F" stroke="#A779F2" stroke-width="3"/>'
             f'<text x="{313*k:.0f}" y="{50*k:.0f}" font-family="Inter" font-weight="900" font-size="22" text-anchor="middle" fill="#F4F5F9">{side} · TAKE PROFIT</text></g>'
             '</svg>')
+
+def snap_parts(wav, parts, dur, win=0.8):
+    """Reparte un subtítulo de varias líneas (|) dentro de su frase y ajusta cada corte a la pausa real más cercana de la voz (silencedetect).
+    wav: audio de la frase recortado igual que en assemble (inicio = inicio de la frase). Devuelve [(ini, fin)] relativos. Mejora del 9 nov 2026."""
+    import re, subprocess
+    Ls = [len(p) for p in parts]; tot = sum(Ls); cuts = []; acc = 0
+    for l in Ls[:-1]: acc += l; cuts.append(dur * acc / tot)
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-i", wav, "-af", "silencedetect=n=-35dB:d=0.09", "-f", "null", "-"], capture_output=True, text=True).stderr
+    ss = [float(v) for v in re.findall(r"silence_start: ([\d.]+)", r)]; se = [float(v) for v in re.findall(r"silence_end: ([\d.]+)", r)]
+    gaps = [(a + b) / 2 for a, b in zip(ss, se) if 0.15 < (a + b) / 2 < dur - 0.15]
+    out = []
+    for c in cuts:
+        g = min(gaps, key=lambda x: abs(x - c)) if gaps else None
+        out.append(g if g is not None and abs(g - c) <= win and (not out or g > out[-1] + 0.3) else c)
+    b = [0.0] + out + [dur]
+    return [(b[i], b[i + 1]) for i in range(len(parts))]
+
+def align_parts(wav, voice_text, parts):
+    """Ubica cada línea del subtítulo (|) con la alineación Whisper de la voz (align_asr), contando las cifras como se pronuncian (446 = 4 palabras).
+    Corrige el adelanto de subtítulos en frases con números. Devuelve [(ini, fin)] relativos a la frase. Mejora del 9 nov 2026."""
+    import os, sys, soundfile as sf
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import align_asr as A
+    x, sr = sf.read(wav, dtype="float32"); x = x.mean(1) if x.ndim > 1 else x; dur = len(x) / sr
+    W = A.align(x, sr, voice_text); T = []
+    for w, t0, t1 in W:
+        n = max(1, len(A.toks(w))); T += [t0 + (t1 - t0) * k / n for k in range(n)]
+    need = [max(1, len(A.toks(p))) for p in parts]; tot = sum(need); b = [0.0]; c = 0
+    for k in range(len(parts) - 1):
+        c += need[k]; i = round(c * len(T) / tot)          # proporción en palabras pronunciadas (tolera pequeñas diferencias de escritura)
+        b.append(max(b[-1] + 0.25, T[min(i, len(T) - 1)]))
+    b.append(dur); return [(b[i], b[i + 1]) for i in range(len(parts))]

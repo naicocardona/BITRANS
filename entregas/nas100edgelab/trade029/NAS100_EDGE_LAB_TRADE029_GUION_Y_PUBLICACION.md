@@ -82,5 +82,5 @@ Buscamos ventaja estadística.
 - La voz se verificó con Whisper: «NAS100», «27.774,32» y «100,82».
 - **Sincronía de subtítulos:** 0,91 (TikTok) y 0,92 (Shorts), sin ventanas desfasadas.
 - `npx hyperframes check` sin errores en las dos versiones.
-- QA cuadro por cuadro y detector de trabas: ver el resultado en la entrega.
+- `qa_video.py` sin cuadros negros, sin momentos quietos de más de 2 s y sin silencios. `stutter.py` no encuentra trabas en ninguna de las dos versiones.
 - El Explorador queda abajo a la izquierda, sin tapar velas, cifras ni subtítulos.

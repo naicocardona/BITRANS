@@ -75,7 +75,7 @@ def learn_tk(C):
 <div class="wlb fx" id="c3l1" style="left:0;top:360px;color:var(--g)">TRADE · 10:00 → 10:30 AM · +100,82 PTS</div><div class="wbar" id="c3b1" style="left:0;top:398px;width:{900 * 30 / 359:.0f}px;background:var(--g)"></div>
 <div class="wlb fx" id="c3l2" style="left:0;top:476px;color:var(--t)">VENTANA DE MEDICIÓN · HASTA 3:59 PM</div><div class="wbar" id="c3b2" style="left:0;top:514px;width:900px;background:linear-gradient(90deg,rgba(63,208,201,.9),rgba(167,121,242,.6))"></div>
 <div class="note fx" id="c3n" style="left:0;top:590px;width:900px;font-size:24px;color:var(--mu)">Incluye periodo posterior al TP · no cambia el resultado del trade</div>
-<div class="stampV fx" id="c3s" style="left:260px;top:402px">NO CAMBIA EL RESULTADO</div>''')
+<div class="stampV fx" id="c3s" style="left:180px;top:404px;font-size:34px;padding:6px 20px 10px;transform:rotate(-2deg)">NO CAMBIA EL RESULTADO</div>''')
     return s1 + "\n" + s2 + "\n" + s3
 
 def body(V, DUR, caps):

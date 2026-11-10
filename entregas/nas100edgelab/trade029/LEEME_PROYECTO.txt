@@ -1,0 +1,6 @@
+Proyecto editable TRADE #029 (HyperFrames), en partes de menos de 30 MB:
+- Parte1_TikTok y Parte2_Shorts: index.html, audio mezclado final (assets/audio/mix.wav), capturas y tiempos de cada versión. La música y los efectos sueltos se regeneran con mix_t029.py.
+- Parte3_Portada_y_scripts: armador, escenas, guion, mezcla y portada.
+- Parte4_Avatar_fuentes_GSAP: carpetas assets/avatar, assets/fonts y assets/vendor del Explorador.
+  Se copian dentro de assets/ de cada versión antes de abrirla o renderizarla.
+Render: npx hyperframes render --fps 30 --output salida.mp4 (desde la carpeta de cada versión).

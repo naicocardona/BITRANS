@@ -1,0 +1,158 @@
+{
+ "version": "shorts",
+ "duracion": 41.9,
+ "frases": [
+  [
+   "s1",
+   0.25,
+   2.938
+  ],
+  [
+   "s2",
+   3.368,
+   2.137
+  ],
+  [
+   "s3",
+   5.854,
+   2.09
+  ],
+  [
+   "s4",
+   8.125,
+   2.265
+  ],
+  [
+   "s5",
+   10.69,
+   3.808
+  ],
+  [
+   "s6",
+   14.679,
+   6.261
+  ],
+  [
+   "s7",
+   21.29,
+   1.071
+  ],
+  [
+   "s8",
+   22.51,
+   3.758
+  ],
+  [
+   "s9",
+   26.469,
+   4.788
+  ],
+  [
+   "s10",
+   31.457,
+   6.362
+  ],
+  [
+   "s11",
+   38.219,
+   2.07
+  ]
+ ],
+ "subtitulos": [
+  [
+   0.25,
+   1.82,
+   "Score 8 para comprar,"
+  ],
+  [
+   1.82,
+   3.37,
+   "con volatilidad alta."
+  ],
+  [
+   3.37,
+   5.85,
+   "Así empezó el trade 29."
+  ],
+  [
+   5.85,
+   8.12,
+   "Lunes, 10 de la mañana en Colombia."
+  ],
+  [
+   8.12,
+   10.69,
+   "El precio estaba sobre las dos medias."
+  ],
+  [
+   10.69,
+   12.88,
+   "El gráfico muestra cómo el impulso"
+  ],
+  [
+   12.88,
+   14.68,
+   "atravesó la zona objetivo,"
+  ],
+  [
+   14.68,
+   16.42,
+   "y el bróker confirmó la salida"
+  ],
+  [
+   16.42,
+   18.7,
+   "con 100,82 puntos"
+  ],
+  [
+   18.7,
+   21.29,
+   "en 30 minutos y 13 segundos."
+  ],
+  [
+   21.29,
+   22.51,
+   "Tres apuntes:"
+  ],
+  [
+   22.51,
+   24.74,
+   "la señal de compra y la volatilidad"
+  ],
+  [
+   24.74,
+   26.47,
+   "se registran por separado;"
+  ],
+  [
+   26.47,
+   28.51,
+   "el objetivo era de 100 puntos,"
+  ],
+  [
+   28.51,
+   31.46,
+   "pero la ejecución dejó 100,82;"
+  ],
+  [
+   31.46,
+   34.28,
+   "y los 351 puntos favorables"
+  ],
+  [
+   34.28,
+   36.55,
+   "corresponden al seguimiento de la sesión,"
+  ],
+  [
+   36.55,
+   38.22,
+   "no a lo que capturamos."
+  ],
+  [
+   38.22,
+   40.89,
+   "Buscamos ventaja estadística."
+  ]
+ ]
+}

@@ -1,4 +1,4 @@
-# NAS100 EDGE LAB · TRADE #029 · PENDIENTE (Lady: «dejamos pendiente el 29 hasta que te diga continúa», 9 nov 2026)
+# NAS100 EDGE LAB · TRADE #029 · brief original (producido el 10 nov 2026 tras el «continúa» de Lady)
 
 **Falta para empezar:** Lady debe reenviar las dos capturas en un mensaje nuevo:
 - el gráfico de TradingView (530×1182);

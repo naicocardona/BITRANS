@@ -83,6 +83,9 @@
     - `tools/hd_render.cjs`: render.
     - `tools/hd_mix.py`: voz + música + efectos, −14 LUFS en 2 pasadas, MP4 y SRT.
     - Ejemplo de escenas: `tools/nv/film.js`.
+    - `tools/hd_voice.py <entrega> <sub>` (nov 2026): voz genérica; `guiones.py` define SH, TK, MAP y PAUSAS opcionales. Ejemplos: `tools/gota/`, `tools/arr/`.
+    - `hd_mix.py` deja sus .wav temporales junto a la salida: mezclar en el taller y copiar a `entregas/` solo el mp4 y el srt.
+    - `hd_render.cjs`: `--grid` y `--cover` son llamadas aparte (no generan el video).
   - **Pronunciación de Juan (ElevenLabs):** escribir «Envidia» (Nvidia), «Yensen Huang» (Jensen Huang) y «ese ene pe quinientos» (S&P 500). En pantalla se corrigen con el MAP de `voice.py`.
   - Si un brief dice «no gastar créditos», igual se usa Juan de ElevenLabs. Lady lo confirmó el 9 nov 2026: «usa elevenlabs como siempre, con las de titan».
   - `align_asr.py` convierte las cifras de Whisper a palabras («10,800», decimales «4,3 %» y «SNP» → «ese ene pe»). Así `sync_check` deja de bajar en los videos con números.

@@ -2,13 +2,13 @@
 
 | Archivo | Formato | Duración |
 |---|---|---|
-| `TITAN_ARRENDAR_O_COMPRAR_Shorts.mp4` | 1080×1920 · 30 fps · −14,0 LUFS · __SH_MB__ MB | __SH_DUR__ s |
-| `TITAN_ARRENDAR_O_COMPRAR_TikTok.mp4` | 1080×1920 · 30 fps · −14,0 LUFS · __TK_MB__ MB | __TK_DUR__ s |
+| `TITAN_ARRENDAR_O_COMPRAR_Shorts.mp4` | 1080×1920 · 30 fps · −14,0 LUFS · 14,1 MB | 43,4 s |
+| `TITAN_ARRENDAR_O_COMPRAR_TikTok.mp4` | 1080×1920 · 30 fps · −14,0 LUFS · 26,9 MB | 78,6 s |
 | `TITAN_ARRENDAR_O_COMPRAR_Portada.jpg` | primer fotograma: «¿ARRENDAR ES BOTAR LA PLATA?», billetes a la caneca y el edificio | — |
 | `TITAN_ARRENDAR_O_COMPRAR_Shorts.srt` y `..._TikTok.srt` | subtítulos de 3 palabras sincronizados con la voz final | — |
 
 - **Voz:** Juan (ElevenLabs, eleven_v4), una toma por guion, 1.764 créditos. Mp3 originales en `voz/`. «CDT» se escribió «ce de te» para la voz y en pantalla sale «CDT».
-- **Verificación:** Whisper confirma las cifras; sincronía de subtítulos 0,89 (TikTok y Short) sin ventanas desfasadas; QA cuadro por cuadro __QA__.
+- **Verificación:** Whisper confirma las cifras; sincronía de subtítulos sobre el audio final 0,92 (TikTok) y 0,89 (Short) sin ventanas desfasadas; QA cuadro por cuadro sin cuadros negros, nada quieto más de 2 s, sin silencios, −14,0 LUFS; transiciones revisadas en el video final con ffmpeg.
 - **Short ≠ recorte:** el Short llega al «truco» del primer año (intereses vs. abono) y cierra con «depende»; el TikTok suma el costo de oportunidad de la cuota inicial (CDT), la comparación del primer año ($41 M vs. $18 M) y el otro lado (el arriendo sube, la vivienda se valoriza y al final es tuya).
 
 ## Supuestos del ejemplo hipotético y cálculos

@@ -153,7 +153,7 @@ if (TK) { const s = 'otro', t_q = As(s, '¿siempre gana arrendar?'), t_no = As(s
       tx(cc, 'cada año', 0, -70, { size: 32, f: 'hand', col: C.goldD, sh: null }); } });
       pill(c, 'HASTA 5,1 % EN 2026', 280, 930, { size: 40, f: 'ui', sc: pb(T, t_51) }); tx(c, 'tope: IPC de 2025', 280, 1000, { size: 28, f: 'ui', al: pr(T, t_51 + .2, .3) }); }
     // derecha: la vivienda se valoriza y al final es tuya
-    building(c, 800, 1150, .8 * pb(T, t_v - .3), T);
+    building(c, 800, 1150, .8 * pb(T, sec(s).t0 - .3), T);
     if (T > t_v) { arrow(c, [960, 1100], [980, 660], pr(T, t_v, .6), { bend: 20, w: 9, col: C.green }); tag(c, 'SE PUEDE VALORIZAR', 800, 600, { size: 30, bg: C.paper, sc: pb(T, t_v + .2) }); }
     keyIcon(c, 620, 1250, pb(T, t_tu) * 1.3, -.3 + Math.sin(T * 3) * .1);
     stamp(c, 'ES TUYA', 800, 1300, T, t_tu + .1, { size: 64, col: C.goldD, rot: .04 });

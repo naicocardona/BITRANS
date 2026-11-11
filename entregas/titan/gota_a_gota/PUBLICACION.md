@@ -2,13 +2,13 @@
 
 | Archivo | Formato | Duración |
 |---|---|---|
-| `TITAN_GOTA_A_GOTA_Shorts.mp4` | 1080×1920 · 30 fps · −14,0 LUFS · __SH_MB__ MB | __SH_DUR__ s |
-| `TITAN_GOTA_A_GOTA_TikTok.mp4` | 1080×1920 · 30 fps · −14,0 LUFS · __TK_MB__ MB | __TK_DUR__ s |
+| `TITAN_GOTA_A_GOTA_Shorts.mp4` | 1080×1920 · 30 fps · −14,0 LUFS · 15,5 MB | 41,6 s |
+| `TITAN_GOTA_A_GOTA_TikTok.mp4` | 1080×1920 · 30 fps · −14,0 LUFS · 25,6 MB | 73,0 s |
 | `TITAN_GOTA_A_GOTA_Portada.jpg` | primer fotograma: «$1 MILLÓN · SIN PAPELES NI PREGUNTAS», billetes que vuelan y gotas que caen | — |
 | `TITAN_GOTA_A_GOTA_Shorts.srt` y `TITAN_GOTA_A_GOTA_TikTok.srt` | subtítulos de 3 palabras sincronizados con la voz final | — |
 
 - **Voz:** Juan (ElevenLabs, eleven_v4), una toma por guion, 1.643 créditos. Mp3 originales en `voz/`; flujo «TITÁN · Gota a gota y Arrendar vs comprar · Narraciones». Pausas recortadas con `tighten.py` (0,32), sin acelerar.
-- **Verificación:** Whisper confirma las cifras habladas; sincronía de subtítulos 0,92 (TikTok y Short) sin ventanas desfasadas; QA cuadro por cuadro __QA__.
+- **Verificación:** Whisper confirma las cifras habladas; sincronía de subtítulos sobre el audio final 0,90 (TikTok) y 0,93 (Short) sin ventanas desfasadas; QA cuadro por cuadro sin cuadros negros, nada quieto más de 2 s, sin silencios, −14,0 LUFS; transiciones revisadas en el video final con ffmpeg.
 - **Short ≠ recorte:** el Short va directo al cobro, la usura y la bola; el TikTok agrega cómo funciona (cédula, sin historial, cobrador en moto), qué hacer (bancos, cooperativas, microcréditos) y el cierre «La plata fácil casi nunca sale barata».
 
 ## Datos y cálculos (todo verificable)

@@ -22,3 +22,7 @@ TK = [
  ("cierre", "La respuesta depende de cuánto tiempo te vas a quedar, de la tasa que consigas y de cuánto se valorice. Haz tu cuenta antes de firmar."),
 ]
 text = lambda L: " ".join(t for _, t in L)
+MAP = [("trescientos millones", "$300 millones"), ("un millón quinientos mil", "$1.500.000"), ("noventa millones", "$90 millones"), ("doscientos diez", "$210 millones"),
+       ("veinte años", "20 años"), ("quince coma cinco por ciento", "15,5 %"), ("dos millones seiscientos ochenta mil", "$2.680.000"), ("treinta millones", "$30 millones"),
+       ("dos millones", "$2 millones"), ("ce de te", "CDT"), ("doce por ciento", "12 %"), ("diez millones", "$10 millones"), ("cuarenta y un millones", "$41 millones"),
+       ("dieciocho millones", "$18 millones"), ("dos mil veintiséis", "2026"), ("cinco coma uno por ciento", "5,1 %")]

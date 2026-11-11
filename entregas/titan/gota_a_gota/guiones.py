@@ -19,3 +19,6 @@ TK = [
  ("cierre", "La plata fácil casi nunca sale barata. Comparte este video con quien lo necesite."),
 ]
 text = lambda L: " ".join(t for _, t in L)
+MAP = [("un millón doscientos mil", "$1.200.000"), ("cuarenta mil pesos", "$40.000"), ("doscientos mil pesos", "$200.000"), ("veintiún mil pesos", "$21.000"), ("veintiún mil", "$21.000"),
+       ("veintiocho coma treinta y cuatro por ciento", "28,34 %"), ("veinte por ciento", "20 %"), ("ciento sesenta y cinco", "165"), ("casi nueve millones", "casi $9 millones"),
+       ("treinta días", "30 días"), ("doce meses", "12 meses"), ("diez veces", "10 veces"), ("un millón", "$1 millón")]

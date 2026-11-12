@@ -15,6 +15,8 @@
 - **Peso:** los videos para redes se exportan en máxima calidad (crf 18), aunque pesen más de 30 MB; Lady lo autorizó el 7 nov 2026. Límite práctico: menos de 100 MB por archivo, que es el máximo de GitHub.
 - No clonar ni imitar voces reales. No activar servicios de pago, no enviar grabaciones de Lady a terceros y no aceptar analítica por ella. ElevenLabs sí está autorizado (plan pago).
 - No copiar el estilo de creadores o canales específicos; TITÁN tiene identidad propia.
+- Videos de referencia que trae Lady (12 nov 2026): son solo para entender de qué trata el tema; todo se hace con el estilo propio de TITÁN, nada de copias (ni look, ni personajes, ni frases).
+- La comunidad de TITÁN compra acciones de EE. UU.: los temas de impuestos y reglas de EE. UU. (IRS, retenciones, herencias) sí aplican; se explican para quien invierte desde Colombia y con fuente.
 - El correo de Lady solo sirve para identificarla; nunca se envía a servicios.
 
 ## TITÁN HOLDING

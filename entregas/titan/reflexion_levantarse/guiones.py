@@ -13,3 +13,6 @@ TK = [
 ]
 SH = [s for s in TK if s[0] in ("resultado", "levantarte", "consecuencias", "aprendimos", "caerse", "partida")]
 text = lambda L: " ".join(t for _, t in L)
+# Pausas de respiración (reflexión): el TikTok llega a ≥ 60 s sin acelerar ni estirar la voz.
+PAUSAS = {"tk": [("quiere el proceso.", 0.5), ("en nosotros mismos.", 0.6), ("levantamos la cabeza.", 0.7), ("quedarte en el piso.", 0.5), ("dispuesto a levantarte.", 0.6)],
+          "sh": [("levantamos la cabeza.", 0.6), ("dispuesto a levantarte.", 0.5)]}

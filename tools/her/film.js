@@ -85,6 +85,130 @@ if (has('regla')) { const s = 'regla', t0 = sec(s).t0, t_nv = As(s, 'Si no vives
     tx(c, 'Fuente: IRS · no residentes que no son ciudadanos · formulario 706-NA', 540, 1540, { size: 24, f: 'ui', al: .8 });
   }); }
 
+
+// 3 · El ejemplo (hipotético): USD 200.000 → USD 41.800 al IRS; la tajada sale del pastel y vuela al edificio
+if (has('ejemplo')) { const s = 'ejemplo', t_e = As(s, 'Ejemplo hipotético:'), t_200 = As(s, 'doscientos mil dólares.'), t_im = As(s, 'El impuesto sería'), t_41 = As(s, 'cuarenta y un mil'), t_q = As(s, 'Más de la quinta parte');
+  hit(t_e + .1, 6, 'ping'); hit(t_200 + .1, 10, 'stamp'); hit(t_im + .1, 6, 'ping'); hit(t_41 + .1, 16, 'stamp'); hit(t_q + .2, 12, 'stamp');
+  const PX = 420, PY = 860, PR = 250, frac = 41800 / 200000;
+  scene(s, 'whip', (c, T, L) => {
+    bg(c, T); camS(c, T, 540, 930, key(T, [[0, 1.0], [t_41, 1.0], [t_41 + .5, 1.05]]) + .012 * Math.sin(L));
+    tag(c, 'EJEMPLO HIPOTÉTICO', 540, 175, { size: 30, bg: C.gold });
+    pill(c, 'USD 200.000', 540, 300, { size: 70, sc: pb(T, sec(s).t0 - .2), top: 'ACCIONES DE EE. UU. AL MORIR' });
+    // pastel del portafolio con la tajada del IRS (20,9 %)
+    const kp = pb(T, sec(s).t0 - .1); if (kp > 0) { c.save(); c.translate(PX, PY); c.scale(kp, kp);
+      const a0 = -Math.PI / 2, a1 = a0 + frac * TAU, out = pr(T, t_im, .5) * 40, fly = pr(T, t_q, .9, easeIO);
+      const wedge = (from, to, r, n = 40) => { const P = [[0, 0]]; for (let i = 0; i <= n; i++) { const a = from + (to - from) * i / n; P.push([Math.cos(a) * r, Math.sin(a) * r]); } return P; };
+      shp(c, wedge(a1, a0 + TAU, PR, 60), C.gold, { sharp: true, w: 6, lc: C.ink, seed: 1401, hatch: C.goldD, hal: .3 });
+      tx(c, 'PARA TU FAMILIA', -10, 120, { size: 30, f: 'ui', al: pr(T, t_41, .4) });
+      const am = (a0 + a1) / 2, dx = Math.cos(am) * out + fly * 330, dy = Math.sin(am) * out + fly * 430;
+      c.save(); c.translate(dx, dy); c.rotate(fly * .6); shp(c, wedge(a0, a1, PR, 20), C.red, { sharp: true, w: 6, lc: C.ink, seed: 1402, hatch: shade(C.red, .6), hal: .35 }); c.restore(); c.restore(); }
+    pill(c, 'USD 41.800', 790, 640, { size: 64, sc: pb(T, t_41), col: '#FFB4A6', top: 'IMPUESTO AL IRS' });
+    tx(c, '≈ 20,9 %', 790, 730, { size: 44, f: 'hand', col: C.red, sh: null, al: pr(T, t_41 + .3, .3) });
+    stamp(c, '¡MÁS DE 1/5!', 760, 860, T, t_q + .1, { size: 60, col: C.red, rot: .05 });
+    taxOffice(c, 820, 1420, .62 * pb(T, t_im - .2));
+    heir(c, 200, 1440, .7, T, { look: 1, mouth: T > t_41 ? 'o' : 'smile', brow: T > t_41 ? 1 : 0 });
+    tx(c, 'Sobre USD 140.000 (lo que pasa el tope), tarifas del 26 % al 32 % · cálculo TITÁN con la tabla del IRS', 540, 1540, { size: 22, f: 'ui', al: .85, max: 1000 });
+  }); }
+
+// 4 · TikTok · El trámite: 9 meses, cuenta congelada hasta el certificado del IRS, sin tratado de herencias con Colombia
+if (has('tramite')) { const s = 'tramite', t_9 = As(s, 'nueve meses'), t_cu = As(s, 'la cuenta puede'), t_co = As(s, 'congelada'), t_ce = As(s, 'dé un certificado.'), t_col = As(s, 'Colombia no tiene'), t_tr = As(s, 'tratado de herencias');
+  hit(t_9 + .1, 8, 'stamp'); hit(t_co + .1, 12, 'stamp'); hit(t_ce + .1, 8, 'ping'); hit(t_col + .1, 6, 'ping'); hit(t_tr + .1, 14, 'stamp');
+  scene(s, 'news', (c, T, L) => {
+    bg(c, T); camS(c, T, 540, 930, 1.0 + .012 * Math.sin(L));
+    const f1 = 1 - pr(T, t_col - .5, .4);
+    if (f1 > 0) { c.save(); c.globalAlpha = f1;
+      // calendario: los meses corren hasta 9
+      const m = Math.min(9, Math.max(1, Math.floor((T - t_9 + .3) * 6) + 1));
+      card(c, 290, 520, 360, 360, { sc: pb(T, sec(s).t0 - .3), band: C.red, seed: 1411, rot: -.03, draw: cc => { tx(cc, 'PLAZO PARA DECLARAR', 0, -145, { size: 26, f: 'ui', col: C.paper }); tx(cc, String(T > t_9 - .3 ? m : 1), 0, 10, { size: 170, col: C.ink, sh: C.gold }); tx(cc, 'MESES', 0, 130, { size: 40, f: 'ui' }); } });
+      // cuenta del bróker congelada
+      const kc = pb(T, Math.min(t_cu - .2, sec(s).t0 + .3)); if (kc > 0) { card(c, 780, 560, 400, 300, { sc: kc, band: C.navy, seed: 1412, rot: .03, draw: (cc, w, h) => {
+        tx(cc, 'CUENTA EN EL BRÓKER', 0, -115, { size: 26, f: 'ui', col: C.gold });
+        const P = []; for (let i = 0; i <= 16; i++) P.push([-150 + i * 19, 60 - i * 6 + Math.sin(i * 1.3) * 10]); ln(cc, P, { w: 6, col: C.green, seed: 1413 });
+        if (T > t_co) { cc.save(); cc.globalAlpha = .55 * pr(T, t_co, .4); cc.fillStyle = '#BFE3F5'; cc.fillRect(-w / 2 + 6, -h / 2 + 72, w - 12, h - 78); cc.restore(); } } });
+        if (T > t_co) { const k = pb(T, t_co); c.save(); c.translate(780, 600); c.scale(k, k); shp(c, R4(-55, -20, 110, 90), C.gold, { w: 5, lc: C.ink, seed: 1414 }); ln(c, [[-34, -20], [-34, -60], [0, -84], [34, -60], [34, -20]], { w: 10, seed: 1415 }); c.restore();
+          stamp(c, 'CONGELADA', 780, 760, T, t_co + .1, { size: 54, col: C.red, rot: -.05 }); } }
+      // certificado del IRS
+      const kd = pb(T, t_ce - .2); if (kd > 0) { card(c, 540, 1020, 520, 260, { sc: kd, rot: -.02, seed: 1416, draw: cc => { tx(cc, 'CERTIFICADO DE TRANSFERENCIA', 0, -80, { size: 28, f: 'ui' }); squiggleText(cc, -200, -40, 400, 3, { color: '#8A8D9C', seed: 1417, lineH: 30, amp: 2, width: 2 }); } });
+        stamp(c, 'IRS', 700, 1100, T, t_ce + .3, { size: 50, col: C.red, rot: .1 }); }
+      heir(c, 190, 1450, .62, T, { look: 1, mouth: T > t_co ? 'o' : 'flat', brow: 1 });
+      c.restore(); }
+    // sin tratado de herencias entre Colombia y EE. UU.
+    const g = pr(T, t_col - .4, .5); if (g > 0) { c.save(); c.globalAlpha = g;
+      country(c, GEO.col, 290, 860, 30, 4, C.gold, { seed: 1421 }); country(c, GEO.usa, 760, 760, 11, 38, C.navy, { seed: 1422 });
+      tx(c, 'COLOMBIA', 290, 1180, { size: 36, f: 'ui' }); tx(c, 'EE. UU.', 760, 1000, { size: 36, f: 'ui' });
+      const px = pr(T, t_tr, .35); ln(c, [[470, 760], [580, 880]], { w: 16, col: C.red, p: px, seed: 1423 }); ln(c, [[580, 760], [470, 880]], { w: 16, col: C.red, p: pr(T, t_tr + .15, .35), seed: 1424 });
+      stamp(c, 'SIN TRATADO DE HERENCIAS', 540, 400, T, t_tr + .2, { size: 50, col: C.red, rot: -.03 });
+      tx(c, 'Fuente: IRS · lista de tratados de herencias y certificado de transferencia', 540, 1540, { size: 22, f: 'ui', al: .85 }); c.restore(); }
+  }); }
+
+// 5 · El mito: «abre una LLC y un fideicomiso» (TikTok) / «¿y si abres una LLC?» (Short)
+if (has('mito')) { const s = 'mito', t0 = sec(s).t0, t_oj = TK ? As(s, 'Ojo.') : As(s, 'Ojo:'), t_ng = As(s, 'no garantiza nada');
+  const t_ab = TK ? As(s, 'abre una ele ele ce') : As(s, '¿Y si abres'), t_fi = TK ? As(s, 'y un fideicomiso.') : null, t_fo = TK ? As(s, 'un formulario anual') : null, t_25 = TK ? As(s, 'veinticinco mil dólares.') : null,
+    t_rv = TK ? As(s, 'fideicomiso revocable') : null, t_tu = TK ? As(s, 'siguen siendo tuyas.') : null,
+    t_o1 = TK ? null : As(s, 'fideicomiso irrevocable,'), t_o2 = TK ? null : As(s, 'una sociedad fuera'), t_o3 = TK ? null : As(s, 'fondos domiciliados'), t_ct = TK ? null : As(s, 'Todas tienen costos.');
+  hit(t_ab + .1, 6, 'ping'); hit(t_oj, 14, 'stamp'); hit(t_ng + .2, 10, 'stamp');
+  if (TK) { hit(t_fi + .1, 6, 'ping'); hit(t_fo + .1, 6, 'ping'); hit(t_25 + .1, 12, 'stamp'); hit(t_rv + .2, 10, 'stamp'); hit(t_tu + .1, 10, 'stamp'); } else { hit(t_o1, 6, 'ping'); hit(t_o2, 6, 'ping'); hit(t_o3, 6, 'ping'); hit(t_ct + .1, 12, 'stamp'); }
+  scene(s, 'drop', (c, T, L) => {
+    bg(c, T); camS(c, T, 540, 930, 1.0 + .012 * Math.sin(L * 1.1));
+    tx(c, TK ? 'TE DIRÁN…' : '¿Y SI ABRES UNA LLC?', 540, 210, { size: 76, col: C.ink, clipP: pr(T, t0 - .45, .4, easeIO), max: 1000 });
+    // asesor genérico con globo de diálogo
+    person(c, 170, 1450, .78, { seed: 14, shirt: C.navy, ...idle(T), look: 1, mouth: T < t_oj ? 'grin' : 'flat', armR: [1.2, 1.0] });
+    const kl = pb(T, Math.min(t_ab - .1, t0 - .3)), yL = TK ? 470 : 520;
+    if (kl > 0) card(c, TK ? 330 : 540, yL, 360, 230, { sc: kl, band: C.navy, seed: 1431, rot: -.03, draw: cc => { tx(cc, 'LLC', 0, -80, { size: 30, f: 'ui', col: C.gold }); tx(cc, 'EN EE. UU.', 0, 20, { size: 48, col: C.ink, sh: C.gold }); } });
+    if (TK) { const kf = pb(T, Math.min(t_fi - .1, t0 - .1)); if (kf > 0) card(c, 760, yL, 360, 230, { sc: kf, band: C.vio, seed: 1432, rot: .03, draw: cc => { tx(cc, 'FIDEICOMISO', 0, -80, { size: 30, f: 'ui', col: C.paper }); tx(cc, T > t_rv ? 'REVOCABLE' : '…', 0, 20, { size: 46, col: C.ink, sh: C.gold }); } }); }
+    stamp(c, '¡OJO!', TK ? 780 : 830, TK ? 760 : 330, T, t_oj, { size: TK ? 80 : 64, col: C.red, rot: -.06 });
+    stamp(c, 'NO GARANTIZA NADA', TK ? 330 : 540, yL + 165, T, t_ng + .1, { size: 40, col: C.red, rot: .04 });
+    if (TK) {
+      const kd = pb(T, t_fo - .1); if (kd > 0) { card(c, 420, 1000, 380, 250, { sc: kd, rot: -.04, seed: 1433, draw: cc => { tx(cc, 'FORMULARIO 5472', 0, -80, { size: 30, f: 'ui' }); tx(cc, 'CADA AÑO', 0, -30, { size: 28, f: 'hand', col: C.goldD, sh: null }); squiggleText(cc, -150, 10, 300, 3, { color: '#8A8D9C', seed: 1434, lineH: 28, amp: 2, width: 2 }); } }); }
+      pill(c, 'MULTAS DESDE USD 25.000', 620, 1220, { size: 44, f: 'ui', sc: pb(T, t_25), bg: C.red, col: C.paper, lc: C.ink });
+      if (T > t_rv) { const p = pr(T, t_rv + .2, .35); ln(c, [[600, yL - 100], [920, yL + 100]], { w: 14, col: C.red, p, seed: 1435 }); ln(c, [[920, yL - 100], [600, yL + 100]], { w: 14, col: C.red, p: pr(T, t_rv + .35, .35), seed: 1436 }); }
+      if (T > t_tu) { tag(c, 'PARA EL IRS, SIGUEN SIENDO TUYAS', 640, 1330, { size: 30, bg: C.paper, sc: pb(T, t_tu) }); arrow(c, [760, yL + 130], [260, 1150], pr(T, t_tu, .5), { bend: 80, w: 8, col: C.red }); }
+    } else {
+      [['FIDEICOMISO IRREVOCABLE', t_o1, 920], ['SOCIEDAD FUERA DE EE. UU.', t_o2, 1050], ['FONDOS DOMICILIADOS FUERA', t_o3, 1180]].forEach(([l, t, y]) => { pill(c, l, 600, y, { size: 38, f: 'ui', sc: pb(T, t) }); });
+      tag(c, 'PUEDE FUNCIONAR · ASESÓRATE', 600, 810, { size: 28, bg: C.paper, sc: pb(T, t_o1 - .2) });
+      stamp(c, 'TODAS TIENEN COSTOS', 600, 1330, T, t_ct + .05, { size: 46, col: C.red, rot: -.03 });
+    }
+  }); }
+
+// 6 · TikTok · Lo que puede funcionar, con costos; en Colombia igual se declara
+if (has('opciones')) { const s = 'opciones', t_p = As(s, 'Lo que puede funcionar:'), t_o1 = As(s, 'fideicomiso irrevocable,'), t_o2 = As(s, 'una sociedad fuera'), t_o3 = As(s, 'fondos domiciliados'), t_ct = As(s, 'Todas tienen costos,'), t_cd = As(s, 'en Colombia igual declaras.');
+  hit(t_p + .1, 6, 'ping'); hit(t_o1 + .1, 8, 'stamp'); hit(t_o2 + .1, 8, 'stamp'); hit(t_o3 + .1, 8, 'stamp'); hit(t_ct + .1, 12, 'stamp'); hit(t_cd + .1, 10, 'ping');
+  scene(s, 'wipe', (c, T, L) => {
+    bg(c, T); camS(c, T, 540, 930, 1.0 + .012 * Math.sin(L));
+    tx(c, 'LO QUE PUEDE FUNCIONAR', 540, 210, { size: 70, col: C.ink, clipP: pr(T, sec(s).t0 - .2, .6, easeIO), max: 1000 });
+    tag(c, 'SOLO CON ASESORÍA EN LOS DOS PAÍSES', 540, 300, { size: 28, bg: C.paper, sc: pb(T, sec(s).t0 - .1) });
+    const opts = [['FIDEICOMISO IRREVOCABLE', 'entregas el control de verdad', t_o1, C.vio], ['SOCIEDAD FUERA DE EE. UU.', 'la sociedad tiene las acciones', t_o2, C.navy], ['FONDOS FUERA DE EE. UU.', 'p. ej., domiciliados en Irlanda', t_o3, C.goldD]];
+    opts.forEach(([a, b, t, col], k) => { const y = 470 + k * 230, kk = pb(T, Math.min(t - .1, sec(s).t0 + .2 + k * .25)); if (kk <= 0) return;
+      card(c, 600, y, 760, 190, { sc: kk, band: col, seed: 1441 + k, rot: (k - 1) * .015, draw: cc => { tx(cc, a, 0, -60, { size: 32, f: 'ui', col: C.paper }); tx(cc, b, 0, 25, { size: 38, f: 'hand', col: C.goldD, sh: null }); } });
+      if (T > t) { const p = pr(T, t + .1, .3); ln(c, [[150, y], [185, y + 35], [240, y - 35]], { w: 14, col: C.green, p, seed: 1445 + k }); } });
+    stamp(c, 'TODAS TIENEN COSTOS', 540, 1180, T, t_ct + .05, { size: 56, col: C.red, rot: -.04 });
+    const kc = pr(T, t_cd - .2, .4); if (kc > 0) { country(c, GEO.col, 200, 1380, 12, 4, C.gold, { seed: 1448, al: kc }); pill(c, 'EN COLOMBIA IGUAL DECLARAS', 620, 1380, { size: 40, f: 'ui', sc: pb(T, t_cd) }); }
+  }); }
+
+// 7 · Cierre (noche → luz): «Todos ven el portafolio crecer. Casi nadie mira quién lo hereda.» + llamado a asesorarse + aviso
+if (has('cierre')) { const s = 'cierre', t_end = DD.words[DD.words.length - 1][2], t_rv = As(s, 'Revisa cuánto'), t_as = As(s, 'asesórate con'), t_dp = As(s, 'los dos países');
+  const t_tv = TK ? As(s, 'Todos ven') : null, t_cn = TK ? As(s, 'Casi nadie mira') : null, t_ht = TK ? null : As(s, 'antes de que le toque');
+  if (TK) { hit(t_tv + .1, 8, 'ping'); hit(t_cn + .1, 12, 'stamp'); } else hit(t_ht + .1, 12, 'stamp'); hit(t_rv + .1, 8, 'ping'); hit(t_dp + .1, 10, 'stamp'); sfx(t_end + .2, 'ping');
+  scene(s, 'blot', (c, T, L) => {
+    bg(c, T, { night: true }); camS(c, T, 540, 960, 1.0 + .015 * Math.sin(L * .9));
+    for (let k = 0; k < 16; k++) { const x = (k * 197) % 1040 + 20, y = (k * 131) % 520 + 80, a = .35 + .55 * Math.abs(Math.sin(T * 2 + k)); c.save(); c.globalAlpha = a; c.fillStyle = C.gold; c.beginPath(); c.arc(x, y, 3, 0, TAU); c.fill(); c.restore(); }
+    if (TK) { const f = 1 - pr(T, t_rv - .3, .4); if (f > 0) { c.save(); c.globalAlpha = f;
+        tx(c, 'TODOS VEN EL PORTAFOLIO CRECER.', 540, 300, { size: 58, col: C.chalk, sh: C.goldD, clipP: pr(T, t_tv, .6, easeIO), max: 1000 });
+        portfolio(c, 540, 620, pb(T, t_tv), T, { title: 'TUS ACCIONES DE EE. UU.' });
+        tx(c, 'CASI NADIE MIRA QUIÉN LO HEREDA.', 540, 900, { size: 58, col: C.gold, sh: null, clipP: pr(T, t_cn, .6, easeIO), max: 1000 });
+        if (T > t_cn) { heir(c, 400, 1300, .6, T, { look: 1, mouth: 'flat', brow: 1 }); tx(c, '?', 720, 1150, { size: 140, col: C.gold, sh: null, sc: pb(T, t_cn + .3) }); }
+        c.restore(); } }
+    const kr = pr(T, TK ? t_rv - .2 : sec(s).t0 - .2, .5); if (kr > 0) { c.save(); c.globalAlpha = kr;
+      tx(c, 'REVISA CUÁNTO TIENES ALLÁ', 540, TK ? 330 : 300, { size: 68, col: C.chalk, sh: C.goldD, sc: pb(T, t_rv), max: 1000 });
+      tx(c, 'Y ASESÓRATE CON UN EXPERTO', 540, TK ? 440 : 410, { size: 60, col: C.gold, sh: null, clipP: pr(T, t_as, .6, easeIO), max: 1000 });
+      tx(c, 'EN LOS DOS PAÍSES', 540, TK ? 540 : 510, { size: 60, col: C.gold, sh: null, clipP: pr(T, t_dp - .3, .4, easeIO) });
+      const km = pb(T, t_dp); if (km > 0) { country(c, GEO.col, 330, 860, 22 * km, 4, C.gold, { seed: 1451 }); country(c, GEO.usa, 760, 800, 8 * km, 38, C.lav, { seed: 1452 }); arrow(c, [420, 820], [660, 780], pr(T, t_dp + .2, .5), { bend: 40, w: 7, col: C.gold }); }
+      if (TK) heir(c, 540, 1300, .55, T, { look: 0, mouth: 'smile', jump: T > t_dp + .3 && T < t_dp + 1.5 });
+      if (!TK) { stamp(c, 'ANTES DE QUE LE TOQUE A TU FAMILIA', 540, 1130, T, t_ht, { size: 40, col: C.red, bg: C.navy, rot: -.03 }); heir(c, 540, 1360, .5, T, { look: 0, mouth: 'smile' }); }
+      c.restore(); }
+    const ke = pr(T, t_end + .15, .5); if (ke > 0) { tx(c, 'Contenido educativo. No es una recomendación de inversión', 540, 1395, { size: 28, f: 'ui', col: C.chalk, al: ke, max: 980 }); tx(c, 'ni asesoría tributaria o legal.', 540, 1435, { size: 28, f: 'ui', col: C.chalk, al: ke }); tx(c, 'TITÁN HOLDING', 540, 1500, { size: 50, col: C.gold, sh: null, al: ke }); }
+  }, true); }
+
 // ================= portada =================
 function cover(c) { drawScene(c, SC[0], 4.6); resetT(c); INKC = C.ink; tx(c, 'TITÁN HOLDING', 540, 70, { size: 24, f: 'ui', al: .7 }); }
 startFilm('herencia-eeuu', cover);

@@ -2,14 +2,14 @@
 
 | Archivo | Formato | Duración |
 |---|---|---|
-| `TITAN_HERENCIA_Shorts.mp4` | 1080×1920 · 30 fps · −14,0 LUFS · __SH_MB__ MB | __SH_DUR__ s |
-| `TITAN_HERENCIA_TikTok.mp4` | 1080×1920 · 30 fps · −14,0 LUFS · __TK_MB__ MB | __TK_DUR__ s |
+| `TITAN_HERENCIA_Shorts.mp4` | 1080×1920 · 30 fps · −14,0 LUFS · 21,2 MB | 53,5 s |
+| `TITAN_HERENCIA_TikTok.mp4` | 1080×1920 · 30 fps · −14,0 LUFS · 33,0 MB | 84,8 s |
 | `TITAN_HERENCIA_Portada.jpg` | primer fotograma: «TUS ACCIONES DE EE. UU. ¿LAS HEREDAN TUS HIJOS… O EL IRS?», portafolio, familia y edificio del IRS | — |
 | `TITAN_HERENCIA_Shorts.srt` y `TITAN_HERENCIA_TikTok.srt` | subtítulos de 3 palabras sincronizados con la voz final | — |
 | `piloto/TITAN_HERENCIA_Piloto.mp4` | piloto aprobado por Lady (gancho + regla) | 20,7 s |
 
 - **Voz:** Juan (ElevenLabs, eleven_v4), una toma por guion, 2.030 créditos. Los mp3 originales están en `voz/`; el flujo se llama «TITÁN · Herencia de acciones de EE. UU. · Narraciones». Para la voz, «IRS» y «LLC» se deletrearon («i erre ese», «ele ele ce»).
-- **Verificación:** __QA__
+- **Verificación:** Whisper confirma las cifras; sincronía de subtítulos sobre el audio final 0,88 (TikTok) y 0,95 (Short), sin ventanas desfasadas; sin cuadros negros, nada quieto más de 2 s, sin silencios, −14,1 LUFS; transiciones revisadas en el video final con ffmpeg.
 - **Short ≠ recorte:** el Short une el mito y las opciones en una sola escena y cierra con «antes de que le toque a tu familia». El TikTok agrega el trámite (9 meses, cuenta congelada hasta el certificado del IRS, sin tratado de herencias), el formulario 5472 de la LLC, el fideicomiso revocable y el remate «Todos ven el portafolio crecer. Casi nadie mira quién lo hereda».
 - **Imagen:** estilo híbrido TITÁN con contornos reales de Colombia y EE. UU. ([Natural Earth](https://www.naturalearthdata.com/) vía world-atlas, licencia ISC; ver `tools/geo/`). Personas genéricas; el edificio del IRS es genérico, sin logos reales.
 - **Aviso en pantalla:** «Contenido educativo. No es una recomendación de inversión ni asesoría tributaria o legal.»

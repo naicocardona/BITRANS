@@ -4,14 +4,14 @@
 # Colombia no tiene tratado de herencia con EE. UU. Transfer certificate del IRS para mover los activos del fallecido. Form 5472: multa USD 25.000 (LLC de dueño extranjero).
 SH = [
  ("gancho", "¿Tus acciones de Estados Unidos las heredan tus hijos… o el i erre ese?"),
- ("regla", "Si no vives en Estados Unidos y mueres con más de sesenta mil dólares en acciones de allá, tu familia puede tener que pagar impuesto de herencia: con tarifas del veintiséis al cuarenta por ciento sobre lo que pase ese tope."),
+ ("regla", "Si no vives en Estados Unidos y mueres con más de sesenta mil dólares en acciones de allá, tu familia puede tener que pagar impuesto de herencia, con tarifas del veintiséis al cuarenta por ciento sobre lo que pase ese tope."),
  ("ejemplo", "Ejemplo hipotético: un portafolio de doscientos mil dólares. El impuesto sería de unos cuarenta y un mil ochocientos dólares. Más de la quinta parte."),
  ("mito", "¿Y si abres una ele ele ce? Ojo: por sí sola no garantiza nada. Lo que puede funcionar es un fideicomiso irrevocable, una sociedad fuera de Estados Unidos o fondos domiciliados fuera de Estados Unidos. Todas tienen costos."),
  ("cierre", "Revisa cuánto tienes allá y asesórate con un experto en los dos países, antes de que le toque a tu familia."),
 ]
 TK = [
  ("gancho", "¿Tus acciones de Estados Unidos las heredan tus hijos… o el i erre ese?"),
- ("regla", "Si no vives en Estados Unidos y mueres con más de sesenta mil dólares en acciones de allá, tu familia puede tener que pagar impuesto de herencia: con tarifas del veintiséis al cuarenta por ciento sobre lo que pase ese tope."),
+ ("regla", "Si no vives en Estados Unidos y mueres con más de sesenta mil dólares en acciones de allá, tu familia puede tener que pagar impuesto de herencia, con tarifas del veintiséis al cuarenta por ciento sobre lo que pase ese tope."),
  ("ejemplo", "Ejemplo hipotético: un portafolio de doscientos mil dólares. El impuesto sería de unos cuarenta y un mil ochocientos dólares. Más de la quinta parte de lo que ahorraste."),
  ("tramite", "Tu familia tiene nueve meses para declarar, y la cuenta puede quedar congelada hasta que el i erre ese dé un certificado. Y Colombia no tiene tratado de herencias con Estados Unidos."),
  ("mito", "Te dirán: abre una ele ele ce y un fideicomiso. Ojo. La ele ele ce, por sí sola, no garantiza nada, y con dueño extranjero exige un formulario anual con multas desde veinticinco mil dólares. Y un fideicomiso revocable no sirve: para el i erre ese, las acciones siguen siendo tuyas."),

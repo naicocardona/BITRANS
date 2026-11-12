@@ -127,6 +127,7 @@
 - Short 2 del paquete Nasdaq: desfase leve de subtítulos (~1 s) entre los segundos 10 y 15. Lady decidió dejarlo así (7 nov 2026). En los videos siguientes, `sync_check.py` es obligatorio antes de entregar.
 - Las voces originales de «demócratas» ya están en `entregas/titan/democratas_wallstreet/voz/`. Desde ahora, guardar siempre los mp3 de ElevenLabs en `entregas/.../voz/` el mismo día: sus enlaces de descarga vencen.
 - Las voces de NU solo están en el flujo de ElevenLabs «TITÁN · NU y las elecciones · Narraciones».
+- **Pendiente (12 nov 2026, Lady lo dejó para la próxima sesión):** serie «La cuenta que nadie hace», con el enfoque de «¿Arrendar o comprar?», el mejor video de TITÁN en TikTok (1.000 visitas en 3 h). Ideas: 1) «¿Abonar a capital o invertir la diferencia?» (segunda parte del de arriendo, recomendada); 2) tarjeta a 36 cuotas; 3) prima de diciembre: ¿pagar deudas o invertir?; 4) carro de contado o a crédito; 5) ¿CDT o acciones de EE. UU.? Preguntarle con cuál arranca.
 - Auditoría del 7 nov 2026: `AUDITORIA_RESPALDO.md`. Revisar sus pendientes al inicio de cada sesión hasta que estén cerrados.
 - Hay que avisarle a Lady en cuanto algo requiera una acción suya desde el computador; ella lo pidió así.
 - El repositorio `naicocardona/lukas-app` es el código de la app LUKAS (otro equipo); no guardar videos ahí.

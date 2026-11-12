@@ -32,7 +32,7 @@ function person2(c, x, y, s, T, o = {}) { person(c, x, y, s, { seed: o.seed ?? 3
 
 // ================= escenas =================
 // 1 · Gancho: titular desde el primer cuadro; el billete de USD 100 se parte y una tajada vuela al IRS
-{ const s = 'gancho', t_l = As(s, 'te llegan setenta.'), t_r = TK ? As(s, '¿Dónde quedó') : null;
+if (has('gancho')) { const s = 'gancho', t_l = As(s, 'te llegan setenta.'), t_r = TK ? As(s, '¿Dónde quedó') : null;
   hit(.05, 8, 'stamp'); hit(t_l + .1, 16, 'stamp'); if (t_r) hit(t_r + .1, 8, 'ping');
   scene(s, null, (c, T, L) => {
     bg(c, T); camS(c, T, 540, key(T, [[0, 940], [t_l, 940], [t_l + .6, 900]]), key(T, [[0, 1.0], [t_l, 1.0], [t_l + .6, 1.05]]) + .012 * Math.sin(L * 1.3));
@@ -41,13 +41,13 @@ function person2(c, x, y, s, T, o = {}) { person(c, x, y, s, { seed: o.seed ?? 3
     const cut = T > t_l ? .7 : 1, off = pr(T, t_l, .9, easeOutQuint);
     bill100(c, 540, 640 + Math.sin(T * 2) * 8, pb(T, -.3), -.04, { cut, off });
     if (T > t_l) { pill(c, '−30 %', 880, 470, { size: 56, sc: pb(T, t_l + .2), bg: C.red, col: C.paper, lc: C.ink }); arrow(c, [820, 580], [880, 1080], pr(T, t_l + .3, .5), { bend: -60, w: 8, col: C.red }); }
-    taxOffice(c, lerp(1250, 880, pr(T, t_l - .3, .5, easeOutBack)), 1430, .8);
+    const kx = pr(T, t_l - .3, .5, easeOutBack); taxOffice(c, lerp(1110, 880, kx) + (kx < 1 ? Math.sin(T * 5) * 8 : 0), 1430, .8); if (kx < .5) tx(c, '?', 960, 1100, { size: 110, col: C.red, sc: 1 + .08 * Math.sin(T * 6) });
     person2(c, 260, 1440, .95, T, { look: 1, mouth: T > t_l ? 'o' : 'grin', brow: T > t_l ? 1 : 0, armR: T < t_l ? [2.4, .4] : [1.2, 1.1], sweat: T > t_l + .4 ? T : 0, prop: (cc, hL, hR) => { if (T > t_l) { shp(cc, R4(hR[0] - 40, hR[1] - 80, 80, 130), C.navy, { sharp: true, w: 3, lc: C.ink, seed: 2150 }); tx(cc, '70', hR[0], hR[1] - 16, { size: 30, f: 'ui', col: C.gold }); } } });
     if (t_r) stamp(c, '¿Y EL RESTO?', 540, 930, T, t_r + .05, { size: 64, col: C.red, rot: -.04 });
   }); }
 
 // 2 · La regla: dividendos de EE. UU. a Colombia; el IRS retiene 30 %; sin tratado de impuestos
-{ const s = 'regla', t0 = sec(s).t0, t_nv = As(s, TK ? 'Si no vives' : 'Si no vives'), t_30 = As(s, 'treinta por ciento'), t_co = As(s, 'Colombia no tiene'), t_tr = As(s, 'tratado de impuestos');
+if (has('regla')) { const s = 'regla', t0 = sec(s).t0, t_nv = As(s, TK ? 'Si no vives' : 'Si no vives'), t_30 = As(s, 'treinta por ciento'), t_co = As(s, 'Colombia no tiene'), t_tr = As(s, 'tratado de impuestos');
   const t_reb = TK ? As(s, 'no hay rebaja.') : As(s, 'que lo rebaje.');
   hit(t_nv + .1, 6, 'ping'); hit(t_30 + .2, 14, 'stamp'); hit(t_co + .1, 6, 'ping'); hit(t_tr + .2, 8, 'stamp'); hit(t_reb + .1, 12, 'stamp');
   scene(s, 'iris', (c, T, L) => {
@@ -66,7 +66,7 @@ function person2(c, x, y, s, T, o = {}) { person(c, x, y, s, { seed: o.seed ?? 3
   }); }
 
 // 3 · Irlanda: el fondo domiciliado en Irlanda paga 15 %, no 30; el acumulativo reinvierte
-{ const s = 'irlanda', t0 = sec(s).t0, t_pm = As(s, TK ? '¿Hay forma' : '¿Se puede pagar'), t_ir = As(s, 'domiciliados en Irlanda.'), t_15 = As(s, 'quince por ciento,'), t_no = As(s, 'no treinta.'), t_ac = As(s, 'acumulativ'), t_re = As(s, 'reinvierte los dividendos');
+if (has('irlanda')) { const s = 'irlanda', t0 = sec(s).t0, t_pm = As(s, TK ? '¿Hay forma' : '¿Se puede pagar'), t_ir = As(s, 'domiciliados en Irlanda.'), t_15 = As(s, 'quince por ciento,'), t_no = As(s, 'no treinta.'), t_ac = As(s, TK ? 'versión acumulativa,' : 'es acumulativo,'), t_re = As(s, 'reinvierte los dividendos');
   hit(t_pm + .1, 6, 'ping'); hit(t_ir + .2, 10, 'stamp'); hit(t_15 + .2, 12, 'stamp'); hit(t_no + .1, 8, 'stamp'); hit(t_ac + .2, 8, 'ping'); hit(t_re + .2, 10, 'stamp');
   scene(s, 'whip', (c, T, L) => {
     bg(c, T); camS(c, T, 540, 930, key(T, [[0, 1.0], [t_15, 1.0], [t_15 + .5, 1.04]]) + .012 * Math.sin(L));
@@ -74,13 +74,13 @@ function person2(c, x, y, s, T, o = {}) { person(c, x, y, s, { seed: o.seed ?? 3
     country(c, GEO.usa, 250, 520, 5.5, 38, C.navy, { seed: 2191, w: 3 }); tx(c, 'EMPRESAS DE EE. UU.', 250, 640, { size: 24, f: 'ui' });
     const ki = pr(T, t_ir - .5, .6); if (ki > 0) { country(c, GEO.irl, 820, 520, 52 * pb(T, t_ir - .5), 53, '#7FA88E', { seed: 2192 }); tx(c, 'IRLANDA', 820, 700, { size: 34, f: 'ui', al: ki }); }
     arrow(c, [380, 520], [690, 520], pr(T, t_ir, .6), { bend: -50, w: 9, col: C.goldD });
-    fundBox(c, 820, 900, pb(T, t_ir + .2), 'ETF DOMICILIADO EN IRLANDA', 'FONDO', T, { band: '#4F7A63' });
+    fundBox(c, 800, 900, pb(T, t_ir + .2), 'ETF EN IRLANDA', 'FONDO', T, { band: '#4F7A63' });
     // comparación de retención: 30 % tachado → 15 %
     const k3 = pb(T, t_15 - .3); if (k3 > 0) { pill(c, '30 %', 260, 900, { size: 70, sc: k3, bg: C.red, col: C.paper, lc: C.ink, top: 'ETF DE EE. UU.' }); if (T > t_no) { ln(c, [[160, 860], [360, 940]], { w: 12, col: C.ink, p: pr(T, t_no, .3), seed: 2195 }); } }
-    pill(c, '15 %', 820, 1130, { size: 90, sc: pb(T, t_15), col: C.goldL, top: 'LO PAGA EL FONDO' });
+    pill(c, '15 %', 800, 1190, { size: 90, sc: pb(T, t_15), col: C.goldL, top: 'LO PAGA EL FONDO' });
     // acumulativo: flecha que regresa al fondo
-    if (T > t_ac - .2) { const p = pr(T, t_re, .8); tag(c, 'VERSIÓN ACUMULATIVA (ACC)', 540, 1320, { size: 32, bg: C.gold, sc: pb(T, t_ac - .1) });
-      const P = []; for (let i = 0; i <= 30; i++) { const a = -Math.PI * .1 + i / 30 * Math.PI * 1.6; P.push([820 + Math.cos(a) * 260, 900 + Math.sin(a) * 200]); } ln(c, P, { w: 8, col: C.green, p, seed: 2196 });
+    if (T > t_ac - .2) { const p = pr(T, t_re, .8); tag(c, 'VERSIÓN ACUMULATIVA (ACC)', 590, 1340, { size: 32, bg: C.gold, sc: pb(T, t_ac - .1) });
+      const P = []; for (let i = 0; i <= 30; i++) { const a = -Math.PI * .1 + i / 30 * Math.PI * 1.6; P.push([800 + Math.cos(a) * 240, 900 + Math.sin(a) * 170]); } ln(c, P, { w: 8, col: C.green, p, seed: 2196 });
       if (p > .95) tx(c, 'SE REINVIERTE', 540, 1420, { size: 44, f: 'hand', col: C.green, sh: null, sc: pb(T, t_re + .8) }); }
     person2(c, 170, 1460, .7, T, { look: 1, mouth: T > t_15 ? 'grin' : 'smile', armR: T > t_15 ? [2.4, .4] : [.3, .2] });
   }); }
@@ -101,7 +101,7 @@ if (has('ejemplo')) { const s = 'ejemplo', t_100 = As(s, 'cien dólares'), t_70 
   }); }
 
 // 5 · Ojo: no es pagar cero (15 % adentro del fondo) y en Colombia igual se declara
-{ const s = 'ojo', t_c = As(s, 'no es pagar cero.'), t_d = As(s, 'dentro del fondo'), t_co = As(s, 'en Colombia igual declaras'), t_v = TK ? As(s, 'cuando vendes.') : null;
+if (has('ojo')) { const s = 'ojo', t_c = As(s, 'no es pagar cero.'), t_d = As(s, 'dentro del fondo'), t_co = As(s, 'en Colombia igual declaras'), t_v = TK ? As(s, 'cuando vendes.') : null;
   hit(t_c + .1, 16, 'stamp'); hit(t_d + .1, 8, 'ping'); hit(t_co + .1, 8, 'stamp'); if (t_v) hit(t_v + .1, 8, 'ping');
   scene(s, TK ? 'wipe' : 'drop', (c, T, L) => {
     bg(c, T); camS(c, T, 540, 930, 1.0 + .012 * Math.sin(L * 1.1));
@@ -123,13 +123,13 @@ if (has('bono')) { const s = 'bono', t_b = As(s, 'hay un bono:'), t_na = As(s, '
     fundBox(c, 320, 620, pb(T, sec(s).t0 - .1), 'ETF IRLANDÉS', 'FONDO', T, { band: '#4F7A63' });
     tag(c, 'NO ES UN ACTIVO DE EE. UU.', 320, 820, { size: 30, bg: C.paper, sc: pb(T, t_na) });
     taxOffice(c, 780, 1050, .75 * pb(T, t_na - .2)); if (T > t_h) { const p = pr(T, t_h, .35); ln(c, [[620, 760], [940, 1080]], { w: 16, col: C.red, p, seed: 2221 }); ln(c, [[940, 760], [620, 1080]], { w: 16, col: C.red, p: pr(T, t_h + .15, .35), seed: 2222 }); }
-    stamp(c, 'NO CUENTA PARA EL IMPUESTO DE HERENCIA', 540, 1250, T, t_h + .2, { size: 38, col: C.red, rot: -.03 });
+    stamp(c, 'NO CUENTA PARA HERENCIA', 540, 1250, T, t_h + .2, { size: 50, col: C.red, rot: -.03 });
     tag(c, 'VE NUESTRO VIDEO DE HERENCIA', 540, 1380, { size: 28, bg: C.gold, sc: pb(T, t_h + .7) });
-    person2(c, 170, 1470, .66, T, { look: 1, mouth: 'grin', jump: T > t_h + .3 && T < t_h + 1.5 ? Math.abs(Math.sin(T * 6)) * 10 : 0 });
+    person2(c, 950, 1500, .55, T, { look: -1, flip: true, mouth: 'grin', jump: T > t_h + .3 && T < t_h + 1.5 ? Math.abs(Math.sin(T * 6)) * 10 : 0 });
   }); }
 
 // 7 · Cierre (noche): revisa dónde está domiciliado tu ETF + asesoría + aviso
-{ const s = 'cierre', t_r = As(s, 'revisa dónde'), t_as = As(s, 'Asesórate'), t_dp = As(s, 'los dos países'), t_end = DD.words[DD.words.length - 1][2], t_cq = TK ? As(s, 'cuánto te queda.') : null;
+if (has('cierre')) { const s = 'cierre', t_r = As(s, 'revisa dónde'), t_as = As(s, 'Asesórate'), t_dp = As(s, 'los dos países'), t_end = DD.words[DD.words.length - 1][2], t_cq = TK ? As(s, 'cuánto te queda.') : null;
   hit(t_r + .1, 8, 'stamp'); if (t_cq) hit(t_cq + .1, 8, 'ping'); hit(t_as + .1, 6, 'ping'); hit(t_dp + .1, 10, 'stamp'); sfx(t_end + .2, 'ping');
   scene(s, 'blot', (c, T, L) => {
     bg(c, T, { night: true }); camS(c, T, 540, 960, 1.0 + .015 * Math.sin(L * .9));
@@ -138,9 +138,10 @@ if (has('bono')) { const s = 'bono', t_b = As(s, 'hay un bono:'), t_na = As(s, '
     tx(c, 'DÓNDE ESTÁ DOMICILIADO', 540, 360, { size: 66, col: C.gold, sh: null, clipP: pr(T, t_r, .6, easeIO), max: 1000 });
     tx(c, 'TU ETF', 540, 460, { size: 80, col: C.gold, sh: null, clipP: pr(T, t_r + .5, .5, easeIO) });
     // ficha del fondo con la lupa sobre «domicilio»
-    const kf = pb(T, sec(s).t0); if (kf > 0) { card(c, 540, 760, 620, 300, { sc: kf, band: C.navy2, seed: 2231, draw: cc => { tx(cc, 'FICHA DEL ETF', 0, -115, { size: 28, f: 'ui', col: C.gold }); tx(cc, 'Domicilio:', -240, -20, { size: 40, f: 'ui', align: 'left' });
+    const kf = pb(T, sec(s).t0); if (kf > 0) { card(c, 540, 760, 620, 300, { sc: kf, band: C.navy2, seed: 2231, draw: cc => { tx(cc, 'FICHA DEL ETF', 0, -115, { size: 28, f: 'ui', col: C.gold }); tx(cc, 'Domicilio:', -240, -20, { size: 40, f: 'ui', align: 'left', col: C.ink });
         const opts = ['IRLANDA', 'EE. UU.'], i = Math.floor((T * 1.2) % 2); tx(cc, opts[i], 60, -20, { size: 44, f: 'ui', align: 'left', col: i ? C.red : C.green }); tx(cc, 'Clase: ACC o DIST', -240, 60, { size: 34, f: 'ui', align: 'left', col: '#5C6075' }); } });
       const mx = 640 + Math.sin(T * 1.5) * 40; c.save(); c.translate(mx, 760); shp(c, blob(0, 0, 70, 70, 2232, { n: 30, amp: .01 }), 'rgba(255,255,255,.25)', { w: 8, lc: C.gold, seed: 2232 }); ln(c, [[50, 50], [120, 130]], { w: 16, col: C.gold, seed: 2233 }); c.restore(); }
+    const km = pb(T, t_as); if (km > 0) { country(c, GEO.col, 380, 1290, 9 * km, 4, C.gold, { seed: 2234 }); country(c, GEO.usa, 700, 1270, 3.6 * km, 38, C.lav, { seed: 2235 }); }
     tx(c, 'Y ASESÓRATE CON UN EXPERTO', 540, 1060, { size: 52, col: C.chalk, sh: C.goldD, clipP: pr(T, t_as, .6, easeIO), max: 1000 });
     tx(c, 'EN LOS DOS PAÍSES', 540, 1140, { size: 52, col: C.gold, sh: null, clipP: pr(T, t_dp - .3, .4, easeIO) });
     const ke = pr(T, t_end + .15, .5); if (ke > 0) { tx(c, 'Contenido educativo. No es una recomendación de inversión', 540, 1395, { size: 28, f: 'ui', col: C.chalk, al: ke, max: 980 }); tx(c, 'ni asesoría tributaria o legal.', 540, 1435, { size: 28, f: 'ui', col: C.chalk, al: ke }); tx(c, 'TITÁN HOLDING', 540, 1500, { size: 50, col: C.gold, sh: null, al: ke }); }

@@ -1,6 +1,7 @@
 // TITÁN · piezas de «escenas de cerca» (reflexión, opción A): rostro grande pintado a mano, luz dirigida, lluvia, amanecer y grano.
 // Personas genéricas; paleta TITÁN (navy, dorado, lavanda, violeta). Se carga después de hd_lib.js.
 'use strict';
+const TEE = '#141418', Lk0 = o => o.light?.k ?? .6;   // camiseta básica negra (pedido de Lady, 12 nov 2026)
 const SKIN = { base: '#C99674', light: '#F1C7A5', shade: '#7A4E3A' }, HAIR = '#1E1A2E';
 function lin(c, x0, y0, x1, y1, stops) { const g = c.createLinearGradient(x0, y0, x1, y1); stops.forEach(([o, col]) => g.addColorStop(o, col)); return g; }
 function rad(c, x, y, r0, r1, stops) { const g = c.createRadialGradient(x, y, r0, x, y, r1); stops.forEach(([o, col]) => g.addColorStop(o, col)); return g; }
@@ -16,9 +17,11 @@ function closeFace(c, o) {
     shp(c, bh, HAIR, { w: 6, lc: C.ink, seed: 1599 }); hatch(c, polyPath(smoothPts(bh, true, 4, 9), true), [cx - 1.2 * R, cy - 1.2 * R, 2.4 * R, 2.8 * R], { angle: 1.45, gap: 8, len: 60, color: '#4A4560', alpha: .5, seed: 1598 }); }
   // hombros y cuello
   const sh = [[cx - 1.45 * R, H + 200], [cx - 1.3 * R, cy + 1.25 * R], [cx - .45 * R, cy + .98 * R], [cx + .45 * R, cy + .98 * R], [cx + 1.3 * R, cy + 1.25 * R], [cx + 1.45 * R, H + 200]];
-  shp(c, sh, o.shirt || '#4A3F6A', { w: 6, lc: C.ink, seed: 1601 }); hatch(c, polyPath(sh, true), [cx - 1.5 * R, cy + .9 * R, 3 * R, H], { angle: 1.1, gap: 9, len: 26, color: C.ink, alpha: .25, seed: 1602 });
+  shp(c, sh, TEE, { w: 6, lc: '#000', seed: 1601 }); hatch(c, polyPath(sh, true), [cx - 1.5 * R, cy + .9 * R, 3 * R, H], { angle: 1.1, gap: 9, len: 26, color: '#3A3A48', alpha: .35, seed: 1602 });
+  c.save(); c.globalCompositeOperation = 'screen'; c.globalAlpha = .35 * Lk0(o); ln(c, sh.slice(1, 3), { w: 8, col: o.light?.col || '#FFD08A', seed: 1603 }); c.restore();
   const nk = [[cx - .2 * R, cy + .6 * R], [cx + .2 * R, cy + .6 * R], [cx + .26 * R, cy + 1.02 * R], [cx - .26 * R, cy + 1.02 * R]];
-  shp(c, nk, SKIN.base, { sharp: true, w: 5, lc: C.ink, seed: 1603 }); c.save(); c.fillStyle = lin(c, 0, cy + .6 * R, 0, cy + 1.02 * R, [[0, 'rgba(40,20,18,.75)'], [1, 'rgba(40,20,18,.2)']]); c.fill(polyPath(nk, true)); c.restore();
+  shp(c, nk, SKIN.base, { sharp: true, w: 5, lc: C.ink, seed: 1604 }); c.save(); c.fillStyle = lin(c, 0, cy + .6 * R, 0, cy + 1.02 * R, [[0, 'rgba(40,20,18,.75)'], [1, 'rgba(40,20,18,.2)']]); c.fill(polyPath(nk, true)); c.restore();
+  { const nl = []; for (let i = 0; i <= 16; i++) { const a = i / 16 * Math.PI; nl.push([cx - Math.cos(a) * .34 * R, cy + 1.0 * R + Math.sin(a) * .14 * R]); } ln(c, nl, { w: 12, col: '#26262E', seed: 1605 }); ln(c, nl, { w: 3, col: '#000', seed: 1609 }); }
   // orejas
   for (const s of [-1, 1]) shp(c, blob(cx + s * .8 * R, eyeY + .12 * R, .12 * R, .2 * R, 1604 + s, { amp: .04, n: 20 }), SKIN.base, { w: 4, lc: C.ink, seed: 1606 + s });
   // cabeza: piel con luz y sombra pintadas
@@ -57,9 +60,35 @@ function closeFace(c, o) {
 // de espaldas (cabeza y hombros) frente a la luz, con borde dorado
 function backView(c, o) { const { cx, cy, R } = o;
   const sh = [[cx - 1.6 * R, H + 200], [cx - 1.45 * R, cy + 1.3 * R], [cx - .5 * R, cy + 1.0 * R], [cx + .5 * R, cy + 1.0 * R], [cx + 1.45 * R, cy + 1.3 * R], [cx + 1.6 * R, H + 200]];
-  shp(c, sh, o.shirt || '#2A2448', { w: 6, lc: C.ink, seed: 1650 }); shp(c, [[cx - .3 * R, cy + .5 * R], [cx + .3 * R, cy + .5 * R], [cx + .33 * R, cy + 1.05 * R], [cx - .33 * R, cy + 1.05 * R]], '#4A2E26', { sharp: true, w: 5, lc: C.ink, seed: 1651 });
+  shp(c, sh, TEE, { w: 6, lc: '#000', seed: 1650 }); hatch(c, polyPath(sh, true), [cx - 1.6 * R, cy + R, 3.2 * R, H], { angle: 1.2, gap: 9, len: 26, color: '#3A3A48', alpha: .35, seed: 1649 }); shp(c, [[cx - .3 * R, cy + .5 * R], [cx + .3 * R, cy + .5 * R], [cx + .33 * R, cy + 1.05 * R], [cx - .33 * R, cy + 1.05 * R]], '#4A2E26', { sharp: true, w: 5, lc: C.ink, seed: 1651 });
   for (const s of [-1, 1]) shp(c, blob(cx + s * .8 * R, cy + .05 * R, .12 * R, .2 * R, 1652 + s, { n: 20 }), '#6A3E30', { w: 4, lc: C.ink, seed: 1654 + s });
   const hp = blob(cx, cy - .05 * R, .82 * R, 1.0 * R, 1656, { amp: .03, n: 60 }); shp(c, hp, HAIR, { w: 6, lc: C.ink, seed: 1657 });
   hatch(c, polyPath(hp, true), [cx - R, cy - 1.1 * R, 2 * R, 2.2 * R], { angle: 1.4, gap: 7, len: 44, color: '#4A4560', alpha: .5, seed: 1658 });
   c.save(); c.globalCompositeOperation = 'screen'; c.globalAlpha = .9; ln(c, hp.slice(5, 28), { w: 9, col: '#FFC870', seed: 1659 }); ln(c, sh.slice(1, 3), { w: 9, col: '#FFC870', seed: 1660 }); ln(c, sh.slice(3, 5), { w: 9, col: '#FFC870', seed: 1661 }); c.restore(); }
 function bigTitle(c, a, b, y, o = {}) { resetT(c); if (a) tx(c, a, 540, y, { size: o.sa || 74, col: o.ca || C.chalk, sh: o.sha ?? '#0D1020', so: 5, max: 1000, clipP: o.pa }); if (b) tx(c, b, 540, y + (o.gap || 105), { size: o.sb || 92, col: o.cb || C.gold, sh: o.shb ?? '#0D1020', so: 6, max: 1000, clipP: o.pb }); }
+// ---------- objetos de cerca ----------
+// mano abierta vista desde arriba (palma hacia abajo); rot en radianes, s escala (~1 = 330 px de largo)
+function hand(c, x, y, s, rot, o = {}) { c.save(); c.translate(x, y); c.rotate(rot); c.scale(s, s);
+  const palm = blob(0, 0, 95, 110, 1801, { amp: .04, n: 34 }); const sk = o.skin || SKIN.base;
+  shp(c, [[-60, 80], [60, 80], [70, 330], [-70, 330]], TEE, { sharp: true, w: 5, lc: '#000', seed: 1800 });   // antebrazo con manga negra
+  shp(c, [[-48, 70], [48, 70], [50, 150], [-50, 150]], sk, { sharp: true, w: 4, lc: C.ink, seed: 1809 });
+  [[-66, -78, -.18, 92], [-24, -100, -.05, 112], [20, -100, .05, 108], [60, -82, .16, 90]].forEach(([fx, fy, a, L], k) => { c.save(); c.translate(fx, fy); c.rotate(a + (o.curl ?? 0) * (k - 1.5) * .05);
+    shp(c, [[-17, 10], [-15, -L + 14], [-8, -L], [8, -L], [15, -L + 14], [17, 10]], sk, { w: 4, lc: C.ink, seed: 1802 + k }); ln(c, [[-9, -L + 6], [9, -L + 6]], { w: 2, col: '#8A5A44', al: .7, seed: 1806 }); c.restore(); });
+  c.save(); c.translate(-92, 10); c.rotate(-.95); shp(c, [[-18, 8], [-16, -78], [-6, -92], [8, -92], [16, -78], [18, 8]], sk, { w: 4, lc: C.ink, seed: 1807 }); c.restore();
+  shp(c, palm, sk, { w: 5, lc: C.ink, seed: 1808 }); c.save(); c.clip(polyPath(palm, true)); c.fillStyle = lin(c, -100, -100, 100, 120, [[0, 'rgba(255,220,180,.35)'], [1, 'rgba(60,30,20,.45)']]); c.fillRect(-120, -130, 240, 260); c.restore();
+  ln(c, [[-40, -40], [-10, -55], [30, -48]], { w: 2, col: '#8A5A44', al: .6, seed: 1810 }); c.restore(); }
+function coinC(c, x, y, r, rot, seed) { c.save(); c.translate(x, y); c.rotate(rot); c.scale(1, .35 + .65 * Math.abs(Math.cos(rot * 2)));
+  shp(c, blob(0, 0, r, r, seed, { n: 26, amp: .01 }), C.gold, { w: 4, lc: C.ink, seed }); ln(c, blob(0, 0, r * .72, r * .72, seed + 1, { n: 20, amp: .01 }), { w: 3, col: C.goldD, close: true, seed: seed + 1 }); c.restore(); }
+function clockC(c, x, y, r, T, melt, seed) { c.save(); c.translate(x, y); const P = blob(0, 0, r, r, seed, { n: 40, amp: .01 }).map(([px, py]) => [px, py > 0 ? py + melt * py * py / r * 1.6 : py]);
+  shp(c, P, C.paper, { w: 6, lc: C.ink, seed }); for (let k = 0; k < 12; k++) { const a = k / 12 * TAU; ln(c, [[Math.cos(a) * r * .8, Math.sin(a) * r * .8], [Math.cos(a) * r * .9, Math.sin(a) * r * .9]], { w: 3, seed: seed + 2 + k }); }
+  const a1 = T * 3, a2 = T * .25; ln(c, [[0, 0], [Math.sin(a1) * r * .75, -Math.cos(a1) * r * .75]], { w: 4, seed: seed + 20 }); ln(c, [[0, 0], [Math.sin(a2) * r * .5, -Math.cos(a2) * r * .5]], { w: 7, seed: seed + 21 }); c.restore(); }
+function shoe(c, x, y, s, flip, seed) { c.save(); c.translate(x, y); c.scale(flip ? -s : s, s);
+  shp(c, [[-30, -150], [30, -150], [34, -40], [-26, -40]], '#22222A', { sharp: true, w: 4, lc: '#000', seed });   // pierna (pantalón oscuro)
+  shp(c, [[-40, -50], [40, -60], [70, -30], [120, -10], [125, 12], [-48, 12], [-52, -20]], '#EDEDF0', { w: 5, lc: C.ink, seed: seed + 1 });
+  shp(c, [[-50, 6], [126, 6], [124, 24], [-50, 24]], '#B9A2E8', { sharp: true, w: 4, lc: C.ink, seed: seed + 2 }); ln(c, [[20, -46], [60, -28]], { w: 3, seed: seed + 3 }); c.restore(); }
+function notebook(c, x, y, rot, T, tick0, n, seed) { c.save(); c.translate(x, y); c.rotate(rot);
+  c.save(); c.fillStyle = 'rgba(0,0,0,.35)'; c.fillRect(-300, -360, 620, 760); c.restore(); shp(c, R4(-320, -380, 640, 760), '#F4EEDC', { sharp: true, w: 5, lc: C.ink, seed });
+  for (let k = 0; k < 9; k++) ln(c, [[-290, -300 + k * 76], [290, -300 + k * 76]], { w: 2, col: '#9AB0D6', straight: true, seed: seed + 1 + k, al: .7 });
+  const items = ['Levantarme temprano', 'Revisar mi plan', 'No operar por impulso', 'Aprender algo nuevo', 'Cumplir lo que dije'];
+  items.forEach((s, k) => { const yy = -250 + k * 112; shp(c, R4(-280, yy - 26, 46, 46), C.paper, { sharp: true, w: 3, lc: C.ink, seed: seed + 20 + k }); tx(c, s, -210, yy, { size: 40, f: 'hand', col: '#22264A', align: 'left', sh: null });
+    if (k < n) { const p = cl01((T - tick0 - k * .5) / .3); if (p > 0) ln(c, [[-276, yy - 4], [-258, yy + 16], [-226, yy - 34]], { w: 9, col: C.green, p, seed: seed + 30 + k }); } }); c.restore(); }

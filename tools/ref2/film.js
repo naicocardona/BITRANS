@@ -164,7 +164,6 @@ if (has('partida')) { const t_s = AS('partida', 'Si hoy estás'), t_nf = AS('par
     filmGrain(c, T, .05);
   }, true); }
 
-// portada: el momento de «levantamos la cabeza» (luz dorada), con el titular completo y la firma
-function cover(c) { const S = SC.find(x => x.id === 'consecuencias') || SC[0], tl = has('consecuencias') ? As('consecuencias', 'levantamos la cabeza.') : 2;
-  drawScene(c, S, tl + 1.8); resetT(c); INKC = C.ink; tx(c, 'TITÁN HOLDING', 540, 70, { size: 26, f: 'ui', col: C.chalk, al: .8 }); }
+// portada (elegida por Lady): el inicio con «TODOS QUIEREN EL RESULTADO / CASI NADIE QUIERE EL PROCESO» completo
+function cover(c) { const tc = has('resultado') ? As('resultado', 'Casi nadie') : 2; drawScene(c, SC[0], Math.min(tc + 1.0, SC[0].t1 - .05)); resetT(c); INKC = C.ink; tx(c, 'TITÁN HOLDING', 540, 70, { size: 26, f: 'ui', col: C.chalk, al: .8 }); }
 startFilm('reflexion-punto-de-partida', cover);

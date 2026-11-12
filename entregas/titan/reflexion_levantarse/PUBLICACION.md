@@ -4,7 +4,7 @@
 |---|---|---|
 | `TITAN_REFLEXION_Shorts.mp4` | 1080×1920 · 30 fps · −14 LUFS · 20,1 MB | 36,6 s |
 | `TITAN_REFLEXION_TikTok.mp4` | 1080×1920 · 30 fps · −14 LUFS · 31,4 MB | 61,4 s |
-| `TITAN_REFLEXION_Portada.jpg` | primer fotograma: rostro cansado frente a la pantalla en rojo, «TODOS QUIEREN EL RESULTADO» | — |
+| `TITAN_REFLEXION_Portada.jpg` | momento de «Y AUN ASÍ… LEVANTAMOS LA CABEZA»: rostro con la lágrima y el rayo de luz dorada, firma TITÁN HOLDING | — |
 | `TITAN_REFLEXION_Shorts.srt` y `TITAN_REFLEXION_TikTok.srt` | subtítulos de 3 palabras sincronizados | — |
 
 - **Guion:** aprobado por Lady (12 nov 2026), en «nosotros», con su frase: «Al final tuvimos que asumir las consecuencias de nuestras malas decisiones. Y aun así, levantamos la cabeza.»

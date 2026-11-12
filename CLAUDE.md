@@ -121,6 +121,7 @@
 - En NAS, el dinero y los lotes quedan tapados desde el primer cuadro.
 - Verificar cifras, fechas, voz (ASR), LUFS, duración con el audio final y peso de cada archivo.
 - `npx hyperframes check` sin errores.
+- Portada: abrirla y mirarla antes de entregar. Ningún texto a medio escribir (tomarla después de que terminen las animaciones de texto) y con el momento más fuerte del video, no siempre el primer cuadro (lección de la reflexión, 12 nov 2026).
 
 ## Notas
 - Short 2 del paquete Nasdaq: desfase leve de subtítulos (~1 s) entre los segundos 10 y 15. Lady decidió dejarlo así (7 nov 2026). En los videos siguientes, `sync_check.py` es obligatorio antes de entregar.

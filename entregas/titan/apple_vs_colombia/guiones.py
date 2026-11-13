@@ -5,13 +5,13 @@
 # 1997: Microsoft invierte USD 150 millones en Apple en crisis (6 ago 1997). Aclaración en pantalla: valor en bolsa ≠ producción de un año (sirve para dimensionar).
 SH = [
  ("gancho", "Apple vale más que toda la economía de Colombia. No una vez: más de nueve veces."),
- ("dato", "Apple vale en bolsa unos cinco coma dos billones de dólares. Todo lo que produce Colombia en un año, según el FMI, son unos quinientos setenta y tres mil millones."),
+ ("dato", "Apple vale en bolsa unos cinco coma dos billones de dólares. Todo lo que produce Colombia en un año, según el efe eme i, son unos quinientos setenta y tres mil millones."),
  ("giro", "Pero en mil novecientos noventa y siete, Apple estaba en crisis. Y su rival, Microsoft, le invirtió ciento cincuenta millones de dólares para ayudarla."),
  ("cierre", "Nadie sabía que iba a ser la empresa más valiosa del mundo. Por eso los grandes inversionistas no apuestan todo a una sola empresa: diversifican."),
 ]
 TK = [
  ("gancho", "Apple vale más que toda la economía de Colombia. No una vez: más de nueve veces."),
- ("dato", "Apple vale en bolsa unos cinco coma dos billones de dólares. Y todo lo que produce Colombia en un año, según el FMI, son unos quinientos setenta y tres mil millones."),
+ ("dato", "Apple vale en bolsa unos cinco coma dos billones de dólares. Y todo lo que produce Colombia en un año, según el efe eme i, son unos quinientos setenta y tres mil millones."),
  ("ojo", "Ojo: no es exactamente lo mismo. Uno es lo que vale una empresa en bolsa; el otro, lo que produce un país en un año. Pero sirve para dimensionar."),
  ("bolsa", "Ahora compárala con todas las empresas de la Bolsa de Colombia juntas: Apple vale unas treinta veces más. Si Apple sube uno por ciento en un solo día, su valor crece unos cincuenta y dos mil millones de dólares. Casi un tercio de toda nuestra bolsa."),
  ("giro", "Pero aquí viene lo interesante. En mil novecientos noventa y siete, Apple estaba en crisis. Y su rival, Microsoft, le invirtió ciento cincuenta millones de dólares para ayudarla."),
@@ -21,4 +21,4 @@ TK = [
 text = lambda L: " ".join(t for _, t in L)
 MAP = [("cinco coma dos billones de dólares", "USD 5,2 billones"), ("quinientos setenta y tres mil millones", "USD 573.000 millones"), ("más de nueve veces", "más de 9 veces"),
        ("treinta veces", "30 veces"), ("uno por ciento", "1 %"), ("cincuenta y dos mil millones de dólares", "USD 52.000 millones"), ("mil novecientos noventa y siete", "1997"),
-       ("ciento cincuenta millones de dólares", "USD 150 millones"), ("FMI", "FMI")]
+       ("ciento cincuenta millones de dólares", "USD 150 millones"), ("efe eme i", "FMI")]

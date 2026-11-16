@@ -1,0 +1,5 @@
+Proyecto editable REPORTE SEMANAL #13 (HyperFrames), en partes de menos de 30 MB:
+- Parte1_TikTok y Parte2_Shorts: index.html, audio mezclado final (assets/audio/mix.wav), capturas y tiempos de cada versión.
+- Parte3_Portada_y_scripts: armador, escenas, guion, mezcla, portada y motor NAS.
+- Parte4_Avatar_fuentes_GSAP: assets/avatar, assets/fonts y assets/vendor del Explorador; se copian dentro de assets/ de cada versión antes de abrirla o renderizarla.
+Render: npx hyperframes render --fps 30 --output salida.mp4 (desde la carpeta de cada versión).

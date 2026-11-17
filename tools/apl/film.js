@@ -42,7 +42,7 @@ if (has('gancho')) { const s = 'gancho', t_ec = As(s, 'economía de Colombia.'),
     apple(c, lx, ly + 70, 105 * pb(T, -.2), 0);
     for (let k = 0; k < n; k++) { const ox = ((k % 3) - 1) * 88, oy = -Math.floor(k / 3) * 70; colMap(c, rx + ox, ry + 135 + oy, 11 * pb(T, (k ? t_9 + (k - 1) * .14 : -.2)), { seed: 2360 + k, w: 3 }); }
     tag(c, 'APPLE (EN BOLSA)', lx, ly + 250, { size: 26, bg: C.paper }); tag(c, 'PIB DE COLOMBIA', rx, ry + 250, { size: 26, bg: C.paper });
-    if (T > t_9) { pill(c, '× 9', rx + 170, ry - 40, { size: 70, sc: pb(T, t_9 + 1.1), col: C.goldL }); stamp(c, '¡MÁS DE 9 VECES!', 540, 470, T, t_9 + .1, { size: 64, col: C.red, rot: -.04 }); }
+    if (T > t_9) { pill(c, '× 9', Math.min(rx + 170, 930), ry - 170, { size: 70, sc: pb(T, t_9 + 1.1), col: C.goldL }); stamp(c, '¡MÁS DE 9 VECES!', 540, 470, T, t_9 + .1, { size: 64, col: C.red, rot: -.04 }); }
   }); }
 
 // 2 · El dato: barras con escala real (Apple 5,2 billones vs. PIB de Colombia 573.000 millones)

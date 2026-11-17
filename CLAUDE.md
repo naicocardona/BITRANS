@@ -88,6 +88,11 @@
     - `tools/hd_voice.py <entrega> <sub>` (nov 2026): voz genérica; `guiones.py` define SH, TK, MAP y PAUSAS opcionales. Ejemplos: `tools/gota/`, `tools/arr/`.
     - `hd_mix.py` deja sus .wav temporales junto a la salida: mezclar en el taller y copiar a `entregas/` solo el mp4 y el srt.
     - `hd_render.cjs`: `--grid` y `--cover` son llamadas aparte (no generan el video).
+    - **Entrega en un paso (17 nov 2026):** `bash tools/hd_entrega.sh <entrega> <sub> <film.js|build.sh> <prefijo_música> <NOMBRE>` hace mp3 de Juan → tighten → hd_voice → sync_check → render → mezcla → qa_video → portada, y copia mp4, srt y portada a la entrega. Se detiene si la primera palabra no arranca en 0 s.
+    - `align_asr.py`: un tramo con voz que Whisper transcribe mal (p. ej. «Apple Balm Mascot») se une al siguiente; antes, los subtítulos del Short de Apple arrancaban 1,4 s tarde.
+    - `hd_render.cjs --grid 24` y `--cover` escriben en el 2.º argumento (salida), no en el que sigue a la bandera.
+    - Plan ElevenLabs Creator desde el 17 nov 2026 (Lady). Un video diario (TikTok + Short) gasta ~1.500–1.800 créditos.
+  - **Reflexión con varios personajes (17 nov 2026):** Lady prefiere varios personajes del kit híbrido (como los videos de siempre) antes que una sola persona de cerca. Plantilla: `tools/env/film.js` (mesa familiar con burbujas, «tú» con camiseta dorada).
   - **Reflexiones y videos emotivos (12 nov 2026):** Lady rechazó la versión «escalera» (persona pequeña y lejana: «no me identifico»). Aprobó el estilo «escenas de cerca»: `tools/ref2/` (`paint.js` con `closeFace`, `backView`, manos, lluvia, grano; `film.js`; `build.sh`). Personaje A1: pelo corto y camiseta básica negra. Antes de animar, mostrar 3 imágenes fijas para aprobar.
   - Mapas reales: `tools/geo/` (Natural Earth vía world-atlas, ISC). Ejemplo de uso: `tools/her/build.sh`, que inyecta `GEO`.
   - **Pronunciación de Juan (ElevenLabs):** escribir «Envidia» (Nvidia), «Yensen Huang» (Jensen Huang) y «ese ene pe quinientos» (S&P 500). En pantalla se corrigen con el MAP de `voice.py`.

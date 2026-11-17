@@ -87,15 +87,16 @@ if (has('estudio')) { const s = 'estudio', t_u = As(s, 'Universidad de Tilburg')
     tx(c, '2 TIPOS DE ENVIDIA', 540, 620, { size: 70, col: C.gold, sh: null, sc: pb(T, t_2) });
     ln(c, [[540, 700], [540, 1500]], { w: 4, col: C.chalk, al: pr(T, t_2, .4) * .5, straight: true, seed: 3202 });
     // izquierda: subir (mejorar la propia posición)
-    const a = pr(T, t_1, 2.0, easeIO); if (T > t_1 - .2) { steps(c, 70, 1460, 4, 100, 110, C.vio, 3210, pr(T, t_1 - .2, .5));
+    const a = pr(T, t_1, 2.0, easeIO); const al1 = .3 + .7 * pr(T, t_1 - .2, .4), al2 = .3 + .7 * pr(T, t_o - .2, .4);
+    c.save(); c.globalAlpha = al1; { steps(c, 70, 1460, 4, 100, 110, C.vio, 3210, 1);
       person(c, lerp(110, 400, a), 1460 - Math.floor(a * 3.2) * 110, .62, { seed: 5, shirt: YOU, ...idle(T), walk: a < 1 ? L * 8 : undefined, mouth: 'grin', look: 1 });
-      pill(c, '↑ MEJORAR', 270, 760, { size: 40, f: 'ui', sc: pb(T, t_1 + .1) }); }
+      pill(c, '↑ MEJORAR', 270, 760, { size: 40, f: 'ui', sc: pb(T, t_1 + .1) }); } c.restore();
     // derecha: bajar al que va adelante
-    if (T > t_o - .2) { const d = pr(T, t_o + .3, 1.2); shp(c, R4(800, 1460 - 380, 160, 380), C.vio, { sharp: true, w: 4, lc: C.ink, seed: 3220 });
+    c.save(); c.globalAlpha = al2; { const d = pr(T, t_o + .3, 1.2); shp(c, R4(800, 1460 - 380, 160, 380), C.vio, { sharp: true, w: 4, lc: C.ink, seed: 3220 });
       person(c, 880, 1080 + d * 30, .62, { seed: 13, shirt: C.lav, ...idle(T, 2), mouth: 'o', brow: 1, lean: d * .25 });
-      ln(c, [[880, 1080 - 30], [640, 1400]], { w: 4, col: C.goldL, seed: 3221, p: pr(T, t_o, .4) });
+      if (T > t_o) ln(c, [[880, 1080 - 30], [640, 1400]], { w: 4, col: C.goldL, seed: 3221, p: pr(T, t_o, .4) });
       person(c, 640, 1460, .62, { seed: 7, shirt: '#3B4466', ...idle(T, 1), mouth: 'flat', brow: -1, armR: [2.6, .4], armL: [2.4, .5], lean: -.2 - .05 * Math.sin(T * 6) });
-      pill(c, '↓ BAJAR AL OTRO', 810, 760, { size: 40, f: 'ui', sc: pb(T, t_o + .1), col: '#FFB4A6' }); }
+      pill(c, '↓ BAJAR AL OTRO', 810, 760, { size: 40, f: 'ui', sc: pb(T, t_o + .1), col: '#FFB4A6' }); } c.restore();
   }, true); }
 
 // 5 · Qué inclina la balanza: ¿merecido?

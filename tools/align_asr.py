@@ -69,10 +69,13 @@ def align(x, sr, text):
             prev = max([k for k in known if k < i], default=None); nxt = min([k for k in known if k > i], default=None)
             wc[i] = wc[prev] if prev is not None else (wc[nxt] if nxt is not None else 0)
     for i in range(1, len(W)): wc[i] = max(wc[i], wc[i - 1])        # monótono
-    out = []
+    out = []; pend = None   # un tramo con voz pero sin palabras emparejadas (ASR confundido, p. ej. «Apple vale más» → «Apple Balm Mascot») se une al siguiente
     for k, (a, b) in enumerate(ch):
         idx = [i for i in range(len(W)) if wc[i] == k]
-        if not idx: continue
+        if not idx:
+            if pend is None and any(c == k for c in AC): pend = a
+            continue
+        if pend is not None: a, pend = pend, None
         L = [len(norm(W[i])) + 1 for i in idx]; t = a
         for i, l in zip(idx, L):
             d = (b - a) * l / sum(L); out.append([W[i], round(t, 3), round(t + d, 3)]); t += d

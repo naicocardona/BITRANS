@@ -1,6 +1,6 @@
 # TITÁN · ¿A cuántas cuotas? (línea B · plata del día a día)
 
-**Estado:** guion, escenas (`tools/tc/film.js`) y música (`tcsh` / `tctk`) listos y probados con voz temporal. Falta solo la voz de Juan (ElevenLabs, ~1.527 créditos: TikTok 998 + Short 529).
+**Entregables (17 nov 2026):** `TITAN_TARJETA_CUOTAS_TikTok.mp4` (70 s), `TITAN_TARJETA_CUOTAS_Shorts.mp4` (38 s), sus `.srt` y `TITAN_TARJETA_CUOTAS_Portada.jpg`. Voz de Juan (1.527 créditos).
 
 ## Datos y fuentes
 - Tasa de usura nov. 2026: 28,34 % E.A. (Superintendencia Financiera; reportado por Semana) → 2,101 % mensual.

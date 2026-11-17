@@ -3,19 +3,20 @@
 # Fuentes: BambooHR (22 oct 2026; encuesta n=1.530 empleados de tiempo completo en EE. UU., 9–20 oct 2026): 18 % planea el día libre; Gen Z 32 %;
 #   50 % de quienes faltan por un lanzamiento se reportaría enfermo; solicitudes de PTO para el 19 nov ~13 % más que días comparables (BambooHR no afirma causalidad).
 # Costo: sin cifra oficial; analistas (citados por Business Insider) estiman USD 1.000–1.500 millones de desarrollo. Take-Two: guía año fiscal 2027 USD 8.000–8.200 millones (Game Developer, ago. 2026).
+# Burj Khalifa: unos USD 1.500 millones (Institution of Civil Engineers, MEED; cifra estimada, no auditada).
 # Analistas: 35–45 millones de copias el primer año (DFC 40 M; BofA 45 M). GTA V: más de 230 millones de unidades (sold-in, Take-Two ago. 2026).
 SH = [
  ("gancho", "El diecinueve de noviembre, millones de personas no van a ir a trabajar. No es un paro. Es un videojuego."),
  ("dato", "Sale ge te a seis. Y según una encuesta en Estados Unidos, casi uno de cada cinco empleados planea tomarse el día. Y la mitad de los que faltan por un juego… se reporta enfermo."),
- ("plata", "Hacerlo habría costado entre mil y mil quinientos millones de dólares, según analistas. Y su dueña, Teik Tu, espera vender en todo su año fiscal unos ocho mil millones, en buena parte por este juego."),
+ ("plata", "Hacerlo habría costado entre mil y mil quinientos millones de dólares, según analistas. Casi lo mismo que construir el Burch Jalifa, el edificio más alto del mundo. Y su dueña, Teik Tu, espera vender en todo su año fiscal unos ocho mil millones, en buena parte por este juego."),
  ("leccion", "El dato para quien invierte: una empresa gigante que depende de un solo producto. Si funciona, gana. Si decepciona, la acción lo siente. Por eso no conviene apostar todo a una sola empresa."),
  ("cierre", "¿Tú vas a pedir el día?"),
 ]
 TK = [
  SH[0],
- ("dato", "Sale ge te a seis. Según una encuesta en Estados Unidos, casi uno de cada cinco empleados planea tomarse el día. Entre los más jóvenes, uno de cada tres. Y la mitad de los que faltan por un juego… se reporta enfermo."),
- ("costo", "¿Cuánto costó hacerlo? Rockstar nunca lo ha dicho. Los analistas estiman entre mil y mil quinientos millones de dólares. Uno de los juegos más caros de la historia."),
- ("gana", "¿Y cuánto puede ganar? Teik Tu, su dueña, espera vender en todo su año fiscal unos ocho mil millones de dólares, en buena parte por este juego. Los analistas calculan entre treinta y cinco y cuarenta y cinco millones de copias el primer año. Para dimensionar: ge te a cinco ya pasa los doscientos treinta millones."),
+ ("dato", "Sale ge te a seis. Según una encuesta en Estados Unidos, casi uno de cada cinco empleados planea tomarse el día. Y la mitad de los que faltan por un juego… se reporta enfermo."),
+ ("costo", "¿Cuánto costó hacerlo? Rockstar nunca lo ha dicho. Los analistas estiman entre mil y mil quinientos millones de dólares. Para que te hagas una idea: construir el Burch Jalifa, el edificio más alto del mundo, costó unos mil quinientos millones. Un videojuego que podría costar casi lo mismo que un rascacielos."),
+ ("gana", "¿Y cuánto puede ganar? Teik Tu, su dueña, espera vender en todo su año fiscal unos ocho mil millones de dólares, en buena parte por este juego. Los analistas calculan entre treinta y cinco y cuarenta y cinco millones de copias el primer año."),
  ("mundo", "La economía no se frena por un día. Pero sí mueve otra: la de los clips, las transmisiones y los creadores que van a vivir de este juego por meses."),
  ("leccion", "Y el dato para quien invierte: una empresa gigante que depende muchísimo de un solo producto. Si funciona, gana. Si decepciona, la acción lo siente. Por eso no conviene apostar todo a una sola empresa."),
  SH[4],
@@ -24,5 +25,7 @@ TK = [
 PERSONAJES = [("empleado", "CWv9T94yZmVI3AWqIzqd", "[coughs] Jefe… amanecí como enfermito."), ("jefe", "8eZN0csGjiGkv5to85bH", "[sighs] ¿Usted también?")]
 text = lambda L: " ".join(t for _, t in L)
 MAP = [("diecinueve de noviembre", "19 de noviembre"), ("ge te a seis", "GTA VI"), ("ge te a cinco", "GTA V"), ("Teik Tu", "Take-Two"),
-       ("mil y mil quinientos millones de dólares", "USD 1.000–1.500 millones"), ("ocho mil millones de dólares", "USD 8.000 millones"), ("ocho mil millones", "USD 8.000 millones"),
+       ("mil y mil quinientos millones de dólares", "USD 1.000–1.500 millones"), ("ocho mil millones de dólares", "USD 8.000 millones"), ("mil quinientos millones", "USD 1.500 millones"), ("Burch Jalifa", "Burj Khalifa"), ("ocho mil millones", "USD 8.000 millones"),
        ("treinta y cinco y cuarenta y cinco millones", "35 y 45 millones"), ("doscientos treinta millones", "230 millones")]
+PAUSAS = {"tk": [("se reporta enfermo.", 6.0)], "sh": [("se reporta enfermo.", 6.0)]}   # empleado 3,67 s + 0,25 + jefe 1,78 s
+HUECOS = ["empleado+jefe"]   # las dos voces van seguidas en el mismo hueco

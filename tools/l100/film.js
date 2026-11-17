@@ -268,5 +268,12 @@ function src(c, s) { tx(c, s, CX, 905, { size: 20, f: 'ui', al: .75, max: 1700 }
   }, true); }
 
 // ================= portada (miniatura de YouTube): 20 años, la cifra grande y la caída de 2009 =================
-function cover(c) { drawScene(c, SC[0], As('gancho', 'Pero casi nadie') - .1); resetT(c); }
+function cover(c) { resetT(c); INKC = C.ink; bg(c, 2); const S = SER['20'];
+  const ch = chart(c, S, 1000, 250, 820, 560, 1, { legend: false, ticks: [2008, 2012, 2016, 2020, 2024] }); const i9 = ch.idx('2009-02');
+  ring(c, ch.X(i9), ch.Y(S[i9][2]), 50, 50, 1, { col: C.red, w: 9, seed: 4990 }); tag(c, '2009: −40 %', ch.X(i9) + 40, ch.Y(S[i9][2]) - 90, { size: 34, bg: '#FFD9D1' });
+  tx(c, 'USD 100', 470, 230, { size: 140, col: C.ink }); tx(c, 'AL MES', 470, 360, { size: 96, col: C.goldD, sh: C.ink });
+  tx(c, '20 AÑOS DESPUÉS…', 470, 490, { size: 64, col: C.ink, sh: null });
+  pill(c, 'USD 103.802', 470, 640, { size: 110 });
+  person(c, 130, 1075, .62, { seed: 13, shirt: C.lav, look: 1, mouth: 'o', brow: 1, armL: [2.7, .3], armR: [2.7, .3] });
+  tag(c, 'DATOS REALES · DESDE COLOMBIA', 560, 800, { size: 34, bg: C.goldL }); tx(c, 'TITÁN HOLDING', 1410, 960, { size: 40, col: C.goldD, sh: null }); }
 startFilm('largo-100-dolares', cover);

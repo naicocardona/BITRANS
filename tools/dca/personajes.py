@@ -11,7 +11,7 @@ ref = rms(x)
 for (ph, gap), pid in zip(g.PAUSAS["yt"], g.HUECOS):
     ks = [nrm(k) for k in ph.split()]; j = next(i + len(ks) - 1 for i in range(len(N)) if N[i:i + len(ks)] == ks)
     t0, t1 = ws[j][2], ws[j + 1][1]   # el hueco está entre la última palabra de la frase y la siguiente
-    tmp = f"{W}/_p_{pid}.wav"; subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f"{E}/voz/personaje_{pid}.mp3", "-ac", "1", "-ar", str(sr), tmp], check=True)
+    tmp = f"{W}/_p_{pid}.wav"; subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f"{E}/voz/personaje_{pid}.mp3", "-af", "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse", "-ac", "1", "-ar", str(sr), tmp], check=True)
     v, _ = sf.read(tmp, dtype="float32"); v = v * (ref / rms(v)) * .95
     a = int(((t0 + t1) / 2 - len(v) / sr / 2) * sr); a = max(int(t0 * sr), a); x[a:a + len(v)] += v[:max(0, len(x) - a)]
     print(pid, f"hueco {t0:.2f}–{t1:.2f} s ({t1 - t0:.2f}) · voz {len(v) / sr:.2f} s", "OK" if len(v) / sr <= t1 - t0 + .1 else "¡NO CABE!")

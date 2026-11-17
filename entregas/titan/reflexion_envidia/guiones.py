@@ -5,7 +5,7 @@
 # La mesa familiar es una situación hipotética (segunda persona), no un caso real.
 TK = [
  ("gancho", "Cuéntale a tu familia que empezaste a invertir cien mil pesos al mes. Vas a escuchar: eso es para ricos, te van a tumbar, mejor gástatelos."),
- ("despues", "Ahora imagina esa misma mesa unos años después, cuando ya se nota el resultado. Las mismas voces te preguntan: ¿y tú cómo hiciste?."),
+ ("despues", "Ahora imagina esa misma mesa unos años después, cuando ya se nota el resultado. Las mismas voces te preguntan: ¿y tú cómo hiciste?"),
  ("igual", "Tú sigues con la misma disciplina de siempre. Lo único nuevo es que ahora hay algo que se puede ver."),
  ("estudio", "Esto tiene explicación. Investigadores de la Universidad de Tilburg, en Países Bajos, publicaron en dos mil nueve que hay dos tipos de envidia. Una te mueve a mejorar tu propia posición. La otra busca bajar al que va adelante."),
  ("merecer", "Y en dos mil doce encontraron qué inclina la balanza: si la otra persona siente que tu avance es merecido, o no."),
@@ -21,5 +21,5 @@ SH = [
 ]
 text = lambda L: " ".join(t for _, t in L)
 MAP = [("cien mil pesos", "$100.000"), ("dos mil nueve", "2009"), ("dos mil doce", "2012")]
-PAUSAS = {"tk": [("gástatelos.", 0.5), ("hiciste?.", 0.6), ("va adelante.", 0.5), ("decida tu futuro.", 0.6)],
-          "sh": [("hiciste?.", 0.5), ("lo muestre.", 0.5)]}
+PAUSAS = {"tk": [("gástatelos.", 0.5), ("hiciste?", 0.6), ("va adelante.", 0.5), ("decida tu futuro.", 0.6)],
+          "sh": [("hiciste?", 0.5), ("lo muestre.", 0.5)]}

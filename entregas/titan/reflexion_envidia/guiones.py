@@ -16,7 +16,7 @@ TK = [
 SH = [
  TK[0], TK[1],
  ("estudio", "Investigadores de la Universidad de Tilburg encontraron que hay dos tipos de envidia. Una te mueve a mejorar. La otra busca bajar al que va adelante."),
- ("merecer", "Y lo que inclina la balanza es si la otra persona siente que tu avance es merecido, o no. Al principio, todavía no hay nada que lo muestre."),
+ ("merecer", "Y lo que inclina la balanza es si la otra persona siente que tu avance es merecido, o no. Y cuando apenas arrancas, todavía no hay nada que lo muestre."),
  TK[7],
 ]
 text = lambda L: " ".join(t for _, t in L)

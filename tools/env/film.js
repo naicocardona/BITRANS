@@ -99,7 +99,7 @@ if (has('estudio')) { const s = 'estudio', t_u = As(s, 'Universidad de Tilburg')
   }, true); }
 
 // 5 · Qué inclina la balanza: ¿merecido?
-if (has('merecer')) { const s = 'merecer', t_b = As(s, 'inclina la balanza'), t_m = As(s, 'merecido, o no.'), t_a = TK ? null : As(s, 'Al principio,');
+if (has('merecer')) { const s = 'merecer', t_b = As(s, 'inclina la balanza'), t_m = As(s, 'merecido, o no.'), t_a = TK ? null : As(s, 'cuando apenas arrancas,');
   hit(t_b + .1, 8, 'ping'); hit(t_m + .1, 14, 'stamp'); if (t_a) hit(t_a + .1, 8, 'stamp');
   scene(s, 'whip', (c, T, L) => {
     bg(c, T); camS(c, T, 540, 960, 1.0 + .012 * Math.sin(L));
@@ -114,7 +114,7 @@ if (has('merecer')) { const s = 'merecer', t_b = As(s, 'inclina la balanza'), t_
     pill(c, 'SÍ → TE IMPULSA', 270, 1150, { size: 34, f: 'ui', sc: pb(T, t_m) }); pill(c, 'NO → TE CRITICA', 810, 1150, { size: 34, f: 'ui', sc: pb(T, t_m + .25), col: '#FFB4A6' });
     FAM.slice(0, 4).forEach(([x, sd, sh], i) => person(c, [110, 290, 790, 970][i], 1580, .78, { seed: sd, shirt: sh, ...idle(T, i), look: i < 2 ? 1 : -1, mouth: T > t_m ? (i < 2 ? 'smile' : 'flat') : 'o', brow: T > t_m && i >= 2 ? -1 : 0 }));
     person(c, 540, 1580, .86, { seed: 5, shirt: YOU, ...idle(T), mouth: 'smile' });
-    if (t_a) stamp(c, 'AL PRINCIPIO NO HAY NADA QUE MOSTRAR', 540, 1270, T, t_a, { size: 34, col: C.red, rot: -.02 });
+    if (t_a) stamp(c, 'AÚN NO HAY NADA QUE MOSTRAR', 540, 1270, T, t_a, { size: 34, col: C.red, rot: -.02 });
   }); }
 
 // 6 · TikTok · Al principio pesa: vitrina vacía y una decisión

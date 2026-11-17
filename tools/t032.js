@@ -54,7 +54,7 @@ show("#rc30 .rhT", RT + 1.1); show("#rc30 .rhD", RT + 1.6); inn("#rn", RT + 1.0,
 const M0 = ph(N.m); chapter(4, M0[0] - 0.2); swap("#sM", M0[0], "scan"); pose("pensativo", M0[0] + 0.2);
 camSet("#cvM", 180, 340, 1.75, 420, M0[0] - 0.3); tl.set(["#cvM .hiE", "#cvM .hiT"], { opacity: 1 }, M0[0] - 0.3);
 show("#cvM .hiA", M0[0] + 0.4); pop("#cvM .lbA", M0[0] + 0.6); cam("#cvM", 200, 360, 1.6, 420, M0[0] + 0.5, 2.5);
-inn("#m_t", mid(N.m, 0.4), { x: -60, y: 0 }); inn("#m_s", mid(N.m, 0.7), { x: 60, y: 0 }); punch("#m_s", mid(N.m, 0.9), 1.06); shake("#sM", mid(N.m, 0.92), 6);
+inn("#m_t", mid(N.m, 0.2), { x: -60, y: 0 }); inn("#m_s", mid(N.m, 0.45), { x: 60, y: 0 }); punch("#m_s", mid(N.m, 0.7), 1.06); shake("#sM", mid(N.m, 0.72), 6);
 
 // 6 · CONCLUSIONES (TikTok: una pantalla cada una) / APUNTES (Shorts)
 if (TK) {

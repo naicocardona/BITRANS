@@ -110,7 +110,7 @@ def body(V, DUR, caps):
 <div class="rcard" id="rc30" style="height:{rh}px"><img src="assets/img/receipt32.jpg" alt="" style="width:900px;height:{rh}px" />{receipt32()}</div>
 <div class="tpbig fx" id="rtp" style="top:{20 + rh + 12}px">+<span id="nR">103,70</span> PUNTOS EJECUTADOS<small>27.330,30 → 27.226,60 · 2 H 17 MIN 27 S</small></div>
 <div class="note fx" id="rn" style="left:0;top:668px;font-size:21px">T/P mostrado 27.230,30 · salida 3,70 pts por debajo · reloj del bróker 17/11 06:00:00 → 08:17:27</div>""")
-    sM = C("sM", f"""<div class="ttl"><div class="n">RECORRIDO DE SESIÓN · HASTA 8:59 AM DEL 17 NOV</div><div class="h" style="font-size:50px"><span class="t">MFE 300</span> · <span class="r">MAE 30</span></div></div>
+    sM = C("sM", f"""<div class="ttl"><div class="n">RECORRIDO DE SESIÓN · HASTA 8:59 AM</div><div class="h" style="font-size:50px"><span class="t">MFE 300</span> · <span class="r">MAE 30</span></div></div>
 {VW("cvM", 150, 420, chart_ov())}
 <div class="cardx fx" id="m_t" style="top:590px;width:430px;border:3px solid var(--g)"><div class="a g">TRADE EJECUTADO</div><div class="b g" style="font-size:40px">+103,70 PTS</div></div>
 <div class="cardx fx" id="m_s" style="top:590px;left:470px;width:430px;border:3px dashed var(--t)"><div class="a t">INCLUYE LO POSTERIOR AL CIERRE</div><div class="b" style="font-size:34px">NO ES GANANCIA</div></div>""")

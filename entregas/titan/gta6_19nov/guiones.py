@@ -7,7 +7,7 @@
 SH = [
  ("gancho", "El diecinueve de noviembre, millones de personas no van a ir a trabajar. No es un paro. Es un videojuego."),
  ("dato", "Sale ge te a seis. Y según una encuesta en Estados Unidos, casi uno de cada cinco empleados planea tomarse el día. Y la mitad de los que faltan por un juego… se reporta enfermo."),
- ("plata", "Hacerlo habría costado entre mil y mil quinientos millones de dólares, según analistas. Y su dueña, Teik Tu, espera ventas por unos ocho mil millones en su año fiscal."),
+ ("plata", "Hacerlo habría costado entre mil y mil quinientos millones de dólares, según analistas. Y su dueña, Teik Tu, espera vender en todo su año fiscal unos ocho mil millones, en buena parte por este juego."),
  ("leccion", "El dato para quien invierte: una empresa gigante que depende de un solo producto. Si funciona, gana. Si decepciona, la acción lo siente. Por eso no conviene apostar todo a una sola empresa."),
  ("cierre", "¿Tú vas a pedir el día?"),
 ]
@@ -15,7 +15,7 @@ TK = [
  SH[0],
  ("dato", "Sale ge te a seis. Según una encuesta en Estados Unidos, casi uno de cada cinco empleados planea tomarse el día. Entre los más jóvenes, uno de cada tres. Y la mitad de los que faltan por un juego… se reporta enfermo."),
  ("costo", "¿Cuánto costó hacerlo? Rockstar nunca lo ha dicho. Los analistas estiman entre mil y mil quinientos millones de dólares. Uno de los juegos más caros de la historia."),
- ("gana", "¿Y cuánto puede ganar? Teik Tu, su dueña, espera ventas por unos ocho mil millones de dólares en su año fiscal. Los analistas calculan entre treinta y cinco y cuarenta y cinco millones de copias el primer año. Para dimensionar: ge te a cinco ya pasa los doscientos treinta millones."),
+ ("gana", "¿Y cuánto puede ganar? Teik Tu, su dueña, espera vender en todo su año fiscal unos ocho mil millones de dólares, en buena parte por este juego. Los analistas calculan entre treinta y cinco y cuarenta y cinco millones de copias el primer año. Para dimensionar: ge te a cinco ya pasa los doscientos treinta millones."),
  ("mundo", "La economía no se frena por un día. Pero sí mueve otra: la de los clips, las transmisiones y los creadores que van a vivir de este juego por meses."),
  ("leccion", "Y el dato para quien invierte: una empresa gigante que depende muchísimo de un solo producto. Si funciona, gana. Si decepciona, la acción lo siente. Por eso no conviene apostar todo a una sola empresa."),
  SH[4],

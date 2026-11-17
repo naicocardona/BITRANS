@@ -21,7 +21,10 @@ PERSONAJES = [
  ("p2009b", "Persona adulta, tranquila, con un café", "Yo sigo con mis cien dólares. Este mes salen más baratos."),
  ("pesperar", "Persona que guarda billetes en un frasco", "Mejor espero a juntar más…"),
 ]
-GANCHO_TOMAS = 2   # solo la primera frase del gancho, para escoger la mejor entonación
+GANCHO_TOMAS = 2   # el gancho se generó 2 veces; se usa la toma 2 (más ágil, 35,9 s vs 37,3 s)
+# Huecos para las voces de personajes (se insertan con hd_voice y se mezclan con tools/dca/personajes.py)
+PAUSAS = {"yt": [("y cero ganancia.", 2.6), ("Imagina ver eso.", 2.9), ("todos tenían miedo.", 3.6), ("y ahí compra.", 2.3)]}
+HUECOS = ["p2020", "p2009", "p2009b", "pesperar"]   # mismo orden que PAUSAS["yt"]
 text = lambda L: " ".join(t for _, t in L)
 MAP = [("cien dólares", "USD 100"), ("veinticuatro mil dólares", "USD 24.000"), ("ciento tres mil ochocientos dos", "USD 103.802"),
        ("doce mil dólares", "USD 12.000"), ("veinticinco mil setecientos noventa y dos", "USD 25.792"), ("cuatro mil cien dólares", "USD 4.100"),

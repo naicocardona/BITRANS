@@ -16,7 +16,8 @@ def display(words):
                 tail = re.sub(r"^.*?([.,:;?!»]*)$", r"\1", words[i + len(ks) - 1][0]); out.append([v + tail, words[i][1], words[i + len(ks) - 1][2]]); i += len(ks); break
         else: out.append(list(words[i])); i += 1
     return out
-for mode, name, L in [("tk", "tiktok", guiones.TK), ("sh", "shorts", guiones.SH)]:
+MODES = [(m, n, getattr(guiones, a)) for m, n, a in [("tk", "tiktok", "TK"), ("sh", "shorts", "SH"), ("yt", "largo", "LARGO")] if hasattr(guiones, a) and os.path.exists(f"{W}/{n}_t.wav")]
+for mode, name, L in MODES:   # «yt» = video largo horizontal (guiones.LARGO, $W/largo_t.wav)
     x, sr = sf.read(f"{W}/{name}_t.wav", dtype="float32"); ws = align_asr.align(x, sr, guiones.text(L)); n = 0; secs = []
     cuts = []
     for ph, dd in PAUSAS.get(mode, []):   # cada palabra se corre solo con las pausas previas a su tiempo original

@@ -29,3 +29,18 @@ for y, st in [(10, "2016-11"), (20, "2006-11"), (30, "1996-11")]:
     out[y] = dict(con_ret30=dca(st), sin_ret=dca(st, 0), sin_div=dca(st, 1), esperar5000=dca(st, wait=5000))
 out["trm"] = {m: tm[m] for m in ("1996-11", "2006-11", "2016-11", "2026-10")}
 print(json.dumps(out, indent=1, default=str)); json.dump(out, open(f"{d}/resultados.json", "w"), indent=1, default=str)
+# Series mes a mes para las gráficas del video (invertido, valor con retención 30 %, valor «esperar 5.000») y TRM mensual
+def serie(start, wh=.30, end="2026-10", wait=None):
+    sh = cash = usd = 0; S = []
+    for i in range(idx[start], idx[end] + 1):
+        m, c = rows[i]
+        if dv.get(m) and sh: sh += sh * dv[m] * (1 - wh) / c
+        usd += 100
+        if wait: cash += 100; (sh := sh + cash / c, cash := 0) if cash >= wait else None
+        else: sh += 100 / c
+        S.append([m, usd, round(sh * c + cash, 1)])
+    return S
+SER = {str(y): serie(st) for y, st in [(10, "2016-11"), (20, "2006-11"), (30, "1996-11")]}
+SER["esperar20"] = serie("2006-11", wait=5000); SER["sinret20"] = serie("2006-11", wh=0); SER["sindiv20"] = serie("2006-11", wh=1)
+SER["trm"] = [[m, tm[m]] for m, _ in rows if m >= "1996-11" and m in tm]
+json.dump(SER, open(f"{d}/series.json", "w"))

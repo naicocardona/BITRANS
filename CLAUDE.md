@@ -122,6 +122,8 @@
 - **Subtítulos NAS:** usar `nas_common.align_parts`, que ubica los cortes de línea con Whisper y cuenta las cifras como se pronuncian. El reparto por letras adelantaba casi 2 s las frases con números («446»).
 - La voz del Explorador siempre es la voz A: Kokoro em_alex 0,92 más la cadena de voz. Lady lo recordó el 9 nov 2026.
 
+- **Portadas (17 nov 2026, Lady):** de ahora en adelante una sola portada por video, la de TikTok (en Shorts no se puede subir). Aplica a TITÁN y NAS100.
+
 ## QC automático antes de entregar (obligatorio)
 - Nada fuera del encuadre y nada tapando caras; textos arriba, subtítulos abajo y personajes en la franja media.
 - Nada quieto más de 2 s y ningún cuadro vacío entre escenas. Revisar las transiciones en el video final con ffmpeg, no solo con snapshots.

@@ -4,6 +4,7 @@
 'use strict';
 const TS = 1.25, TRD = .5;
 const DD = DATA, DUR = DD.dur, MODE = DD.mode;
+const FMT = MODE === 'yt' ? '16:9' : '9:16', FORMAT = FMT === '16:9' ? { ar: '16:9', width: 1920 } : { ar: '9:16', width: 1080 }; setFormat(FORMAT);   // 'yt' = largo horizontal de YouTube
 const C = { paper: '#F6F4EF', ink: '#161A36', navy: '#0D1020', navy2: '#171B33', gold: '#C8A45D', goldD: '#9C7B3A', goldL: '#E9D9AE', red: '#D9604F', green: '#3FAF7A',
   chalk: '#F6F4EF', blobA: '#E9D9AE', blobB: '#DCD6C6', blobN: '#2A3150', lav: '#B9A2E8', vio: '#6B4FA0',
   skin: ['#F1C7A5', '#C99674', '#8D5B3E', '#E8B48F'], hair: ['#2B1B12', '#5A3A22', '#1E1A2E', '#8A5A2B'], pants: ['#2A3150', '#3B4466', '#1E2338', '#4A3F6A'] };
@@ -29,7 +30,7 @@ const HITS = [], EV = [];
 function hit(t, amp = 10, kind = 'impact') { HITS.push([t, amp]); if (kind) EV.push([+t.toFixed(3), kind]); return t; }
 function sfx(t, kind) { EV.push([+t.toFixed(3), kind]); return t; }
 function shk(T) { let x = 0, y = 0; for (const [t, a] of HITS) { if (T < t || T > t + .9) continue; x += settle(T, t, { amp: a, freq: 10, decay: 7 }); y += settle(T, t, { amp: a * .8, freq: 13, decay: 7, phase: 1.3 }); } return [x, y]; }
-function camS(c, T, x, y, z = 1, rot = 0) { if (COVER) { cam(c, 540, 960, 1); return; } const [sx, sy] = shk(T); cam(c, x - sx / z, y - sy / z, z, rot + sx * .0004); }
+function camS(c, T, x, y, z = 1, rot = 0) { if (COVER) { cam(c, CX, CY, 1); return; } const [sx, sy] = shk(T); cam(c, x - sx / z, y - sy / z, z, rot + sx * .0004); }
 
 // ---------- trazos ----------
 function dens(pts, step = 18) { const out = [pts[0]]; for (let i = 1; i < pts.length; i++) { const a = pts[i - 1], b = pts[i], n = Math.max(1, Math.round(Math.hypot(b[0] - a[0], b[1] - a[1]) / step)); for (let k = 1; k <= n; k++) out.push([lerp(a[0], b[0], k / n), lerp(a[1], b[1], k / n)]); } return out; }
@@ -88,8 +89,8 @@ function tag(c, s, x, y, o = {}) { const size = o.size || 32, w = tw(c, s, { siz
 function bg(c, T, o = {}) {
   if (o.night) night(c, C.navy, 7); else paper(c, C.paper, null);
   resetT(c); c.save(); c.fillStyle = o.night ? C.chalk : C.ink; c.globalAlpha = o.night ? .06 : .05; const off = (T * 6) % 78;
-  for (let k = 0; k < 14 * 26; k++) { const x = 30 + (k % 14) * 78, y = 30 + Math.floor(k / 14) * 78 - off; c.beginPath(); c.arc(x, y, 2.6, 0, TAU); c.fill(); } c.restore();
-  for (const [x, y, r, col, sp, sd] of [[180, 520, 260, o.night ? C.blobN : C.blobA, 9, 1], [930, 1250, 300, o.night ? C.blobN : C.blobB, -7, 2]]) { c.save(); c.globalAlpha = o.night ? .35 : .45;
+  const NC = Math.ceil(W / 78), NR = Math.ceil(H / 78) + 2; for (let k = 0; k < NC * NR; k++) { const x = 30 + (k % NC) * 78, y = 30 + Math.floor(k / NC) * 78 - off; c.beginPath(); c.arc(x, y, 2.6, 0, TAU); c.fill(); } c.restore();
+  for (const [x, y, r, col, sp, sd] of [[W * .167, H * .271, 260, o.night ? C.blobN : C.blobA, 9, 1], [W * .861, H * .651, 300, o.night ? C.blobN : C.blobB, -7, 2]]) { c.save(); c.globalAlpha = o.night ? .35 : .45;
     shp(c, blob(x + Math.sin(T * .3 + sd) * sp * 3, y + Math.cos(T * .25 + sd) * sp * 2, r, r * .8, sd, { amp: .1 }), col, { line: false }); c.restore(); }
 }
 // periódico genérico (sin textos reales): cabecera y renglones garabateados
@@ -150,8 +151,8 @@ function buildSubs() { const d = DD.display, G = []; let g = [];
   SUB = G.map((g, k) => ({ g, a: g[0][1], b: k + 1 < G.length ? Math.min(G[k + 1][0][1], g[g.length - 1][2] + .6) : g[g.length - 1][2] + .6 }));
   window.__SUB = SUB.map(s => [s.g.map(w => w[0]).join(' '), +s.a.toFixed(3), +s.b.toFixed(3)]); }
 function subs(c, T) { const s = SUB.find(s => T >= s.a && T < s.b); if (!s) return; resetT(c);
-  const size = 56, txt = s.g.map(w => w[0]).join(' '); c.save(); c.font = `800 ${size}px ${FF.ui}`; const wd = c.measureText(txt).width; c.restore(); const k = Math.min(1, 940 / (wd + 70));
-  const idx = SUB.indexOf(s), sc = (.92 + .08 * pb(T, s.a, .18)) * k; c.save(); c.translate(540, 1665); c.rotate(idx % 2 ? .012 : -.012); c.scale(sc, sc); const w = wd + 70, h = 92; INKC = C.ink;
+  const size = 56, txt = s.g.map(w => w[0]).join(' '); c.save(); c.font = `800 ${size}px ${FF.ui}`; const wd = c.measureText(txt).width; c.restore(); const k = Math.min(1, (Math.min(W, 1080) - 140) / (wd + 70));
+  const idx = SUB.indexOf(s), sc = (.92 + .08 * pb(T, s.a, .18)) * k; c.save(); c.translate(CX, H > W ? H - 255 : H - 105); c.rotate(idx % 2 ? .012 : -.012); c.scale(sc, sc); const w = wd + 70, h = 92; INKC = C.ink;
   shp(c, R4(-w / 2, -h / 2, w, h), C.paper, { sharp: true, w: 5, seed: 300 + idx % 3 });
   c.font = `800 ${size}px ${FF.ui}`; c.textBaseline = 'middle'; c.textAlign = 'left'; let x = -wd / 2;
   for (const wv of s.g) { const ww = c.measureText(wv[0] + ' ').width, on = T >= wv[1] && T < wv[2] + .05; c.fillStyle = on ? C.goldD : C.ink; c.fillText(wv[0], x, 3); if (on) ul(c, x, x + c.measureText(wv[0]).width, 34, 1, { w: 6, seed: 7 }); x += ww; }
@@ -174,8 +175,8 @@ function frame(c, tau) {
   const T = Math.min(DUR - 1e-3, tau / TS); let k = SC.findIndex(s => T >= s.t0 && T < s.t1); if (k < 0) k = SC.length - 1; const s = SC[k], tl = T - s.t0;
   if (k > 0 && tl < TRD && s.tr) { if (!LA) { LA = layer(); LB = layer(); } drawScene(LA.getContext('2d'), SC[k - 1], T); drawScene(LB.getContext('2d'), s, T); compose(c, s.tr, tl / TRD); }
   else drawScene(c, s, T);
-  resetT(c); INKC = C.ink; if (!SC[k].night) { c.save(); c.globalAlpha = .85; c.fillStyle = C.paper; c.beginPath(); c.roundRect(430, 50, 220, 40, 20); c.fill(); c.restore(); }
-  tx(c, 'TITÁN HOLDING', 540, 70, { size: 24, f: 'ui', col: SC[k].night ? C.chalk : C.ink, al: SC[k].night ? .55 : .7 }); subs(c, T);
+  resetT(c); INKC = C.ink; if (!SC[k].night) { c.save(); c.globalAlpha = .85; c.fillStyle = C.paper; c.beginPath(); c.roundRect(CX - 110, 50, 220, 40, 20); c.fill(); c.restore(); }
+  tx(c, 'TITÁN HOLDING', CX, 70, { size: 24, f: 'ui', col: SC[k].night ? C.chalk : C.ink, al: SC[k].night ? .55 : .7 }); subs(c, T);
 }
 // arranque: verifica orden de transiciones, exporta eventos y escenas, carga fuentes y define el film
 function startFilm(name, coverFn) {
@@ -184,5 +185,5 @@ function startFilm(name, coverFn) {
   if (coverFn) window.__cover = () => { COVER = true; try { coverFn(ctx); } finally { COVER = false; } return cv.toDataURL('image/png'); };
   const fonts = [['Caveat', 'caveat-700.woff2', 700], ['Bricolage', 'bricolage-800.woff2', 800], ['Jakarta', 'jakarta-800.woff2', 800]];
   Promise.all(fonts.map(([n, f, w]) => new FontFace(n, `url(${f})`, { weight: String(w) }).load().then(ff => document.fonts.add(ff)))).then(() =>
-    defineFilm({ palette: { ...PALETTES.pencilMinimal, paper: C.paper, paperBand: null, ink: C.ink, night: C.navy, accents: [C.gold, C.goldD, C.goldL, C.red], chalk: C.chalk }, format: { ar: '9:16', width: 1080 }, fps: 24, timeline: [{ name: name + '-' + MODE, dur: DUR * TS, fn: frame }] }));
+    defineFilm({ palette: { ...PALETTES.pencilMinimal, paper: C.paper, paperBand: null, ink: C.ink, night: C.navy, accents: [C.gold, C.goldD, C.goldL, C.red], chalk: C.chalk }, format: FORMAT, fps: 24, timeline: [{ name: name + '-' + MODE, dur: DUR * TS, fn: frame }] }));
 }

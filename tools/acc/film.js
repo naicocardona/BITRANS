@@ -36,12 +36,13 @@ if (has('gancho')) { const s = 'gancho', t_10 = As(s, 'diez empresas más grande
     tx(c, 'LAS 10 MÁS GRANDES', 540, 200, { size: 92, col: C.ink, sc: 1 + settle(T, .05, { amp: .1, freq: 3, decay: 5 }), max: 1000 });
     tx(c, 'DE EE. UU. EN EL AÑO 2000', 540, 300, { size: 56, col: C.goldD, sh: C.ink, max: 1000 });
     const out = pr(T, t_h + .1, .6);
-    TOP.forEach(([n], k) => { const col = k % 2, row = Math.floor(k / 2), x = 300 + col * 480 - 30 + (col ? 60 : 0), y0 = 450 + row * 150, ms = k === 0;
-      const drop = pr(T, .15 + k * .12, .5, easeOutBack), y = lerp(-200, y0, drop) + (ms ? 0 : out * out * 900 * (1 + k * .07)), rot = ms ? 0 : out * (k % 2 ? .4 : -.35);
-      coCard(c, n, x - 30, y, drop > 0 ? 1 : 0, { n: String(k + 1), rot, al: ms ? 1 : 1 - out * .6, bg: ms && T > t_h ? C.goldL : C.paper, seed: 4100 + k * 3 }); });
-    if (T > t_h + .2) { const g = .5 + .5 * Math.sin(T * 5); c.save(); c.globalAlpha = .25 + .2 * g; c.strokeStyle = C.gold; c.lineWidth = 14; c.strokeRect(70, 380, 400, 140); c.restore(); }
-    stamp(c, 'SOLO 1 SIGUE EN EL TOP 10', 600, 1080, T, t_d + .1, { size: 54, col: C.red, rot: -.04 });
-    person(c, 860, 1460, .85, { seed: 8, shirt: C.lav, flip: true, ...idle(T), look: -1, mouth: T > t_h ? 'o' : 'smile', brow: T > t_h ? 1 : 0, armR: T > t_d ? [2.5, .5] : [.3, .2] });
+    TOP.forEach(([n], k) => { const col = k % 2, row = Math.floor(k / 2), x = 300 + col * 480, y0 = 440 + row * 130, ms = k === 0;
+      const drop = pr(T, .15 + k * .12, .5, easeOutBack), y = lerp(-200, y0, drop) + (ms ? 0 : out * 30 * Math.sin(k)), rot = ms ? 0 : out * (k % 2 ? .12 : -.1);
+      coCard(c, n, x - 30, y, drop > 0 ? (ms ? 1 + .06 * out : 1 - .22 * out) : 0, { n: String(k + 1), rot, al: ms ? 1 : 1 - out * .7, bg: ms && T > t_h ? C.goldL : C.paper, seed: 4100 + k * 3 });
+      if (!ms && out > .5) { c.save(); c.globalAlpha = (out - .5) * 1.6; ln(c, [[x - 180, y], [x + 120, y]], { w: 8, col: C.red, straight: true, seed: 4130 + k }); c.restore(); } });
+    if (T > t_h + .2) { const g = .5 + .5 * Math.sin(T * 5); c.save(); c.globalAlpha = .25 + .2 * g; c.strokeStyle = C.gold; c.lineWidth = 14; c.strokeRect(70, 370, 400, 140); c.restore(); }
+    stamp(c, 'SOLO 1 SIGUE EN EL TOP 10', 540, 1130, T, t_d + .1, { size: 46, col: C.red, rot: -.04 });
+    person(c, 900, 1520, .7, { seed: 8, shirt: C.lav, flip: true, ...idle(T), look: -1, mouth: T > t_h ? 'o' : 'smile', brow: T > t_h ? 1 : 0, armR: T > t_d ? [2.5, .5] : [.3, .2] });
     src(c, 'Top 10 del S&P 500 al 1 ene. 2000: 24/7 Wall St. · hoy: CompaniesMarketCap', 1560);
   }); }
 
@@ -75,7 +76,7 @@ if (has('reglas')) { const s = 'reglas', t_m = As(s, 'mil dólares'), t_d = As(s
     tx(c, 'ENE. 2000', 170, 960, { size: 34, f: 'ui', al: pr(T, t_m, .3) }); tx(c, 'OCT. 2026', 910, 960, { size: 34, f: 'ui', al: pr(T, t_o - .2, .3) });
     tag(c, 'DIVIDENDOS REINVERTIDOS', 540, 1060, { size: 34, bg: C.goldL, sc: pb(T, t_d) });
     tx(c, 'Sin comisiones ni impuestos · cierre ajustado de Yahoo Finance', 540, 1160, { size: 26, f: 'ui', al: pr(T, t_d + .4, .4) });
-    person(c, 200, 1460, .85, { seed: 5, shirt: C.gold, ...idle(T), look: 1, mouth: 'smile', armR: [2.2, .5] });
+    person(c, 900, 1500, .75, { seed: 5, shirt: C.gold, flip: true, ...idle(T), look: -1, mouth: 'smile', armR: [2.2, .5] });
   }); }
 
 // 4 · Microsoft: barra que sube a USD 14.729 · «Le atinaste» (TikTok) / SH «cuenta»: Microsoft vs. Citigroup
@@ -99,6 +100,7 @@ if (has('cuenta')) { const s = 'cuenta', t_m = As(s, 'En Microsoft,'), t_v = As(
   scene(s, 'whip', (c, T, L) => {
     bg(c, T); camS(c, T, 540, 950, 1.0 + .012 * Math.sin(L)); hipo(c, 200);
     tx(c, 'USD 1.000 EN ENE. 2000 → HOY', 540, 300, { size: 56, col: C.ink, sc: pb(T, sec(s).t0 - .3), max: 1000 });
+    const k0 = pb(T, sec(s).t0); if (T < t_m + .2) { c.save(); c.translate(540, 700); c.scale(k0, k0); for (let k = 0; k < 5; k++) coin(c, -120 + k * 60, Math.sin(T * 3 + k) * 8, 52, 4300 + k); c.restore(); pill(c, 'USD 1.000 EN CADA UNA', 540, 850, { size: 46, f: 'ui', sc: pb(T, sec(s).t0 + .3) }); }
     mvsc(c, T, t_m + .1, t_c + .1, true);
     stamp(c, 'CASI −50 %', 750, 1120, T, t_p, { size: 60, col: C.red, rot: .04 });
     person(c, 150, 1480, .75, { seed: 5, shirt: C.gold, ...idle(T), look: 1, mouth: T > t_p ? 'o' : 'grin', brow: T > t_p ? 1 : 0, sweat: T > t_p ? T : 0 });
@@ -116,8 +118,8 @@ if (has('perdedora')) { const s = 'perdedora', t_c = As(s, 'Citigroup,'), t_v = 
     const X = y => 120 + (y - 2000) / 26.8 * 840, Y = v => 1180 - v / 1500 * 640, g = pr(T, t_c, Math.max(1.5, t_95 - t_c), easeIO);
     ln(c, [[110, 1180], [980, 1180]], { w: 5, straight: true, seed: 4501 }); c.save(); c.setLineDash([12, 9]); c.strokeStyle = C.ink; c.globalAlpha = .4; c.lineWidth = 4; c.beginPath(); c.moveTo(110, Y(1000)); c.lineTo(980, Y(1000)); c.stroke(); c.restore();
     tx(c, 'USD 1.000', 200, Y(1000) - 26, { size: 24, f: 'ui', al: .7 }); tx(c, '2000', 130, 1220, { size: 26, f: 'ui' }); tx(c, '2009', X(2009.1), 1220, { size: 26, f: 'ui', col: C.red }); tx(c, '2026', 950, 1220, { size: 26, f: 'ui' });
-    const ord = [t_c, t_c + .6, t_c + 1.0, t_c + 1.4, t_9 + .1, t_9 + .6, t_9 + 1.0, t_v];
-    const pts = []; P.forEach(([y, v], k) => { if (T >= ord[k] || k === 0) pts.push([X(y), Y(v)]); }); if (pts.length > 1) ln(c, pts, { w: 9, col: C.red, straight: true, seed: 4502 });
+    const gl = pr(T, t_c + .1, Math.max(1, t_v - t_c - .1), easeIO); if (gl > 0) ln(c, P.map(([y, v]) => [X(y), Y(v)]), { w: 9, col: C.red, straight: true, seed: 4502, p: gl });
+    if (T > t_9) { const g = .5 + .5 * Math.sin(T * 6); c.save(); c.globalAlpha = .5 + .4 * g; c.strokeStyle = C.red; c.lineWidth = 8; c.beginPath(); c.arc(X(2009.1), Y(51), 34, 0, TAU); c.stroke(); c.restore(); }
     if (T > t_9 + .1) { pill(c, 'FEB. 2009: USD 51', X(2009.1) + 40, Y(51) - 70, { size: 32, f: 'ui', col: '#FFB4A6', sc: pb(T, t_9 + .2) }); }
     stamp(c, '−95 %', X(2009.1), 860, T, t_95, { size: 90, col: C.red, rot: -.05 });
     pill(c, 'HOY: USD 570', 820, Y(570) - 80, { size: 38, f: 'ui', col: '#FFB4A6', sc: pb(T, t_v) });

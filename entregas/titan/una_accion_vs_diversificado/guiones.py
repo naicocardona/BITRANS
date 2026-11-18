@@ -24,4 +24,4 @@ text = lambda L: " ".join(t for _, t in L)
 MAP = [("catorce mil setecientos dólares", "USD 14.700"), ("catorce mil setecientos", "USD 14.700"), ("quinientos setenta", "USD 570"), ("ocho mil doscientos treinta dólares", "USD 8.230"),
        ("ocho mil doscientos treinta", "USD 8.230"), ("mil dólares", "USD 1.000"), ("ese ene pe quinientos", "S&P 500"), ("noventa y cinco por ciento", "95 %"),
        ("dos mil veintiséis", "2026"), ("dos mil nueve", "2009"), ("año dos mil", "año 2000"), ("del dos mil", "del 2000"), ("Veintiséis años", "26 años"), ("diez empresas", "10 empresas"),
-       ("diez primeras", "10 primeras"), ("De las diez", "De las 10"), ("de las diez", "de las 10")]
+       ("diez primeras", "10 primeras"), ("las diez", "las 10")]

@@ -1,0 +1,100 @@
+{
+ "MSFT": {
+  "nombre": "Microsoft",
+  "valor": 14729,
+  "x": 14.73,
+  "peor": 333,
+  "peor_mes": "2009-02",
+  "caida_max_pct": 66.7
+ },
+ "GE": {
+  "nombre": "General Electric",
+  "valor": 2266,
+  "x": 2.27,
+  "peor": 216,
+  "peor_mes": "2009-02",
+  "caida_max_pct": 78.4
+ },
+ "CSCO": {
+  "nombre": "Cisco",
+  "valor": 3055,
+  "x": 3.05,
+  "peor": 196,
+  "peor_mes": "2002-09",
+  "caida_max_pct": 80.4
+ },
+ "WMT": {
+  "nombre": "Walmart",
+  "valor": 8454,
+  "x": 8.45,
+  "peor": 659,
+  "peor_mes": "2000-10",
+  "caida_max_pct": 34.1
+ },
+ "XOM": {
+  "nombre": "Exxon Mobil",
+  "valor": 10760,
+  "x": 10.76,
+  "peor": 842,
+  "peor_mes": "2002-09",
+  "caida_max_pct": 15.8
+ },
+ "INTC": {
+  "nombre": "Intel",
+  "valor": 2813,
+  "x": 2.81,
+  "peor": 340,
+  "peor_mes": "2002-09",
+  "caida_max_pct": 66.0
+ },
+ "C": {
+  "nombre": "Citigroup",
+  "valor": 570,
+  "x": 0.57,
+  "peor": 51,
+  "peor_mes": "2009-02",
+  "caida_max_pct": 94.9
+ },
+ "IBM": {
+  "nombre": "IBM",
+  "valor": 4927,
+  "x": 4.93,
+  "peor": 549,
+  "peor_mes": "2002-09",
+  "caida_max_pct": 45.1
+ },
+ "ORCL": {
+  "nombre": "Oracle",
+  "valor": 5896,
+  "x": 5.9,
+  "peor": 281,
+  "peor_mes": "2002-09",
+  "caida_max_pct": 71.9
+ },
+ "HD": {
+  "nombre": "Home Depot",
+  "valor": 8411,
+  "x": 8.41,
+  "peor": 308,
+  "peor_mes": "2003-01",
+  "caida_max_pct": 69.2
+ },
+ "SPY": {
+  "nombre": "S&P 500 (SPY)",
+  "valor": 8232,
+  "x": 8.23,
+  "peor": 576,
+  "peor_mes": "2002-09",
+  "caida_max_pct": 42.4
+ },
+ "canasta_10": {
+  "puesto": 10000,
+  "valor": 61881
+ },
+ "le_ganan_al_indice": [
+  "MSFT",
+  "WMT",
+  "XOM",
+  "HD"
+ ]
+}

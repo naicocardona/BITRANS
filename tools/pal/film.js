@@ -30,14 +30,14 @@ function src(c, s, y = 1520) { tx(c, s, 540, y, { size: 22, f: 'ui', al: .75, ma
 if (has('gancho')) { const s = 'gancho', t_e = As(s, 'no excavó ni un día.'), t_v = As(s, 'Vendió las palas.');
   hit(.05, 8, 'stamp'); hit(t_e + .1, 8, 'ping'); hit(t_v + .1, 16, 'stamp');
   scene(s, null, (c, T, L) => {
-    bg(c, T); camS(c, T, key(T, [[0, 540], [t_v, 540], [t_v + .7, 700]]), key(T, [[0, 960], [t_v, 960], [t_v + .7, 1080]]), key(T, [[0, 1.0], [t_v, 1.0], [t_v + .7, 1.25]]) + .01 * Math.sin(L * 1.3));
+    bg(c, T); camS(c, T, key(T, [[0, 540], [t_v, 540], [t_v + .7, 600]]), key(T, [[0, 960], [t_v, 960], [t_v + .7, 1010]]), key(T, [[0, 1.0], [t_v, 1.0], [t_v + .7, 1.1]]) + .01 * Math.sin(L * 1.3));
     tx(c, 'LA FIEBRE DEL ORO', 540, 200, { size: 92, col: C.ink, sc: 1 + settle(T, .05, { amp: .1, freq: 3, decay: 5 }), max: 1000 });
     tx(c, '¿QUIÉN GANÓ DE VERDAD?', 540, 300, { size: 58, col: C.goldD, sh: C.ink, max: 1000 });
     mountain(c, T);
     for (let k = 0; k < 7; k++) digger(c, 120 + k * 95, 1050 - (k % 2) * 60 - Math.max(0, 300 - Math.abs(k * 95 - 380)) * .5, .38, T, k, 20 + k);
     // puesto de palas abajo a la derecha
-    shp(c, R4(640, 1300, 360, 40), '#A8743F', { sharp: true, w: 5, lc: C.ink, seed: 6010 }); for (let k = 0; k < 6; k++) shovel(c, 670 + k * 55, 1260, .7, .12 * Math.sin(T * 2 + k), 6020 + k * 2);
-    person(c, 820, 1520, .62, { seed: 5, shirt: C.gold, ...idle(T), look: -1, mouth: 'grin', armR: [2.3, .4] });
+    shp(c, R4(560, 1330, 360, 40), '#A8743F', { sharp: true, w: 5, lc: C.ink, seed: 6010 }); for (let k = 0; k < 6; k++) shovel(c, 590 + k * 55, 1290, .7, .12 * Math.sin(T * 2 + k), 6020 + k * 2);
+    person(c, 990, 1560, .5, { seed: 5, shirt: C.gold, ...idle(T), look: -1, mouth: 'grin', armR: [2.3, .4] });
     stamp(c, 'VENDIÓ LAS PALAS', 600, 1150, T, t_v + .05, { size: 56, col: C.goldD, rot: -.04 });
   }); }
 
@@ -66,8 +66,8 @@ if (has('historia')) { const s = 'historia', t_n = As(s, 'Sam Brannan'), t_20 = 
     shp(c, [[-130, -55], [120, -55], [160, 0], [120, 55], [-130, 55]], g > .5 ? C.red : C.gold, { sharp: true, w: 5, lc: C.ink, seed: 6130 }); tx(c, g > .5 ? 'USD 15' : 'USD 0,20', -5, 4, { size: 48, f: 'ui', col: g > .5 ? C.paper : C.ink, sc: pb(T, t_20) }); c.restore();
     tx(c, '×75', 760, 600, { size: 100, col: C.red, sh: C.ink, sc: pb(T, t_15 + .4) });
     if (t_c) tag(c, 'ENCONTRARAN ORO O NO, ÉL COBRABA', 540, 1230, { size: 34, bg: C.goldL, sc: pb(T, t_c - .4) });
-    stamp(c, 'PRIMER MILLONARIO DE CALIFORNIA', 540, 1350, T, t_m + .1, { size: 46, col: C.goldD, rot: -.03 });
-    person(c, 920, 1520, .55, { seed: 5, shirt: C.gold, flip: true, ...idle(T), look: -1, mouth: 'grin', armR: [2.4, .4] });
+    stamp(c, 'PRIMER MILLONARIO DE CALIFORNIA', 500, 1350, T, t_m + .1, { size: 38, col: C.goldD, rot: -.03 });
+    person(c, 985, 1570, .48, { seed: 5, shirt: C.gold, flip: true, ...idle(T), look: -1, mouth: 'grin', armR: [2.4, .4] });
     src(c, 'Samuel Brannan · Wikipedia');
   }); }
 
@@ -97,7 +97,7 @@ if (has('cae')) { const s = 'cae', t_o = As(s, 'Pero ojo:'), t_n = As(s, 'noviem
     // tramo 2021-01 → 2023-06 con escala hasta 3
     const seg = NV.slice(0, 30), x0 = 140, x1 = 960, Z = 1150, Hh = 620, X = i => x0 + (x1 - x0) * i / 29, Y = v => Z - Hh * v / 3;
     ln(c, [[x0 - 10, Z], [x1 + 10, Z]], { w: 5, straight: true, seed: 6150 }); [['2021', 0], ['2022', 12], ['2023', 24]].forEach(([s2, i]) => tx(c, s2, X(i), Z + 34, { size: 26, f: 'ui' }));
-    const p = pr(T, sec(s).t0, Math.max(1.5, t_p - sec(s).t0 - .3), easeIO); ln(c, seg.slice(0, Math.max(2, Math.floor(30 * p))).map(([, v], i) => [X(i), Y(v)]), { w: 8, col: C.red, straight: true, seed: 6151 });
+    const p = pr(T, sec(s).t0 + .1, 1.6, easeIO); ln(c, seg.slice(0, Math.max(2, Math.floor(30 * p))).map(([, v], i) => [X(i), Y(v)]), { w: 8, col: C.red, straight: true, seed: 6151 });
     if (T > t_n) { pill(c, 'NOV. 2021', X(10), Y(2.419) - 60, { size: 30, f: 'ui', sc: pb(T, t_n) }); }
     if (T > t_p - .4) { c.save(); c.setLineDash([12, 8]); c.strokeStyle = C.red; c.lineWidth = 5; c.beginPath(); c.moveTo(X(10), Y(2.419)); c.lineTo(X(20), Y(2.419)); c.lineTo(X(20), Y(.9)); c.stroke(); c.restore(); pill(c, 'SEP. 2022', X(20) + 40, Y(.9) + 60, { size: 30, f: 'ui', sc: pb(T, t_p - .3) }); }
     stamp(c, '−63 %', 740, 560, T, t_p + .1, { size: 110, col: C.red, rot: -.05 });

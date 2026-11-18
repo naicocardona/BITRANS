@@ -14,11 +14,11 @@ const N = TK ? { g1: "g1", g2: "g2", e1: "e1", e2: "e2", d: "d1", r: "d2", rt: "
 // 1 · GANCHO: OBJETIVO EN 5:43 · +99,70 PUNTOS · score 7/10 · gráfico real · «la sesión siguió mucho más allá»
 tl.set("#sG", { opacity: 1 }, 0); CUR = "#sG";
 tl.set("#g_1", { opacity: 1 }, 0); tl.fromTo("#g_1", { scale: 1.12, transformOrigin: "0% 50%" }, { scale: 1, duration: 0.3, ease: "power4.out", immediateRender: true }, 0.0); shake("#g_1", 0.32, 9);
-camSet("#gv", 106, 150, 4.0, 250, 0); tl.set("#gv", { opacity: 1 }, 0);
+camSet("#gv", 106, 150, 3.0, 250, 0); tl.set("#gv", { opacity: 1 }, 0);
 tl.fromTo("#gv", { x: -60, rotation: -2 }, { x: 0, rotation: 0, duration: 0.5, ease: "back.out(1.4)", immediateRender: true }, 0.0);
 tl.set("#gS", { opacity: 1 }, 0); tl.fromTo("#gS", { scale: 0.6, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.4, ease: "back.out(2)", immediateRender: true }, 0.05);
 segs("#gS", 0.2); punch("#g_1 span", mid(N.g1, 0.75), 1.08); shake("#gS", mid(N.g1, 0.78), 6); neon("#64E087", mid(N.g1, 0.75));
-cam("#gv", 106, 165, 4.0, 250, 0.6, 3.0); blinkHi("#gv .hiE", 0.9); pose("senala", 0.3);
+cam("#gv", 106, 165, 3.2, 250, 0.6, 3.0); blinkHi("#gv .hiE", 0.9); pose("senala", 0.3);
 inn("#g_r", mid(N.g1, 0.35), { x: -60, y: 0 }); punch("#g_r", mid(N.g1, 0.55), 1.06);
 inn("#g_q", TK ? S("g2") + 0.05 : F("s1") - 0.4, { x: -40, y: 0 }); punch("#g_q", TK ? mid("g2", 0.8) : F("s1"), 1.06); pose("explica", TK ? S("g2") : F("s1") - 0.3);
 if (TK) { show("#gv .hiA", S("g2") + 0.2); tl.to("#gv .cam", { x: 450 - 106 * 2.4, y: 125 - 420 * 2.4, scale: 2.4, duration: 1.2, ease: IO }, S("g2") + 0.1); }
@@ -35,12 +35,12 @@ inn("#e_a", eM + 0.5, { x: 60, y: 0 }); inn("#e_q", eM + 0.8, { x: -60, y: 0 });
 
 // 3 · REFERENCIAS DE TRADINGVIEW: entrada, objetivo y stop rotulados como referencias; descenso y rebote
 const D1 = ph(N.d); chapter(2, D1[0] - 0.2); swap("#sD", D1[0], "slide"); pose("senala", D1[0] + 0.15);
-camSet("#cvD", 106, 120, 2.9, 576, D1[0] - 0.3); inn("#d_src", D1[0], { x: -40, y: 0 }); inn("#d_n", D1[0] + 0.2, { y: 6 });
-blinkHi("#cvD .hiE", D1[0] + 0.3); pop("#cvD .lbE", D1[0] + 0.4);
-blinkHi("#cvD .hiT", mid(N.d, 0.55)); pop("#cvD .lbT", mid(N.d, 0.6)); neon("#64E087", mid(N.d, 0.6));
-blinkHi("#cvD .hiS", mid(N.d, 0.75)); pop("#cvD .lbS", mid(N.d, 0.8));
-show("#cvD .hiD", F(N.d) - 0.2); pop("#cvD .lbD", F(N.d)); show("#cvD .hiP", F(N.d) + 0.3); pop("#cvD .lbP", F(N.d) + 0.4); shake("#sD", F(N.d) + 0.1, 5);
-cam("#cvD", 106, 190, 2.5, 576, F(N.d) - 0.5, 1.2);
+camSet("#cvD", 106, 128, 2.5, 576, D1[0] - 0.3); inn("#d_src", D1[0], { x: -40, y: 0 }); inn("#d_n", D1[0] + 0.2, { y: 6 });
+blinkHi("#cvD .hiE", D1[0] + 0.25); pop("#cvD .lbE", D1[0] + 0.35);
+blinkHi("#cvD .hiT", mid(N.d, 0.3)); pop("#cvD .lbT", mid(N.d, 0.35)); neon("#64E087", mid(N.d, 0.35));
+blinkHi("#cvD .hiS", mid(N.d, 0.44)); pop("#cvD .lbS", mid(N.d, 0.48));
+cam("#cvD", 106, 190, 2.4, 576, mid(N.d, 0.66), 0.9);
+show("#cvD .hiD", mid(N.d, 0.72)); pop("#cvD .lbD", mid(N.d, 0.76)); show("#cvD .hiP", mid(N.d, 0.86)); pop("#cvD .lbP", mid(N.d, 0.9)); shake("#sD", mid(N.d, 0.78), 5);
 
 // 4 · EJECUCIÓN (BRÓKER): comprobante con lote, dinero y Δ/% tapados · +99,70 PUNTOS en 5 min 43 s
 const R0 = S(N.r); chapter(3, R0 - 0.2); swap("#sR", R0, "flip"); pose("senala", R0 + 0.1); inn("#r_src", R0 + 0.1, { y: -10 });

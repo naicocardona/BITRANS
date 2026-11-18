@@ -111,7 +111,7 @@ def body(V, DUR, caps):
     sR = C("sR", f"""<div class="tag3 fx" id="r_src" style="left:0;top:-58px;color:#64E087;border:3px solid #64E087;font-size:24px">BRÓKER · COMPROBANTE DE EJECUCIÓN</div>
 <div class="rcard" id="rc30" style="height:{rh}px"><img src="assets/img/receipt33.jpg" alt="" style="width:900px;height:{rh}px" />{receipt33()}</div>
 <div class="tpbig fx" id="rtp" style="top:{20 + rh + 12}px">+<span id="nR">99,70</span> PUNTOS EJECUTADOS<small>27.261,55 → 27.161,85 · 5 MIN 43 S</small></div>
-<div class="note fx" id="rn" style="left:0;top:668px;font-size:21px">T/P mostrado 27.161,55 · salida efectiva 0,30 pts antes · reloj del bróker 17:00:01 → 17:05:44 (no es hora de Colombia)</div>""")
+<div class="note fx" id="rn" style="left:0;top:668px;font-size:21px">T/P 27.161,55 · salida 0,30 pts antes · horas del reloj del bróker, no de Colombia</div>""")
     sM = C("sM", f"""<div class="ttl"><div class="n">RECORRIDO DE SESIÓN · HASTA 3:59 PM</div><div class="h" style="font-size:50px"><span class="t">MFE 654</span> · <span class="r">MAE 14</span></div></div>
 {VW("cvM", 140, 550, chart_ov(1.7), left=0, w=380)}
 <div class="cardx fx" id="m_t" style="top:150px;left:420px;width:480px;border:3px solid var(--g)"><div class="a g">TRADE EJECUTADO · BRÓKER</div><div class="b g" style="font-size:46px">+99,70 PTS</div><div class="c">Cerrado en 5 min 43 s</div></div>

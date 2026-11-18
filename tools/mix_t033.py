@@ -8,7 +8,7 @@ for v, var, lufs in [("tiktok", "t033t", -16), ("shorts", "t033s", -14)]:
     if TK: ev += [[m_("g1", 0.75), "impact"], [s_("g2") + 0.05, "ping"], [s_("e1") + 0.05, "stamp"], [s_("e1") + 0.4, "stamp"], [s_("e2") + 0.5, "ping"], [m_("e2", 0.65) + 0.35, "impact"]]
     else: ev += [[m_("s1", 0.75), "impact"], [s_("s2") + 0.05, "stamp"], [s_("s2") + 0.45, "stamp"], [m_("s2", 0.45) + 0.5, "ping"], [m_("s2", 0.8) + 0.35, "impact"]]
     for k in (["e1", "d1", "d2", "m1", "l1", "l2", "l3", "x1"] if TK else ["s2", "s3", "s4", "s5", "s6", "s10"]): ev.append([s_(k) - 0.35, "whoosh"])
-    d1 = "d1" if TK else "s3"; ev += [[s_(d1) + 0.4, "ping"], [m_(d1, 0.6), "ping"], [f_(d1), "impact"]]
+    d1 = "d1" if TK else "s3"; ev += [[s_(d1) + 0.35, "ping"], [m_(d1, 0.35), "ping"], [m_(d1, 0.48), "ping"], [m_(d1, 0.78), "impact"]]
     ev += [[s_("m1" if TK else "s5") + 0.6, "ping"], [m_("m1" if TK else "s5", 0.9), "impact"]]
     rt = s_("d3") if TK else m_("s4", 0.8); ev += [[rt + 0.28, "impact"], [rt + 0.35, "ping"]]
     if TK: ev += [[m_("l1", 0.65), "ping"], [m_("l1", 0.8), "stamp"], [m_("l2", 0.35), "ping"], [f_("l2") - 0.2, "stamp"], [m_("l3", 0.35), "ping"], [m_("l3", 0.78), "stamp"]]

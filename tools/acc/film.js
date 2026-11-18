@@ -113,7 +113,7 @@ if (has('perdedora')) { const s = 'perdedora', t_c = As(s, 'Citigroup,'), t_v = 
   // trayectoria aproximada por hitos reales del cálculo (USD): 2000: 1.000 · pico 2000: ~1.400 · 2007: ~1.300 · feb. 2009: 51 · 2026: 570
   const P = [[2000, 1000], [2000.6, 1400], [2002.7, 800], [2007, 1300], [2009.1, 51], [2012, 250], [2020, 450], [2026.8, 570]];
   scene(s, 'drop', (c, T, L) => {
-    bg(c, T); camS(c, T, key(T, [[0, 540], [t_9, 540], [t_9 + .8, 470]]), key(T, [[0, 950], [t_9, 950], [t_9 + .8, 1000]]), key(T, [[0, 1.0], [t_9, 1.0], [t_9 + .8, 1.12]]) + .012 * Math.sin(L)); hipo(c, 200);
+    bg(c, T); camS(c, T, 540, 950, key(T, [[0, 1.0], [t_9, 1.0], [t_9 + .8, 1.03]]) + .012 * Math.sin(L)); hipo(c, 200);
     tx(c, 'SI ESCOGISTE CITIGROUP', 540, 300, { size: 64, col: C.red, sh: C.ink, sc: pb(T, sec(s).t0 - .3), max: 1000 });
     const X = y => 120 + (y - 2000) / 26.8 * 840, Y = v => 1180 - v / 1500 * 640, g = pr(T, t_c, Math.max(1.5, t_95 - t_c), easeIO);
     ln(c, [[110, 1180], [980, 1180]], { w: 5, straight: true, seed: 4501 }); c.save(); c.setLineDash([12, 9]); c.strokeStyle = C.ink; c.globalAlpha = .4; c.lineWidth = 4; c.beginPath(); c.moveTo(110, Y(1000)); c.lineTo(980, Y(1000)); c.stroke(); c.restore();
@@ -123,8 +123,8 @@ if (has('perdedora')) { const s = 'perdedora', t_c = As(s, 'Citigroup,'), t_v = 
     if (T > t_9 + .1) { pill(c, 'FEB. 2009: USD 51', X(2009.1) + 40, Y(51) - 70, { size: 32, f: 'ui', col: '#FFB4A6', sc: pb(T, t_9 + .2) }); }
     stamp(c, '−95 %', X(2009.1), 860, T, t_95, { size: 90, col: C.red, rot: -.05 });
     pill(c, 'HOY: USD 570', 820, Y(570) - 80, { size: 38, f: 'ui', col: '#FFB4A6', sc: pb(T, t_v) });
-    tx(c, 'CASI LA MITAD MENOS, 26 AÑOS DESPUÉS', 540, 1300, { size: 40, f: 'ui', col: C.red, clipP: pr(T, t_p - .1, .5, easeIO) });
-    person(c, 900, 1500, .7, { seed: 9, shirt: C.navy, flip: true, ...idle(T), look: -1, mouth: 'o', brow: 1, sweat: T > t_9 ? T : 0 });
+    tx(c, 'CASI LA MITAD MENOS, 26 AÑOS DESPUÉS', 540, 1280, { size: 36, f: 'ui', col: C.red, clipP: pr(T, t_p - .1, .5, easeIO) });
+    person(c, 975, 1585, .5, { seed: 9, shirt: C.navy, flip: true, ...idle(T), look: -1, mouth: 'o', brow: 1, sweat: T > t_9 ? T : 0 });
     src(c, 'Mínimo de cierre mensual: feb. 2009 · Yahoo Finance · cálculo TITÁN', 1560);
   }); }
 

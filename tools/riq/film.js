@@ -19,7 +19,7 @@ function divBars(c, T, t0, o = {}) { const Z = o.Z ?? 1180, K = (o.H ?? 600) / 8
   ln(c, [[x0 - 10, Z], [x0 + DIV.length * (bw + gap) + 5, Z]], { w: 5, straight: true, seed: 7030 });
   DIV.forEach(([y, v], k) => { const g = pr(T, t0 + k * .06, .5, easeOutBack); if (g <= 0) return; const col = y === 2009 ? C.red : (k === 0 || k === DIV.length - 1 ? C.gold : C.lav);
     shp(c, R4(x0 + k * (bw + gap), Z - v * K * g, bw, v * K * g), col, { sharp: true, w: 3, lc: C.ink, seed: 7031 + k });
-    if (k === 0 || k === DIV.length - 1 || (o.mark09 && y === 2009)) { tx(c, String(y), x0 + k * (bw + gap) + bw / 2, Z + 30, { size: 24, f: 'ui', col: y === 2009 ? C.red : C.ink });
+    if ((k === 0 && !o.mark09) || k === DIV.length - 1 || (o.mark09 && y === 2009)) { tx(c, String(y), x0 + k * (bw + gap) + bw / 2, Z + 30, { size: 24, f: 'ui', col: y === 2009 ? C.red : C.ink });
       pill(c, 'USD ' + v.toFixed(2).replace('.', ','), x0 + k * (bw + gap) + bw / 2 + (k === 0 ? 50 : k === DIV.length - 1 ? -50 : 0), Z - v * K - 50, { size: 30, f: 'ui', sc: pb(T, t0 + k * .06 + .3), col: y === 2009 ? '#FFB4A6' : C.gold }); } }); }
 
 // ================= escenas =================
@@ -71,7 +71,7 @@ if (has('dato')) { const s = 'dato', t_6 = As(s, 'dos mil seis'), t_25 = As(s, '
     bg(c, T); camS(c, T, 540, 950, key(T, [[0, 1.0], [t_x, 1.0], [t_x + .6, 1.04]]) + .012 * Math.sin(L));
     tx(c, 'DIVIDENDOS DE 1 ACCIÓN', 540, 220, { size: 72, col: C.ink, sc: pb(T, sec(s).t0 - .3), max: 1000 });
     tag(c, 'FONDO QUE COPIA AL S&P 500 (SPY) · USD POR AÑO', 540, 320, { size: 26, bg: C.goldL, sc: pb(T, sec(s).t0) });
-    divBars(c, T, t_6 - .2, { Z: 1130, H: 560 });
+    divBars(c, T, sec(s).t0 + .3, { Z: 1130, H: 560 });
     stamp(c, '×3 SIN TRABAJAR MÁS', 540, 1300, T, t_x, { size: 52, col: C.goldD, rot: -.03 });
     src(c, 'Yahoo Finance · dividendos de SPY por año · antes de la retención');
   }); }
@@ -83,7 +83,7 @@ if (has('ojo')) { const s = 'ojo', t_30 = As(s, 'treinta por ciento'), t_b = TK 
     bg(c, T); camS(c, T, 540, 950, 1.0 + .012 * Math.sin(L));
     tx(c, 'OJO', 540, 220, { size: 120, col: C.red, sh: C.ink, sc: pb(T, sec(s).t0 - .3) });
     // retención: 10 monedas, 3 se van con la bandera de EE. UU. (rectángulo con franjas)
-    for (let k = 0; k < 10; k++) { const out = k < 3 ? pr(T, t_30, .8, easeIO) : 0; coin(c, 220 + (k % 5) * 160 + out * 300, 470 + Math.floor(k / 5) * 110 - out * 200, 40, 7100 + k); }
+    for (let k = 0; k < 10; k++) { const out = k < 3 ? pr(T, t_30, .8, easeIO) : 0; c.save(); c.globalAlpha = 1 - out * .85; coin(c, 220 + (k % 5) * 160 + out * 420, 470 + Math.floor(k / 5) * 110 + out * 40, 40, 7100 + k); c.restore(); }
     pill(c, 'RETENCIÓN EN EE. UU.: 30 %', 540, 760, { size: 46, f: 'ui', sc: pb(T, t_30), col: '#FFB4A6' });
     divBars(c, T, sec(s).t0 + .2, { Z: 1260, H: 360, mark09: true });
     stamp(c, '2009: BAJARON', 760, 960, T, t_b + .1, { size: 46, col: C.red, rot: .04 });

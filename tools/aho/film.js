@@ -21,7 +21,7 @@ function cart(c, x, y, s, items, seed = 5120) { c.save(); c.translate(x, y); c.s
   items.forEach(([dx, col], k) => shp(c, R4(dx, -130 - (k % 2) * 30, 60, 70 + (k % 2) * 30), col, { sharp: true, w: 4, lc: C.ink, seed: seed + 5 + k })); c.restore(); }
 function coinD(c, x, y, r, seed, a) { c.save(); c.globalAlpha *= a; shp(c, blob(x, y, r, r, seed, { n: 16, amp: .02 }), C.gold, { w: 3, lc: C.ink, seed }); tx(c, '$', x, y + 2, { size: r * 1.1, col: C.goldD, sh: null }); c.restore(); }
 function hipo(c, y = 200) { tag(c, 'EJEMPLO HIPOTÉTICO', 540, y, { size: 28, bg: C.paper }); }
-function src(c, s, y = 1560) { tx(c, s, 540, y, { size: 22, f: 'ui', al: .75, max: 1000 }); }
+function src(c, s, y = 1520) { tx(c, s, 540, y, { size: 22, f: 'ui', al: .75, max: 1000 }); }
 
 // ================= escenas =================
 // 1 · Gancho: $10.000.000 quietos; el banco paga +$43.000 pero el sello dice −$587.000 de poder de compra

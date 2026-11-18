@@ -16,7 +16,7 @@ function coCard(c, s, x, y, k, o = {}) { if (k <= 0) return; c.save(); c.transla
   tx(c, s, 22, 4, { size: o.size || 34, f: 'ui', col: o.col || C.ink, max: w - 90 }); if (o.n) tx(c, o.n, -w / 2 + 34, 2, { size: 30, f: 'ui', col: C.ink }); c.restore(); }
 function coin(c, x, y, r, seed) { shp(c, blob(x, y, r, r, seed, { n: 22, amp: .02 }), C.gold, { w: 4, lc: C.ink, seed }); tx(c, '$', x, y + 2, { size: r * 1.1, col: C.goldD, sh: null }); }
 function hipo(c, y = 400) { tag(c, 'EJEMPLO HIPOTÉTICO · PRECIOS REALES', 540, y, { size: 26, bg: C.paper }); }
-function src(c, s, y = 1530) { tx(c, s, 540, y, { size: 22, f: 'ui', al: .75, max: 1000 }); }
+function src(c, s, y = 1520) { tx(c, s, 540, y, { size: 22, f: 'ui', al: .75, max: 1000 }); }
 // barras de las 10 + línea del índice (ordenadas de mayor a menor)
 function tenBars(c, T, t0, tLine, tWin, o = {}) { const S = TOP.map((r, i) => [...r, i]).sort((a, b) => b[1] - a[1]), Z = o.Z ?? 1250, Hm = o.H ?? 640, K = Hm / 15000, x0 = 95, bw = 76, gap = 14;
   ln(c, [[70, Z], [1010, Z]], { w: 6, straight: true, seed: 4150 });
@@ -43,7 +43,7 @@ if (has('gancho')) { const s = 'gancho', t_10 = As(s, 'diez empresas más grande
     if (T > t_h + .2) { const g = .5 + .5 * Math.sin(T * 5); c.save(); c.globalAlpha = .25 + .2 * g; c.strokeStyle = C.gold; c.lineWidth = 14; c.strokeRect(70, 370, 400, 140); c.restore(); }
     stamp(c, 'SOLO 1 SIGUE EN EL TOP 10', 540, 1130, T, t_d + .1, { size: 46, col: C.red, rot: -.04 });
     person(c, 900, 1520, .7, { seed: 8, shirt: C.lav, flip: true, ...idle(T), look: -1, mouth: T > t_h ? 'o' : 'smile', brow: T > t_h ? 1 : 0, armR: T > t_d ? [2.5, .5] : [.3, .2] });
-    src(c, 'Top 10 del S&P 500 al 1 ene. 2000: 24/7 Wall St. · hoy: CompaniesMarketCap', 1560);
+    src(c, 'Top 10 del S&P 500 al 1 ene. 2000: 24/7 Wall St. · hoy: CompaniesMarketCap');
   }); }
 
 // 2 · TikTok · ¿Una sola o todas? Dos personas: una abraza una tarjeta, otra carga una canasta llena
@@ -104,7 +104,7 @@ if (has('cuenta')) { const s = 'cuenta', t_m = As(s, 'En Microsoft,'), t_v = As(
     mvsc(c, T, t_m + .1, t_c + .1, true);
     stamp(c, 'CASI −50 %', 750, 1120, T, t_p, { size: 60, col: C.red, rot: .04 });
     person(c, 150, 1480, .75, { seed: 5, shirt: C.gold, ...idle(T), look: 1, mouth: T > t_p ? 'o' : 'grin', brow: T > t_p ? 1 : 0, sweat: T > t_p ? T : 0 });
-    src(c, 'Dividendos reinvertidos · dic. 1999 → oct. 2026 · Yahoo Finance · cálculo TITÁN', 1560);
+    src(c, 'Dividendos reinvertidos · dic. 1999 → oct. 2026 · Yahoo Finance · cálculo TITÁN');
   }); }
 
 // 5 · TikTok · Citigroup: la línea cae hasta USD 51 en 2009 y hoy vale USD 570
@@ -125,7 +125,7 @@ if (has('perdedora')) { const s = 'perdedora', t_c = As(s, 'Citigroup,'), t_v = 
     pill(c, 'HOY: USD 570', 820, Y(570) - 80, { size: 38, f: 'ui', col: '#FFB4A6', sc: pb(T, t_v) });
     tx(c, 'CASI LA MITAD MENOS, 26 AÑOS DESPUÉS', 540, 1280, { size: 36, f: 'ui', col: C.red, clipP: pr(T, t_p - .1, .5, easeIO) });
     person(c, 975, 1585, .5, { seed: 9, shirt: C.navy, flip: true, ...idle(T), look: -1, mouth: 'o', brow: 1, sweat: T > t_9 ? T : 0 });
-    src(c, 'Mínimo de cierre mensual: feb. 2009 · Yahoo Finance · cálculo TITÁN', 1560);
+    src(c, 'Mínimo de cierre mensual: feb. 2009 · Yahoo Finance · cálculo TITÁN');
   }); }
 
 // 6 · TikTok · Las 10 en barras con la línea del S&P 500: solo 4 por encima
@@ -136,7 +136,7 @@ if (has('medio')) { const s = 'medio', t_i = As(s, 'Intel'), t_d = As(s, 'De las
     tx(c, 'USD 1.000 EN CADA UNA → HOY', 540, 300, { size: 56, col: C.ink, sc: pb(T, sec(s).t0 - .3), max: 1000 });
     tenBars(c, T, sec(s).t0, t_d, t_4, { Z: 1180, H: 680 });
     stamp(c, 'SOLO 4 DE 10 LE GANARON AL ÍNDICE', 540, 1370, T, t_4 + .1, { size: 44, col: C.red, rot: -.03 });
-    src(c, 'Dividendos reinvertidos · dic. 1999 → oct. 2026 · Yahoo Finance · cálculo TITÁN', 1560);
+    src(c, 'Dividendos reinvertidos · dic. 1999 → oct. 2026 · Yahoo Finance · cálculo TITÁN');
   }); }
 
 // 7 · El S&P 500 completo: la canasta con 500 empresas → USD 8.232 «sin adivinar»
@@ -153,7 +153,7 @@ if (has('indice')) { const s = 'indice', t_e = As(s, 'ese ene pe quinientos'), t
     pill(c, 'HOY: ' + usd(SPY), 540, 1150, { size: 62, f: 'ui', sc: pb(T, t_v) }); burst(c, 540, 1150, T, t_v + .2, { R: 260, n: 20 });
     if (TK) stamp(c, 'SIN ADIVINAR CUÁL GANABA', 540, 1310, T, t_x, { size: 52, col: C.goldD, rot: .03 });
     person(c, 160, 1480, .75, { seed: 12, shirt: C.vio, ...idle(T), look: 1, mouth: T > t_v ? 'grin' : 'smile', armR: [1.8, .6] });
-    src(c, 'SPY (fondo que replica el S&P 500) · dividendos reinvertidos · Yahoo Finance', 1560);
+    src(c, 'SPY (fondo que replica el S&P 500) · dividendos reinvertidos · Yahoo Finance');
   }); }
 
 // 8 · Cierre (noche): ¿una sola o diversificado? Depende · diversificar evita adivinar · haz tu cuenta

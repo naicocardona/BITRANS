@@ -12,11 +12,14 @@ def w99(n): return U[n] if n < 30 else DEC[n // 10] + ("" if n % 10 == 0 else " 
 def w999(n): return w99(n) if n < 100 else ("cien" if n == 100 else ("ciento " + w99(n - 100)) if n < 200 else {2: "doscientos", 3: "trescientos", 4: "cuatrocientos", 5: "quinientos"}.get(n // 100, "") + (" " + w99(n % 100) if n % 100 else ""))
 def precio(v): e, c = int(v), round((v - int(v)) * 100); return w999(e) + (" dólares" if c == 0 else " con " + w99(c))
 CW = precio(CL["cierre"]); CN = ("USD %.2f" % CL["cierre"]).replace(".", ",")
-VAR = CL["cierre"] / 83 - 1; VW = ("subió " if VAR >= 0 else "bajó ") + w99(round(abs(VAR) * 100)) + " por ciento frente al precio de salida"
+VAR = CL["cierre"] / 83 - 1; VP = round(abs(VAR) * 100); VW = ("subió " if VAR >= 0 else "bajó ") + w99(VP) + " por ciento frente al precio de salida"
+VO = CL["cierre"] / 111.5 - 1; OP = abs(VO) * 100; OPn = round(OP)  # frente a la apertura
+OPw = ("casi " if OPn > OP else "más de " if OPn < OP else "") + w99(OPn) + " por ciento"
+OW = (" Quien compró al abrir terminó el día perdiendo " + OPw + ".") if VO < 0 else (" Y quien compró al abrir terminó el día ganando " + OPw + ".")
 TK = [
  ("gancho", "La empresa que creó a Claude salió hoy a la bolsa. Y fue la salida a bolsa más grande de la historia."),
  ("datos", "Anthropic vendió novecientos ochenta millones de acciones a ochenta y tres dólares cada una, y recaudó ochenta y un mil trescientos millones de dólares. Más que SpaceX en junio."),
- ("apertura", f"Pero casi nadie compró a ochenta y tres. La acción abrió en ciento once dólares con cincuenta, un treinta y cuatro por ciento más cara. Y cerró el día en {CW}: {VW}."),
+ ("apertura", f"Pero casi nadie compró a ochenta y tres. La acción abrió en ciento once dólares con cincuenta, un treinta y cuatro por ciento más cara. Y cerró el día en {CW}: {VW}.{OW}"),
  ("leccion", "Esa es la letra pequeña: el precio de salida se asigna sobre todo a inversionistas institucionales. Quien compra el primer día paga lo que pida el mercado en ese momento."),
  ("facebook", "Y el primer día no dice mucho. En mayo de dos mil doce, Facebook salió a treinta y ocho dólares y abrió en cuarenta y dos. Cuatro meses después llegó a diecisiete con cincuenta y cinco: menos de la mitad."),
  ("ojo", "Ojo con la publicidad: algunos brókers ya ofrecen operarla con CFD, y con un CFD no eres dueño de la acción. Además, el apalancamiento puede multiplicar las pérdidas."),
@@ -24,11 +27,11 @@ TK = [
 ]
 SH = [
  ("gancho", "La empresa que creó a Claude salió hoy a la bolsa. Y fue la salida a bolsa más grande de la historia."),
- ("cuenta", f"Vendió sus acciones a ochenta y tres dólares, la acción abrió en ciento once con cincuenta y cerró en {CW}. Pero casi nadie compró al precio de salida."),
+ ("cuenta", f"Vendió sus acciones a ochenta y tres dólares, la acción abrió en ciento once con cincuenta y cerró en {CW}.{OW} Pero casi nadie compró al precio de salida."),
  ("facebook", "Y ojo: en dos mil doce, Facebook salió a treinta y ocho dólares y abrió en cuarenta y dos. Cuatro meses después llegó a diecisiete con cincuenta y cinco: menos de la mitad."),
  ("cierre", "Una salida a bolsa no es una garantía. Haz tu cuenta. Contenido educativo. No es una recomendación de inversión."),
 ]
 text = lambda L: " ".join(t for _, t in L)
 MAP = [("novecientos ochenta millones", "980 millones"), ("ochenta y un mil trescientos millones de dólares", "USD 81.300 millones"), ("ochenta y tres dólares", "USD 83"), ("ochenta y tres.", "USD 83."),
        ("ciento once dólares con cincuenta", "USD 111,50"), ("ciento once con cincuenta", "USD 111,50"), ("treinta y cuatro por ciento", "34 %"), (CW, CN),
-       ("treinta y ocho dólares", "USD 38"), ("cuarenta y dos.", "USD 42."), ("diecisiete con cincuenta y cinco", "USD 17,55"), ("dos mil doce", "2012")]
+       ("treinta y ocho dólares", "USD 38"), ("cuarenta y dos.", "USD 42."), ("diecisiete con cincuenta y cinco", "USD 17,55"), ("dos mil doce", "2012"), (w99(VP) + " por ciento frente", "%d %% frente" % VP), (OPw, OPw.replace(w99(OPn) + " por ciento", "%d %%" % OPn))]

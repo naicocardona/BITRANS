@@ -44,28 +44,30 @@ if (has('datos')) { const s = 'datos', t_a = As(s, 'novecientos ochenta millones
     tx(c, 'LA OFERTA', 540, 220, { size: 100, col: C.ink, sc: pb(T, sec(s).t0 - .3) });
     pill(c, '980 MILLONES DE ACCIONES', 540, 400, { size: 46, f: 'ui', sc: pb(T, t_a) }); tx(c, '×', 540, 500, { size: 80, col: C.goldD, sc: pb(T, t_a + .5) }); pill(c, 'USD 83 C/U', 540, 600, { size: 46, f: 'ui', sc: pb(T, t_a + .8) });
     const g = pr(T, t_r - .2, 1.0, easeIO); pill(c, 'USD ' + Math.round(81300 * g).toLocaleString('es-CO').replace(/,/g, '.') + ' MILLONES', 540, 780, { size: 60, f: 'ui', sc: pb(T, t_r - .2), col: C.paper });
-    priceBars(c, T, [['SPACEX (JUN. 2026)', 75, t_x, C.lav, 330], ['ANTHROPIC', 81.3, t_x + .3, C.gold, 750]], 1250, 3.6);
+    priceBars(c, T, [['SPACEX (JUN. 2026)', 75, sec(s).t0 + .6, C.lav, 330], ['ANTHROPIC', 81.3, t_r + .2, C.gold, 750]], 1250, 3.6);
+    stamp(c, 'RÉCORD', 750, 1090, T, t_x + .1, { size: 54, col: C.red, rot: -.05 });
     src(c, 'CNN, CNBC, Fox Business · 19 nov. 2026 (cifras en miles de millones de USD)');
   }); }
 
 // 3 · Apertura: USD 83 → USD 111,50 (+34 %) → cierre del día
-function openClose(c, T, t83, t111, tC, Z) { priceBars(c, T, [['SALIDA', 83, t83, C.lav, 220], ['APERTURA', 111.5, t111, C.gold, 540], ['CIERRE HOY', CLOSE, tC, CLOSE >= 83 ? C.goldL : '#FFB4A6', 860]], Z, 5.2);
-  if (T > t111 + .4) tx(c, '+34 %', 380, Z - 111.5 * 5.2 - 150, { size: 64, col: C.green, sh: C.ink, sc: pb(T, t111 + .4) }); }
-if (has('apertura')) { const s = 'apertura', t_n = As(s, 'casi nadie compró'), t_1 = As(s, 'ciento once dólares'), t_c = As(s, 'Y cerró el día');
-  hit(t_n + .1, 10, 'stamp'); hit(t_1 + .3, 14, 'impact'); hit(t_c + .4, 12, 'impact');
+function openClose(c, T, t83, t111, tC, Z, tQ) { priceBars(c, T, [['SALIDA', 83, t83, C.lav, 220], ['APERTURA', 111.5, t111, C.gold, 540], ['CIERRE HOY', CLOSE, tC, CLOSE >= 83 ? C.goldL : '#FFB4A6', 860]], Z, 5.2);
+  if (T > t111 + .4) tx(c, '+34 %', 380, Z - 111.5 * 5.2 - 150, { size: 64, col: C.green, sh: C.ink, sc: pb(T, t111 + .4) });
+  if (tQ != null && T > tQ) { const q = Math.round((CLOSE / 111.5 - 1) * 100); stamp(c, (q < 0 ? 'QUIEN COMPRÓ AL ABRIR: −' : 'QUIEN COMPRÓ AL ABRIR: +') + Math.abs(q) + ' %', 540, Z + 150, T, tQ, { size: 50, col: q < 0 ? C.red : C.green, rot: .04 }); } }
+if (has('apertura')) { const s = 'apertura', t_n = As(s, 'casi nadie compró'), t_1 = As(s, 'ciento once dólares'), t_c = As(s, 'Y cerró el día'), t_q = As(s, 'Quien compró al abrir');
+  hit(t_n + .1, 10, 'stamp'); hit(t_1 + .3, 14, 'impact'); hit(t_c + .4, 12, 'impact'); hit(t_q + .3, 12, 'stamp');
   scene(s, 'iris', (c, T, L) => {
     bg(c, T); camS(c, T, 540, 950, 1.0 + .012 * Math.sin(L));
     tx(c, '¿QUIÉN COMPRÓ A USD 83?', 540, 220, { size: 74, col: C.ink, sc: pb(T, sec(s).t0 - .3), max: 1000 });
     stamp(c, 'CASI NADIE', 540, 360, T, t_n + .1, { size: 60, col: C.red, rot: -.04 });
-    openClose(c, T, sec(s).t0 + .3, t_1, t_c + .2, 1220);
+    openClose(c, T, sec(s).t0 + .3, t_1, t_c + .2, 1220, t_q + .3);
     src(c, 'Apertura: CNN, CNBC · cierre oficial: Yahoo Finance');
   }); }
-if (has('cuenta')) { const s = 'cuenta', t_8 = As(s, 'ochenta y tres dólares,'), t_1 = As(s, 'ciento once'), t_c = As(s, 'cerró en');
-  hit(t_8 + .2, 8, 'ping'); hit(t_1 + .3, 14, 'impact'); hit(t_c + .4, 12, 'impact');
+if (has('cuenta')) { const s = 'cuenta', t_8 = As(s, 'ochenta y tres dólares,'), t_1 = As(s, 'ciento once'), t_c = As(s, 'cerró en'), t_q = As(s, 'Quien compró al abrir');
+  hit(t_8 + .2, 8, 'ping'); hit(t_1 + .3, 14, 'impact'); hit(t_c + .4, 12, 'impact'); hit(t_q + .3, 12, 'stamp');
   scene(s, 'whip', (c, T, L) => {
     bg(c, T); camS(c, T, 540, 950, 1.0 + .012 * Math.sin(L));
     tx(c, 'SU PRIMER DÍA EN BOLSA', 540, 220, { size: 72, col: C.ink, sc: pb(T, sec(s).t0 - .3), max: 1000 });
-    openClose(c, T, t_8, t_1, t_c + .2, 1220);
+    openClose(c, T, t_8, t_1, t_c + .2, 1220, t_q + .3);
     src(c, 'Salida y apertura: CNN, CNBC · cierre oficial: Yahoo Finance');
   }); }
 
@@ -87,8 +89,8 @@ if (has('facebook')) { const s = 'facebook', t_m = As(s, 'Facebook salió'), t_4
   hit(t_m + .1, 10, 'stamp'); hit(t_42 + .2, 8, 'ping'); hit(t_17 + .3, 18, 'impact');
   scene(s, TK ? 'wipe' : 'iris', (c, T, L) => {
     bg(c, T); camS(c, T, 540, 950, key(T, [[0, 1.0], [t_17, 1.0], [t_17 + .6, 1.05]]) + .012 * Math.sin(L));
-    tx(c, 'YA PASÓ ANTES', 540, 220, { size: 92, col: C.ink, sc: pb(T, sec(s).t0 - .3) }); tag(c, 'FACEBOOK · MAYO 2012', 540, 330, { size: 32, bg: C.goldL, sc: pb(T, t_m) });
-    const Z = 1200, K = 14, X = [250, 540, 830], V = [38, 42.05, 17.55], L3 = ['SALIDA', 'APERTURA', '4 SEP. 2012'], ts = [t_m + .3, t_42, t_17];
+    tx(c, 'YA PASÓ ANTES', 540, 220, { size: 92, col: C.ink, sc: pb(T, sec(s).t0 - .3) }); tag(c, 'FACEBOOK · MAYO 2012', 540, 330, { size: 32, bg: C.goldL, sc: pb(T, Math.min(t_m, sec(s).t0 + .2)) });
+    const Z = 1200, K = 14, X = [250, 540, 830], V = [38, 42.05, 17.55], L3 = ['SALIDA', 'APERTURA', '4 SEP. 2012'], ts = [Math.min(t_m + .3, sec(s).t0 + .6), t_42, t_17];
     ln(c, [[100, Z], [980, Z]], { w: 6, straight: true, seed: 9740 });
     V.forEach((v, k) => { const g = pr(T, ts[k], .7, easeOutBack); if (g <= 0) return; const col = k === 2 ? C.red : C.lav; shp(c, R4(X[k] - 90, Z - v * K * g, 180, v * K * g), col, { sharp: true, w: 5, lc: C.ink, seed: 9741 + k, hatch: shade(col, .6), hal: .3 });
       tx(c, L3[k], X[k], Z + 40, { size: 30, f: 'ui' }); pill(c, fmtU(v), X[k], Z - v * K - 60, { size: 36, f: 'ui', sc: pb(T, ts[k] + .3), col: k === 2 ? '#FFB4A6' : C.gold }); });

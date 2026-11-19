@@ -1,0 +1,4 @@
+{'regularMarketPrice': 97.17, 'regularMarketTime': 1795122001, 'regularMarketDayHigh': 115.1, 'regularMarketDayLow': 92.72, 'marketState': None, 'currentTradingPeriod': {'pre': {'timezone': 'EST', 'end': 1795098600, 'start': 1795078800, 'gmtoffset': -18000}, 'regular': {'timezone': 'EST', 'end': 1795122000, 'start': 1795098600, 'gmtoffset': -18000}, 'post': {'timezone': 'EST', 'end': 1795136400, 'start': 1795122000, 'gmtoffset': -18000}}}
+Thu Nov 19 16:12:27 -05 2026
+
+[exited with code 0]

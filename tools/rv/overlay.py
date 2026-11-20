@@ -61,7 +61,7 @@ for n in range(NF):
         fr.alpha_composite(Image.merge('RGBA', (r, z, z, a.point(lambda q: q // 2))), (max(0, px - 22), py))
         fr.alpha_composite(Image.merge('RGBA', (z, g, b, a.point(lambda q: q // 2))), (min(W - t.width, px + 22), py))
     fr.alpha_composite(t, (max(0, min(W - t.width, px)), max(0, py)))
-    if f >= 2 or last: fr.alpha_composite(LAB, ((W - LAB.width) // 2, 175))
+    if os.environ.get("RV_LABEL") and (f >= 2 or last): fr.alpha_composite(LAB, ((W - LAB.width) // 2, 175))
     if c == 'G' and (f < 10 or last):                                                # destellos
         d = ImageDraw.Draw(fr); rr = random.Random(k * 100 + (f // 3 if last else 0))
         for _ in range(9 if not last else 7):

@@ -25,14 +25,18 @@ for k in range(len(CUTS) - 1):
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', str(s), '-i', SRC, '-an', '-vf', vf, '-frames:v', str(round(b * 30) - round(a * 30)), '-c:v', 'libx264', '-crf', '14', '-pix_fmt', 'yuv420p', p], check=True)
 open(f"{tmp}/l.txt", 'w').write(''.join(f"file '{p}'\n" for p in parts))
 # textos: 負け PIERDO / 勝ち GANO, con destello en cada cambio de color
-JP, LAT = '/usr/share/fonts/opentype/ipafont-gothic/ipag.ttf', '/usr/share/fonts/opentype/inter/Inter-ExtraBold.otf'
-dt = []
+LAT = '/usr/share/fonts/opentype/inter/Inter-ExtraBold.otf'
+# contador de ejemplo (pedido de Lady): pérdidas hasta −$2,000 y luego recuperación hasta +$5,000
+LOSS = [100, 200, 300, 500, 700, 900, 1000, 1200, 1300, 1500, 1600, 1800, 2000, 1700, 1900, 2000, 1500, 1200, 800]
+GAIN = [100, 200, 300, 500, 700, 1000, 1500, 2000, 3000, 4000, 5000]
+dt = []; li = gi = 0
 for k in range(len(CUTS) - 1):
     a, b = CUTS[k], CUTS[k + 1]; c = col(a)
-    jp, es, fc = ('勝ち', 'GANO', '0x39FF6A') if c == 'G' else ('負け', 'PIERDO', '0xFF3B3B')
-    fa, fb = round(a * 30), round(b * 30); en = f"between(n,{fa},{fb - 1})"; pop = f"if(lt(n-{fa},3),1.25,1)"
-    dt.append(f"drawtext=fontfile={JP}:text='{jp}':fontsize='210*{pop}':fontcolor={fc}:borderw=10:bordercolor=black:x=(w-tw)/2:y=250:enable='{en}'")
-    dt.append(f"drawtext=fontfile={LAT}:text='{es}':fontsize=96:fontcolor=white:borderw=8:bordercolor=black:x=(w-tw)/2:y=500:enable='{en}'")
+    if c == 'G': v = GAIN[min(gi, len(GAIN) - 1)]; gi += 1; txt, fc = f"+\\${v:,}", '0x39FF6A'
+    else: v = LOSS[min(li, len(LOSS) - 1)]; li += 1; txt, fc = f"−\\${v:,}", '0xFF3B3B'
+    fa, fb = round(a * 30), round(b * 30); en = f"between(n,{fa},{fb - 1})"
+    size = f"190*if(lt(n-{fa},3),1.22,1)" if k < len(CUTS) - 2 else f"190*(1.22-0.06*min(n-{fa},4))*(1+0.04*sin((n-{fa})/3))"
+    dt.append(f"drawtext=fontfile={LAT}:text='{txt}':fontsize='{size}':fontcolor={fc}:borderw=12:bordercolor=black:shadowx=0:shadowy=10:shadowcolor=black@0.6:x=(w-tw)/2:y=330-th/2:enable='{en}'")
     if k and col(CUTS[k - 1]) != c: dt.append(f"drawbox=x=0:y=0:w=iw:h=ih:color=white@0.55:t=fill:enable='between(n,{fa},{fa + 1})'")
 vf = ','.join(dt)
 cmd = ['ffmpeg', '-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', f"{tmp}/l.txt"]

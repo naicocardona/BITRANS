@@ -146,6 +146,9 @@
 - Auditoría del 7 nov 2026: `AUDITORIA_RESPALDO.md`. Revisar sus pendientes al inicio de cada sesión hasta que estén cerrados.
 - **Cuenta personal de Lady (20 nov 2026):** también se le hacen videos para su TikTok personal (no TITÁN ni NAS100), p. ej. «rojo/verde» frente a las pantallas (`entregas/personal/rojo_verde/`). La música de tendencia la pone ella en TikTok con «Usar este sonido»; se entrega sin música.
 - **Lección de «Apple vs. Colombia» (20 nov 2026, comentario en TikTok):** no mezclar en el gancho un valor acumulado (valor en bolsa) con un flujo anual (PIB). Comparar lo mismo con lo mismo: bolsa con bolsa, o ventas con PIB (citando la fuente). Si se usa una comparación para dimensionar, aclararlo en los primeros 5 s y también en el Short.
+- **Referencias pendientes de Lady (22 nov 2026, «tenerlos pendientes para cuando los veas necesarios»):** en `entregas/titan/referencias_pendientes/`. Solo el tema, con estilo TITÁN y nada copiado.
+  - `ref_el_elegido.mp4`: reflexión de superación («nadie recuerda al que lo tuvo fácil», caídas y levantadas, el camino no es recto). Para una reflexión con varios personajes (plantilla `tools/env/`), llevada a la disciplina de invertir.
+  - `ref_si_te_alcanza_justo.mov`: «si te alcanza justo, no te alcanza»: vivir al día vs. ganar poco, imprevistos (llanta, mascota, muela), «importa cuánto te sobra». Línea B: colchón para imprevistos, con cifras de ejemplo marcadas como hipotéticas.
 - Hay que avisarle a Lady en cuanto algo requiera una acción suya desde el computador; ella lo pidió así.
 - El repositorio `naicocardona/lukas-app` es el código de la app LUKAS (otro equipo); no guardar videos ahí.
 - `tools/sfx_mix.py` y `tools/tts_local_any.py` se reconstruyeron el 7 nov 2026 con la misma interfaz (las originales se perdieron en una carpeta temporal). Las demás herramientas se recuperaron textuales. Las fuentes, el logo y GSAP están en `tools/kit/tq-3d/`.

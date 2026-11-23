@@ -12,7 +12,7 @@ U = ["", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nuev
 DEC = {3: "treinta", 4: "cuarenta", 5: "cincuenta", 6: "sesenta", 7: "setenta", 8: "ochenta", 9: "noventa"}
 def w99(n): return U[n] if n < 30 else DEC[n // 10] + ("" if n % 10 == 0 else " y " + U[n % 10])
 def w999(n): return w99(n) if n < 100 else ("cien" if n == 100 else ("ciento " + w99(n - 100)) if n < 200 else "")
-def precio(v): e, c = int(v), round((v - int(v)) * 100); return w999(e) + (" dólares" if c == 0 else " con " + w99(c))
+def precio(v): e, c = int(v), round((v - int(v)) * 100); return w999(e) + (" dólares" if c == 0 else " con " + ("cero " if c < 10 else "") + w99(c))
 C = CL["cierre"]; CW = precio(C); CN = ("USD %.2f" % C).replace(".", ",")
 UP = C / 125.53 - 1; UPn = round(UP * 100); UPw = w99(UPn) + " por ciento"
 TK = [

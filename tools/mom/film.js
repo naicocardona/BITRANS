@@ -6,8 +6,8 @@ const TK = MODE === 'tk';
 const sec = id => SEC[id];
 const has = id => !!SEC[id];
 const usd = v => 'USD ' + Math.round(v).toLocaleString('es-CO').replace(/,/g, '.');
-const S = SER.S.slice(0, -1), FIN = SER.S[SER.S.length - 1];
-function src(c, s, y = 1520) { tx(c, s, 540, y, { size: 22, f: 'ui', al: .75, max: 1000 }); }
+const SS = SER.S.slice(0, -1), FIN = SER.S[SER.S.length - 1];
+function src(c, s, y = 1312) { tx(c, s, 540, y, { size: 22, f: 'ui', al: .75, max: 1000 }); }
 function hist(c, y = 400) { tag(c, 'DATOS REALES · PASADO, NO PROMESA', 540, y, { size: 26, bg: C.paper }); }
 
 // ---------- piezas ----------
@@ -20,16 +20,16 @@ function calendar(c, T, t0, tCross, x0, y0, o = {}) { const cw = o.cw ?? 40, n =
     if (cr) { const p = pr(T, tCross + GOLD.indexOf(k) * .06, .25); ln(c, [[x + 4, y + 4], [x + cw - 4, y + cw - 4]], { w: 5, col: C.red, p, straight: true, seed: 6100 + k }); ln(c, [[x + cw - 4, y + 4], [x + 4, y + cw - 4]], { w: 5, col: C.red, p, straight: true, seed: 6200 + k }); } } }
 // gráfico de la serie: invertido (dorado) y sin los 10 mejores (rojo)
 const CX0 = 130, CX1 = 960, CZ = 1240, CH = 640, VMAX = 75000;
-const cx = i => CX0 + (CX1 - CX0) * i / (S.length - 1), cy = v => CZ - CH * v / VMAX;
+const gx = i => CX0 + (CX1 - CX0) * i / (SS.length - 1), gy = v => CZ - CH * v / VMAX;
 function chart(c, T, tA, dA, tB, dB, o = {}) {
   ln(c, [[CX0 - 20, CZ], [CX1 + 20, CZ]], { w: 5, straight: true, seed: 6300 }); ln(c, [[CX0 - 20, CZ], [CX0 - 20, CZ - CH - 20]], { w: 4, straight: true, seed: 6301 });
-  [10000, 30000, 50000, 70000].forEach(v => { tx(c, (v / 1000) + ' mil', CX0 - 32, cy(v), { size: 22, f: 'ui', align: 'right', al: .7 }); c.save(); c.globalAlpha = .18; c.strokeStyle = C.ink; c.lineWidth = 2; c.beginPath(); c.moveTo(CX0 - 20, cy(v)); c.lineTo(CX1 + 20, cy(v)); c.stroke(); c.restore(); });
+  [10000, 30000, 50000, 70000].forEach(v => { tx(c, (v / 1000) + ' mil', CX0 - 32, gy(v), { size: 22, f: 'ui', align: 'right', al: .7 }); c.save(); c.globalAlpha = .18; c.strokeStyle = C.ink; c.lineWidth = 2; c.beginPath(); c.moveTo(CX0 - 20, gy(v)); c.lineTo(CX1 + 20, gy(v)); c.stroke(); c.restore(); });
   ['2006', '2011', '2016', '2021', '2026'].forEach((y, k) => tx(c, y, CX0 + (CX1 - CX0) * k / 4, CZ + 34, { size: 24, f: 'ui', al: .75 }));
   const pa = pr(T, tA, dA, easeIO), pbb = tB != null ? pr(T, tB, dB, easeIO) : 0;
-  if (pa > 0) { const pts = S.map((r, i) => [cx(i), cy(r[1])]); ln(c, pts, { w: 7, col: C.goldD, p: pa, seed: 6310 });
-    const i = Math.min(S.length - 1, Math.floor(pa * (S.length - 1))); pill(c, usd(pa >= 1 ? FIN[1] : S[i][1]), Math.min(820, cx(i) + 10), cy(S[i][1]) - 64, { size: 34, f: 'ui', col: C.gold }); }
-  if (pbb > 0) { const pts = S.map((r, i) => [cx(i), cy(r[2])]); ln(c, pts, { w: 7, col: C.red, p: pbb, seed: 6320 });
-    const i = Math.min(S.length - 1, Math.floor(pbb * (S.length - 1))); pill(c, usd(pbb >= 1 ? FIN[2] : S[i][2]), Math.min(840, cx(i) + 10), cy(S[i][2]) + 64, { size: 34, f: 'ui', col: '#FFB4A6' }); }
+  if (pa > 0) { const pts = SS.map((r, i) => [gx(i), gy(r[1])]); ln(c, pts, { w: 7, col: C.goldD, p: pa, seed: 6310 });
+    const i = Math.min(SS.length - 1, Math.floor(pa * (SS.length - 1))); pill(c, usd(pa >= 1 ? FIN[1] : SS[i][1]), Math.min(820, gx(i) + 10), gy(SS[i][1]) - 64, { size: 34, f: 'ui', col: C.gold }); }
+  if (pbb > 0) { const pts = SS.map((r, i) => [gx(i), gy(r[2])]); ln(c, pts, { w: 7, col: C.red, p: pbb, seed: 6320 });
+    const i = Math.min(SS.length - 1, Math.floor(pbb * (SS.length - 1))); pill(c, usd(pbb >= 1 ? FIN[2] : SS[i][2]), Math.min(840, gx(i) + 10), gy(SS[i][2]) + 64, { size: 34, f: 'ui', col: '#FFB4A6' }); }
   if (o.legend) { tag(c, '— INVERTIDO TODO EL TIEMPO', 300, 560, { size: 24, bg: C.goldL, sc: pb(T, tA) }); if (tB != null) tag(c, '— SIN LOS 10 MEJORES DÍAS', 760, 560, { size: 24, bg: '#FFD3CB', sc: pb(T, tB) }); } }
 // línea de tiempo 2006–2026 con los 10 mejores días (dorado) y su peor día cercano (rojo)
 const yr = s => +s.slice(0, 4) + (+s.slice(5, 7) - 1) / 12 + (+s.slice(8, 10)) / 365;
@@ -63,8 +63,8 @@ if (has('dato')) { const s = 'dato', t_10 = As(s, 'Diez mil dólares'), t_r = As
     bg(c, T); camS(c, T, 540, 940, key(T, [[0, 1.0], [t_70, 1.0], [t_70 + .6, 1.04]]) + .012 * Math.sin(L));
     tx(c, 'MIRA LA CUENTA', 540, 200, { size: 90, col: C.ink, sc: pb(T, sec(s).t0 - .3) });
     pill(c, usd(10000) + ' · S&P 500 · NOV. 2006', 540, 320, { size: 40, f: 'ui', sc: pb(T, sec(s).t0 + .1) }); hist(c, 420);
-    chart(c, T, t_10 + .2, t_70 - t_10 + .2, null, 0, { legend: true });
-    if (T > t_r) tag(c, 'DIVIDENDOS REINVERTIDOS · SIN TOCARLO', 540, 1330, { size: 28, bg: C.goldL, sc: pb(T, t_r) });
+    chart(c, T, sec(s).t0 + .2, t_70 - sec(s).t0, null, 0, { legend: true });
+    if (T > t_r) tag(c, 'DIVIDENDOS REINVERTIDOS · SIN TOCARLO', 540, 1372, { size: 28, bg: C.goldL, sc: pb(T, t_r) });
     stamp(c, '×7', 880, 680, T, t_70 + .3, { size: 90, col: C.goldD, rot: .06 });
     person(c, 140, 1560, .55, { seed: 9, shirt: C.navy, ...idle(T), look: 1, mouth: T > t_70 ? 'grin' : 'smile', armR: [2.1, .4] });
     src(c, 'SPY (ETF del S&P 500) · Yahoo Finance · 20 nov. 2006 → 20 nov. 2026 · cálculo TITÁN');
@@ -77,7 +77,7 @@ function tenScene(s, tr, tA, dA, tB, dB, tHalf) {
     tx(c, TK ? '…SIN 10 DÍAS' : 'USD 10.000 · 20 AÑOS', 540, 200, { size: TK ? 100 : 80, col: C.ink, sc: pb(T, sec(s).t0 - .3) });
     tag(c, TK ? 'DE ~5.000 DÍAS DE BOLSA, SOLO LOS 10 MEJORES' : 'S&P 500 · DIVIDENDOS REINVERTIDOS', 540, 310, { size: 28, bg: C.paper, sc: pb(T, sec(s).t0) }); hist(c, 410);
     chart(c, T, tA, dA, tB, dB, { legend: true });
-    stamp(c, 'MENOS DE LA MITAD', 560, 820, T, tHalf, { size: 64, col: C.red, rot: -.04 });
+    stamp(c, 'MENOS DE LA MITAD', 430, 760, T, tHalf, { size: 64, col: C.red, rot: -.04 });
     person(c, 960, 1560, .55, { seed: 11, shirt: C.vio, flip: true, ...idle(T), look: -1, mouth: T > tB + dB ? 'o' : 'flat', brow: T > tB + dB ? 1 : 0, sweat: T > tHalf ? T : 0 });
     src(c, 'SPY · Yahoo Finance · 20 nov. 2006 → 20 nov. 2026 · sin comisiones ni impuestos · cálculo TITÁN');
   }); }
@@ -126,13 +126,13 @@ if (has('miedo')) { const s = 'miedo', t_9 = As(s, 'El nueve de abril'), t_10 = 
     bg(c, T); camS(c, T, 540, 940, key(T, [[0, 1.0], [t_10, 1.0], [t_10 + .6, 1.05]]) + .012 * Math.sin(L));
     tx(c, 'ABRIL DE 2025', 540, 210, { size: 96, col: C.ink, sc: pb(T, sec(s).t0 - .3) }); hist(c, 320);
     const Z = 900; ln(c, [[120, Z], [960, Z]], { w: 6, straight: true, seed: 6600 });
-    const gd = pr(T, t_c - .3, .6, easeOutBack); if (gd > 0) { shp(c, R4(260, Z, 200, 5.85 * 45 * gd), C.red, { sharp: true, w: 5, lc: C.ink, seed: 6601, hatch: shade(C.red, .6), hal: .3 });
-      tx(c, '4 DE ABRIL', 360, Z - 40, { size: 30, f: 'ui' }); pill(c, '−5,85 %', 360, Z + 5.85 * 45 + 60, { size: 40, f: 'ui', sc: pb(T, t_c), col: '#FFB4A6' }); }
+    const gd = pr(T, sec(s).t0 + .3, .6, easeOutBack); if (gd > 0) { shp(c, R4(260, Z, 200, 5.85 * 45 * gd), C.red, { sharp: true, w: 5, lc: C.ink, seed: 6601, hatch: shade(C.red, .6), hal: .3 });
+      tx(c, '4 DE ABRIL', 360, Z - 40, { size: 30, f: 'ui' }); pill(c, '−5,85 %', 360, Z + 5.85 * 45 + 60, { size: 40, f: 'ui', sc: pb(T, sec(s).t0 + .6), col: '#FFB4A6' }); }
     const gu = pr(T, t_10 - .2, .7, easeOutBack); if (gu > 0) { shp(c, R4(620, Z - 10.5 * 45 * gu, 200, 10.5 * 45 * gu), C.gold, { sharp: true, w: 5, lc: C.ink, seed: 6602, hatch: shade(C.gold, .6), hal: .3 });
       tx(c, '9 DE ABRIL', 720, Z + 40, { size: 30, f: 'ui' }); pill(c, '+10,50 %', 720, Z - 10.5 * 45 - 60, { size: 44, f: 'ui', sc: pb(T, t_10 + .2), col: C.gold }); }
     burst(c, 720, Z - 10.5 * 45, T, t_10 + .3, { R: 200, n: 16 });
     const u = pr(T, t_m, 1.4, easeIO); person(c, lerp(380, -120, u), 1560, .6, { seed: 3, shirt: C.lav, flip: u > 0, ...idle(T), look: u > 0 ? -1 : 1, mouth: 'o', brow: 1, sweat: T > t_c ? T : 0, walk: u > 0 && u < 1 ? T * 10 : undefined });
-    stamp(c, 'SE PERDIÓ EL REBOTE', 600, 1330, T, t_r + .1, { size: 60, col: C.red, rot: -.04 });
+    stamp(c, 'SE PERDIÓ EL REBOTE', 600, 1400, T, t_r + .1, { size: 60, col: C.red, rot: -.04 });
     src(c, 'SPY · Yahoo Finance · cierres del 4 y el 9 de abril de 2025');
   }); }
 

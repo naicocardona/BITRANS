@@ -7,6 +7,7 @@ set -e; export PYTHONDONTWRITEBYTECODE=1
 R=$(cd "$(dirname "$0")/.." && pwd); E=$(cd "$1" && pwd); WK=${BITRANS_WORK:-/home/user/bitrans_work}; W=$WK/$2; FILM=$R/$3; MV=$4; N=$5; mkdir -p $W
 for n in tiktok shorts; do ffmpeg -v error -y -i $E/voz/${n}_juan.mp3 -ac 1 -ar 44100 $W/$n.wav; python3 $R/tools/tighten.py $W/$n.wav $W/${n}_t.wav 0.32; done
 BITRANS_WORK=$WK python3 $R/tools/hd_voice.py $E $2
+BITRANS_WORK=$WK python3 $R/tools/retime_words.py $E $2   # opcional: RETIME en guiones.py (tramos que Whisper corre)
 python3 -c "import json,sys
 for m in ('tk','sh'):
   w=json.load(open('$W/'+m+'.words.json'))['words']; assert w[0][1] < .3, f'{m}: la primera palabra arranca en {w[0][1]} s (alineación corrida)'" 

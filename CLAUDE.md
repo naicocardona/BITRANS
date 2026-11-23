@@ -89,6 +89,8 @@
     - `hd_mix.py` deja sus .wav temporales junto a la salida: mezclar en el taller y copiar a `entregas/` solo el mp4 y el srt.
     - `hd_render.cjs`: `--grid` y `--cover` son llamadas aparte (no generan el video).
     - **Entrega en un paso (17 nov 2026):** `bash tools/hd_entrega.sh <entrega> <sub> <film.js|build.sh> <prefijo_música> <NOMBRE>` hace mp3 de Juan → tighten → hd_voice → sync_check → render → mezcla → qa_video → portada, y copia mp4, srt y portada a la entrega. Se detiene si la primera palabra no arranca en 0 s.
+    - **Corrección por tramos (23 nov 2026):** si `sync_check` marca una ventana desfasada, medir los tramos de voz reales (energía + Whisper por tramo) y declarar `RETIME = {"tk"|"sh": [(frase exacta, inicio, fin[, sección que abre])]}` en `guiones.py`. `hd_entrega.sh` lo aplica solo con `tools/retime_words.py` después de `hd_voice`. Si se agregan `PAUSAS` antes de esos tramos, correr los tiempos en la misma cantidad. Ejemplo: `entregas/titan/te_alcanza_justo/guiones.py`.
+    - En los `film.js` del kit no se pueden usar los nombres `S`, `cx` ni `cy`: ya existen en `core.js` y rompen el render («Identifier has already been declared»).
     - `align_asr.py`: un tramo con voz que Whisper transcribe mal (p. ej. «Apple Balm Mascot») se une al siguiente; antes, los subtítulos del Short de Apple arrancaban 1,4 s tarde.
     - `hd_render.cjs --grid 24` y `--cover` escriben en el 2.º argumento (salida), no en el que sigue a la bandera.
     - Plan ElevenLabs Creator desde el 17 nov 2026 (Lady). Un video diario (TikTok + Short) gasta ~1.500–1.800 créditos.

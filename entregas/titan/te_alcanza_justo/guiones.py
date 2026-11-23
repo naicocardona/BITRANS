@@ -20,3 +20,8 @@ TK = [
 text = lambda L: " ".join(t for _, t in L)
 MAP = [("un millón setecientos cincuenta mil novecientos cinco pesos", "$1.750.905"), ("cien mil pesos", "$100.000"), ("cien mil", "$100.000"), ("seis millones", "$6.000.000"),
        ("cuatrocientos mil pesos", "$400.000"), ("cuatrocientos mil", "$400.000"), ("cuatro meses", "4 meses"), ("tres y seis meses", "3 y 6 meses")]
+# Pausas de lectura en el Short (llega a 35 s sin acelerar la voz): después del giro y de la frase clave.
+PAUSAS = {"sh": [("imprevisto de cuatrocientos mil.", 0.7), ("termina endeudado.", 1.2)]}
+# Tramos medidos en sh.wav (con la pausa): Whisper corría ~1,5 s «termina endeudado» y el cierre (tools/retime_words.py).
+RETIME = {"tk": [("Haz tu cuenta.", 69.22, 69.9), ("Contenido educativo.", 70.22, 71.38), ("No es una recomendación de inversión.", 71.7, 73.72)],
+          "sh": [("termina endeudado.", 22.08, 23.16), ("No es cuánto entra:", 23.46, 24.84, "cierre"), ("es cuánto aguantas si algo sale mal.", 25.16, 27.6)]}

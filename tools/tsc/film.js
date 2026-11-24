@@ -8,7 +8,7 @@ const has = id => !!SEC[id];
 const cop = v => '$' + Math.round(v).toLocaleString('es-CO').replace(/,/g, '.');
 function src(c, s, y = 1312) { tx(c, s, 540, y, { size: 22, f: 'ui', al: .75, max: 1000 }); }
 function hipo(c, y = 320) { tag(c, 'EJEMPLO HIPOTÉTICO', 540, y, { size: 28, bg: C.paper }); }
-const SARA = { seed: 6, shirt: C.lav }, MATEO = { seed: 10, shirt: '#3B4466' };
+const SARA = { seed: 6, shirt: C.gold, hair: '#8B4A2B', skin: C.skin[0] }, MATEO = { seed: 10, shirt: '#3B4466', hair: '#1F1A17', skin: C.skin[2] };
 
 // ---------- piezas ----------
 function ccard(c, x, y, s, rot, o = {}) { c.save(); c.translate(x, y); c.rotate(rot); c.scale(s, s); shp(c, R4(-130, -80, 260, 160), o.col || C.vio, { w: 5, lc: C.ink, seed: o.seed ?? 9001 });
@@ -25,7 +25,7 @@ function moto(c, x, y, s, T, seed = 9040, smoke = 0) { c.save(); c.translate(x, 
   c.restore(); }
 function coinD(c, x, y, r, seed) { shp(c, blob(x, y, r, r, seed, { n: 16, amp: .02 }), C.gold, { w: 3, lc: C.ink, seed }); tx(c, '$', x, y + 2, { size: r * 1.1, col: C.goldD, sh: null }); }
 // comparación final: barra de Sara (12 meses) vs barra de Mateo (1 mes)
-function compare(c, T, tA, tB, y0 = 1220) { const K = 560 / 200000;
+function compare(c, T, tA, tB, y0 = 1220) { const K = 420 / 200000;
   [[300, 141768, tA, C.lav, 'SARA · 12 MESES'], [780, 200000, tB, C.red, 'MATEO · 1 MES']].forEach(([x, v, t, col, lab], k) => { const g = pr(T, t, .7, easeOutBack); if (g <= 0) return;
     shp(c, R4(x - 110, y0 - v * K * g, 220, v * K * g), col, { sharp: true, w: 5, lc: C.ink, seed: 9100 + k, hatch: shade(col, .6), hal: .3 });
     tx(c, lab, x, y0 + 40, { size: 30, f: 'ui' }); pill(c, cop(v), x, y0 - v * K - 60, { size: 40, f: 'ui', sc: pb(T, t + .3), col: k ? '#FFB4A6' : C.gold }); });
@@ -156,9 +156,9 @@ if (has('giro')) { const s = 'giro', t_p = As(s, 'el banco le presta:'), t_a = A
   scene(s, 'whip', (c, T, L) => {
     bg(c, T); camS(c, T, 540, key(T, [[0, 950], [t_m, 950], [t_m + .6, 980]]), key(T, [[0, 1.0], [t_m, 1.0], [t_m + .6, 1.05]]) + .012 * Math.sin(L)); hipo(c, 320);
     tx(c, 'EL MISMO ARREGLO', 540, 210, { size: 84, col: C.ink, sc: pb(T, sec(s).t0 - .3), max: 1000 });
-    bank(c, 300, 620, .8); stamp(c, 'APROBADO', 300, 520, T, t_p + .2, { size: 42, col: '#2E8B57', rot: -.06 });
-    bank(c, 780, 620, .8, 9050); stamp(c, 'RECHAZADO', 780, 520, T, t_r + .2, { size: 42, col: C.red, rot: .06 });
-    if (T > t_r + .5) tag(c, '→ GOTA A GOTA', 780, 800, { size: 32, bg: '#FFD3CB', sc: pb(T, t_r + .5) });
+    bank(c, 300, 560, .8); stamp(c, 'APROBADO', 300, 450, T, t_p + .2, { size: 42, col: '#2E8B57', rot: -.06 });
+    bank(c, 780, 560, .8, 9050); stamp(c, 'RECHAZADO', 780, 450, T, t_r + .2, { size: 42, col: C.red, rot: .06 });
+    if (T > t_r + .5) tag(c, '→ GOTA A GOTA', 780, 690, { size: 32, bg: '#FFD3CB', sc: pb(T, t_r + .5) });
     compare(c, T, t_a - .4, t_m - .3, 1240);
     src(c, 'Ejemplo hipotético · usura nov. 2026: 28,34 % E.A. (Superfinanciera)', 1330);
   }); }

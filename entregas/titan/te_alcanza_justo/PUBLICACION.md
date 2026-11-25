@@ -5,7 +5,7 @@
 Tema tomado de una referencia de Lady. El guion, las escenas (balanza, sobres, Ana y Bruno, colchón) y las frases son propias de TITÁN; nada se copió.
 
 ## Datos y fuentes
-- Salario mínimo 2026: **$1.750.905** (Decreto 1469 de 2025).
+- Salario mínimo 2026: **$1.750.905** (Decreto 0159 de 2026, transitorio, tras la suspensión del Decreto 1469 de 2025 por el Consejo de Estado; mismo valor).
 - Fondo de emergencia de **3 a 6 meses de gastos básicos**: recomendación de BBVA, citada por La República (7 may. 2026). En el video aparece como referencia, no como regla.
 - **Ejemplo hipotético** (marcado en pantalla):
   - Ana gana el mínimo y le sobran $100.000 al mes.

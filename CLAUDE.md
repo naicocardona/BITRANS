@@ -152,6 +152,7 @@
 - **Referencias pendientes de Lady (22 nov 2026, «tenerlos pendientes para cuando los veas necesarios»):** en `entregas/titan/referencias_pendientes/`. Solo el tema, con estilo TITÁN y nada copiado.
   - `ref_el_elegido.mp4`: reflexión de superación («nadie recuerda al que lo tuvo fácil», caídas y levantadas, el camino no es recto). Para una reflexión con varios personajes (plantilla `tools/env/`), llevada a la disciplina de invertir.
   - `ref_si_te_alcanza_justo.mov`: «si te alcanza justo, no te alcanza»: vivir al día vs. ganar poco, imprevistos (llanta, mascota, muela), «importa cuánto te sobra». Línea B: colchón para imprevistos, con cifras de ejemplo marcadas como hipotéticas.
+- **Salario mínimo 2026 (verificado 25 nov 2026):** $1.750.905 por el **Decreto 0159 de 2026 (transitorio)**, porque el Consejo de Estado suspendió el 1469 de 2025. Auxilio de transporte: $249.095 (Decreto 1470 de 2025). Citar el 0159, no el 1469.
 - Hay que avisarle a Lady en cuanto algo requiera una acción suya desde el computador; ella lo pidió así.
 - El repositorio `naicocardona/lukas-app` es el código de la app LUKAS (otro equipo); no guardar videos ahí.
 - `tools/sfx_mix.py` y `tools/tts_local_any.py` se reconstruyeron el 7 nov 2026 con la misma interfaz (las originales se perdieron en una carpeta temporal). Las demás herramientas se recuperaron textuales. Las fuentes, el logo y GSAP están en `tools/kit/tq-3d/`.

@@ -59,7 +59,7 @@ if (has('cuanto')) { const s = 'cuanto', t_m = As(s, TK ? 'Si ganas el mínimo,'
     bg(c, T); camS(c, T, 540, 940, key(T, [[0, 1.0], [t_1, 1.0], [t_1 + .6, 1.05]]) + .012 * Math.sin(L));
     tx(c, '¿CUÁNTO ES?', 540, 210, { size: 100, col: C.ink, sc: pb(T, sec(s).t0 - .3) });
     if (t_20) tag(c, 'SE PAGA A MÁS TARDAR EL 20 DE DICIEMBRE', 540, 320, { size: 28, bg: C.goldL, sc: pb(T, t_20 - .3) });
-    pill(c, 'SALARIO MÍNIMO 2026: ' + cop(1750905), 540, 470, { size: 40, f: 'ui', sc: pb(T, t_m + .2) });
+    pill(c, 'SALARIO MÍNIMO 2026: ' + cop(1750905), 540, 470, { size: 40, f: 'ui', sc: pb(T, Math.min(t_m + .2, sec(s).t0 + .3)) });
     tx(c, '+', 540, 560, { size: 70, col: C.goldD, sc: pb(T, t_a) });
     pill(c, 'AUXILIO DE TRANSPORTE: ' + cop(249095), 540, 650, { size: 40, f: 'ui', sc: pb(T, t_a + .2) });
     const tb = t_2 ?? (t_a + 1.2); ln(c, [[200, 730], [880, 730]], { w: 6, straight: true, seed: 9620, p: pr(T, tb - .2, .4) });
@@ -78,7 +78,7 @@ if (has('error')) { const s = 'error', t_c = As(s, 'comprometerla antes de recib
     tx(c, 'EL ERROR', 540, 210, { size: 110, col: C.red, sc: pb(T, sec(s).t0 - .3) });
     [['CUOTAS BLACK FRIDAY', t_b], ['EL PASEO', t_p], ['LOS REGALOS', t_r]].forEach(([w, t], k) => pill(c, w, 540, 420 + k * 120, { size: 42, f: 'ui', sc: pb(T, t), col: '#FFB4A6' }));
     for (let k = 0; k < 3; k++) { const u = (T * .8 + k / 3) % 1; if (T > t_b) coinD(c, 540 + (k - 1) * 200, 420 + k * 120 - u * 200, 26 * (1 - u), 9650 + k); }
-    if (T > t_g - .4) { envelope(c, 540, 960, 1.0, 'PRIMA', C.goldL, 9660, 1); stamp(c, 'VACÍO', 540, 960, T, t_g + .1, { size: 70, col: C.red, rot: -.08 }); }
+    envelope(c, 540, 960 + 10 * Math.sin(T * 2), 1.0 * pb(T, sec(s).t0 + .2), 'PRIMA', C.goldL, 9660, pr(T, t_g - .4, .4)); stamp(c, 'VACÍO', 540, 960, T, t_g + .1, { size: 70, col: C.red, rot: -.08 });
     person(c, 900, 1560, .6, { seed: 7, shirt: C.navy, flip: true, ...idle(T), look: -1, mouth: T > t_g ? 'o' : 'smile', brow: T > t_g ? 1 : 0, sweat: T > t_g ? T : 0 });
   }); }
 

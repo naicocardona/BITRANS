@@ -21,9 +21,9 @@ function growth(c, T, t7, d7, t6, d6, o = {}) {
   curve(V7, p7, C.goldD, 9810); curve(V6, p6, C.red, 9820);
   if (p7 > 0) { const y = 30 * p7; pill(c, usd(p7 >= 1 ? 76123 : V7(y)), Math.min(840, qx(y)), qy(V7(y)) - 60, { size: 32, f: 'ui', col: C.gold }); }
   if (p6 > 0) { const y = 30 * p6; pill(c, usd(p6 >= 1 ? 57435 : V6(y)), Math.min(840, qx(y)), qy(V6(y)) + 62, { size: 32, f: 'ui', col: '#FFB4A6' }); }
-  tag(c, '— 7 % AL AÑO', 300, 540, { size: 26, bg: C.goldL, sc: pb(T, t7) }); if (t6 != null) tag(c, '— CON 1 % DE COMISIÓN', 700, 540, { size: 26, bg: '#FFD3CB', sc: pb(T, t6) });
+  tag(c, '— 7 % AL AÑO', 300, 440, { size: 26, bg: C.goldL, sc: pb(T, t7) }); if (t6 != null) tag(c, '— CON 1 % DE COMISIÓN', 720, 440, { size: 26, bg: '#FFD3CB', sc: pb(T, t6) });
   if (o.gap && T > o.gap) { const g = pr(T, o.gap, .5, easeIO), x = qx(30) + 30; ln(c, [[x, qy(76123)], [x, qy(76123) + (qy(57435) - qy(76123)) * g]], { w: 7, col: C.red, straight: true, seed: 9830 });
-    stamp(c, '−' + usd(18688), 640, 760, T, o.gap + .3, { size: 52, col: C.red, rot: -.04 }); } }
+    stamp(c, '−' + usd(18688), 420, 640, T, o.gap + .3, { size: 52, col: C.red, rot: -.04 }); } }
 function feeBars(c, T, t0, tL, y0 = 1180) { const K = 520 / 560;
   for (let y = 1; y <= 30; y++) { const g = pr(T, t0 + y * .04, .35, easeOutBack); if (g <= 0) continue; const x = 150 + (y - 1) * 26, h = FEE(y) * K * g;
     shp(c, R4(x, y0 - h, 20, h), y === 1 || y === 30 ? C.red : '#F3B0A2', { sharp: true, w: 2, lc: C.ink, seed: 9900 + y }); }
@@ -77,7 +77,7 @@ if (has('diferencia')) { const s = 'diferencia', t_d = As(s, 'dieciocho mil sete
     bg(c, T); camS(c, T, 540, key(T, [[0, 940], [t_d, 940], [t_d + .6, 900]]), key(T, [[0, 1.0], [t_d, 1.0], [t_d + .6, 1.06]]) + .012 * Math.sin(L)); hipo(c, 320);
     tx(c, 'LA DIFERENCIA', 540, 210, { size: 96, col: C.ink, sc: pb(T, sec(s).t0 - .3) });
     growth(c, T, sec(s).t0 - 5, .01, sec(s).t0 - 5, .01, { gap: t_d - .2 });
-    pill(c, '−24,5 % · CASI 1/4', 560, 880, { size: 44, f: 'ui', sc: pb(T, t_c), col: '#FFB4A6' });
+    pill(c, '−24,5 % · CASI 1/4', 420, 760, { size: 44, f: 'ui', sc: pb(T, t_c), col: '#FFB4A6' });
     person(c, 140, 1560, .6, { seed: 5, shirt: C.gold, ...idle(T), look: 1, mouth: 'o', brow: 1, sweat: T });
   }); }
 
@@ -88,7 +88,7 @@ if (has('porque')) { const s = 'porque', t_c = As(s, TK ? 'Se cobra cada año,' 
   scene(s, TK ? 'wipe' : 'iris', (c, T, L) => {
     bg(c, T); camS(c, T, 540, 940, 1.0 + .012 * Math.sin(L)); hipo(c, 320);
     tx(c, TK ? '¿POR QUÉ?' : '−' + usd(18688), 540, 210, { size: 100, col: TK ? C.ink : C.red, sc: pb(T, sec(s).t0 - .3) });
-    feeBars(c, T, t_c - .2, t_y ?? (t_c + 1.6), 1180);
+    feeBars(c, T, Math.min(t_c - .2, sec(s).t0 + .2), t_y ?? (t_c + 1.6), 1180);
     if (t_i) stamp(c, 'INTERÉS COMPUESTO EN TU CONTRA', 540, 1300, T, t_i + .2, { size: 44, col: C.red, rot: -.03 });
     else tag(c, 'SE COBRA CADA AÑO SOBRE TODO LO QUE CRECIÓ', 540, 1300, { size: 28, bg: '#FFD3CB', sc: pb(T, t_c + .4) });
   }); }
@@ -102,7 +102,7 @@ if (has('ojo')) { const s = 'ojo', t_m = As(s, 'cobrar no es malo.'), t_a = As(s
     shp(c, R4(300, 400, 480, 520), C.paper, { sharp: true, w: 5, lc: C.ink, seed: 9960 }); tx(c, 'CONTRATO', 540, 460, { size: 34, f: 'ui' });
     for (let k = 0; k < 5; k++) ln(c, [[340, 520 + k * 50], [740, 520 + k * 50]], { w: 3, straight: true, seed: 9961 + k, al: .45 });
     pill(c, 'COMISIÓN ANUAL: ¿?', 540, 830, { size: 38, f: 'ui', sc: pb(T, t_a + .3), col: '#FFB4A6' });
-    stamp(c, '¿CUÁNTO ME COBRAN?', 540, 1080, T, t_n + .1, { size: 60, col: C.goldD, rot: -.03 });
+    stamp(c, '¿CUÁNTO ME COBRAN?', 540, 1080, T, t_n + .1, { size: 48, col: C.goldD, rot: -.03 });
     person(c, 900, 1560, .6, { seed: 12, shirt: C.vio, flip: true, ...idle(T), look: -1, mouth: 'flat', armR: [2.3, .3] });
   }); }
 

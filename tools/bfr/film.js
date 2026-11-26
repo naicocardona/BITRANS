@@ -62,7 +62,7 @@ if (has('cuenta')) { const s = 'cuenta', t_96 = As(s, 'novecientos sesenta mil.'
     const Z = 1150, K = 560 / 1.6e6; ln(c, [[100, Z], [980, Z]], { w: 6, straight: true, seed: 8500 });
     [['PRECIO NORMAL', 1e6, sec(s).t0 + .2, C.lav], ['«ANTES»', 1.6e6, sec(s).t0 + .5, '#FFD3CB'], ['PAGAS', 960000, t_96 - .2, C.gold]].forEach(([n, v, t, col], k) => { const g = pr(T, t, .7, easeOutBack); if (g <= 0) return; const x = 230 + k * 310;
       shp(c, R4(x - 100, Z - v * K * g, 200, v * K * g), col, { sharp: true, w: 5, lc: C.ink, seed: 8510 + k, hatch: shade(col, .6), hal: .3 }); tx(c, n, x, Z + 40, { size: 28, f: 'ui' }); pill(c, cop(v), x, Z - v * K - 56, { size: 32, f: 'ui', sc: pb(T, t + .3) }); });
-    pill(c, 'EL CARTEL: −40 %', 340, 480, { size: 40, f: 'ui', sc: pb(T, t_c), col: C.goldL });
+    pill(c, 'EL CARTEL: −40 %', 260, 420, { size: 40, f: 'ui', sc: pb(T, t_c), col: C.goldL });
     stamp(c, 'AHORRO REAL: 4 %', 700, 560, T, t_4 + .2, { size: 56, col: C.red, rot: .04 });
   }); }
 

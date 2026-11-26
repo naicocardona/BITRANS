@@ -113,7 +113,7 @@ if (has('festivo')) { const s = 'festivo', t_c = As(s, 'cerrada por Acción de G
   scene(s, TK ? 'news' : 'iris', (c, T, L) => {
     bg(c, T); camS(c, T, 540, 940, 1.0 + .012 * Math.sin(L));
     tx(c, 'ESTA SEMANA', 540, 210, { size: 96, col: C.ink, sc: pb(T, sec(s).t0 - .3) });
-    [['JUE. 26', 'CERRADA', 'ACCIÓN DE GRACIAS', t_c, '#FFD3CB'], ['VIE. 27', 'HASTA LA 1:00 P. M.', 'HORA DE COLOMBIA', t_1, C.goldL]].forEach(([d, a, b, t, col], k) => {
+    [['JUE. 26', 'CERRADA', 'ACCIÓN DE GRACIAS', t_c, '#FFD3CB'], ['VIE. 27', 'HASTA LA 1:00 P. M.', 'HORA DE COLOMBIA', Math.min(t_1, t_c + 1.2), C.goldL]].forEach(([d, a, b, t, col], k) => {
       const g = pb(T, t - .2); if (g <= 0) return; c.save(); c.translate(290 + k * 500, 640); c.scale(g, g); shp(c, R4(-210, -200, 420, 400), col, { w: 5, lc: C.ink, seed: 8100 + k });
       shp(c, R4(-210, -200, 420, 90), C.navy, { sharp: true, w: 4, lc: C.ink, seed: 8110 + k }); tx(c, d, 0, -152, { size: 46, f: 'ui', col: C.paper }); tx(c, a, 0, 10, { size: k ? 36 : 54, f: 'ui', col: k ? C.ink : C.red, max: 380 }); tx(c, b, 0, 110, { size: 26, f: 'ui', al: .8, max: 380 }); c.restore(); });
     stamp(c, 'BOLSA DE EE. UU.', 540, 950, T, t_c + .5, { size: 50, col: C.navy, rot: .03 });

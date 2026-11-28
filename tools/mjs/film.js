@@ -31,8 +31,8 @@ function spxChart(c, T, t0, tR, tG) {
   [['30 OCT', 0], ['13 NOV', i13], ['20 NOV', i20], ['27 NOV', ND - 1]].forEach(([s, i]) => tx(c, s, dxx(i), DZ + 56, { size: 20, f: 'ui', al: .75 }));
   const g = pr(T, t0, Math.max(.6, tG + .4 - t0), easeIO), m = Math.max(1, Math.round(g * (ND - 1)));
   ln(c, MS.spx.slice(0, m + 1).map((r, i) => [dxx(i), dyy(r[1])]), { w: 7, col: C.vio, straight: true, seed: 6110 });
-  if (T > tR + .3) pill(c, '−8,6 %', (dxx(i13) + dxx(i20)) / 2, dyy(MS.spx[i20][1]) + 70, { size: 38, f: 'ui', col: '#FFB4A6', sc: pb(T, tR + .3) });
-  if (T > tG + .3) pill(c, '+5,6 %', (dxx(i20) + dxx(ND - 1)) / 2 + 20, dyy(MS.spx[ND - 1][1]) - 70, { size: 38, f: 'ui', col: C.gold, sc: pb(T, tG + .3) }); }
+  if (T > tR + .3) pill(c, '−8,6 %', (dxx(i13) + dxx(i20)) / 2, DZ - DH + 30, { size: 38, f: 'ui', col: '#FFB4A6', sc: pb(T, tR + .3) });
+  if (T > tG + .3) pill(c, '+5,6 %', (dxx(i20) + dxx(ND - 1)) / 2 + 20, DZ - DH + 110, { size: 38, f: 'ui', col: C.gold, sc: pb(T, tG + .3) }); }
 function chip(c, x, y, s, T, k = 1) { if (k <= 0) return; c.save(); c.translate(x, y); c.scale(s * k, s * k); c.rotate(.05 * Math.sin(T * 2));
   for (let i = 0; i < 5; i++) for (const sd of [-1, 1]) { ln(c, [[-80 + i * 40, sd * 95], [-80 + i * 40, sd * 125]], { w: 6, col: C.ink, straight: true, seed: 6200 + i + sd }); ln(c, [[sd * 95, -80 + i * 40], [sd * 125, -80 + i * 40]], { w: 6, col: C.ink, straight: true, seed: 6210 + i + sd }); }
   shp(c, R4(-100, -100, 200, 200), '#2B2F45', { sharp: true, w: 5, lc: C.ink, seed: 6220 }); shp(c, R4(-60, -60, 120, 120), C.gold, { sharp: true, w: 4, lc: C.ink, seed: 6221 });
@@ -53,10 +53,10 @@ if (has('gancho')) { const s = 'gancho', t_p = As(s, 'peor semana'), t_m = As(s,
     tx(c, 'BOLSA DE EE. UU.', 540, 190, { size: 90, col: C.ink, sc: 1 + settle(T, .05, { amp: .1, freq: 3, decay: 5 }) });
     tx(c, 'EN 2 SEMANAS', 540, 295, { size: 80, col: C.goldD, sh: C.ink, sc: pb(T, .2) });
     weekBars(c, T, Math.min(t_p, 1.0), t_m, 8.6, 5.6, { y0: 780, k: 32 });
-    stamp(c, 'PEOR EN 19 MESES', 330, 1150, T, t_p + .2, { size: 44, col: C.red, rot: -.05 });
+    stamp(c, 'PEOR EN 19 MESES', 330, 1215, T, t_p + .2, { size: 44, col: C.red, rot: -.05 });
     stamp(c, 'MEJOR EN 19 MESES', 750, 460, T, t_m + .2, { size: 44, col: GRN, rot: .04 });
-    person(c, 540, 1440, .75, { seed: 4, shirt: C.gold, ...idle(T), look: T > t_m ? 1 : -1, mouth: T > t_m ? 'grin' : 'o', brow: T > t_p ? 1 : 0, sweat: T > t_p && T < t_m ? T : 0, jump: T > t_m + .2 && T < t_m + .9 ? 30 * Math.sin((T - t_m - .2) / .7 * Math.PI) : 0 });
-    src(c, 'S&P 500 · cierres semanales · Yahoo Finance', 1480);
+    person(c, 800, 1460, .75, { seed: 4, shirt: C.gold, ...idle(T), look: T > t_m ? 1 : -1, mouth: T > t_m ? 'grin' : 'o', brow: T > t_p ? 1 : 0, sweat: T > t_p && T < t_m ? T : 0, jump: T > t_m + .2 && T < t_m + .9 ? 30 * Math.sin((T - t_m - .2) / .7 * Math.PI) : 0 });
+    src(c, 'S&P 500 · cierres semanales · Yahoo Finance', 1520);
   }); }
 
 // 2 · El dato: S&P día a día (roja y verde); TikTok: el Nasdaq 100 más extremo
@@ -68,13 +68,13 @@ if (has('dato')) { const s = 'dato', t_c = As(s, 'cayó ocho coma seis'), t_s = 
     if (T < tSw) {
       tx(c, 'S&P 500', 540, 200, { size: 100, col: C.ink, sc: pb(T, sec(s).t0 - .3) }); tag(c, 'CIERRE DE CADA DÍA', 540, 310, { size: 28, bg: C.paper, sc: pb(T, sec(s).t0) });
       spxChart(c, T, sec(s).t0 + .1, t_c, t_s);
-      person(c, 940, 1460, .6, { seed: 8, shirt: C.vio, flip: true, ...idle(T), look: -1, mouth: T > t_s ? 'grin' : 'o', brow: T > t_c ? 1 : 0 });
-      src(c, 'Yahoo Finance · S&P 500 · 30 oct.–27 nov. 2026', 1310);
+      person(c, 990, 1470, .5, { seed: 8, shirt: C.vio, flip: true, ...idle(T), look: -1, mouth: T > t_s ? 'grin' : 'o', brow: T > t_c ? 1 : 0 });
+      src(c, 'Yahoo Finance · S&P 500 · 30 oct.–27 nov. 2026', 1250);
     } else {
       tx(c, 'NASDAQ 100', 540, 200, { size: 100, col: C.ink, sc: pb(T, tSw) }); tag(c, 'MÁS EXTREMO', 540, 310, { size: 30, bg: '#FFD3CB', sc: pb(T, tSw + .2) });
       weekBars(c, T, t_d - .1, t_e - .1, 10.4, 6.8, { y0: 760, k: 30 });
-      person(c, 540, 1440, .7, { seed: 8, shirt: C.vio, ...idle(T), look: T > t_e ? 1 : -1, mouth: T > t_e ? 'grin' : 'o', brow: 1 });
-      src(c, 'Yahoo Finance · Nasdaq 100 · 13→20 nov. y 20→27 nov. 2026', 1310);
+      person(c, 880, 1460, .65, { seed: 8, shirt: C.vio, flip: true, ...idle(T), look: T > t_e ? -1 : 1, mouth: T > t_e ? 'grin' : 'o', brow: 1 });
+      src(c, 'Yahoo Finance · Nasdaq 100 · 13→20 nov. y 20→27 nov. 2026', 1200);
     }
   }); }
 
@@ -102,9 +102,9 @@ if (has('abril')) { const s = 'abril', t_n = As(s, 'no es la primera'), t_a = As
     bg(c, T); camS(c, T, 540, 940, 1.0 + .012 * Math.sin(L));
     tx(c, 'YA PASÓ ANTES', 540, 200, { size: 96, col: C.ink, sc: pb(T, sec(s).t0 - .3) });
     cal(c, 540, 450, .9, 'S&P 500', 'ABRIL 2025', C.vio, 6500, pb(T, t_a - .2), -.03);
-    weekBars(c, T, t_9 - .1, t_5 - .1, 9.1, 5.7, { y0: 900, k: 30, la: 'SEMANA 31 MAR', lb: 'SEMANA 7 ABR' });
-    src(c, 'Yahoo Finance · S&P 500 semanal: 28 mar. 5.580,94 → 4 abr. 5.074,08 → 11 abr. 5.363,36', 1310);
-    person(c, 950, 1470, .6, { seed: 3, shirt: C.gold, flip: true, ...idle(T), look: -1, mouth: 'o', brow: 1 });
+    weekBars(c, T, Math.min(t_9 - .1, sec(s).t0 + .6), t_5 - .1, 9.1, 5.7, { y0: 880, k: 26, la: 'SEMANA 31 MAR', lb: 'SEMANA 7 ABR' });
+    src(c, 'Yahoo Finance · S&P 500 semanal: 28 mar. 5.580,94 → 4 abr. 5.074,08 → 11 abr. 5.363,36', 1300);
+    person(c, 150, 760, .55, { seed: 3, shirt: C.gold, ...idle(T), look: 1, mouth: 'o', brow: 1 });
   }); }
 
 // 5 · Ejemplo hipotético: dos personas con USD 1.000 el viernes 20
@@ -117,9 +117,9 @@ if (has('ejemplo')) { const s = 'ejemplo', t_e = As(s, 'Ejemplo hipotético:'), 
     // A vende y se va con la plata; B se queda sentada
     const g = pr(T, t_v, 1.4, x => x), xa = lerp(270, 150, g);
     person(c, xa, 1150, .95, { seed: 9, shirt: C.lav, ...idle(T), walk: T > t_v && g < 1 ? T * 8 : undefined, flip: true, look: -1, mouth: 'flat', brow: 1, sweat: T > t_v ? T : 0 });
-    tag(c, 'VENDIÓ POR MIEDO', 270, 760, { size: 30, bg: '#FFD3CB', sc: pb(T, t_v), rot: -.04 });
+    tag(c, 'VENDIÓ POR MIEDO', 270, 690, { size: 30, bg: '#FFD3CB', sc: pb(T, t_v), rot: -.04 });
     person(c, 810, 1150, .95, { seed: 5, shirt: C.gold, ...idle(T), look: -1, mouth: T > t_h ? 'grin' : 'smile', armL: [.4, .3] });
-    tag(c, 'NO HIZO NADA', 810, 760, { size: 30, bg: C.goldL, sc: pb(T, t_o), rot: .04 });
+    tag(c, 'NO HIZO NADA', 810, 690, { size: 30, bg: C.goldL, sc: pb(T, t_o), rot: .04 });
     if (T > t_h + .3) { money(c, 810, 1280, .75, 'USD 1.056', C.goldL, pb(T, t_h + .3)); burst(c, 810, 1280, T, t_h + .4, { R: 160 }); money(c, 270, 1280, .75, 'USD 1.000', C.paper, pb(T, t_h + .5)); }
   }); }
 
@@ -133,7 +133,6 @@ if (has('ojo')) { const s = 'ojo', t_o = As(s, 'Ojo:'), t_n = As(s, 'En noviembr
     cal(c, 300, 640, 1.0, 'NOVIEMBRE', '−3,7 %', C.red, 6600, pb(T, t_n - .1), -.04);
     tx(c, 'S&P 500, 30 OCT.–27 NOV.', 300, 800, { size: 22, f: 'ui', al: .7 });
     cal(c, 780, 640, 1.0, 'PRÓXIMA SEMANA', '?', C.navy, 6610, pb(T, t_x - .1), .04);
-    if (T > t_x) for (let k = 0; k < 6; k++) { c.save(); c.globalAlpha = .25 + .1 * Math.sin(T * 2 + k); shp(c, blob(700 + k * 30 + 20 * Math.sin(T + k), 560 + (k % 3) * 60, 90, 40, 6620 + k, { amp: .1 }), '#C9CCD4', { line: false }); c.restore(); }
     person(c, 540, 1380, .85, { seed: 6, shirt: C.lav, ...idle(T), look: T > t_x ? 1 : -1, mouth: 'flat', brow: 1 });
     src(c, 'Yahoo Finance · S&P 500 · cierres del 30 oct. y del 27 nov. 2026', 1420);
   }); }
@@ -146,8 +145,8 @@ if (has('cierre')) { const s = 'cierre', t_a = As(s, TK ? 'una y otra' : 'Nadie 
     for (let k = 0; k < 16; k++) { const x = (k * 197) % 1040 + 20, y = (k * 131) % 420 + 80, a = .35 + .55 * Math.abs(Math.sin(T * 2 + k)); c.save(); c.globalAlpha = a; c.fillStyle = C.gold; c.beginPath(); c.arc(x, y, 3, 0, TAU); c.fill(); c.restore(); }
     tx(c, 'LOS PEORES DÍAS Y LOS MEJORES', 540, 300, { size: 56, col: C.chalk, sh: C.goldD, clipP: pr(T, t_a - .2, .6, easeIO), max: 1000 });
     tx(c, 'SUELEN LLEGAR JUNTOS', 540, 400, { size: 64, col: C.lav, sh: null, clipP: pr(T, t_j - .3, .6, easeIO), max: 1000 });
-    const g = pr(T, t_j - .2, .6, easeOutBack); cal(c, lerp(200, 420, g), 720, .9, 'SEMANA 16–20', '−8,6 %', C.red, 6700, pb(T, sec(s).t0 + .2), -.08 + .05 * g);
-    cal(c, lerp(880, 660, g), 720, .9, 'SEMANA 23–27', '+5,6 %', GRN, 6710, pb(T, sec(s).t0 + .5), .08 - .05 * g);
+    const g = pr(T, t_j - .2, .6, easeOutBack); cal(c, lerp(200, 420, g), 720, .9, '16–20 NOV', '−8,6 %', C.red, 6700, pb(T, sec(s).t0 + .2), -.08 + .05 * g);
+    cal(c, lerp(880, 660, g), 720, .9, '23–27 NOV', '+5,6 %', GRN, 6710, pb(T, sec(s).t0 + .5), .08 - .05 * g);
     if (g >= 1) shp(c, R4(500, 600, 80, 40), '#E9D9AE', { sharp: true, w: 3, lc: C.ink, seed: 6720 });
     tx(c, 'HAZ TU CUENTA', 540, 1050, { size: 104, col: C.gold, sh: null, sc: pb(T, t_h) });
     const ke = pr(T, t_end + .15, .5); if (ke > 0) { tx(c, 'Contenido educativo. No es una recomendación de inversión.', 540, 1380, { size: 30, f: 'ui', col: C.chalk, al: ke, max: 980 }); tx(c, 'TITÁN HOLDING', 540, 1450, { size: 50, col: C.gold, sh: null, al: ke }); }
